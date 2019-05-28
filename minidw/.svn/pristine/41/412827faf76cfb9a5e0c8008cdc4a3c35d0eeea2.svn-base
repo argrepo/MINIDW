@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="minidw">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="minidw.processors-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/minidw.processors/minidw.processors">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="minidwclientws-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/minidwclientws/minidwclientws">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="minidw.service.utils-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/minidw.service.utils/minidw.service.utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="client.data.to.csv.path.converter-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/client.data.to.csv.path.converter/client.data.to.csv.path.converter">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="common-utils-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/common-utils/common-utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="encryptor-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/encryptor/encryptor">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="minidw.client.jdbc.utils-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/minidw.client.jdbc.utils/minidw.client.jdbc.utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="amazons3util-3.6.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/amazons3util/amazons3util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="minidw"/>
+        <property name="java-output-path" value="/minidw/target/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,2287 @@
+#anvizent.package.header=Mis paquetes
+anvizent.package.header=Conjuntos de datos
+anvizent.package.label.unableToProcessYourRequest=No se puede procesar su solicitud.
+anvizent.message.validation.text.fileIsEmpty=El archivo está vacío.
+anvizent.message.success.code=ÉXITO
+anvizent.message.error.code=ERROR
+#label
+
+#544
+anvizent.message.text.errorWhileGettingPackageProperties=Error al obtener las propiedades del paquete
+anvizent.message.text.errorWhileGettingLocaleNamesList=Error al obtener la lista de nombres locales
+anvizent.message.text.errorWhileGettingGetclientlist=Error al obtener getClientList
+anvizent.message.text.unableToRetrieveConnectionList=No se puede recuperar la lista de conexiones
+anvizent.message.text.unableToRetrieveIlConnectionMappingInfoList=No se puede recuperar la lista de información de mapeo de conexión.
+anvizent.message.text.changeLogNotFound=Registro de cambios no encontrado
+anvizent.message.text.fileSavingFailedErrorDetails=Error al guardar el archivo. <br /> <b>Error de detalles:</b>
+anvizent.message.text.serverNotReachable=Servidor no accesible
+anvizent.message.text.fileUploadingFailed=Falló la carga del archivo.
+anvizent.message.text.successfullyChanged=Cambiado exitosamente
+anvizent.message.text.editMappedHeaders=Editar encabezados asignados
+anvizent.message.text.queryisOK=La consulta está bien.
+anvizent.message.text.procedureIsOK=El procedimiento está bien.
+
+
+
+anvizent.package.label.standardPackage=Paquete estándar
+anvizent.package.label.customPackage=Paquete personalizado
+anvizent.package.label.archivePackage=Paquete de archivo
+anvizent.package.label.archive=Archivo
+anvizent.package.label.archivedPackages=Paquetes archivados
+anvizent.package.label.newPackageName=Nuevo nombre del paquete
+anvizent.package.label.activatePackage=Activar paquete
+anvizent.package.label.areyousure,youwanttoactivatethispackage=¿Estás seguro de que quieres activar este paquete?
+anvizent.package.label.activate=Activar
+anvizent.package.label.packageId=ID del paquete
+anvizent.package.label.packageType=Tipo de paquete
+anvizent.package.label.packageName=Nombre del paquete
+anvizent.package.label.verticalDetails=Detalles verticales
+anvizent.package.label.isActive=está activo
+anvizent.package.label.status=Estado
+anvizent.package.label.scheduled=está programado
+anvizent.package.label.isMapped=isMapped
+anvizent.package.label.remarks=Observaciones
+anvizent.package.label.edit=Editar
+anvizent.package.label.delete=Borrar
+anvizent.package.label.viewResults=Ver resultados
+anvizent.package.label.viewExecutionResults=Ver los resultados de ejecución
+anvizent.package.label.packageExecutionStatus=Estado de ejecución del paquete
+anvizent.package.label.modalHeader.deletePackage=Eliminar paquete
+anvizent.package.label.modalHeader.archivePackage=Paquete de archivo
+anvizent.package.standardPackage.label.selectIndustry=Industria
+anvizent.package.label.flatFile=Archivo plano
+anvizent.package.label.database=Base de datos
+anvizent.package.label.existingConnections=Conexiones existentes
+anvizent.package.label.databaseConnectionDetails=Detalles de conexión de base de datos
+anvizent.package.label.existingDatabaseConnectionDetails =Conexiones existentes
+anvizent.package.label.connectionName=Nombre de la conexión
+anvizent.package.label.databaseType=Tipo de base de datos
+anvizent.package.label.connectorType=tipo de conector
+anvizent.package.label.connectionType=Tipo de conección
+anvizent.package.label.serverName=Servidor IP con puerto
+anvizent.package.label.userName=Nombre de usuario
+anvizent.package.label.password=Contraseña
+anvizent.package.label.typeOfCommand=Tipo de comando
+anvizent.package.label.flatFileDetails=Detalles del archivo plano
+anvizent.package.label.fileType=Tipo de archivo
+anvizent.package.label.filePath=Ruta de archivo
+anvizent.package.label.file=Expediente
+anvizent.package.label.delimiter=Delimitador
+anvizent.package.label.firstRowHasColumnNames=La primera fila tiene nombres de columna
+anvizent.package.label.sNo=S.No.
+#manish
+anvizent.package.label.executionID=ID de ejecución
+anvizent.package.label.initiatedFrom=Iniciado desde
+anvizent.package.label.uploadStatus=Estado de carga
+anvizent.package.label.uploadComments=Subir comentarios
+anvizent.package.label.executeStatus=Estado de ejecución
+anvizent.package.label.executionComments=Comentarios de ejecución
+anvizent.package.label.druidStatus=Estado druida
+anvizent.package.label.info=Información
+anvizent.package.label.detailedInfo=Información detallada
+anvizent.package.label.targetTableName=Nombre de la tabla de destino
+
+anvizent.package.label.columnName=Nombre de columna
+anvizent.package.label.dataType=Tipo de datos
+anvizent.package.label.columnSize=Tamaño de la columna
+anvizent.package.label.createNewSchema=Crear nuevo esquema
+anvizent.package.label.useExistingSchema=Usar esquema existente
+anvizent.package.label.fetchFromFile=Recuperar del archivo
+anvizent.package.label.createTargetTable=Crear tabla de destino
+anvizent.package.label.modalHeader.deleteSource=Eliminar fuente
+anvizent.package.label.modalHeader.deleteTargetTable=Eliminar tabla de destino
+anvizent.package.label.modalHeader.deleteDerivedTable=Eliminar tabla derivada
+anvizent.package.label.pk=Clave primaria
+anvizent.package.label.nn=No nulo
+anvizent.package.label.ai=Autoincremento
+anvizent.package.label.uq=Único
+anvizent.package.label.view=Ver
+anvizent.package.label.batchId=ID del lote
+anvizent.package.label.jobName=Nombre del trabajo
+anvizent.package.label.startDate=Fecha de inicio
+anvizent.package.label.endDate=Fecha final
+#manish
+anvizent.package.label.jobStatus=Estado del trabajo
+anvizent.package.label.sourceRecords=Registros fuente
+
+anvizent.package.label.insertedRecords=Registros insertados
+anvizent.package.label.updatedRecords=Registros actualizados
+anvizent.package.label.ViewErrorLog=Ver registro de errores
+anvizent.admin.label.ViewSourceDetails=Ver detalles de la fuente de IL
+anvizent.admin.label.viewcustompackagesource=Ver fuente del paquete personalizado
+anvizent.package.label.Webservice=Servicio web
+anvizent.package.label.xReference=Referencia cruzada
+anvizent.package.label.ilxrefdetails=IL X-Ref Detalles
+anvizent.package.label.xreferenceSplitting=División de X-ref
+anvizent.package.label.xref.xreftables=Mesas X-Ref
+anvizent.package.label.xref.xrefsources=Fuentes X-ref
+anvizent.package.label.merging=Fusionando
+anvizent.package.label.xrefilName=Nombre de XRef IL
+anvizent.package.label.splitting=Terrible
+anvizent.package.label.xref.downloadtemplate=Descargar
+anvizent.package.label.xref.viewtablestructure=Estructura de la mesa
+anvizent.package.label.type=Tipo
+anvizent.package.label.sourceName=Nombre de la fuente
+anvizent.package.label.xref.Condition=Ver condición de fusión
+anvizent.package.label.xReference=Referencia cruzada
+anvizent.package.label.xref.xrefbycondition=X-ref por condición
+anvizent.package.label.xref.xrefbyvalues=X-ref por valores
+anvizent.package.label.modalHeader.resetschemas=Restablecer esquemas
+anvizent.package.label.mergeCondition=Ver condición de fusión
+anvizent.package.label.viewsplitttingCondition=Ver condición de división
+anvizent.package.label.unMerge=Un Merge
+#button
+anvizent.package.button.createStandardPackage=Crear paquete estándar
+anvizent.package.button.createCustomPackage=Crear paquete personalizado
+anvizent.package.button.yes=Sí
+anvizent.package.button.no=No
+anvizent.package.button.createNewConnection=Crear nueva conexión
+anvizent.package.button.saveConnection=Guardar conexión
+anvizent.package.button.save=Salvar
+anvizent.package.button.save&Schedule=Guardar y programar
+anvizent.package.button.close=Cerrar
+anvizent.package.button.deleteConnection=Eliminar conexión
+anvizent.package.button.editConnection=Editar conexión
+anvizent.package.button.updateConnection=Actualizar conexión
+anvizent.package.label.modalHeader.deleteIlConnection=Eliminar conexión IL
+anvizent.package.message.deletePackage.alltheMappingsWithTheseConnectionWillBeDeleted=Todas las asignaciones con esta conexión serán eliminadas.
+anvizent.package.message.deletePackage.areYouSureYouWantToDeleteIlConnection=¿Estás seguro de que quieres eliminar la conexión?
+anvizent.package.message.deletePackage.areYouSureYouWantToEditSource=¿Estás seguro de que quieres editar la fuente?
+anvizent.package.standardPackage.NoModuleMapped=Ningún módulo está mapeado. Por favor seleccione un módulo de la siguiente sección.
+anvizent.package.standardPackage.ViewMappedModules=Ver módulos asignados
+anvizent.package.message.updatePackage.areYouSureYouWantToUpdateConnection=¿Estás seguro de que quieres actualizar esta conexión?
+anvizent.package.message.deleteSource.areYouSureYouWantToResetSchemas=¿Estás seguro de que deseas restablecer la selección del esquema?
+anvizent.package.button.reset=Reiniciar
+#message
+anvizent.package.message.emptyStandardPackage=No se encontraron paquetes
+anvizent.package.message.deletePackage.areYouSureYouWantToDeletePackage=¿Estás seguro, quieres archivar el paquete?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteSource=¿Estás seguro, quieres borrar la Fuente?
+anvizent.package.message.deleteSource.areYouSureYouWantToUnMerge=¿Estás seguro de que quieres Un Merge?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteTargetTable=¿Está seguro, desea eliminar la tabla de destino?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteTargetTableForScheduled=Todos los conjuntos de datos asociados con este paquete se eliminarán y los paneles de instrumentos asociados con este paquete pueden dejar de funcionar. ¿Estás seguro de que quieres editar el paquete?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteDerivedTable=¿Está seguro, desea eliminar la tabla derivada?
+anvizent.package.message.modulesAreNotAssignedPleaseContactSuperAdmin=Los módulos no están asignados. Por favor, póngase en contacto con Super Admin.
+anvizent.package.message.deletePackage.packagewillbedeactivated=El paquete será desactivado.
+anvizent.package.message.deletePackage.sourcesandtableswillnotbedeleted=Las fuentes y tablas asociadas con este paquete no se eliminarán.
+anvizent.package.message.deletePackage.youwillnotbeableusethesamepackagenameagain=No podrá volver a utilizar el mismo nombre de paquete.
+anvizent.package.message.targetTableDoesNotExist=La tabla de destino no existe.
+anvizent.package.message.deleteSource.areYouSureYouWantToTruncateeUserTables=¿Está seguro, desea truncar todas las tablas seleccionadas?
+anvizent.package.message.areYouSureYouWantToDeleteThisIL =¿Estás seguro de que quieres eliminar este IL?
+anvizent.package.message.areYouSureYouWantToDeleteThisDL =¿Estás seguro que quieres borrar este DL?
+anvizent.package.message.packageNameShouldContainAtleast3Characters =Longitud del nombre del paquete debe estar entre $ - ?.
+anvizent.package.message.packageNameShouldNotBeEmpty =El nombre del paquete no debe estar vacío.
+anvizent.package.message.addAtLleastAnAlphanumericCharacter=Añadir al menos un carácter alfanumérico.
+anvizent.package.message.specialCharactersandOnlyAllowed=Los caracteres especiales &quot;_&quot; y &quot;-&quot; solo están permitidos.
+anvizent.package.message.invalidData=Datos inválidos
+anvizent.package.message.defaultValueLengthIsExceeded=Se excede la longitud del valor predeterminado.
+anvizent.package.message.constantValueLengthIsExceeded=Se excede la longitud del valor constante.
+anvizent.package.message.pleaseSelectAtleastOneSchema=Por favor seleccione al menos un esquema.
+anvizent.package.message.pleasechoosefromdate=Por favor, elija a partir de la fecha.
+anvizent.package.message.pleasechoosetodate=Por favor, elija hasta la fecha.
+anvizent.package.message.pleasechooseloadinterval=Por favor, elija el intervalo de carga.
+anvizent.package.message.variblesnotfound=no se encuentran {fromDate}, {toDate} ni ninguna de las variables en Il Query.
+anvizent.package.message.datevariablenotfound=La variable {date} no se encuentra en Il Query.
+anvizent.package.message.pleasechoosedatabasevariable=Por favor, elija la base de datos variable.
+anvizent.package.message.pleasechoosedatabasename=Por favor, elija el nombre de la base de datos.
+anvizent.package.message.pleasechooseschemavariable=Por favor, elija la variable de esquema.
+anvizent.package.message.pleasechooseschemaname=Por favor, elija el nombre del esquema.
+anvizent.package.message.pleaseselectdatabase=Por favor, seleccione la base de datos.
+anvizent.package.message.pleaseselectwebservice=Por favor seleccione servicio web.
+anvizent.message.error.text.connectorIdisShouldNotBeEmpty=El ID del conector no debe estar vacío.
+anvizent.message.error.text.parameterIdisShouldNotBeEmpty=La identificación no debe estar vacía.
+anvizent.package.message.pleasechoosewebservice=Por favor, elija el servicio web.
+anvizent.package.message.text.areYouSureYouWantToUnscheduleThePackage=¿Estás seguro de que quieres cancelar la programación del paquete?
+
+#accessDenied.jsp
+anvizent.package.label.accessDenied=Acceso denegado
+
+#addILSource.jsp
+anvizent.package.label.addilSource=Añadir IL Source
+anvizent.package.label.moduleName=Nombre del módulo
+anvizent.package.label.inputLayout=Diseño de entrada
+anvizent.package.link.viewSourceDetails=Ver detalles de la fuente
+#manish
+anvizent.package.link.runNow=Corre ahora
+anvizent.package.link.runwithScheduler=Ejecutar con programador
+anvizent.package.link.viewResults=Ver resultados
+
+anvizent.package.button.viewTableStructure=Ver la estructura de la tabla
+anvizent.package.label.template=Modelo
+anvizent.package.label.direct=Directo
+anvizent.package.button.testConnection=Conexión de prueba
+anvizent.package.label.query=Consulta
+anvizent.package.label.storedProcedure=Procedimiento almacenado
+anvizent.package.label.ispaginationrequired=Se requiere paginación
+anvizent.package.label.incrementalUpdate=Actualización incremental
+anvizent.package.label.incrementalUpdateDetails=Detalles de actualización incremental
+anvizent.package.label.historicalLoad=Carga historica
+anvizent.package.label.storedProcedureName=Nombre del procedimiento almacenado
+anvizent.package.button.addParameters=Agregar Parámetros
+anvizent.package.label.name=Nombre
+anvizent.package.label.value=Valor
+anvizent.package.button.preview=Avance
+anvizent.package.button.initiateBuildQuery=Iniciar consulta de construcción
+anvizent.package.button.buildQuery=Consulta de construcción
+anvizent.package.label.DownloadTemplate=Descargar plantilla
+anvizent.package.label.historicalload=Carga historica
+anvizent.package.label.fromdate=Partir de la fecha
+anvizent.package.label.startdate=Fecha de inicio
+anvizent.package.label.todate=Hasta la fecha
+anvizent.package.label.enddate=Fecha final
+anvizent.package.label.loadinterval=Intervalo de carga
+anvizent.package.label.incremental=Incremental
+anvizent.package.label.start=comienzo
+anvizent.package.label.replaceVariable=Reemplazar variable
+anvizent.package.label.databaseandschema=Base de datos y esquema
+anvizent.package.label.selectdbvariable=Seleccione DB Variable
+anvizent.package.label.selectdbname=Seleccione Nombre de DB
+anvizent.package.label.selectschemavariable=Seleccione la variable de esquema
+anvizent.package.label.selectschemaname=Seleccione el nombre del esquema
+
+anvizent.package.label.responseobjectname=Nombre del objeto de respuesta:
+anvizent.package.label.enterresponseobjectname=Introduzca el nombre del objeto de respuesta
+anvizent.package.label.apiName=Nombre de API
+anvizent.package.label.enterAPIName=Ingrese el nombre de la API
+anvizent.package.label.url=URL:
+anvizent.package.label.enterUrl=Introducir URL
+anvizent.package.label.isAuthenticationRequiredYes=Sí
+anvizent.package.label.authenticationUrl=URL de autenticación
+anvizent.package.button.validAuthenticationURL=Validar URL de autenticación
+anvizent.package.label.enterAuthenticationURL=Validar URL de autenticación:
+anvizent.package.label.authenticationParametersfromURL=Parámetros de autenticación desde la URL:
+anvizent.package.label.key=Llave
+anvizent.package.label.cookieRequired=Cookie requerida:
+anvizent.package.label.methodType=Tipo de método
+anvizent.package.label.get=OBTENER
+anvizent.package.label.post=ENVIAR
+anvizent.package.label.put=PONER
+anvizent.package.label.DELETE=BORRAR
+anvizent.package.label.options=OPCIONES
+anvizent.package.label.headerDetails=Detalles del encabezado:
+anvizent.package.label.rawHeader=Encabezado crudo
+anvizent.package.label.rawHeaderExContentTypeApplicationjsonAuthorizationBasictoken=Raw Header Ex: Content-Type: Application / json, Autorización: token básico
+anvizent.package.label.pathParameters=Parámetros de ruta:
+anvizent.package.label.enterKey=Introducir clave
+anvizent.package.label.enterValue=Ingrese el valor
+anvizent.package.label.EnterValue=Ingrese el valor
+anvizent.package.label.requestBody=Cuerpo de solicitud:
+anvizent.package.label.rawPayLoad=Carga de pago sin procesar
+anvizent.package.label.RawExKeyValuekeyvalue=Sin editar: {&quot;clave&quot;
+anvizent.package.label.requsetparam=Parámetros de solicitud
+anvizent.package.label.responsetokenname=Nombre del token:
+anvizent.package.label.enterresponsetokenname=Introduzca el nombre del token de respuesta
+anvizent.package.label.pleaseEnterTokenName=Por favor ingrese el nombre del token.
+anvizent.package.label.responseColumnObjectName=Columna de respuesta Nombre del objeto
+anvizent.package.label.pleaseEnterResponseColumnObject=Por favor ingrese el objeto de columna de respuesta
+anvizent.package.label.requestParameter=Parámetro de solicitud
+anvizent.package.label.bodyParameter=Parámetro del cuerpo
+#Manish2
+anvizent.message.success.text.successfullyMadeTheConnection=Se realizó con éxito la conexión {0}.
+anvizent.message.error.text.failedToConnectServer=Error al conectar el servidor {0}.
+anvizent.message.error.text.unableToFetchILcoloumnsList=No se puede obtener la lista de columnas Il
+anvizent.message.error.text.tablesNotFoundFor=Tablas no encontradas para {0}
+anvizent.message.error.text.unableToPrepareLoginUrl=No se puede preparar la URL de inicio de sesión
+anvizent.message.validation.text.alreadyRunning=Ya corriendo.
+anvizent.message.success.text.runNowInitiated=Ejecutar ahora iniciado.
+
+
+anvizent.package.label.yes=Sí
+anvizent.package.label.no=No
+anvizent.package.label.notePleaseMakeSureFileIsHavingHeaders=Nota *: Asegúrese de que el archivo tenga encabezados.
+anvizent.package.label.noteDateTimeFormat=Nota *: Formato de fecha y hora
+anvizent.package.button.mapFileHeadersUpload=Mapear encabezados de archivos y subir
+anvizent.package.button.mapFileHeadersUpdate=Mapear encabezados de archivos y actualizar
+anvizent.package.button.upload=Subir
+anvizent.package.label.noteSourceFileHeadersAndInputLayoutTableColumnsShouldHaveSamePositionalIdentity=Nota *: Los encabezados de los archivos de origen y las columnas de la tabla de Diseño de entrada deben tener la misma identidad posicional.
+anvizent.package.link.back=Espalda
+anvizent.package.label.mapFileHeadersUpload=Mapear encabezados de archivos y subir
+anvizent.package.label.default=Defecto
+anvizent.package.label.constant=Constante
+anvizent.package.link.mapOneMoredL=Mapa de un DL más
+anvizent.package.button.cancel=Cancelar
+anvizent.package.button.ok=De acuerdo
+
+#advanceAddILSource.jsp
+
+anvizent.package.label.dlName=Nombre de DL
+anvizent.package.label.ilName=Nombre de IL
+anvizent.package.button.xrefDetails=X-Ref Detalles
+anvizent.package.label.tunnel=Túnel
+anvizent.package.labelTestConnection=Conexión de prueba
+anvizent.package.button.validateQuerySP=Validar consulta / SP
+anvizent.package.button.saveMapping=Guardar mapeo
+anvizent.package.button.updateMapping=Actualizar mapeo
+
+#advancedPackage.jsp
+anvizent.package.label.xrefPackage=Paquete X-Ref
+anvizent.package.link.createxrefPackage=Crear X-RefPackage
+anvizent.package.label.isProcessed=es procesado
+anvizent.package.label.editView=Editar vista
+anvizent.package.link.done=Hecho
+anvizent.package.label.pending=Pendiente
+anvizent.package.label.targetTable=Tabla de objetivos
+anvizent.package.label.tableName=Nombre de la tabla
+anvizent.package.label.totalRecords=Total de registros
+anvizent.package.label.processedRecords=Registros procesados
+anvizent.package.label.failedRecords=Registros fallidos
+anvizent.package.label.derivedTables=Tabla (s) Derivada (s)
+
+#advancedStandardPackage.jsp
+anvizent.package.label.sourceMapping=Mapeo de fuente
+anvizent.package.label.xRefData=X datos de referencia
+anvizent.package.label.ilData=Los datos
+anvizent.package.button.xrefTable=Tabla de referencia externa
+anvizent.package.button.ilTable=Mesa de il
+anvizent.package.button.x=X
+anvizent.package.label.fileName=Nombre del archivo
+anvizent.package.label.mapping=Cartografía
+anvizent.package.button.splitSelectedRows=Dividir filas seleccionadas
+anvizent.package.button.addGroup=Añadir grupo
+anvizent.package.button.add=AÑADIR
+anvizent.package.button.removeGroup=Eliminar grupo
+anvizent.package.label.conditionName=Nombre de la condición
+anvizent.package.label.columnValues=Valores de la columna
+anvizent.package.button.proceed=Proceder
+anvizent.package.label.mergingStatusof=Estado de fusión de
+anvizent.package.label.conditions=Condiciones:
+anvizent.package.label.addressCompanyName=Dirección1-Company_Name
+anvizent.package.label.noOfXRefInsertedRecords=Núm. De registros insertados de X-Ref:
+anvizent.package.label.noOfXRefUpdatedRecords=Nº de registros actualizados de X-Ref:
+anvizent.package.label.noOfIlInsertedRecords=Número de registros insertados de IL:
+anvizent.package.label.noOfIlFailedRecords=Número de registros fallidos de IL:
+anvizent.package.label.addSource=Agregue una fuente
+anvizent.package.label.mappingInfo=Información de mapeo
+
+#advancedStandardPackage-BeforeXrefPackage.jsp
+anvizent.package.label.advanced=Avanzado
+anvizent.package.label.Parameters=Parámetros
+
+#clientDLMapping.jsp
+anvizent.package.label.client=Cliente
+anvizent.package.label.selectAll=Seleccionar todo
+anvizent.package.label.dlId=ID de DL
+anvizent.package.label.lockUnLock=Bloqueo y desbloqueo
+anvizent.package.label.locked=Bloqueado
+anvizent.package.label.unLocked=Desbloqueado
+anvizent.package.label.source=Fuente
+anvizent.package.label.pleaseChooseAtLeastOneDL=Por favor, elija al menos un DL.
+
+#createContextParameter.jsp
+anvizent.package.label.paramName=Nombre de parámetro
+anvizent.package.label.paramId=Paramid
+
+#createDL.jsp
+anvizent.package.label.enterDLName=Ingrese el Nombre de DL
+anvizent.package.label.enterTableName=Ingrese el nombre de la tabla
+anvizent.package.label.description=Descripción
+anvizent.package.label.enterDLDescription=Introduzca DL Descripción
+anvizent.package.label.enterJobName=Ingrese el nombre del trabajo
+anvizent.package.label.select=-------------------------------------------Seleccionar------ -------------------------------------
+
+
+#createIL.jsp
+anvizent.package.label.ilNameDisplayName=Nombre de IL: (Nombre para mostrar)
+anvizent.package.label.enterILName=Ingrese el nombre de IL
+anvizent.package.label.enterILDescription=Enter IL Descripción
+
+#customPackage.jsp
+anvizent.package.label.createPackage=Crear paquete
+anvizent.package.label.SelectPackage=- Seleccione el paquete--
+anvizent.package.label.createPackageAsToCompleteThisActionSelectAnExistingPackage=Crear paquete como (para completar esta acción, seleccione un paquete existente)
+anvizent.package.label.noteThisOptionWillCopyOnlySourcesFromTheSelectedPackage=Esta opción copiará solo las fuentes del paquete seleccionado.
+anvizent.package.label.createNewDataSetTables=Crear nuevos conjuntos de datos / tablas
+anvizent.package.label.allSourcesHavingSameSetOfHeaders=Todas las fuentes que tienen el mismo conjunto de encabezados:
+anvizent.package.label.noteIfItIsSingleFileChooseOptionYes=Nota *: Si es un solo archivo, elija la opción Sí.
+anvizent.package.label.noteIfItIsASingleSourceChooseOptionYes=Nota *: Si es una sola fuente, elija la opción Sí.
+anvizent.package.button.viewQuery=Consulta de vista
+anvizent.package.button.proceedForMapping=Proceder para mapear
+anvizent.package.label.length=Longitud
+anvizent.package.button.createTable=Crear mesa
+anvizent.package.label.tableCreation=Creación de tablas
+anvizent.package.label.primary=Primario
+anvizent.package.label.TargetTableIsAlreadyCreatedForThisPackageIfyouAddSourceAllMappingsWillBeDestroyed=La tabla de destino ya está creada para este paquete. Si agrega la Fuente, todas las asignaciones serán destruidas.
+anvizent.package.label.areYouSureYouWantToAddSource=¿Estás seguro, quieres agregar la fuente?
+anvizent.package.label.nA=N / A
+anvizent.package.button.undo=Refrescar
+
+#derivedTable.jsp
+anvizent.package.label.existingTablesFromCloudDerivedTables=Tablas existentes desde la nube (tablas derivadas)
+anvizent.package.title.addToBelowTable=Añadir a la siguiente tabla
+anvizent.package.button.saveUpload=Guardar y subir
+anvizent.package.label.source=Fuente
+
+#easyquerybuilder.jsp
+anvizent.package.label.queryBuilder=Consultor de construcción
+anvizent.package.link.packageDetails=Detalles del paquete
+anvizent.package.label.resultTableWithColumns=Tabla de resultados con columnas
+anvizent.package.label.addTablesAndColumnsFromEntitiesAndAttributes=Agregar tablas y columnas de entidades y atributos
+anvizent.package.label.joinTables=Unir tablas
+anvizent.package.label.joinConditions=Condiciones de inscripción
+anvizent.package.button.enableQuery=Habilitar consulta
+anvizent.package.button.disableQuery=Deshabilitar consulta
+anvizent.package.label.schemas=Esquemas:
+anvizent.package.label.selectSchema=------------ Seleccionar esquema ------------
+anvizent.package.link.ok=DE ACUERDO
+anvizent.package.button.validateQuery=Validar consulta
+
+#ETLAdmin.jsp
+
+#fileSettings.jsp
+
+#home.jsp
+
+anvizent.package.label.userDetailsScreen=Pantalla de detalles del usuario
+
+#iLDLMapping.jsp
+anvizent.package.label.selectDL=Seleccione DL
+anvizent.package.label.dlMapped=DL mapeado
+anvizent.package.label.ilId=ID de IL
+anvizent.package.button.submit=Enviar
+
+#modifyXref.jsp
+anvizent.package.label.xRefKey=X- clave de referencia
+anvizent.package.button.splitSelectedRows=Dividir filas seleccionadas
+anvizent.package.label.noSourceFileIsAdded=No se agrega ningún archivo fuente
+
+#package.jsp
+anvizent.package.label.no=No
+anvizent.package.link.completed=Terminado
+anvizent.package.label.filterPackagesBy=Filtrar paquetes por:
+anvizent.package.label.all=Todos
+anvizent.package.label.active=Activo
+anvizent.package.label.Archived=Archivado
+
+#queryBuilder.jsp
+anvizent.package.label.joins=Se une
+anvizent.package.label.innerJoin=UNIR INTERNAMENTE
+anvizent.package.label.leftOuterJoin=IZQUIERDA COMBINACIÓN EXTERNA
+anvizent.package.label.rightOuterJoin=JUSTE EXTERIOR DERECHO
+anvizent.package.label.with=Con
+anvizent.package.label.joinConditions=ÚNASE A LAS CONDICIONES
+anvizent.package.label.selectTable=Seleccionar tabla
+anvizent.package.label.selectColumn=Seleccionar columna
+
+#schedule.jsp
+anvizent.package.label.schedule=Programar
+anvizent.package.label.standard=Estándar
+anvizent.package.label.custom=Personalizado
+anvizent.package.label.recurrence=Recurrencia
+anvizent.package.label.startTime=Hora de inicio :
+anvizent.package.label.endTime=Hora de finalización :
+anvizent.package.label.range=Distancia :
+anvizent.package.link.reSchedule=Reprogramar
+anvizent.package.link.unschedule=No programado
+anvizent.package.label.runNow=Corre ahora
+anvizent.package.label.runwithscheduler =Ejecutar con programador
+anvizent.package.label.recurrencePattern=Patrón de recurrencia, patrón recurrente
+anvizent.package.label.once=Una vez
+anvizent.package.label.hourly=Cada hora
+anvizent.package.label.daily=Diario
+anvizent.package.label.weekly=Semanal
+anvizent.package.label.monthly=Mensual
+anvizent.package.label.yearly=Anual
+anvizent.package.label.recurEvery=Repita todos los
+anvizent.package.label.weeksOn=semana (s) en:
+anvizent.package.label.day=Día
+anvizent.package.label.every=Cada
+anvizent.package.label.selecthours=Seleccione horas
+anvizent.package.label.hours=horas
+anvizent.package.label.ofEvery=de cada
+anvizent.package.label.months=meses)
+anvizent.package.label.noteIfSelectedDayIsNotAvailableForAMonthLastDayOfThatMonthWillBeConsidered=Nota *: Si el día seleccionado no está disponible por un mes, se considerará el último día de ese mes.
+anvizent.package.label.years=años)
+anvizent.package.label.on=En:
+anvizent.package.label.scheduleTime=Tiempo programado
+anvizent.package.label.rangeOfRecurrence=Rango de recurrencia
+anvizent.package.label.noEndDate=Sin fecha de finalización
+anvizent.package.label.endAfter=Terminar despues
+anvizent.package.label.occurrences=ocurrencias
+anvizent.package.label.endBy=Terminar por
+anvizent.package.label.MaxOccurences=MaxOccurences
+anvizent.package.label.ScheduleEndDate=ScheduleEndDate
+anvizent.package.label.schedulePackages=Paquetes de horarios
+anvizent.package.label.order=Orden
+#manish
+anvizent.package.label.unschedule=No programado
+anvizent.package.label.runOnlyIL=Ejecutar solo IL (s)
+anvizent.package.label.runOnlyModule=Ejecutar solo módulo (s)
+anvizent.package.label.runBothIlandModule=Ejecutar tanto IL (s) como Módulo (s)
+anvizent.package.label.fetchFrom=Obtener de
+anvizent.package.label.jobRunType=Tipo de ejecución del trabajo
+anvizent.package.label.source=Fuente
+anvizent.package.label.advancedOptions=Opciones avanzadas
+anvizent.package.label.clientScheduler=Programador de clientes
+anvizent.package.label.welcome=Bienvenido
+anvizent.package.label.executionStartDate=Fecha de inicio de ejecución
+anvizent.package.label.lastExecutionDate=Última fecha de ejecución
+
+
+#standardPackage.jsp
+anvizent.package.label.mappedModulesDataSets=Módulos asignados / conjuntos de datos
+anvizent.package.label.modules=Módulos
+anvizent.package.label.kPI=KPI
+anvizent.package.label.kPIs=KPIs
+anvizent.package.label.pathParams=Parámetros de ruta:
+
+#tableBuilder.jsp
+anvizent.package.label.derivedTableBuilder=Generador de tablas derivadas
+anvizent.package.label.select=Seleccionar
+anvizent.package.label.dimensionMeasure=Dimensión / Medida
+anvizent.package.label.dimension=Dimensión
+anvizent.package.label.measure=Medida
+anvizent.package.label.derivedTableName=Nombre de tabla derivado
+anvizent.package.label.valueType=Tipo de valor
+anvizent.package.button.saveTable=Guardar tabla
+anvizent.package.button.validate=Validar
+anvizent.package.label.addCustomColumn=Añadir columna personalizada
+anvizent.package.label.derived=Derivado
+anvizent.package.label.aggregates=Agregados
+anvizent.package.label.sum=Suma
+anvizent.package.label.min=Min
+anvizent.package.label.max=Max
+anvizent.package.label.avg=Avg
+anvizent.package.label.count=Contar
+anvizent.package.label.operations=Operaciones
+anvizent.package.label.multiplication=Multiplicación
+anvizent.package.label.addition=Adición
+anvizent.package.label.subtraction=Sustracción
+anvizent.package.label.division=División
+anvizent.package.label.varchar=VARCHAR
+anvizent.package.label.int=EN T
+anvizent.package.label.bigInt=BIGINT
+anvizent.package.label.float=FLOTADOR
+anvizent.package.label.bit=POCO
+anvizent.package.label.dateTime=FECHA Y HORA
+anvizent.package.label.date=FECHA
+anvizent.package.button.createDerivedTable=Crear tabla derivada
+anvizent.package.label.noteColumnsonwhichaggregatesareapplicablewillappearinSelectColumnlist=Nota: Las columnas en las que se aplican los agregados aparecerán en la lista Seleccionar columna.
+anvizent.package.label.entitiesAndAtrributes=Entidades y Atributos
+
+#userprofile.jsp
+anvizent.package.label.clientId=Identificación del cliente
+anvizent.package.label.roleId=Identificación del rol
+anvizent.package.label.roleName=Nombre de rol
+anvizent.package.label.version=Versión
+anvizent.package.label.availableDatabases=Base de datos disponible (s)
+anvizent.package.label.databaseName=Nombre de la base de datos
+anvizent.package.label.drivername=Nombre del conductor
+anvizent.package.label.protocal=Protocol
+anvizent.package.label.urlformat=Formato de URL
+anvizent.package.label.connectorJar=Tarro conector
+
+
+#viewCustomPackageSource.jsp
+anvizent.package.label.delimeter=Delimitador
+
+#viewILDL.jsp
+anvizent.package.label.viewIL=Ver IL
+anvizent.package.label.ViewDL=Ver DL
+anvizent.package.label.ilQuery=IL Query
+anvizent.package.label.saveQuery=Guardar consulta
+anvizent.package.label.dlNameDisplayName=Nombre de DL: (Nombre para mostrar)
+anvizent.package.button.update=Actualizar
+anvizent.package.label.deleteFile=Borrar archivo
+anvizent.package.label.areYouSureYouWantToDeleteThisFile?=¿Estás seguro, quieres borrar este archivo?
+anvizent.package.label.webserviceName=Nombre del servicio web
+anvizent.package.label.apiname=Nombre de api
+anvizent.package.label.url=Url
+
+#viewIlSource.jsp
+anvizent.package.label.typeOfcommand=Tipo de comando
+anvizent.package.label.noSourceIsAdded=No se han encontrado fuentes.
+
+#viewResults.jsp
+anvizent.package.label.searchResults=Resultados de la búsqueda
+anvizent.package.label.jobStartDate=Fecha de inicio del trabajo:
+anvizent.package.label.from=Desde
+anvizent.package.label.to=A
+anvizent.package.label.0errors=0 error (s)
+#manish
+anvizent.package.label.failure=fracaso
+anvizent.package.label.success=éxito
+
+anvizent.package.link.errors=Error (s)
+anvizent.package.label.errorLog=Registro de errores
+anvizent.package.label.errorId=ID de error
+anvizent.package.label.errorCode=Código de error
+anvizent.package.label.errorType=Tipo de error
+anvizent.package.label.errorMessage=Mensaje de error
+anvizent.package.label.errorSyntax=Sintaxis de error
+
+#xRefDetails.jsp
+anvizent.package.label.ilSourceDetails=IL Detalles de la fuente
+anvizent.package.button.sequence=Secuencia
+anvizent.package.label.conditionName=Nombre de la condición
+anvizent.package.label.constraints=Restricciones
+anvizent.package.label.sequence=Secuencia
+anvizent.package.label.constraint=Restricción
+
+#xRefDetails2.jsp
+anvizent.package.label.ilColumnName=Nombre de la columna IL
+anvizent.package.label.SourceColumnName=Nombre de la columna fuente
+anvizent.package.button.addCondition=Añadir condición
+
+#xReferenceAddILSource.jsp
+anvizent.package.label.sourceDetails=Detalles de la fuente
+
+#############################################
+# new props #
+############################################
+
+#advancedStandardPackage.jsp
+anvizent.package.label.sourceampMapping=Fuente y Mapeo
+
+#advancedStandardPackage-BeforeXrefPackage.jsp
+anvizent.package.label.source=Fuente
+
+#clientDLMapping.js
+anvizent.package.label.thereisNoDlFor=No hay DL para
+anvizent.package.label.pleasechooseClientName=Por favor, elija el nombre del cliente
+anvizent.package.label.PleasechooseDlNames=Por favor, elija nombres de DL
+anvizent.package.label.dependencyJars=Tarros de dependencia
+anvizent.package.label.dlDescription=Descripción
+
+#createContextParameter.js
+anvizent.package.label.paramNameShoudnotbeEmpty=ParamName no debe estar vacío
+
+#createDL.js
+anvizent.package.label.dLCreatedSuccesfully=DL creado con éxito
+anvizent.package.label.pleaseEnterDLName=Por favor ingrese DL Nombre
+anvizent.package.label.pleaseEnterTableName=Por favor ingrese el nombre de la tabla
+anvizent.package.label.pleaseEnterDLDescription=Por favor ingrese la descripción de DL
+anvizent.package.label.pleaseEnterJobName=Por favor ingrese el nombre del trabajo
+anvizent.package.label.pleaseChooseFile=Por favor elija el archivo
+anvizent.package.label.pleaseChooseEitherTxtorJarFile=Por favor elija el archivo .txt o .jar
+anvizent.package.label.pleasechooseContextParameters=Por favor, elija los parámetros de contexto
+
+#createIL.js
+anvizent.package.label.pleaseEnterILName=Por favor ingrese el nombre de IL
+anvizent.package.label.pleaseEnterILDescription=Por favor ingrese la descripción de IL
+
+#customPackage.js
+anvizent.package.label.selectConnection=Seleccione Conexión
+anvizent.package.label.selectSchema=Seleccione esquema
+anvizent.package.label.lengthShouldNotBeEmptyforVARCHARBIT=la longitud no debe estar vacía para VARCHAR, BIT
+anvizent.package.label.selectColumnsToProcess=Seleccionar columnas para procesar
+anvizent.package.label.viewDetails=Ver detalles
+anvizent.package.label.note=Nota:
+anvizent.package.label.targetTableAlreadyCreatedForThisPackageIfyouDeletetheSourceallmappingswillbeDestroyed=Tabla de destino ya creada para este paquete. Si elimina la fuente, todas las asignaciones serán destruidas.
+anvizent.package.label.targetTableAlreadyCreatedForThisPackageIfyouEdittheSourceallmappingswillbeDestroyed=Tabla de destino ya creada para este paquete. Si edita la fuente, todas las asignaciones serán destruidas.
+anvizent.package.label.sourceDeletedSuccessfully=Fuente eliminada exitosamente
+anvizent.package.label.sourceDeletionFailed=Eliminación de la fuente fallida
+anvizent.package.label.pleaseMentionPortNumberAfterServerIPAddressSeperatedby=Indique el número de puerto después de la dirección IP del servidor separados por
+anvizent.package.label.pleaseSelectTheConnectionToCompleteTheProcess=Por favor, seleccione la conexión para completar el proceso.
+anvizent.package.label.pleaseSelectFirstRowHasColumnNames=Por favor seleccione la primera fila tiene nombres de columna
+anvizent.package.label.pleaseFillRequiredFields=Por favor, rellene los campos requeridos
+anvizent.package.label.operationFailedPleaseTryAgain=No se puede procesar su solicitud. Inténtalo de nuevo.
+anvizent.package.label.delimeterShouldContainOnlyOneCharacter=Delimitador debe contener un solo carácter.
+anvizent.package.label.fileExtensionIsNotMatchingWithFileTypeSelected=La extensión del archivo no coincide con el tipo de archivo seleccionado.
+anvizent.package.label.pleaseEnterTargetTableName=Por favor ingrese el nombre de la tabla de destino
+anvizent.package.label.tableNameShouldNotContainSpace=El nombre de la tabla no debe contener espacio.
+anvizent.package.label.tableNameContainsIllegalSpecialCharacters=El nombre de la tabla contiene caracteres especiales ilegales.
+anvizent.package.label.onlyUnderscoreIsAllowedInTableName=Solo se permite el subrayado (_) en el nombre de la tabla.
+anvizent.package.label.columNameShouldntBeEmpty=El nombre de la columna no debe estar vacío
+anvizent.package.label.columnNameShouldNotContainSpace=El nombre de la columna no debe contener espacio.
+anvizent.package.label.columNameContainsIllegalSpecialCharacters=El nombre de la columna contiene caracteres especiales ilegales.
+anvizent.package.label.onlyUnderscoreIsAllowedInColumnName=Solo el guión bajo (_) está permitido en el nombre de la columna.
+anvizent.package.label.tableDoesNotExist=la mesa no existe
+anvizent.package.label.noRecordsAvailableInTable=No hay registros disponibles en la tabla
+anvizent.package.label.shouldNotBeEmpty=no debe estar vacio
+anvizent.package.label.noRecordsAvailable=No hay registros disponibles
+anvizent.package.label.pleaseSelectPrimaryFile=Por favor seleccione el archivo principal
+anvizent.package.label.pleaseSelectOnePrimaryFile=Por favor seleccione un archivo primario
+anvizent.package.label.pleaseChooseaFile=Por favor elija un archivo
+anvizent.package.label.thisFieldRequired=Este campo requiere
+anvizent.package.label.selectYesOrNo=Seleccione Sí o No
+anvizent.package.label.connectionNameContainsIllegalSpecialCharacters =El nombre de la conexión contiene caracteres especiales ilegales.
+
+#derivedTable.js
+anvizent.package.label.derivedTable=Tabla derivada
+anvizent.package.label.selectExistingTables=Seleccione las tablas existentes
+anvizent.package.label.alreadyAdded=ya agregado
+anvizent.package.label.pleaseSelectExistingTables=Por favor seleccione las tablas existentes
+
+#easyquerybuilder.js
+anvizent.package.label.search=Buscar
+anvizent.package.label.addColumns=Añadir columnas
+anvizent.package.label.add=Añadir
+anvizent.package.label.remove=retirar
+anvizent.package.label.aliasName=Apodo
+anvizent.package.label.aggregation=Agregación
+anvizent.package.label.createsDuplicateRow=Crea una fila duplicada
+anvizent.package.label.createsDuplicateColumn=Crea una columna duplicada
+anvizent.package.label.whereConditions=Donde las condiciones
+anvizent.package.label.addcustomColumn=Añadir columna personalizada
+anvizent.package.label.newColumnName=Nuevo nombre de columna
+anvizent.package.label.customColumnFormula=Fórmula de columna personalizada
+anvizent.package.label.clauses=Cláusulas
+anvizent.package.label.inputValue=Valor de entrada
+anvizent.package.label.clause=Cláusula
+anvizent.package.label.innerJoin=Unir internamente
+anvizent.package.label.leftOuterJoin=Izquierda combinación externa
+anvizent.package.label.rightOuterJoin=Unión externa derecha
+anvizent.package.label.with=Con
+anvizent.package.label.orderByColumnSorting=Ordenar por (columna de clasificación)
+anvizent.package.label.orderBy=Ordenar por
+anvizent.package.label.pleaseSelectTableToJoin=Por favor seleccione la tabla para unirse.
+anvizent.package.label.pleaseSelectJoinType=Por favor seleccione el tipo de unión.
+anvizent.package.label.selectClause=Cláusula de selección
+anvizent.package.label.queryShouldNotBeEmpty=La consulta no debe estar vacía.
+anvizent.package.label.connectionIsisEmpty=La conexión está vacía
+anvizent.package.label.clearSelection=Selección clara
+
+#purge
+anvizent.package.label.purgeTables=Mesas de purga
+anvizent.navLeftTabLink.label.purge=Purga
+
+#fileSettings.js
+anvizent.package.label.maxFIleSizeEmpty=Tamaño máximo de archivo vacío
+anvizent.package.label.maxFIleSizeshouldnot=El tamaño máximo de archivo no debe ser 0.
+anvizent.package.label.allowsOnlyNumeric=Sólo permite numérico
+
+#home.js
+
+#iLDLMapping.js
+anvizent.package.label.thereisNoIlFor=No hay IL para
+anvizent.package.label.pleaseChooseDlName=Por favor, elija DL Nombre
+anvizent.package.label.pleaseChooseilNames=Por favor, elija los nombres de IL
+
+#modifyXref.js
+anvizent.package.label.startMapping=Iniciar mapeo
+anvizent.package.label.selectXRefKey=Seleccione la tecla XRef
+anvizent.package.label.thisFieldIsRequired=este campo es requerido
+
+#queryBuilder.js
+anvizent.package.label.lengthShouldNotBeEmptyFor=la longitud no debe estar vacía para
+anvizent.package.label.selectColumns=Seleccionar columnas
+
+#schedule.js
+anvizent.package.label.pleaseChooseAtLeastOneDay=Por favor elija al menos un día
+anvizent.package.label.pleaseChooseAnyOneOfRecurrencePattern=Por favor elija cualquiera de los patrones de recurrencia.
+anvizent.package.label.pleaseFillScheduleStartDate=Por favor complete la fecha de inicio del horario
+anvizent.package.label.pleaseFillScheduleEndDate=Por favor complete el calendario Fecha de finalización
+anvizent.package.label.pleaseChooseAnyOneOfRangeOfRecurrence=Por favor elige cualquiera de Rango de Recurrencia
+anvizent.package.label.pleaseChooseRunNowOrSchedule=Por favor seleccione RunNow o Schedule
+
+#standardPackage.js
+anvizent.package.label.selectFileColumn=Seleccionar columna de archivo
+anvizent.package.label.yyyyMMdd=yyyy-MM-dd
+anvizent.package.label.delimeterShouldBeOneCharacter=Delimitador debe ser un personaje.
+anvizent.package.label.fileMustHaveColumnNamesInFirstRow=El archivo debe tener nombres de columna en la primera fila.
+anvizent.package.label.pleaseChooseMandatoryField=Por favor, elija el campo obligatorio
+anvizent.package.label.notFoundInAuthorisationKeys=no se encuentra en las claves de autorización
+anvizent.package.label.pleaseEnterAPIName=Por favor ingrese el nombre de la API
+anvizent.package.label.pleaseEnterAPIURL=Por favor ingrese la URL de la API
+anvizent.package.label.pleaseChooseIsAuthenticationRequired=Por favor, elija si se requiere autenticación
+anvizent.package.label.pleaseEnterAuthenticationURL=Por favor ingrese la URL de autenticación
+anvizent.package.label.pleaseEnterResponseObject=Por favor ingrese el objeto de respuesta
+anvizent.package.label.pleaseEnterapiName=Por favor, introduzca ApiName
+anvizent.package.label.pleaseChooseCookieRequired=Por favor elija la cookie requerida
+anvizent.package.label.pleaseEnterAuthenticationDetails=Por favor ingrese los detalles de autenticación
+anvizent.package.label.pleaseChooseMethodType=Por favor, elija el tipo de método
+anvizent.package.label.pleaseChoosemethodTypeAuthSelection=Por favor, elija el tipo de método de selección.
+anvizent.package.label.pleaseEnterKeyvalueForAuthentication=Por favor, introduzca las claves y valores para la autenticación.
+anvizent.package.label.pleaseEnterHeaderDetails=Por favor ingrese los detalles del encabezado.
+
+#tableBuilder.js
+anvizent.package.label.forCustomFormulaEgColumn=Fórmula personalizada aplicable solo para columnas de tipo integral (Símbolos permitidos: +, -, *, /,%) Ej: Column1 * Column2
+anvizent.package.label.setDefaultValueforaColumn=Establecer el valor constante para una columna
+anvizent.package.label.pleaseEnterColumnName=Por favor ingrese el nombre de la columna
+anvizent.package.label.pleaseSelectValueType=Por favor seleccione el tipo de valor
+anvizent.package.label.pleaseEnterValue=Por favor ingrese el valor
+anvizent.package.label.pleaseSelectValues=Por favor seleccione valores
+anvizent.package.label.duplicateColumnName=Nombre de columna duplicada
+anvizent.package.label.selectAtleastOneColumnFromTargetTable=Seleccione al menos una columna de la tabla de destino.
+anvizent.package.label.successfullyValidated=Validado exitosamente
+anvizent.package.label.errorWhileValidatingSelectedColumns=Error al validar las columnas seleccionadas
+anvizent.package.label.unableToProcessYourRequest=No se puede procesar su solicitud
+anvizent.package.label.pleaseSelectClient=Por favor seleccione cliente
+anvizent.message.error.text.errorWhileSavingClientVerticalMapping=Error al guardar el mapeo vertical del cliente.
+anvizent.message.error.text.errorWhileTestingConnection=Error al probar la conexión
+anvizent.package.label.pleaseEnterTableName=Por favor ingrese el nombre de la tabla
+anvizent.package.label.errorOcucredPleaseTryAgain=Ocurrió un error, por favor intente de nuevo
+anvizent.package.label.tableCreated=Tabla creada
+anvizent.package.label.Selected=Seleccionado
+anvizent.package.label.pleaseEnterValidColumnLength=Por favor ingrese la longitud de columna válida
+
+#viewCustomPackageSource.js
+#viewILDL.js
+anvizent.package.label.selectIL=Seleccione IL
+anvizent.package.label.selectDL=Seleccione DL
+anvizent.package.label.pleaseChooseIL=Por favor elige IL
+anvizent.package.label.pleaseChooseDL=Por favor, elija DL
+anvizent.package.label.paramName=Nombre de parámetro
+anvizent.package.label.paramValue=Valor param
+anvizent.package.label.pleaseEnterILQuery=Por favor ingrese IL Query
+anvizent.package.label.querySaved=Consulta guardada.
+anvizent.package.label.iLIsupdated=IL se actualiza
+anvizent.package.label.dLIsUpdated=DL se actualiza
+
+#viewIlSource.js
+#viewResults.js
+#xRefDetails.js
+anvizent.package.label.pleaseSelectColumnName=Por favor seleccione el nombre de la columna
+anvizent.package.label.conditionPairAlreadyExistInThisGroup=par de condiciones ya existen en este grupo
+anvizent.package.label.conditionNameShouldNotBeEmpty=El nombre de la condición no debe estar vacío
+anvizent.package.label.conditionGroupsNotFound=Grupos de condición no encontrados
+anvizent.package.label.newRecordsInXReferenceTable=Nuevos registros en la tabla X-Reference.
+anvizent.package.label.newRecordsInILTable=Nuevos registros en la tabla IL
+anvizent.package.label.updatedRecordsInXReferenceTable=Registros actualizados en la tabla X-Reference
+anvizent.package.label.success=Éxito
+
+#xRefDetails2.js
+anvizent.package.label.xRef=Registro de referencias cruzadas
+
+#xreferenceIl.js
+anvizent.package.label.loading=Cargando...
+
+#common.js
+anvizent.package.label.unableToConnectPleaseVerifyNetwork=No puede conectarse. Por favor verifique la red.
+anvizent.package.label.internalServerErrorPleaseContactSystemAdministrator=Error de servidor interno. Por favor, póngase en contacto con el administrador del sistema
+anvizent.package.label.requestedJSONParseFailed=Se solicitó el error de JSON.
+anvizent.package.label.ajaxRequestAborted=Ajax petición abortada.
+anvizent.package.label.uncaughtError=Error no detectado.
+anvizent.package.label.unselectAll=Deselecciona todo
+anvizent.package.label.pleaseChooseTables=Por favor, elija mesa (s)
+anvizent.package.label.package=Paquete
+anvizent.package.label.isDeleted=se archiva
+anvizent.package.label.pleaseSelectAtleastOneTable=Por favor seleccione al menos una mesa
+anvizent.package.label.errorlog=Registros de errores
+anvizent.package.label.errorCode=Código de error
+anvizent.package.label.errorBody=Cuerpo de error
+anvizent.package.label.errorDatetime =Fecha y hora de error
+anvizent.package.label.errorMessage=Mensaje de error
+anvizent.package.label.requestedService=Servicio solicitado
+anvizent.package.label.receivedParameters=Parámetros de solicitud
+anvizent.package.label.from=Desde
+anvizent.package.label.to=A
+anvizent.package.label.submit=Enviar
+anvizent.package.label.userId=ID de usuario
+anvizent.package.label.clientDetails=Detalles del cliente
+
+anvizent.package.label.search=Buscar
+anvizent.package.label.clear=Claro
+anvizent.package.label.searchErrorLog=Registro de errores de búsqueda
+anvizent.package.label.tableNameShouldNotContainILsandDLsNames =El nombre de la tabla no debe contener los nombres IL y DL
+anvizent.navLeftTabLink.label.template=Plantillas
+anvizent.package.label.ilID=ID de IL
+anvizent.package.label.fielName=Nombre del archivo
+anvizent.package.label.xrefFileName=X ref nombre de archivo
+anvizent.package.label.uploadFile=Subir archivo
+anvizent.package.label.ilTemplate=Plantilla IL
+anvizent.package.label.xrefTemplate=Plantilla X-REF
+anvizent.package.label.sameAsIl=Igual que IL
+anvizent.package.label.pleaseChooseCSVFile=Por favor, elija un archivo csv.
+anvizent.package.label.downloadILFile=Descargar la Plantilla IL
+anvizent.package.label.downloadXrefFile=Descargar la plantilla de referencia externa
+
+#S3AuditLog.jsp
+anvizent.package.label.s3AuditLogs=Registros de auditoría S3
+anvizent.package.label.s3AuditLogsForClient=Registros de auditoría S3 para el cliente
+anvizent.package.label.s3AuditLogsForUser=Registros de auditoría S3 para el usuario
+anvizent.package.label.s3AuditLogsForPackage=Registros de auditoría S3 para el paquete
+anvizent.package.label.uploadedFilesSize=Tamaño de archivos cargados
+anvizent.package.label.noOfUsers=No. De Usuarios
+anvizent.package.label.noOfPackages=Número de paquetes
+anvizent.package.label.uploadedOn=Subido en
+anvizent.package.label.enterWebServiceName=Por favor ingrese el nombre del servicio web
+anvizent.package.button.edit=EDITAR
+anvizent.package.button.delete=BORRAR
+
+#webServiceClientMapping
+
+anvizent.package.label.clientId=Identificación del cliente
+anvizent.package.label.clientName=nombre del cliente
+anvizent.package.label.pleasechoosewebservice=Por favor elige el servicio web
+anvizent.package.label.pleasechooseclients=Por favor elige clientes
+
+## cross reference
+anvizent.package.label.automerge=Fusión automática
+anvizent.package.label.merge=Unir
+anvizent.package.label.bulkmerge=Fusión masiva
+anvizent.package.label.split=División
+anvizent.package.label.selectDimension=Seleccionar dimensión
+anvizent.package.label.xReferenceType=Tipo de referencia cruzada
+anvizent.package.label.dataSource=Nombre de fuente de datos
+anvizent.package.label.values=Valores
+anvizent.package.label.getRecords=Obtener registros
+anvizent.package.label.splitSelectedRecords=Dividir registros seleccionados
+anvizent.package.label.pleaseSelectIl=Por favor seleccione Il
+anvizent.package.label.pleaseSelectAtLeastOneRecordForSplit=Por favor seleccione al menos un registro para dividir
+anvizent.package.label.pleaseSelectMoreThanOneRecordForMerge=Por favor seleccione más de un registro para fusionar
+anvizent.package.label.pleaseSelectAtLeastOneRecordForMerge=Por favor seleccione al menos un registro para fusionar
+anvizent.package.label.pleaseEnterXRefValue=Por favor ingrese el valor de X-Ref
+
+anvizent.package.label.pleasechooseDl=Por favor elija Dl
+anvizent.package.label.pleasechooseKpi=Por favor, elija Kpi
+
+#defaultQueries
+anvizent.admin.label.defaultQueries=Consultas por defecto
+anvizent.package.label.connectorName=Nombre del conector
+anvizent.package.label.incrementalUpdateQuery=Consulta de actualización incremental
+anvizent.package.label.isactive=Activo
+anvizent.package.label.mappingId=ID de mapeo
+anvizent.package.label.ilIncrementalupdate=Actualización incremental
+anvizent.package.label.historicalLoad=Carga historica
+anvizent.package.label.databaseTypeId=ID de tipo de base de datos
+anvizent.package.label.connector=Conector
+anvizent.package.label.pleaseSelectConnectorType=Por favor seleccione el conector.
+anvizent.package.label.ilPreBuildQueries=IL PreBuild Consultas
+anvizent.package.label.maxDateQuery=Consulta de fecha máxima
+
+#database.jsp
+anvizent.package.label.databaseConnector=Conector de base de datos
+anvizent.package.label.pleaseEnterDatabaseName=Por favor ingrese el nombre de la base de datos
+anvizent.package.label.pleaseEnterDatabaseDriverName=Por favor ingrese el nombre del controlador de la base de datos
+anvizent.package.label.pleaseEnterDatabaseProtocal=Por favor ingrese la base de datos Protocol
+anvizent.package.label.pleaseEnterDatabaseUrlFormat=Por favor ingrese el formato url de la base de datos
+anvizent.package.label.PleaseChooseActiveStatus=Por favor, elija estado activo
+anvizent.package.label.pleaseEnterConnectorName=Por favor ingrese el nombre del conector
+anvizent.package.label.pleaseChooseDatabase=Por favor, elija la base de datos
+
+anvizent.package.label.pleaseEnterParameterName=Por favor ingrese el nombre del parámetro
+anvizent.package.label.pleaseEnterParameterValue=Por favor ingrese el valor del parámetro
+anvizent.package.label.pleaseEnterParameterDescription=Por favor ingrese la descripción del parámetro
+
+#connector.jsp
+anvizent.package.label.id=Carné de identidad
+anvizent.package.label.connector=Conector
+
+#vertical.jsp
+anvizent.package.label.vertical=Vertical
+anvizent.package.label.create=Crear
+anvizent.package.label.createVertical=Crear vertical
+anvizent.package.label.editVertical=Editar Vertical
+anvizent.package.label.deleteVertical=Eliminar vertical
+anvizent.package.label.verticalName=Nombre vertical
+anvizent.package.label.enterVerticalName=Ingrese el nombre vertical
+anvizent.package.label.verticalDescription=Descripción vertical
+anvizent.package.label.enterVerticalDescription=Introduzca la descripción vertical
+anvizent.package.label.createNewVertical=Crear nueva vertical
+anvizent.package.label.activeStatus=Estado activo
+anvizent.package.label.updateVertical=Actualizar vertical
+anvizent.package.message.areYouSureYouWantToDeleteThisVertical=¿Estás seguro, quieres borrar esta vertical?
+anvizent.package.label.pleaseEnterVerticalName=Por favor, introduzca el nombre vertical.
+anvizent.package.label.pleaseEnterVerticalDescription=Por favor, introduzca la descripción vertical.
+
+#kpi.jsp
+anvizent.package.label.createKpi=Crear Kpi
+anvizent.package.label.editKpi=Editar Kpi
+anvizent.package.label.kpiName=Nombre Kpi
+anvizent.package.label.kpiDescription=Kpi Descripción
+anvizent.package.label.enterKpiName=Ingrese el nombre Kpi
+anvizent.package.label.enterKpiDescription=Enter Kpi Description
+anvizent.package.label.createNewKpi=Crear nuevos Kpi
+anvizent.package.label.updateKpi=Actualizar Kpi
+anvizent.package.label.pleaseEnterKpiName=Por favor ingrese el nombre kpi
+anvizent.package.label.pleaseEnterKpiDescription=Por favor ingrese la descripción de kpi
+
+#clientVerticalMapping.jsp
+anvizent.package.label.clientVerticalMapping=Mapeo vertical del cliente
+anvizent.package.label.selectClient=Seleccione Cliente
+anvizent.package.label.verticals=Verticales
+anvizent.package.label.selectVerticals=Seleccione verticales
+anvizent.package.label.pleaseChooseAtLeastOneVertical=Por favor, elija al menos una vertical
+
+#clientDatabaseMapping.jsp
+anvizent.package.label.selectDatabase=Seleccionar base de datos
+anvizent.package.label.clientDatabaseMapping=Mapeo de la base de datos del cliente
+anvizent.package.label.databases=Bases de datos
+anvizent.package.label.selectDatabases=Seleccionar bases de datos
+anvizent.package.label.pleaseChooseAtLeastOneDatabse=Por favor, elija al menos una base de datos
+anvizent.package.label.databaseClientMapping=Mapeo de clientes de base de datos
+anvizent.package.label.clients=Clientela
+anvizent.package.label.selectClients=Seleccionar clientes
+anvizent.package.label.pleaseChooseAtLeastOneClient=Por favor elija al menos un cliente
+
+#clientConnectorMapping.jsp
+anvizent.package.label.clientConnectorMapping=Asignación de conector de cliente
+anvizent.package.label.connectors=Conectores
+anvizent.package.label.connections=Conexiones
+anvizent.package.label.selectConnectors=Seleccione Conectores
+anvizent.package.label.pleaseChooseAtLeastOneConnector=Por favor, elija al menos un conector
+
+#iLInfo.jsp
+anvizent.package.label.iLInfo=Información de IL
+anvizent.package.label.iLType=Tipo IL
+anvizent.package.label.iLDetails=Detalles de IL
+anvizent.package.label.iLDescription=IL Descripción
+anvizent.package.label.iLTableName=Nombre de la tabla IL
+anvizent.package.label.xrefILTableName=Nombre de la tabla Xref IL
+anvizent.package.label.purgeScript=Script de Purga
+anvizent.package.label.contextParameters=Parámetro de contexto
+anvizent.package.label.transaction=Transacción
+anvizent.package.label.jobFile=Archivo de trabajo
+anvizent.package.label.pleaseEnterILTableName=Por favor ingrese el nombre de la tabla IL.
+anvizent.package.label.pleaseEnterXrefILTableName=Por favor ingrese xref nombre de la tabla IL.
+anvizent.package.label.pleaseEnterPurgeScript=Por favor, introduzca el script de purga.
+anvizent.package.label.xrefTableNotAllowedForILType=Tabla de referencia externa no permitida para el tipo IL.
+anvizent.package.label.jobFileName=Nombre del archivo de trabajo
+anvizent.package.label.pleaseAddAtLeastOneJobFile=Por favor agregue al menos un archivo de trabajo.
+anvizent.package.label.pleaseChooseJarFile=Por favor, elija el archivo .jar.
+anvizent.package.label.duplicateJobFiles=Duplicar archivos de trabajo.
+
+#clientSpecificIL.jsp
+anvizent.package.label.clientSpecificIL=IL específica del cliente
+anvizent.package.label.iL=ILLINOIS
+anvizent.package.label.sameAsDefaultJobPleaseChangeTheJob=Igual que el trabajo predeterminado. Por favor cambia el trabajo.
+anvizent.package.label.sameAsDefaultJobJarFilesChangeTheJarFiles=Igual que los archivos jar por defecto. Por favor cambia los archivos.
+anvizent.package.label.defaultJobName=Nombre de trabajo predeterminado
+anvizent.package.label.defaultJarFileNames=Nombres de archivo jar predeterminados
+anvizent.package.label.useDefault=Uso por defecto
+anvizent.package.label.currentClientSpecificJobName=Nombre de trabajo específico del cliente actual
+anvizent.package.label.currentClientSpecificJarFileNames=Nombres de archivo jar específicos del cliente actual
+anvizent.package.label.clientSpecificJobName=Nombre del trabajo específico del cliente
+anvizent.package.label.clientSpecificJarFileNames=Nombres de archivos jar específicos del cliente
+anvizent.package.label.clientSpecificJarFiles=Archivos Jar específicos del cliente
+anvizent.package.label.currentClientSpecificJarFiles=Nombres de archivos jar específicos del cliente actual
+anvizent.package.label.pleaseEnterJobVersion=Por favor ingrese la versión de trabajo
+
+#clientSpecificDL.jsp
+anvizent.package.label.clientSpecificDL=DL específica del cliente
+anvizent.package.label.dL=DL
+
+#allMappingInfo.jsp
+anvizent.package.label.allMappingInfo=Toda la información de mapeo
+anvizent.package.label.assignMore=Asignar más
+anvizent.package.label.assign=Asignar
+anvizent.package.label.numberOfVerticals=Número de verticales
+anvizent.package.label.numberOfTableScripts=Número de guiones de tablas
+anvizent.package.label.numberOfDatabases=Número de bases de datos
+anvizent.package.label.numberOfConnectors=número de conectores
+anvizent.package.label.numberOfDLs=Número de DLs
+anvizent.package.label.commonMappings=Asignaciones comunes
+anvizent.package.label.numberOfWebSerices=Número de servicios web
+
+#commonJob.jsp
+anvizent.package.label.commonJob=Trabajos comunes
+anvizent.package.label.jobType=Tipo de empleo
+anvizent.package.label.jobFileName=Nombre del archivo de trabajo
+anvizent.package.label.selectJobType=Seleccione el tipo de trabajo
+anvizent.package.label.jobFile=Archivo de trabajo
+
+#dashBoardLayoutMaster.jsp
+anvizent.package.label.ils=Ils
+anvizent.package.label.kpis=Kpis
+anvizent.package.label.contextparameters=Parámetros de contexto
+anvizent.package.label.active =Activo
+anvizent.package.label.existingfiles=Archivos existentes
+
+#clientTableScriptExecution.jsp
+anvizent.package.label.scripttype =Tipo de script
+anvizent.package.label.scriptname =Nombre del script
+anvizent.package.label.sqlscript  =Guión
+anvizent.package.label.executionstatus =Estado
+anvizent.package.label.executescripts =Ejecutar
+anvizent.package.label.pleasechoosetablescripts=Por favor, elija tablas de comandos.
+anvizent.package.label.pleasechooseatleastonependingscript =Por favor, elija al menos un script pendiente.
+anvizent.package.label.pleasechooseclientid =Por favor, elija la identificación del cliente.
+anvizent.package.label.createdDate=Fecha de creación
+anvizent.package.label.modifiedDate=Fecha modificada
+anvizent.package.label.executedDate=Fecha de ejecución
+
+#clientTableScriptsMapping.jsp
+anvizent.package.label.pleasechoosepriority=Por favor, elija la prioridad.
+anvizent.package.label.pleasedontusesamepriority=Por favor, no utilice las mismas prioridades.
+anvizent.package.label.executionorder=Orden de ejecución
+anvizent.package.label.scriptid=ID de script
+anvizent.package.label.savemapping=Guardar mapeo
+anvizent.package.label.youarenotmappedanyscriptpleaseaddtablescriptforyourclient=No está asignado ningún script. Por favor agregue el script de tabla para su cliente.
+anvizent.package.label.pleasechooseatleastonenotmappedscript =Por favor, elija al menos un script no asignado.
+
+#clientTableScripts.jsp
+anvizent.package.label.targetschema=Esquema objetivo
+anvizent.package.label.pleasechoosescriptname=Por favor ingrese el nombre del script.
+anvizent.package.label.pleasechoosesqlscript=Por favor, introduzca el script sql.
+anvizent.package.label.pleasechoosescripttype=Por favor, elija el tipo de script.
+anvizent.package.label.noqueryfound=No se ha encontrado ninguna consulta.
+anvizent.package.label.clientId=Identificación del cliente
+anvizent.package.label.pleasechoosetargetschema=Por favor, elija el esquema de destino.
+anvizent.package.label.PleaseChoosedescription=Por favor, introduzca la descripción.
+anvizent.package.label.pleaseEnterVersion=Por favor ingrese la versión.
+anvizent.package.message.specialCharacters_and-and.AreOnlyAllowed=Caracteres especiales &quot;_&quot;, &quot;-&quot; y &quot;.&quot; Sólo se permiten.
+
+#dashboardLayoutmaster
+anvizent.package.label.dlmaster=DL Master
+anvizent.package.label.pleasechooseils=Por favor, elija Ils.
+anvizent.package.label.pleasechoosekpis=Por favor, elija Kpis.
+anvizent.package.label.pleasechooseparameters=Por favor, elija los parámetros de contexto.
+anvizent.package.label.pleasechooseverticalname=Por favor, elija el nombre vertical.
+anvizent.package.label.dLInfo=DL Info
+
+#webServiceMapping
+anvizent.package.label.clientWebServiceMapping=Mapeo del servicio web del cliente
+anvizent.package.label.pleaseChooseAtLeastOneWebservice=Por favor elija al menos un servicio web
+anvizent.package.label.noOfApis=No. de APIs
+anvizent.package.label.addEditView=Añadir / Editar / Ver
+anvizent.package.label.webServiceTemplateName=Nombre de la plantilla de servicio web
+anvizent.package.label.webServiceApiDetails=Web Service Api Details
+anvizent.package.label.webServiceApi=Servicio Web Api
+anvizent.package.label.deleteWebServiceILMapping=Eliminar servicio web - mapeo IL
+anvizent.package.label.areYouSure,YouWantToDeleteThisWebServiceILMapping=¿Está seguro de que desea eliminar este servicio web - asignación de IL?
+anvizent.package.label.manual=Manual
+anvizent.package.label.subUrl=Sub url
+anvizent.package.label.pathParamsDetails=Detalles de la ruta
+anvizent.package.label.getPathParams=Obtener parámetros de ruta
+
+anvizent.package.label.specialcharactersnotallowedexceptunderscoredigitsandalphabets=No se permiten caracteres especiales, excepto el guión bajo, dígitos, espacios y alfabetos.
+anvizent.message.label.unableToCheckQuerySyntax=No se puede verificar la sintaxis de consulta.
+anvizent.message.label.errorOccurredWhileCreatingTable=Se produjo un error al crear la tabla.
+anvizent.message.label.filesarenothavingsamecolumns=Las fuentes agregadas no tienen columnas seleccionadas. Por favor, compruebe.
+anvizent.message.label.fileUploadingFailed=Falló la carga del archivo.
+anvizent.message.label.errorWhileGettingTableDetails=Error al obtener los detalles de la mesa
+anvizent.message.label.unableToGetSchemaRelatedTables=No se pueden obtener tablas relacionadas con el esquema
+anvizent.message.label.unableToGetTableRelatedColumns=No se pueden obtener las columnas relacionadas con la tabla
+anvizent.message.label.errorWhileGettingTableRelatedColumns=Error al obtener columnas relacionadas con la tabla
+anvizent.message.label.QueryShouldNoBeEmptyPleaseCheckTheSourceQueries=La consulta no debe estar vacía. Por favor, consulte las consultas de origen
+anvizent.message.label.schemaNotFound=Esquema no encontrado
+anvizent.message.label.errorWhileGettingSchema=Error al obtener información de esquema
+anvizent.package.label.errorWhileGettingCustTempTablesDataFromRestService=Error al obtener los datos de las tablas temporales personalizadas del servicio de descanso
+anvizent.message.label.errorWhileGettingTableStructure=Error al obtener la estructura de la tabla
+anvizent.message.label.unableToGetXrefTableDetails=No se pueden obtener los detalles de la tabla de referencia externa
+anvizent.message.label.errorWhileGettingXrefTableDetails=Error al obtener detalles de la tabla de referencias externas
+anvizent.message.label.unableToGetDetails=No se pueden obtener detalles
+anvizent.package.label.specialcharactersnotallowedexceptunderscoredigitsdotsandalphabets=No se permiten caracteres especiales, excepto el subrayado (_), dígitos, puntos (.) Y alfabetos.
+anvizent.message.error.text.clientNameShouldNotbeEmpty=El nombre del cliente no debe estar vacío
+anvizent.message.label.dliShouldNotbeEmpty=DL no debe estar vacío.
+anvizent.message.label.failedToUploadJarFiles=Error al cargar archivos jar
+anvizent.message.error.text.errorWhileSavingClientSpecificDLInfo=Error al guardar información DL específica del cliente.
+anvizent.message.error.text.databaseIdisShouldNotbeEmpty=El ID de la base de datos no debe estar vacío.
+anvizent.message.error.text.errorWhileSavingClientSpecificILInfo=Error al guardar información de IL específica del cliente.
+
+
+anvizent.package.label.find=Encontrar
+anvizent.package.label.replaceWith=Reemplazar con
+anvizent.package.label.pleaseEnterVariable=Por favor, introduzca la variable.
+anvizent.package.label.areyousureyouwanttoReplaceAll=¿Estás seguro, quieres reemplazar todo?
+
+
+#historicalLoad
+anvizent.package.label.queryScript=Guión de consulta
+anvizent.package.label.runstatus =Estado de ejecución
+anvizent.package.label.run=correr
+anvizent.package.label.interval=Intervalo
+anvizent.package.label.historicalquery=Consulta historica
+anvizent.package.label.pleasechooseilid=Por favor, elija Il.
+anvizent.package.label.pleasechooseconnectorid=Por favor, elija conector id.
+anvizent.package.label.pleasechoosehistoricalfromdate=Por favor, elija histórico a partir de la fecha.
+anvizent.package.label.pleasechoosehistoricaltodate=Por favor, elija histórico hasta la fecha.
+anvizent.package.label.pleasechooseloadinterval=Por favor, elija el intervalo de carga.
+anvizent.package.label.pleasechoosehistoricalqueryscript=Por favor, elija el script de consulta histórica.
+anvizent.package.label.runJobs=Ejecutar trabajos
+anvizent.package.label.terminate=Terminar
+anvizent.package.label.lastUpdatedDate=Fecha de última actualización
+anvizent.package.label.noOfRecords=No de registros
+anvizent.package.label.fileSize=Tamaño del archivo
+anvizent.package.label.select=Seleccionar
+anvizent.package.label.days=Dias
+anvizent.package.label.historyLoadStatus=Historial de carga de estado
+anvizent.package.label.sourceRowsCount=Número de filas de origen
+anvizent.package.label.iLExecutionStatus=Estado de ejecución de IL
+anvizent.package.label.comment=Comentario
+anvizent.package.label.historyLoadAlreadyStopped=La carga del historial ya se detuvo
+anvizent.package.label.historyLoadIsNotRunning=La carga del historial no se está ejecutando
+anvizent.package.label.historyLoadSuccessfullyTerminated=La carga del historial finalizó correctamente
+anvizent.package.label.initiattedSuccessfully=Iniciado exitosamente
+anvizent.package.label.historyLoadAlreadyCompleted=Ya se ha completado la carga del historial
+anvizent.package.label.noDataFound=Datos no encontrados
+anvizent.package.label.mergeSelectedRecords=Fusionar registros seleccionados
+
+#defaultMappingConfiguration
+anvizent.package.label.defaultMappingConfiguration=Configuración de asignación predeterminada
+anvizent.package.label.dls=DLs
+anvizent.package.label.tableScripts=Tablas de comandos
+anvizent.package.label.pleaseChooseAtLeastOneTableScript=Por favor, elija al menos un TableScript
+anvizent.package.label.pleaseChooseAtLeastOneDL=Por favor, elija al menos un DL
+anvizent.package.label.pleaseChooseAtLeastOneConnector=Por favor, elija al menos un conector
+anvizent.package.label.pleaseChooseAtLeastOneVertical=Por favor, elija al menos una vertical
+anvizent.package.label.decimal=DECIMAL
+anvizent.package.label.trialTemplate=Plantilla de prueba
+anvizent.package.label.generalSettings=Configuración general
+anvizent.package.label.webService=Servicio web
+anvizent.package.label.pleaseEnterTemplateName=Por favor ingrese el nombre de la plantilla
+anvizent.package.label.templateId=ID de plantilla
+anvizent.package.label.templateName=Nombre de la plantilla
+anvizent.package.label.currencyMapping=Mapeo de divisas
+
+#clientTableScriptExecution
+anvizent.package.label.execution=Ejecutar
+anvizent.package.label.instantScriptExecution=Ejecución instantánea de guiones
+anvizent.package.label.showPreviousExecutedScripts=Scripts Ejecutados Anteriormente
+anvizent.package.label.ScriptDescription=Descripción del script
+anvizent.package.label.ExecutionStatusMessage=Mensaje de estado
+anvizent.package.label.errorMessage=Mensaje de error
+anvizent.package.label.createdBy=Creado por
+anvizent.package.label.executedBy=Ejecutado por
+
+anvizent.package.message.editdetailswouldnotbepossiblepleaseverifythedetailsbeforeproceding=No sería posible editar los detalles. ¡Verifique los detalles antes de continuar!
+anvizent.package.message.deletePackage.doyouwanttocontinue=Quieres continuar ?
+anvizent.package.label.requestParameters=Parámetros de solicitud
+anvizent.package.label.requestBodyParameters=Parámetros del cuerpo de solicitud
+#webService Authentication
+anvizent.package.label.calBackUrl=URL de devolución de llamada
+anvizent.package.label.tokenName=Nombre del token
+anvizent.package.label.accessTokenUrl=URL de token de acceso
+anvizent.package.label.clientSecret=Secreto del cliente
+anvizent.package.label.grantType=Tipo de subvención
+anvizent.package.label.isMandatory=es obligatorio
+anvizent.package.label.selectWebservice=Seleccione el servicio web
+anvizent.package.label.authenticationType=tipo de autenticación
+anvizent.package.label.selecAuthentication=Seleccione Autenticación
+anvizent.package.label.authorizationCode=Código de Autorización
+anvizent.package.label.clientCredentials=Credenciales del cliente
+anvizent.package.label.pleaseEnterWebServiceName=Por favor ingrese el nombre de la plantilla de servicio web
+anvizent.package.label.enterAuthenticationUrl=Introduzca la url de autenticación
+anvizent.package.label.enterAccessTokenUrl=Ingresar url de token de acceso
+anvizent.package.label.enterCallBackUrl=Introduzca la url de devolución de llamada
+anvizent.package.label.enterGrantType=Elija el tipo de subvención
+anvizent.package.label.enterReqparams=Por favor ingrese los parámetros de solicitud
+anvizent.package.label.isPassword=isPassword
+anvizent.package.label.webServiceTemplate=Plantilla de servicio web
+anvizent.package.label.requestparamsToApi=Parámetros de solicitud
+anvizent.package.label.bodyparamsToApi=Parámetros del cuerpo
+anvizent.package.label.requestHeadersToApi=Solicitar encabezados
+anvizent.package.label.enterHeaderDetails=Introduzca los detalles del encabezado
+anvizent.package.label.requestHeaders=Solicitar encabezados
+anvizent.package.label.duplicateName=nombre duplicado
+anvizent.package.label.methodtype=Tipo de método
+anvizent.package.label.dateFormat=Formato de fecha
+anvizent.package.label.pleaseChooseDateformat=Por favor elija el formato de fecha
+anvizent.package.label.selectDateFormat=Seleccione el formato de fecha
+anvizent.package.label.selectGrantType=Seleccione el tipo de subvención
+
+#defaultMappingInfo.jsp
+anvizent.package.label.defaultMappingInformation=Información de asignación predeterminada
+anvizent.package.label.template=Modelo
+anvizent.package.label.selectTemplate=Seleccionar plantilla
+anvizent.package.label.saveDefaultMappings=Guardar asignaciones predeterminadas
+anvizent.package.label.skip=Omitir
+anvizent.package.label.dashboardLayouts=Diseños de tablero
+anvizent.package.label.webServices=Servicios web
+
+anvizent.package.label.enterWebserviceNames=Introduzca el nombre de la plantilla de webService
+ 
+ 
+#standard package web service
+
+anvizent.package.label.viewAuthenticationDetails=Ver detalles de autenticación
+anvizent.package.label.authenticationMethodType=Tipo de método de autenticación
+anvizent.package.label.callbackUrl=URL de devolución de llamada
+anvizent.package.label.clientIdentifier=Identificador de cliente
+anvizent.package.label.params=Parámetros
+ 
+anvizent.package.label.requiredApiRequestParames=Parámetros de solicitud de API requeridos
+anvizent.package.label.requiredApiBodyParames=Parámetros de Cuerpo Api Requeridos
+anvizent.package.label.requiredApiHeaderParams=Parámetros de encabezado api requeridos
+anvizent.package.label.addNewApi=Añadir nuevo Api
+anvizent.package.label.apiDetails=Detalles API
+anvizent.package.label.webServiceConfirmation=Confirmación del servicio web
+anvizent.package.label.apiUrl=Url de api
+ 
+anvizent.package.label.addRequsetParam=Añadir parámetros de solicitud
+anvizent.package.label.requestparams=Parámetros de solicitud
+anvizent.package.label.requestbodyparams=Solicitud de parámetros del cuerpo
+anvizent.package.label.apiMethodType=Tipo de Método Api
+anvizent.package.label.apiResponseObjectname=Nombre de objeto de respuesta Api
+anvizent.package.label.apiResponseColumnObjectname=Nombre de objeto de columna de respuesta de API
+anvizent.package.label.pathParamDetails=Detalles de ruta
+anvizent.package.label.paramValueFrom=Valor param desde
+ 
+anvizent.package.label.subApiUrl=Sub Api Url
+anvizent.package.label.subApiMethodType=Tipo de Método Sub Api
+anvizent.package.label.subApiResponseObjectName=Nombre de objeto de respuesta Sub Api
+
+anvizent.package.label.offsetparamnameandstartsfrom=OffSet Param Name &amp; Starts From
+anvizent.package.label.limitparamnameandvalue=Nombre y valor de parámetro límite
+
+
+anvizent.package.label.getPathParam=Obtener ruta param
+anvizent.package.label.addRequsetBodyParam=Añadir parámetros de cuerpo
+
+anvizent.package.label.mapHeaders=Encabezados del mapa
+anvizent.package.button.mapFileHeadersAndSave =Map Headers &amp; Save
+#web service validation Messages
+anvizent.package.message.pleaseEnterWebserviceApiName =Por favor, ingrese el nombre de api del servicio web.
+anvizent.package.message.pleaseEnterWebserviceApiUrl =Por favor ingrese el servicio web api url.
+anvizent.package.message.pleaseChooseMethodtype =Por favor, elija el tipo de método.
+anvizent.package.message.pleaseEnterWebServiceResponseObjecName =Introduzca el nombre del objeto de respuesta del servicio web.
+anvizent.package.message.pleaseEnterWebServiceResponseColumnObjecName =Introduzca el nombre del objeto de la columna de respuesta del servicio web.
+anvizent.package.message.pleaseEnterRequestParamName =Por favor, ingrese el nombre de parámetro de solicitud
+anvizent.package.message.pleaseEnterRequestParamValue=Por favor ingrese el valor de solicitud
+anvizent.package.message.pleaseEnterPathParam=Por favor ingrese el parámetro de ruta.
+anvizent.package.message.pleaseEnterParamValue =Por favor, introduzca el valor del parámetro.
+anvizent.package.message.pleaseEnterSubApiUrl=Por favor ingrese sub api url.
+anvizent.package.message.pleaseChooseSubApiMethodtype=Por favor, elija el método de sub api.
+anvizent.package.message.pleaseEnterSubApiResponseTypeObject=Por favor ingrese el objeto de tipo de respuesta sub api.
+anvizent.package.message.pleaseEnterRequestParamName=Por favor, ingrese el nombre de parámetro de solicitud
+anvizent.package.message.pleaseEnterRequestParamValue=Por favor ingrese el valor de solicitud
+anvizent.package.message.invalidurl=URL invalida.
+anvizent.package.message.nopathparamfound=No se ha encontrado ningún parámetro de ruta.
+
+#webServiceConnection.jsp
+anvizent.package.label.webServiceConnectionDetails=Detalles de conexión del servicio web
+anvizent.package.label.enterClientIdentifier=Introduzca el identificador del cliente
+anvizent.package.label.enterClientSecret=Ingrese el secreto del cliente
+anvizent.package.label.enterParamValue=Ingrese el valor param
+anvizent.package.label.headerKeyValues=Valores clave del encabezado
+anvizent.package.label.requestParamHeader=Solicitar encabezado de param
+anvizent.package.label.webServiceConnectionName=Nombre de conexión del servicio web
+anvizent.package.label.pleaseEnterwebServiceConnectionName=Por favor ingrese el nombre de conexión del servicio web
+anvizent.package.label.connectionId=ID de conexión
+anvizent.package.label.authenticationType=tipo de autenticación
+anvizent.package.label.webserviceconnectiondetails=Detalles de conexión del servicio web
+
+
+#General Settings.jsp
+anvizent.package.label.pleaseChooseOption=Por favor elija la opción
+anvizent.package.label.pleaseChooseFileSize=Por favor ingrese fileSize
+anvizent.package.label.timeZone=Zona horaria
+anvizent.package.label.pleaseChooseTimeZone=Por favor, elija la zona horaria
+anvizent.package.label.selectTimeZone=Selecciona la zona horaria
+
+anvizent.package.msg.pleaseChoosetimezone=por favor elija la zona horaria
+anvizent.package.msg.datePlaceholderNotFoundInQuery={fecha} marcador de posición no encontrado en la consulta
+anvizent.package.label.columnNameShouldNotContain=El nombre de la columna no debe contener &#39;-&#39;
+
+
+#Client Configuration Settings
+anvizent.package.label.clientConfigurationSettings =Ajustes de configuración del cliente
+anvizent.navLeftTabLink.label.templateMigration=Migración de plantillas
+
+
+#templateMigration
+anvizent.package.label.Template=Modelo
+anvizent.package.label.migrate=Emigrar
+anvizent.package.label.export=Exportar
+anvizent.package.label.selectUser=Seleccionar usuario
+anvizent.package.label.import=Importar
+
+#currency Integration
+anvizent.package.label.accessKey=Llave de acceso
+anvizent.package.label.currencies=monedas
+anvizent.package.label.s3BucketMapping=Mapeo de cubos S3
+anvizent.package.label.startPeriod=Período de inicio
+anvizent.package.label.endPeriod=Período final
+anvizent.package.label.datasource=Nombre de fuente de datos
+anvizent.package.label.enterDataSourceName=Por favor elija el nombre de la fuente de datos
+anvizent.package.label.enterDataSource=Ingrese el nombre de la fuente de datos
+anvizent.package.label.PleaseEnterFilePath=Por favor ingrese la ruta del archivo
+anvizent.package.label.pleaseEnterVersionNumber=Por favor ingrese el número de versión
+anvizent.package.label.versionId=ID de versión
+anvizent.package.label.versionNumber=Número de versión
+
+anvizent.package.label.modalHeader.deleteddltable=Eliminar tabla DDL
+anvizent.package.message.deletePackage.areYouSureYouWantToDeleteDDLTable=¿Está seguro, desea eliminar la tabla DDl?
+
+
+#client currency maping
+anvizent.package.label.currencytype=Tipo de cambio monetario
+anvizent.package.label.dashboardcurrencycode=Código de moneda de DashBoard
+anvizent.package.label.accountingcurrencycode=Código de moneda contable
+anvizent.package.label.othercurrencycode=Otro código de moneda
+anvizent.package.label.SelectCurrency=Seleccione el tipo de moneda
+anvizent.package.label.ClientSpecific=Específico del cliente
+anvizent.package.label.currencies=Monedas
+anvizent.package.label.change=Cambio
+ 
+ #ddl layout
+anvizent.package.label.ddlsources=DDL Source&#39;s
+anvizent.package.label.runtype=Tipo de ejecución
+anvizent.message.error.text.unabletogetddlayouttables=No se puede obtener la lista de tablas de diseño DD.
+anvizent.package.label.pleaseChooseStartDate=Por favor elija la fecha de inicio
+anvizent.package.label.pleaseChooseEndDate=Por favor, elija la fecha de finalización
+
+
+### Admin properties
+
+#button
+anvizent.admin.button.createContextParameter=Crear parámetro de contexto
+anvizent.admin.button.createIL=Crear IL
+anvizent.admin.button.createDL=Crear DL
+anvizent.admin.button.iLDLMapping=IL - Mapeo DL
+anvizent.admin.button.clientDLMapping=Mapeo de clientes DL
+anvizent.admin.button.Back=Espalda
+anvizent.admin.button.Submit=Enviar
+anvizent.admin.button.CreateParameter=Crear Parámetro
+anvizent.admin.button.createOrViewContextParameter=Crear / ver parámetro de contexto
+anvizent.admin.button.viewILDL=Ver IL / DL
+anvizent.admin.button.Edit=Editar
+anvizent.admin.button.Update=Actualizar
+anvizent.admin.button.Delete=Borrar
+anvizent.admin.button.historicalload=Carga histórica
+anvizent.admin.button.currencyLoad =Carga de divisas
+anvizent.navLeftTabLink.label.multiClientTableScriptExecution =Ejecución de TableScript MultiClient
+
+#label
+anvizent.admin.label.createContextParameter=Crear parámetro de contexto
+anvizent.admin.label.contextParameter=Parámetro de contexto
+anvizent.admin.label.createIL=Crear IL
+anvizent.admin.label.createDL=Crear DL
+anvizent.admin.label.iLDLMapping=IL - Mapeo DL
+anvizent.admin.label.clientDLMapping=Mapeo de clientes DL
+anvizent.admin.label.ParamName=Nombre de parámetro
+anvizent.admin.label.ExistingContextParameters=Parámetros de contexto existentes
+anvizent.admin.label.DLName=Nombre de DL
+anvizent.admin.label.ClientId=Identificación del cliente
+anvizent.admin.label.maxfilesize=Tamaño máximo de archivo
+anvizent.admin.label.multiPartEnabled=MultiPart Habilitado
+anvizent.admin.label.noOfRecordsPerFile=No de registros por archivo
+anvizent.admin.label.mb=MEGABYTE
+anvizent.admin.label.webservice=Servicio web
+anvizent.admin.button.webService=Servicio web
+anvizent.package.label.webServicename=Nombre del servicio web
+anvizent.package.label.enterWebServiceName=Introduzca el nombre del servicio web
+anvizent.package.label.authenticationUrl=URL de autenticación
+anvizent.package.label.enterAuthenticationURL=Introduzca la URL de autenticación
+anvizent.admin.label.webserviceClientMapping=Mapeo de clientes de servicios web
+ 
+anvizent.admin.label.dlKpiMapping=Mapeo DL KPI
+anvizent.admin.label.tablescripts=Tablas de comandos
+anvizent.admin.label.addTableScripts=Añadir scripts de tabla
+anvizent.admin.label.scriptName=Nombre del script
+anvizent.admin.label.sqlScript=Guión
+anvizent.admin.label.priority=Prioridad
+anvizent.admin.label.webServiceILMapping=Servicio web IL Mapping
+anvizent.admin.label.dlKpiMapping=Mapeo DL KPI
+ 
+#### Login properties   
+
+#header
+anvizent.login.heading =Registrarse
+#label
+anvizent.login.label.username =Nombre de usuario
+anvizent.login.label.password =Contraseña
+anvizent.login.label.forgotPassword =Se te olvidó tu contraseña ?
+anvizent.login.label.staySignedIn =Manténgase conectado
+#button
+anvizent.login.button.login =Iniciar sesión
+#message
+anvizent.login.message.usernameAndOrPasswordIsNotValid =El nombre de usuario o contraseña que ingresaste no es válido
+
+
+
+#### nav-left properties
+
+anvizent.navLeftTabLink.label.ETLAdmin=Administrador de ETL
+anvizent.navLeftTabLink.label.userProfile=Perfil
+anvizent.navLeftTabLink.label.myPackages=Mis paquetes
+anvizent.navLeftTabLink.label.dataSets=Conjuntos de datos
+anvizent.navLeftTabLink.label.schedule=Programar
+anvizent.navLeftTabLink.label.xRefCommonColoumn=X-Ref CommonColumn
+anvizent.navLeftTabLink.label.logOut=Cerrar sesión
+anvizent.navLeftTabLink.label.derivedtables=Tablas derivadas
+anvizent.navLeftTabLink.label.FileSettings=Configuraciones de archivo
+anvizent.navLeftTabLink.label.databaseConnection=Conexión de base de datos
+anvizent.navLeftTabLink.label.purge=Purga
+anvizent.navLeftTabLink.label.logs=Troncos
+anvizent.navLeftTabLink.label.miscellaneous=Diverso
+anvizent.navLeftTabLink.label.quicklinks=enlaces rápidos
+anvizent.navLeftTabLink.label.errorlogs=Registros de errores
+anvizent.navLeftTabLink.label.s3AuditLogs=Registros de auditoría S3
+anvizent.navLeftTabLink.label.webServiceClientMapping=Mapeo de clientes de servicios web
+anvizent.navLeftTabLink.label.dlKpiMapping=Mapeo DL KPI
+anvizent.navLeftTabLink.label.ilPreBuildQueries=IL PreBuild Consultas
+anvizent.navLeftTabLink.label.webServiceClientMapping=Mapeo de clientes de servicios web
+anvizent.navLeftTabLink.label.dlKpiMapping=Mapeo DL KPI
+anvizent.navLeftTabLink.label.tablescripts=Tablas de comandos
+anvizent.navLeftTabLink.label.connector=Conectores
+anvizent.navLeftTabLink.label.clientTableScriptsMapping=Mapeo de scripts de tabla
+anvizent.navLeftTabLink.label.database=Bases de datos
+anvizent.navLeftTabLink.label.clientTableScriptsExecution=Ejecución de scripts de tabla
+anvizent.navLeftTabLink.label.home=Casa
+anvizent.navLeftTabLink.label.mappingInfo=Información de mapeo
+anvizent.navLeftTabLink.label.defaultMappingConfiguration=Configuración de asignación predeterminada
+anvizent.navLeftTabLink.label.vertical=Verticales
+anvizent.navLeftTabLink.label.clientVerticalMapping=Mapeo vertical del cliente
+anvizent.navLeftTabLink.label.clientConnectorMapping=Asignación de conector de cliente
+anvizent.navLeftTabLink.label.iLInfo=Información de IL
+anvizent.navLeftTabLink.label.kPI=KPIs
+anvizent.navLeftTabLink.label.dLInfo=DL Info
+anvizent.navLeftTabLink.label.clientSpecificIL=IL específica del cliente
+anvizent.navLeftTabLink.label.clientSpecificDL=DL específica del cliente
+anvizent.navLeftTabLink.label.commonJob=Trabajos comunes
+anvizent.navLeftTabLink.label.clientWebServiceMapping=Mapeo del servicio web del cliente
+anvizent.navLeftTabLink.label.standardPackage=Paquete estándar
+anvizent.navLeftTabLink.label.customPackage=Paquete personalizado
+anvizent.navLeftTabLink.label.customDataSets=Conjuntos de datos personalizados
+anvizent.navLeftTabLink.label.xReference=Referencia cruzada
+anvizent.navLeftTabLink.label.archivedPackages=Paquetes archivados
+anvizent.navLeftTabLink.label.clientDLMapping=Mapeo de clientes DL
+anvizent.navLeftTabLink.label.createOrViewContextParameter=Crear / ver parámetro de contexto
+anvizent.navLeftTabLink.label.webService=Servicio web
+anvizent.navLeftTabLink.label.viewDetails=Ver detalles
+anvizent.navLeftTabLink.label.master=Dominar
+anvizent.navLeftTabLink.label.modules=Módulos
+anvizent.navLeftTabLink.label.instantExecution=Ejecución instantánea de guiones
+anvizent.navLeftTabLink.label.clientSettings=Configuraciones del cliente
+anvizent.navLeftTabLink.label.executeScripts=Ejecutar scripts
+anvizent.navLeftTabLink.label.webseviceConnection=Conexión de servicio web
+anvizent.navLeftTabLink.label.generalSettings=Configuración general
+anvizent.navLeftTabLink.label.existingjars=Tarros existentes
+anvizent.navLeftTabLink.label.webServiceTemplate=Plantilla de servicio web
+anvizent.navLeftTabLink.label.clientConfigurationSettings =Ajustes de configuración del cliente
+anvizent.navLeftTabLink.label.templateMigration=Migración de plantillas
+anvizent.navLeftTabLink.label.configTags=Etiquetas de configuración
+anvizent.navLeftTabLink.label.jobTags=Etiquetas de trabajo
+anvizent.navLeftTabLink.label.masterConfiguration=Configuración maestra
+anvizent.navLeftTabLink.label.loadParameters=Parámetros de carga
+anvizent.navLeftTabLink.label.ELT=ELT
+
+### Schedule Properties
+
+#label
+anvizent.schedule.label.scheduleTime =Tiempo programado
+anvizent.schedule.label.schedule =Programar
+anvizent.schedule.label.scheduleCurrentStatus =Programar estado actual
+anvizent.schedule.label.scheduleTime =Tiempo programado
+
+### Site properties
+
+footer.copyright =MINI-DW
+
+header.logo =Argha
+header.welcome =Bienvenido
+
+nav.title=Herramienta modal de datos
+nav.home =Casa
+
+nav.application =Aplicaciones
+
+nav.search =Buscar
+nav.orderentry =Orden de entrada
+nav.support =Apoyo
+nav.signIn =Registrarse
+nav.signOut =Desconectar
+nav.welcome =Bienvenido
+
+quicklinks.title =enlaces rápidos
+quicklinks.button =enlaces rápidos
+
+site.customer =Cliente
+site.password =Contraseña
+site.search =Buscar
+site.submit =Enviar
+site.username =Nombre de usuario
+
+### User profile properties
+
+#header
+anvizent.userProfile.header =Perfil del usuario
+#label
+anvizent.userProfile.label.clientId =Identificación del cliente
+anvizent.userProfile.label.userName =Nombre de usuario
+ anvizent.userProfile.label.email =Identificación de correo
+anvizent.userProfile.label.mobileNumber =Número de teléfono móvil
+#button
+anvizent.userProfile.button.createSchema =Crear esquema
+anvizent.userProfile.button.updateSchma =Actualizar esquema
+
+anvizent.userProfile.button.rajesh =Actualizar Schema Rajesh
+#Middle Level Manager
+anvizent.package.label.contextPath =Ruta de contexto
+anvizent.package.label.uploadListEndPoint =Subir el punto final de la lista
+anvizent.package.label.writeEndPoint =Escribir punto final
+anvizent.package.label.deleteEndPoint =Eliminar punto final
+anvizent.package.label.upgradeEndPoint =Punto final de actualización
+anvizent.package.label.userAuthToken =Token de Autentificación del Usuario
+anvizent.package.label.clientAuthToken =Token de autenticación del cliente
+anvizent.package.label.encryptionPrivateKey =Clave privada de cifrado
+anvizent.package.label.encryptionIV =Cifrado IV
+
+#MultiClientTableScriptExecution
+anvizent.package.label.multiClientScriptExecution =Ejecución MultiClientScript
+anvizent.package.label.multiClient =ID de cliente múltiple
+anvizent.package.label.multiClients =Clientes múltiples
+anvizent.package.label.clientIds =Identificación del cliente
+anvizent.package.label.sqlscript =SqlScript
+anvizent.package.label.createdDate =Fecha de creación
+anvizent.package.label.modifiedDate =Fecha modificada
+anvizent.package.label.isActive =Está activo
+anvizent.package.label.selectClientIds=Por favor, seleccione ClientId&#39;s
+anvizent.package.label.trailingmonths=Meses finales
+anvizent.package.message.trailingmonthsShouldNotBeEmpty=Los meses finales no deben estar vacíos.
+
+#Client Job Execution Parameters
+anvizent.package.label.NullReplacementValues=Valores de reemplazo nulos
+anvizent.package.label.ClienJobExecutionParameters=Parámetros de ejecución de trabajo del cliente
+anvizent.package.label.SourceTimeZone=Zona horaria de origen
+anvizent.package.label.DestinationTimeZone=Zona horaria de destino
+anvizent.package.label.CaseSensitive=Distingue mayúsculas y minúsculas
+anvizent.package.label.trailingMonths=Meses finales
+anvizent.package.label.selectInterval=Seleccione mes
+
+
+
+
+#sudheer
+
+#clientJobExecutionParameters.jsp
+anvizent.package.label.ClientJobExecutionParameters =Parámetros de ejecución de trabajo del cliente
+anvizent.package.label.SourceTimeZone=Zona horaria de origen
+anvizent.package.label.DestinationTimeZone =Zona horaria de destino
+anvizent.package.label.NullReplacementValues =Valores de reemplazo nulos
+anvizent.package.label.CaseSensitive=Distingue mayúsculas y minúsculas
+anvizent.package.label.TrialInterval =Intervalo de prueba
+anvizent.package.label.selectInterval=Seleccionar intervalo
+
+
+#allMappingInfo.jsp
+anvizent.package.label.DefaultMappings=Asignaciones predeterminadas
+anvizent.package.label.change=cambio
+
+
+
+
+
+
+#webServiceILMapping.jsp
+anvizent.package.label.BodyParameters =Parámetros del cuerpo
+anvizent.package.label.SelectWebServiceTemplate =Seleccionar plantilla de servicio web
+anvizent.package.label.RequestParameter =Parámetro de solicitud
+anvizent.package.label.Details=Detalles
+anvizent.package.label.BodyParameter =Parámetro del cuerpo
+
+
+
+
+#existingJars.jsp
+anvizent.package.label.ExistingJars =Tarros existentes
+
+
+#clientCurrencyMapping.jsp
+anvizent.package.label.ClientCurrencyMapping =Mapeo de moneda del cliente
+anvizent.package.label.ClientMappingDetails =Detalles del mapeo del cliente
+anvizent.package.label.Add=Añadir
+
+
+
+#clientsInstantScriptExecution.jsp
+anvizent.package.label.ClientsInstantScriptExecution =Clientes Ejecución instantánea de guiones
+
+
+#clientsInstantScriptExecution.jsp
+anvizent.package.label.ScriptId=ID de script
+anvizent.package.label.ViewResults=Ver resultados
+anvizent.package.label.InstantExecutionId=Identificación de ejecución instantánea
+
+anvizent.package.label.ExecutionMessage=Mensaje de ejecución
+anvizent.package.label.ViewScript=Ver guión
+
+
+#clientchange.jsp
+anvizent.package.label.ChangeClient=Cambiar Cliente
+anvizent.package.label.Master=Dominar
+
+#connector.jsp
+anvizent.package.label.Update=Actualizar
+
+
+
+#database.jsp
+anvizent.package.label.DatabaseDetails=Detalles de la base de datos
+
+
+
+#dashBoardLayoutMaster.jsp
+anvizent.package.label.selectvertical=seleccione vertical
+
+#clientTableScripts.jsp
+anvizent.package.label.ExecutedScripts=Scripts Ejecutados
+
+
+#errorLogs
+anvizent.package.label.Close=Cerrar
+
+#addWebService.jsp
+anvizent.package.label.StatusCode=Código de estado
+anvizent.package.label.SelectWebService=Seleccione el servicio web
+anvizent.package.label.View=Ver
+anvizent.package.label.Show=Show
+
+
+#appDbVersionTableScripts.jsp
+anvizent.package.label.AppDbVersionTableScripts=AppDb Version Table Scripts
+anvizent.package.label.Id=Carné de identidad
+anvizent.package.label.AnvizentScript=Guión de Anvizent
+anvizent.package.label.MinidwScript=Minidw Script
+anvizent.package.label.Default=Defecto
+anvizent.package.label.View=Ver
+anvizent.package.label.AppDBVersionTableScriptsDetails=Detalles de los scripts de la tabla de versiones de AppDB
+anvizent.package.label.AppDBScript=AppDB Script
+anvizent.package.label.Script=Guión
+
+#clientConfigurationSettings.jsp
+anvizent.package.label.EmailDetails=Detalles de correo electrónico
+anvizent.package.label.From=Desde
+anvizent.package.label.Password=Contraseña
+anvizent.package.label.To=A
+anvizent.package.label.CC=CC
+anvizent.package.label.BCC=BCC
+anvizent.package.label.ReplyTo =Responder a
+anvizent.package.label.SMTPDetails=Detalles SMTP
+anvizent.package.label.SMTPHost=Host SMTP
+anvizent.package.label.SocketFactoryPorts=Puertos de fábrica de zócalo
+anvizent.package.label.SMTPPort=Puerto SMTP
+anvizent.package.label.Save=Salvar
+
+
+#clientDLMapping.jsp
+anvizent.package.label.Lock=Bloquear
+anvizent.package.label.UnLock=Desbloquear
+
+#clientSpecificDL.jsp
+anvizent.package.label.DefaultJob=Trabajo predeterminado
+anvizent.package.label.ClientSpecificJob=Trabajo específico del cliente
+ 
+
+#clientSpecificIL.jsp
+anvizent.package.label.AddUpdateClientSpecificILInfo=Agregar / Actualizar información específica de cliente de IL
+anvizent.package.label.ClientSpecificJob=Trabajo específico del cliente
+anvizent.package.label.ExistedJarFiles=Archivos jar existentes
+
+#clientTableScriptExecution.jsp
+anvizent.package.label.ExecutedDate=Fecha de ejecución
+anvizent.package.label.ErrorMsg=Mensaje de error
+
+#clientTableScripts.jsp
+anvizent.package.label.Yes=Sí
+anvizent.package.label.No=No
+anvizent.package.label.ScriptType=Tipo de script
+anvizent.package.label.TableScript=Script de tabla
+anvizent.package.label.Client=Cliente
+anvizent.package.label.TargetSchema=Esquema objetivo
+
+anvizent.package.label.Reset=Reiniciar
+
+
+#commonJob.jsp
+anvizent.package.label.Back=Espalda
+
+
+
+#Client Job Execution Parameters.jsp
+anvizent.package.label.ClienJobExecutionParameters=Parámetros de ejecución de trabajo del cliente
+
+
+#contextParameters.jsp
+
+#currencyIntegration.jsp
+anvizent.package.label.CurrencyIntegration=Integración de divisas
+anvizent.package.label.CurrencyApiDetails=Detalles de la moneda de la API
+anvizent.package.label.Apiurl=Api url
+anvizent.package.label.AccessKey=Llave de acceso
+anvizent.package.label.ScheduleRecurrence=Horario de recurrencia
+anvizent.package.label.Time=Hora
+anvizent.package.label.Jobname=Nombre del trabajo
+anvizent.package.label.ClientSpecific=Específico del cliente
+anvizent.package.label.Edit=Editar
+anvizent.package.label.Cancel=Cancelar
+anvizent.package.label.InstantRun=InstantRun
+anvizent.package.label.EndDate=Fecha final
+anvizent.package.label.Run=correr
+
+#defaultMappingConfiguration.jsp
+anvizent.package.label.CurrencyType=Tipo de cambio monetario
+anvizent.package.label.DashBoardCurrency=Moneda de DashBoard
+anvizent.package.label.AccountingCurrencyCode=Código de moneda contable
+anvizent.package.label.SelectCurrency=Seleccione el tipo de moneda
+anvizent.package.label.OtherCurrency=Otra moneda
+anvizent.package.label.SelectBucket=Seleccionar cubo
+
+#defaultMappingInfo.jsp
+anvizent.package.label.BucketName=Nombre del cubo
+anvizent.package.label.SecretKey=Llave secreta
+
+#dlKpiMapping.jsp
+anvizent.package.label.KPIId=KPI Id
+anvizent.package.label.KPIName=Nombre KPI
+
+#generalSettings.jsp
+anvizent.package.label.GeneralSettings=Seleccione opciones
+anvizent.package.label.selectoptions=Seleccione opciones
+anvizent.package.label.Enable=Habilitar
+anvizent.package.label.Disable=Inhabilitar
+anvizent.package.label.NotDisplay=No mostrar
+
+#hybridClientsGrouping.jsp
+anvizent.package.label.HybridClientsGrouping=Agrupación de clientes híbridos
+anvizent.package.label.Name=Nombre
+anvizent.package.label.Clients=Clientela
+anvizent.package.label.Active=Activo
+anvizent.package.label.Description=Descripción
+anvizent.package.label.ThreadCount=Número de hilos
+anvizent.package.label.Seconds=Segundos
+anvizent.package.label.Minute=Minuto
+anvizent.package.label.Hour=Hora
+anvizent.package.label.PackageRetrievalInterval=Intervalo de recuperación de paquetes
+
+#internalization.jsp
+anvizent.package.label.Internalization=Internalizacion
+anvizent.package.label.LocaleId=ID de localidad
+anvizent.package.label.LocaleName=Nombre del local
+anvizent.package.label.SelectLanguage=Seleccione el idioma
+anvizent.package.label.ProceedForMapping=Proceder para mapear
+anvizent.package.label.ApplicationProperties=Propiedades de la aplicación
+anvizent.package.label.ServiceProperties=Propiedades del servicio
+anvizent.package.label.EnglishKey=Llave inglesa
+anvizent.package.label.EnglishValue=Valor en ingles
+anvizent.package.label.SelectedLanguage=Idioma seleccionado
+anvizent.package.label.Submit=Enviar
+
+#middleLevelManager.jsp
+anvizent.package.label.MiddleLevelManager=Gerente de nivel medio
+anvizent.package.label.MiddleLevelManagerDetails=Detalles del gerente de nivel medio
+anvizent.package.label.UserAuthenticationToken=Token de autenticación de usuario
+anvizent.package.label.ClientAuthenticationToken=Token de autenticación de cliente
+
+
+#migrateTemplate.jsp
+anvizent.package.label.SourceServer=Servidor de origen
+anvizent.package.label.Select=Seleccionar
+anvizent.package.label.DestinationServer=Servidor de destino
+anvizent.package.label.SourceClient=Cliente de origen
+anvizent.package.label.DestinationClient=Cliente de destino
+anvizent.package.label.Users=Usuarios
+anvizent.package.label.Packages=Paquetes
+anvizent.package.label.DatabaseConnections=Conexiones de base de datos
+anvizent.package.label.WebServiceConnections=Conexiones de servicios web
+anvizent.package.label.ClientILJars=Tarros de cliente IL
+anvizent.package.label.ClientDLJars=Tarros de cliente DL
+anvizent.package.label.TableScripts=Tablas de comandos
+anvizent.package.label.PackageName=Nombre del paquete
+anvizent.package.label.SourceUser=Usuario fuente
+anvizent.package.label.DestinationUsers=Usuarios de destino
+anvizent.package.label.Migrationstatus=Estado de migración
+anvizent.package.label.UserId=ID de usuario
+anvizent.package.label.UserName=Nombre de usuario
+anvizent.package.label.JobVersion=Versión de trabajo
+anvizent.package.label.ILId=ID de IL
+anvizent.package.label.TemplateName=Nombre de la plantilla
+anvizent.package.label.TemplateId=ID de plantilla
+anvizent.package.label.ScriptName=Nombre del script
+anvizent.package.label.DestinationServerClientMetaInfo=Destino cliente cliente meta información
+anvizent.package.label.TableScripts=Tablas de comandos
+anvizent.package.label.CreatedBy=Creado por
+anvizent.package.label.DatabaseName=Nombre de la base de datos
+anvizent.package.label.WebServiceName=Nombre del servicio web
+anvizent.package.label.VerticalId=Identificación vertical
+anvizent.package.label.VerticalName=Nombre vertical
+anvizent.package.label.SelectAll=Seleccionar todo
+
+#s3BucketInfo.jsp
+anvizent.package.label.S3BucketInfo=S3Bucket Info
+anvizent.package.label.IsActive=Está activo
+anvizent.package.label.S3Details=Detalles S3
+anvizent.package.label.ActiveStatus=Estado activo
+anvizent.package.label.YES=SÍ
+anvizent.package.label.NO=NO
+
+#s3ClientMapping.jsp
+anvizent.package.label.ClientS3BucketMapping=Asignación de clientes S3Bucket
+anvizent.package.label.SelectClient=Seleccione Cliente
+#scheduleStatus.jsp
+anvizent.package.label.ClientScheduler=Programador de clientes
+anvizent.package.label.SchedulerStatus=Estado del programador
+anvizent.package.label.Running=Corriendo
+anvizent.package.label.Stop=Detener
+anvizent.package.label.Stopped=Detenido
+anvizent.package.label.Start=comienzo
+anvizent.package.label.FromDate=Partir de la fecha
+anvizent.package.label.ToDate=Hasta la fecha
+anvizent.package.label.PAUSED=EN PAUSA
+anvizent.package.label.READY=LISTO
+anvizent.package.label.FilterBy=Filtrado por
+anvizent.package.label.Search=Buscar
+anvizent.package.label.ClientId=Identificación del cliente
+anvizent.package.label.Change=Cambio
+anvizent.package.label.JobId=Identificación del trabajo
+anvizent.package.label.JobName=Nombre del trabajo
+anvizent.package.label.GroupName=Nombre del grupo
+anvizent.package.label.StartTime=Hora de inicio
+anvizent.package.label.EndTime=Hora de finalización
+anvizent.package.label.NextFireTime=Siguiente tiempo de fuego
+anvizent.package.label.Action=Acción
+anvizent.package.label.ViewJobResults=Ver los resultados del trabajo
+anvizent.package.label.TriggerID=ID de activador
+
+
+
+#serverConfiguration.jsp
+anvizent.package.label.ServerConfiguration=Configuración del servidor
+anvizent.package.label.Sr.No.=No Señor.
+anvizent.package.label.ServerName=Nombre del servidor
+anvizent.package.label.IPHostName=IP / nombre de host
+anvizent.package.label.ShortName=Nombre corto
+anvizent.package.label.IPAddress=Dirección IP
+anvizent.package.label.PortNumber=Número de puerto
+anvizent.package.label.MinidwSchemaName=Nombre de esquema de Minidw
+anvizent.package.label.AnvizentSchemaName=Nombre del esquema de Anvizent
+anvizent.package.label.Clientschemadetailsendpoint=Detalles del esquema del cliente punto final
+
+
+#tablescripts.jsp
+anvizent.package.label.S.No=S.No
+anvizent.package.label.SQLScript=Script SQL
+anvizent.package.label.NoDataFound.=Datos no encontrados.
+anvizent.package.label.AddUpdateTableScripts=Detalles del esquema del cliente punto final
+anvizent.package.label.SelectOrder=Elije el orden
+
+#templateMigration.jsp
+anvizent.package.label.PackageId=PackageId
+anvizent.package.label.PackageName=Nombre del paquete
+anvizent.package.label.PackageType=Tipo de paquete
+anvizent.package.label.NoPackagesFoundforuser=No se encontraron paquetes para el usuario
+
+#templates.jsp
+anvizent.package.label.csv=csv
+
+#versionUpgrade.jsp
+anvizent.package.label.VersionUpgrade=Actualización de la versión
+anvizent.package.label.Latestversion=Ultima versión
+anvizent.package.label.LatestVersionToUpgrade=Última versión para actualizar
+anvizent.package.label.selectDataSource=Seleccionar fuente de datos
+anvizent.package.label.other=Otro
+
+#webServiceTemplate.jsp
+anvizent.package.label.RequestParametersHeadersRequiredforAPIfromAuthenticationResponse=Parámetros / encabezados de solicitud requeridos para la API de la respuesta de autenticación
+
+#addIlSource
+anvizent.package.label.CreateNewWebServiceConnection=Crear nueva conexión de servicio web
+anvizent.package.label.webService=Servicio web
+
+#xReference.jsp
+anvizent.package.label.ViewDetails=Ver detalles
+
+ # 24-11-2017
+ #crossReference.jsp
+anvizent.package.button.Id=Carné de identidad
+anvizent.package.button.ColumnName=Nombre de columna
+anvizent.package.button.ColumnValues=Valores de la columna
+anvizent.package.button.XrefColumnValues=Valores de la columna de referencia externa
+anvizent.package.button.MergeColumns=Fusionar columnas
+anvizent.package.button.AutoMergeQueries=Consultas de fusión automática
+anvizent.package.button.ViewDetails=Ver detalles
+anvizent.package.button.ColumnValue=Valor de columna
+anvizent.package.button.UpdateRow=Fila de actualización
+anvizent.package.button.SNo=S No
+anvizent.package.label.Manual=Manual
+
+#manish_24_11
+anvizent.package.label.viewExecutionStatus=Ver estado de ejecución
+anvizent.package.label.executed=Ejecutado
+anvizent.package.label.running=Corriendo
+anvizent.package.label.pending=Pendiente
+
+
+ #date:24/11/2017 @mahender
+anvizent.package.label.baseUrl=URL base
+anvizent.package.label.baseUrlRequired=URL base requerida
+
+
+#Date:28/11/17 @usha
+anvizent.package.label.replaceSchemas=Reemplazar esquemas
+anvizent.package.label.selectDataSource=Seleccionar fuente de datos
+anvizent.package.label.undo=Refrescar
+anvizent.package.label.replaceAll=Reemplaza todo
+anvizent.package.label.availableColumns=Columnas disponibles
+anvizent.package.label.optional=Opcional
+anvizent.package.label.selectSchemas=Seleccionar esquemas
+anvizent.package.label.go=IR
+anvizent.package.label.saveWebServiceConnection=Guardar conexión de servicio web
+anvizent.package.label.formatResponse=Formato de Respuesta
+anvizent.package.label.editSource=Editar fuente
+anvizent.package.label.viewDetails=Ver detalles
+anvizent.package.label.manual=Manual
+anvizent.package.label.newXref=Nueva referencia cruzada
+anvizent.package.label.existingXref=Referencia cruzada existente
+anvizent.package.label.selectOption=Seleccionar
+anvizent.package.label.selectWebServiceTemplate=Seleccionar plantilla de servicio web
+anvizent.package.label.startsFrom=Comienza desde
+anvizent.package.label.noSchemaSelected=Ningún esquema seleccionado.
+anvizent.package.label.areYouSure=Estás seguro ?
+anvizent.package.label.selectALLOpt=Seleccionar todo
+anvizent.package.label.selectedAll=TODOS los seleccionados
+anvizent.package.label.editQuery=Editar consulta
+
+anvizent.package.label.loadPreBuildQuery=Cargar Consulta PreBuild
+anvizent.package.label.selectDataSource=Seleccionar fuente de datos
+anvizent.package.label.joinUrls=Unir urls
+anvizent.package.label.joinQuery=Unirse a la consulta
+anvizent.package.label.viewX-REFColumnValue=Ver el valor de la columna X-REF
+anvizent.package.label.autoMergeQueries=Consultas de fusión automática
+anvizent.package.label.defualtMappingNotFoundForSelectedIl=Mapeo predeterminado no encontrado para el seleccionado Il.
+anvizent.package.label.selectXref=Seleccione Xref
+anvizent.package.label.archivedRowCount=Recuento de filas archivadas
+anvizent.package.label.archivedUploadedTime=Tiempo cargado archivado
+anvizent.package.label.sourceArchived=Fuente / Archivado
+anvizent.package.label.packageExecution=Ejecución del paquete
+anvizent.package.label.thisPackageExecutionAlreadyStarted=¡La ejecución de este paquete ya comenzó!
+anvizent.package.label.terminateStart=Terminar y comenzar
+anvizent.package.label.pleaseSelectAtLeastoneColumn=Por favor seleccione al menos una columna
+
+anvizent.package.label.pleaseChooseAuthenticationType=Por favor, elija el tipo de autenticación
+anvizent.package.label.pleaseEnterParamName=Por favor ingrese el nombre del parámetro
+ 
+#date:29/11/2017 @mahender
+anvizent.package.message.RequestParameter=Parámetro de solicitud
+anvizent.package.message.BodyParameter=Parámetro del cuerpo
+
+anvizent.package.label.paginationType=Tipo de paginación
+anvizent.package.label.paginationoffset=Compensar
+anvizent.package.label.paginationdate=Fecha
+anvizent.package.label.datepagination=Paginación de fecha
+anvizent.package.label.paginationdaterange=Rango de fechas
+
+anvizent.package.label.pleaseSelectdaterange=Por favor, seleccione el intervalo de fechas.
+anvizent.package.label.pleasechoosestartdate=Por favor, elija la fecha de inicio.
+anvizent.package.label.SelectParamType=Seleccione el tipo de parámetro
+anvizent.package.message.BodyParameters=Parámetros del cuerpo
+ 
+#date:30/11/2017 @mahender
+anvizent.package.label.executionStatus=Estado de ejecución
+anvizent.package.label.executed=ejecutado
+anvizent.package.label.running=corriendo
+anvizent.package.label.pending=pendiente
+ 
+#date:12/12/2017 @mahender
+anvizent.package.label.pleaseentersuburloffsetparamname=Por favor ingrese sub url off set param nombre.
+anvizent.package.label.pleaseentersuburloffsetparamvalue=Por favor ingrese sub url desactivado establecer el valor param.
+anvizent.package.label.pleaseentersuburllimitparamname=Por favor, introduzca el nombre de parámetro de límite de ur url.
+anvizent.package.label.pleaseentersuburllimitparamvalue=Por favor, introduzca el valor de param límite de ur url.
+anvizent.package.label.pleaseentersuburlfromdateparamname=Por favor ingrese sub url de fecha param nombre.
+anvizent.package.label.pleaseentersuburltodateparamname=Por favor ingrese sub url a la fecha param nombre.
+anvizent.package.label.pleaseentersuburlstartdate=Por favor ingrese la fecha de inicio de la url.
+anvizent.package.label.pleasechoosedaterange=Por favor, elija el rango de fechas.
+anvizent.package.label.pleaseenternumericvalueexcept0=Por favor, introduzca el valor numérico, excepto 0.
+anvizent.package.label.pleaseenterRequestParamValue=Por favor ingrese el valor de solicitud
+anvizent.package.label.pleasechoosepathparamvaluetype=Por favor, elija la ruta param tipo de valor.
+anvizent.package.label.pleaseentersuburl.hypermedia.pattern=Por favor, introduzca el patrón de objetos de Hypermedia.
+anvizent.package.label.pleaseentersuburl.hypermedia.record.limit=Por favor, introduzca el límite de registro.
+
+
+anvizent.package.label.pleaseenterauthenticationurl=Por favor, introduzca la url de autenticación.
+anvizent.package.label.pleaseenteraccesstokenurl=Por favor ingrese el url del token de acceso.
+anvizent.package.label.pleaseenterclientIdentifier=Por favor ingrese el identificador del cliente.
+anvizent.package.label.pleaseentercallbackuri=Por favor, introduzca la llamada de vuelta uri.
+anvizent.package.label.pleaseenterclientsecret=Por favor, introduzca el secreto del cliente.
+anvizent.package.label.pleaseentersuburl=Por favor ingrese sub url.
+anvizent.package.label.Pleaseentersuburlresponseobject=Por favor, introduzca el objeto de respuesta sub url.
+anvizent.package.label.pleasechoosesuburlpaginationtype=Por favor, elija el tipo de paginación de url.
+anvizent.package.label.pleasechooseauthenticationtype=Por favor, elija el tipo de autenticación.
+
+anvizent.package.label.pleaseReplaceDatabaseOrSchemasInDefaultQuery=Reemplace {0} En la consulta predeterminada de la base de datos o del esquema.
+anvizent.package.label.packageExecutionDetailsNotFound =Detalles de ejecución del paquete no se encuentran
+
+anvizent.package.label.pleaseReplace=Por favor cámbialo
+anvizent.package.label.DatabasesOrSchemasInDefaultQuery=Base de datos o esquema en consulta por defecto.
+anvizent.package.label.pleaseEnterBaseUrl=Por favor ingrese la URL base
+anvizent.package.label.pleaseentervalidurl=Por favor, introduzca una URL válida.
+
+
+anvizent.package.label.contextPath=Ruta de contexto
+anvizent.package.label.uploadListEndPoint=Subir el punto final de la lista
+anvizent.package.label.writeEndPoint =Escribir punto final
+anvizent.package.label.deleteEndPoint =Eliminar punto final
+anvizent.package.label.upgradeEndPoint =Punto final de actualización
+anvizent.package.label.userAuthToken =Token de Autentificación del Usuario
+anvizent.package.label.clientAuthToken =Token de autenticación del cliente
+anvizent.package.label.encryptionPrivateKey =Clave privada de cifrado
+anvizent.package.label.encryptionIV =Cifrado IV
+anvizent.message.error.text.errorOccurredWhileMapping=Ocurrió un error durante la asignación de archivos
+anvizent.package.success.recordsProcessedSuccessfully=Registros procesados con éxito
+anvizent.package.message.Lock=Bloquear
+anvizent.package.message.UnLock=Desbloquear
+
+anvizent.package.label.Source=Fuente
+
+
+#apisDate 31/1/18
+anvizent.package.label.endPointUrl=Url de punto final
+anvizent.package.label.apiDescription =Api Descripción
+anvizent.package.label.query =Consulta
+anvizent.package.label.apisData =Apis de datos
+anvizent.package.label.pleaseEnterEndPointUrl=Por favor, introduzca la url de punto final
+anvizent.package.label.pleaseEnterApiDescription =Por favor, introduzca la descripción de la API
+anvizent.package.label.pleaseEnterQuery =Por favor ingrese la consulta
+anvizent.package.label.testLink =Enlace de prueba
+
+#datavalidationAdmin
+anvizent.package.label.businesscases =Validación de Casos de Negocio
+anvizent.navLeftTabLink.label.datavalidation =Validación de datos
+anvizent.navLeftTabLink.label.businesscases =Casos de negocios
+anvizent.package.label.validationname =Nombre de validación
+anvizent.package.label.validationscripts =Scripts de Validación
+anvizent.package.label.status =Estado
+anvizent.package.label.businesscasesvalidation =Validación de Casos de Negocio
+anvizent.package.label.moduleordl =Módulo / DL
+anvizent.package.label.selectmodule =Seleccione el módulo / DL
+anvizent.package.label.pleaseEnterValidationName =Por favor ingrese el nombre de validación
+anvizent.package.label.pleaseEnterValidationScripts =Por favor ingrese los scripts de validación
+anvizent.package.label.pleaseChoosedls =Por favor, elija DL
+anvizent.navLeftTabLink.label.preload =Carga previa
+anvizent.package.label.dlnames =DLs
+anvizent.package.message.ViewResults =Ver resultados
+anvizent.package.message.ViewScript =Ver guión
+anvizent.package.label.script =Guión
+anvizent.package.button.runselected =Ejecutar seleccionado
+anvizent.package.label.run =correr
+anvizent.package.label.selectAtleastonescript =Seleccione al menos un script
+anvizent.package.label.results =Resultados
+anvizent.package.label.noscriptfound =No se ha encontrado ningún script
+anvizent.package.label.download =Descargar
+
+#CrossReference
+anvizent.package.label.type.of.merge=Tipo de fusión
+
+anvizent.package.label.preload =Validación de precarga
+anvizent.package.label.selectIl =Seleccione IL
+anvizent.package.label.selectConnector =Seleccione conector
+anvizent.package.label.pleaseChooseil =Por favor elige IL
+anvizent.package.label.pleaseChooseconnector =Por favor, elija conector
+anvizent.package.label.ilname =Nombre de IL
+anvizent.package.label.validationtype =Tipo de validación
+anvizent.package.label.selectvalidationtype =Seleccione el tipo de validación
+anvizent.package.label.pleaseChooseValidationtype =Por favor, elija el tipo de validación
+anvizent.message.text.runinitiated =Ejecutar iniciado
+anvizent.message.text.failedtorunselectedsources =Error al ejecutar las fuentes seleccionadas
+anvizent.message.text.unabletorunsources =No se pueden ejecutar fuentes
+anvizent.package.label.isDlExecutionRequired =¿Se requiere la ejecución de DL?
+anvizent.admin.label.fileEncryptionRequired =Cifrado de archivos requerido
+anvizent.package.message.text.areYouSureYouWantToUnscheduleTheModule=¿Estás seguro de que quieres cancelar la programación del módulo?
+anvizent.package.label.noInputlayoutMapped =No se asigna ningún diseño de entrada
+
+#ELT 28/03/2018
+anvizent.package.label.tagName=Nombre de etiqueta
+anvizent.package.label.clone=Clon
+anvizent.package.label.tagDetails=Detalles de la etiqueta
+anvizent.package.label.key=Llave
+anvizent.package.label.value=Valor
+anvizent.package.label.addOrDelete=Añadir / Eliminar
+anvizent.package.label.configTags=Etiquetas de configuración
+anvizent.package.label.pleaseEnterTagName=Por favor ingrese el nombre de la etiqueta
+anvizent.package.label.pleaseChoosePropertiesFile=Por favor, elija el archivo de propiedades
+anvizent.package.label.mappingID=ID de mapeo
+anvizent.package.label.configTagName=Nombre de etiqueta de configuración
+anvizent.package.label.valueTagName=Nombre de etiqueta de valor
+anvizent.package.label.statsTagName=Nombre de etiqueta de estadísticas
+anvizent.package.label.derivedComponent=Componente derivado
+anvizent.package.label.jobTagName=Nombre de la etiqueta de trabajo
+anvizent.package.label.tagDetails=Detalles de la etiqueta
+anvizent.package.label.globalConfigValues=Valores globales de configuración
+anvizent.package.label.selectGlobalValue=Seleccione el valor global
+anvizent.package.label.updateSeq=Actualizar Seq
+anvizent.package.label.configInfo=Información de configuración
+anvizent.package.label.selectTag=Seleccionar etiqueta
+anvizent.package.label.environmentVariables=Variables de entorno
+anvizent.package.label.makeDefault=Hacer por defecto
+anvizent.package.label.sourceType=tipo de fuente
+anvizent.package.label.sparkMaster=Spark Master
+anvizent.package.label.deployMode=Modo de despliegue
+anvizent.package.label.sparkPath=Spark Path Name
+anvizent.package.label.eltClassName=Nombre de la clase de ELT
+anvizent.package.label.eltJobPath=Ruta de trabajo de ELT
+anvizent.package.label.default=Defecto
+anvizent.package.label.master=Dominar
+anvizent.package.label.yarn=Hilo
+anvizent.package.label.local=Local
+anvizent.package.label.select=Seleccionar
+anvizent.package.label.s3=S3
+anvizent.package.label.masterConfiguration=Configuración maestra
+anvizent.package.label.noOfExecutors=No de los ejecutores
+anvizent.package.label.executorMemory=Memoria del ejecutor
+anvizent.package.label.executorCores=Núcleos Ejecutores
+anvizent.package.label.eLTLoadParameters=Parámetros de carga ELT
+#05/04/18
+anvizent.package.label.applicableDate=Fecha aplicable
+anvizent.package.label.referenceFields=Campos de referencia
+anvizent.package.label.crossReferenceFields=Campos de referencia cruzada
+anvizent.package.label.fileHeadersMapping=Asignación de encabezados de archivos
+anvizent.package.label.fileHeaders=Encabezados de archivo
+anvizent.package.label.selectedILHeaders=Encabezados IL seleccionados
+anvizent.package.label.stats=Estadísticas
+anvizent.package.label.selectColumnNames=Seleccionar nombres de columna
+anvizent.package.label.enterConditionName=Introduzca el nombre de la condición
+anvizent.package.label.selectApplicableFromDate=Seleccione aplicable desde la fecha
+anvizent.package.label.pleaseSelectReferenceColumns=Por favor seleccione columnas de referencia
+anvizent.package.label.pleaseSelectXReferenceColumns=Por favor seleccione X columnas de referencia
+
+anvizent.message.error.text.targetTableDoesNotExistPleaseCreateATargetTableForThePackageAndSchedulePackageWillbeNotBeShownInSchedulePageWithoutATargetTable =? : La tabla de destino no existe Por favor crea una tabla de destino para el paquete y runnow / schedule.
+anvizent.package.label.cluster=Racimo
+anvizent.package.label.mesos=Mesos
+anvizent.package.label.standalone=Ser único
+anvizent.package.label.kubernetes=Kubernetes
+anvizent.package.label.sparkSubmitMode=Modo de envío de chispa
+anvizent.package.label.jobSubmitModeType=Modo de envío de trabajo
+anvizent.package.label.java=Java
+anvizent.package.label.aurora=Aurora
+anvizent.package.label.ppkFile=Archivo PPK
+anvizent.package.label.host=Anfitrión
+anvizent.package.label.port=Puerto
+anvizent.admin.button.hierarchicalData =Datos jerárquicos
+anvizent.navLeftTabLink.label.hierarchical =Grupo de jerarquía
+anvizent.package.button.createNewHierarchy =Crear nueva jerarquía
+anvizent.package.label.groupName =Nombre del grupo
+anvizent.package.button.addHierarchy =Añadir jerarquía
+anvizent.package.label.mapHierarchy =Jerarquía de mapas
+anvizent.package.label.Map =Mapa
+anvizent.package.label.selectilordl =IL / DL
+anvizent.package.label.selectmeasure=Medida
+anvizent.package.label.selectdimension =Dimensión
+anvizent.package.label.dimensionvalues =Valores de dimensión
+anvizent.package.label.associationname =Nombre de la asociación
+anvizent.package.label.report.source.table =Tabla fuente
+anvizent.package.label.columns =Columnas
+anvizent.package.label.addtolevel =Añadir a nivel
+anvizent.package.label.columndaterange =Distancia
+anvizent.package.label.fetch =Ha podido recuperar
+anvizent.package.label.pattern =Modelo
+anvizent.package.label.autoManual =Manual
+anvizent.package.label.fetchPatternData =FetchPatternData
+anvizent.package.label.selectExclusions =Seleccione Exclusiones
+anvizent.package.label.hierarchyType =Tipo de jerarquía
+anvizent.package.label.financial =Financiero
+anvizent.package.label.financialTemplate =Plantilla financiera
+anvizent.package.label.pagination.nextpage.pattern.and.Limit =Hipermedia patrón y limite
+anvizent.package.label.pleaseEnterKeyParam =Por favor patrón hipermedia
+anvizent.package.label.pagination.nextpage =Hipermedia
+anvizent.package.label.placeholder.hyperlink.next.record.pattern=Patrón hipermedia
+
+anvizent.package.message.structual.changes.custom.package.edit=Se encontraron cambios en la columna de mapeo. ¿Te gustaría revisar la consulta y proceder para mapear?
+
+anvizent.package.label.placeholder.hyperlink.next.record.pattern=Patrón hipermedia
+anvizent.package.label.addConditions =Añadir condiciones
+anvizent.package.label.crossRefName =Nombre de referencia cruzada
+anvizent.package.label.selectDimensiontable =Seleccionar tabla de dimensiones
+anvizent.package.button.addorviewresults =Añadir / Ver resultados
+anvizent.package.label.patternormatchChars =Patrón / Match No De Caracteres
+
+anvizent.message.error.text.unableToSaveDetails=No se pueden guardar los detalles
+anvizent.package.label.doUWantUnMergetheExistingCross-ref=¿Desea Un-Merge / Nullify / Revvertir las referencias cruzadas existentes?
+anvizent.package.label.non-deleted =No eliminado
+anvizent.package.label.deleted =Eliminado
+anvizent.package.label.autoSplit =División automática
+anvizent.package.label.successfullyDeleted =Eliminado exitosamente
+anvizent.package.label.doUWantdroptheexistingmergeCondition =¿Desea eliminar las condiciones de fusión existentes?
+anvizent.package.label.successfullyunmerged =Exitosamente sin fusionar
+anvizent.package.label.alreadyMapped=Ya mapeado
+anvizent.package.label.alertonDropColumnwhileheadersmapping =Si modifica la tabla de destino existente, se efectuarán los respectivos conjuntos de datos personalizados.
+anvizent.package.label.reset=Reiniciar
+
+anvizent.package.label.pagenumber = Número de página
+anvizent.package.label.retrylimit = Reintentar el límite
+anvizent.package.label.sleeptime = Hora de dormir
+anvizent.package.label.dataBasevariables = DataBase Variables 
+anvizent.package.label.dataBasevariables = Variables de base de datos
+anvizent.package.label.dbParams = Parámetros de consulta DB (opcional)
+
+anvizent.package.label.allowedfilesizeexceededmax5mb = Se ha excedido el tamaño del archivo permitido. (Máx. 5 MB)
+anvizent.package.message.Details = Detalles
+
+anvizent.package.label.sslenable = SSL habilitado
+anvizent.package.label.sslfiles =  Archivos SSL existentes
+anvizent.package.label.sslclientkeyfile = Archivo de clave de cliente SSL
+anvizent.package.label.sslclientcerfile = Archivo de certificado de cliente SSL
+anvizent.package.label.sslservercafile = Archivo de CA del servidor SSL
+
+anvizent.package.label.pleasechoosepemfile = Por favor elija el archivo pem.
+anvizent.package.label.dbvariablekeystartwithandendswith = db variable clave comienza con '{' y termina con '}'.

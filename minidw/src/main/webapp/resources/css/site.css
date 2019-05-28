@@ -1,0 +1,217 @@
+body {
+	padding-top: 0px;
+}
+
+#input {
+	width: auto;
+	width: 410px;
+}
+
+#text {
+	width: 310px;
+}
+
+#input {
+	width: auto;
+	width: 310px;
+}
+
+.label {
+	width: 100px;
+}
+
+#datepicker {
+	width: 150px;
+}
+
+.jumbotron {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.container-fluid {
+	align: center;
+}
+
+#portal-navbar {
+	margin-bottom: 70px;
+}
+
+.nav {
+	margin-left: 5px;
+}
+
+h3 {
+	text-align: center;
+}
+
+a, a:link, a:visited, a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+.btn, .btn-primary, .btn-default {
+	background-color: #0099ff;
+	color: #fff;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(161, 161, 161, 0.5);
+	-moz-box-shadow: 0px 2px 4px 0px rgba(161, 161, 161, 0.5);
+	box-shadow: 0px 2px 4px 0px rgba(161, 161, 161, 0.5);
+}
+
+.btn:hover, .btn-primary:hover, .btn-default:hover {
+	background-color: #0484d9;
+	color: #fff;
+}
+
+.btn-secondary {
+	background: #a1a1a1;
+	color: #fff;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(161, 161, 161, 0.5);
+	-moz-box-shadow: 0px 2px 4px 0px rgba(161, 161, 161, 0.5);
+	box-shadow: 0px 2px 4px 0px rgba(161, 161, 161, 0.5);
+}
+
+.btn-secondary:hover {
+	background: #7d7d7d;
+}
+
+.btn[disabled] {
+	background: #a1a1a1;
+	color: #000;
+}
+
+.navbar, #portal-navbar .btn {
+	background-color: #1a9b59;
+	color: #fff;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a,
+	.navbar-inverse .navbar-toggle {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-toggle:hover,
+	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,
+	.navbar-inverse .navbar-nav>.open>a:focus, #portal-navbar .btn:hover {
+	background-color: #078645;
+	color: #fff;
+}
+
+.nav li>a:hover, .navbar .nav li>a:hover {
+	background-color: #078645;
+}
+
+.nav .active a:hover, .navbar .nav .active  a:hover
+{
+  color: #fff;
+  background-color: #428bca;
+}
+
+.nav .active a, .navbar .nav .active  a
+{
+  color: #fff;
+  background-color: #428bca;
+}
+
+.nav .save, .navbar .nav .save {
+	background-color: #333333;
+}
+
+.nav .save a:hover, .navbar .nav .save a:hover {
+	background-color: #666666;
+}
+
+.nav .cancel, .navbar .nav .cancel {
+	background-color: #cc0000;
+}
+
+.nav .cancel a:hover, .navbar .nav .cancel a:hover {
+	background-color: #990000;
+}
+
+.nav .next {
+	background-color: #0099ff;
+}
+
+.nav .next a:hover {
+	background-color: #0484d9;
+}
+
+.nav .break {
+	height:5px;
+	background-color: #078645;
+}
+
+.welcome {
+	display: inline-block !important;
+	vertical-align: middle !important;
+}
+
+.list-group a:hover, .dropdown-menu>li>a:hover {
+	background-color: #1a9b59;
+	color: #fff;
+}
+
+/* Datatable styles*/
+table.dataTable {
+	clear: both;
+	margin-top: 6px !important;
+	margin-bottom: 6px !important;
+	max-width: none !important;
+	/*margin-left: -100px !important;*/
+}
+
+table.table-bordered.dataTable {
+	border-collapse: separate !important;
+	/*margin-left: -150px !important;*/
+}
+
+table.dataTable thead, 
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+	background-color: #1a9b59;
+	color: #fff;
+}
+
+/* Table Styles */
+table {
+	align: center;
+	width: 100%;
+	text-align: center;
+	float: center;
+	border-collapse: separate;
+}
+
+thead th {
+	font-weight: bold;
+	background-color: #1a9b59;
+	color: #fff;
+	text-align: left;
+}
+
+tr td {
+	text-align: left;
+}
+
+.error {
+	color: #E00000;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.errorField {
+	background-color: #ffc;
+}
+
+.ui-autocomplete
+ {
+     font-size: 10px;
+     background-color:white;
+ }
+ 
+.ui-autocomplete-loading {
+	background: url('./images/autocomplete.gif') no-repeat right center;
+}

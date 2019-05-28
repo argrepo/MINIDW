@@ -1,0 +1,2474 @@
+#header
+#anvizent.package.header= My Packages
+anvizent.package.header=Data Sets
+anvizent.package.label.unableToProcessYourRequest=Unable to process your Request.
+anvizent.message.validation.text.fileIsEmpty=File is empty.
+anvizent.message.success.code=SUCCESS
+anvizent.message.error.code=ERROR
+#label
+
+#544
+anvizent.message.text.errorWhileGettingPackageProperties=Error while getting package Properties
+anvizent.message.text.errorWhileGettingLocaleNamesList=Error while getting Locale Names List
+anvizent.message.text.errorWhileGettingGetclientlist=Error while getting getClientList
+anvizent.message.text.unableToRetrieveConnectionList=Unable to retrieve Connection list
+anvizent.message.text.unableToRetrieveIlConnectionMappingInfoList=Unable to retrieve Il connection Mapping Info List.
+anvizent.message.text.changeLogNotFound=Change log not found
+anvizent.message.text.fileSavingFailedErrorDetails=File saving failed. <br /> <b>Error Details:</b> 
+anvizent.message.text.serverNotReachable=Server not reachable
+anvizent.message.text.fileUploadingFailed=File uploading failed.
+anvizent.message.text.successfullyChanged=Successfully changed
+anvizent.message.text.editMappedHeaders=Edit Mapped Headers
+anvizent.message.text.queryisOK=Query is OK.
+anvizent.message.text.procedureIsOK=Procedure is OK.
+
+
+
+anvizent.package.label.standardPackage= Standard Package
+anvizent.package.label.customPackage= Custom Package
+anvizent.package.label.archivePackage=Archive Package
+anvizent.package.label.archive=Archive 
+anvizent.package.label.archivedPackages=Archived Packages
+anvizent.package.label.newPackageName= New Package Name
+anvizent.package.label.activatePackage=Activate Package
+anvizent.package.label.areyousure,youwanttoactivatethispackage=Are you sure, you want to activate this package?
+anvizent.package.label.areyousure,youwanttodeletethispackage=Are you sure, you want to delete this package?
+anvizent.package.label.activate=Activate
+anvizent.package.label.deletePackage=Delete Package
+anvizent.package.label.packageId= Package Id
+anvizent.package.label.packageType= Package Type
+anvizent.package.label.packageName= Package Name
+anvizent.package.label.verticalDetails= Vertical Details
+anvizent.package.label.isActive= isActive
+anvizent.package.label.status= Status
+anvizent.package.label.scheduled= isScheduled
+anvizent.package.label.isMapped= isMapped
+anvizent.package.label.remarks= Remarks
+anvizent.package.label.edit= Edit
+anvizent.package.label.delete= Delete
+anvizent.package.label.viewResults= View Results
+anvizent.package.label.viewExecutionResults= View Execution Results
+anvizent.package.label.packageExecutionStatus= Package Execution Status
+anvizent.package.label.modalHeader.deletePackage= Delete Package
+anvizent.package.label.modalHeader.archivePackage= Archive Package
+anvizent.package.standardPackage.label.selectIndustry= Industry 
+anvizent.package.label.flatFile= Flat File
+anvizent.package.label.database= Database
+anvizent.package.label.existingConnections= Existing Connections
+anvizent.package.label.databaseConnectionDetails= Database Connection Details
+anvizent.package.label.existingDatabaseConnectionDetails = Existing Connections
+anvizent.package.label.connectionName= Connection Name
+anvizent.package.label.databaseType=Database Type
+anvizent.package.label.connectorType=Connector Type
+anvizent.package.label.connectionType= Connection Type
+anvizent.package.label.serverName= Server IP with Port
+anvizent.package.label.userName= User Name
+anvizent.package.label.password= Password
+anvizent.package.label.typeOfCommand= Type of Command
+anvizent.package.label.flatFileDetails= Flat File Details
+anvizent.package.label.fileType= File Type
+anvizent.package.label.filePath= File Path
+anvizent.package.label.file= File
+anvizent.package.label.delimiter= Delimiter
+anvizent.package.label.firstRowHasColumnNames= First row has column names
+anvizent.package.label.sNo= S.No.
+#manish
+anvizent.package.label.executionID=Execution ID
+anvizent.package.label.initiatedFrom=Initiated From
+anvizent.package.label.uploadStatus=Upload Status
+anvizent.package.label.uploadComments=Upload Comments
+anvizent.package.label.executeStatus=Execution Status
+anvizent.package.label.executionComments=Execution Comments
+anvizent.package.label.druidStatus=Druid Status
+anvizent.package.label.info=Info
+anvizent.package.label.detailedInfo=Detailed Info
+anvizent.package.label.targetTableName=Target Table Name
+
+anvizent.package.label.columnName= Column Name
+anvizent.package.label.dataType= Data Type
+anvizent.package.label.columnSize= Column Size
+anvizent.package.label.createNewSchema= Create New Schema
+anvizent.package.label.useExistingSchema= Use Existing Schema
+anvizent.package.label.fetchFromFile= Fetch from file
+anvizent.package.label.createTargetTable= Create Target Table
+anvizent.package.label.modalHeader.deleteSource= Delete Source
+anvizent.package.label.modalHeader.deleteTargetTable= Delete Target Table
+anvizent.package.label.modalHeader.deleteDerivedTable= Delete Derived Table
+anvizent.package.label.pk= Primary Key
+anvizent.package.label.nn= Not Null
+anvizent.package.label.ai= Auto Increment
+anvizent.package.label.uq=Unique
+anvizent.package.label.view= View
+anvizent.package.label.batchId= Batch Id
+anvizent.package.label.jobName= Job Name
+anvizent.package.label.startDate= Start Date
+anvizent.package.label.endDate= End Date
+#manish
+anvizent.package.label.jobStatus=Job Status
+anvizent.package.label.sourceRecords=Source Records
+
+anvizent.package.label.insertedRecords= Inserted Records
+anvizent.package.label.updatedRecords= Updated Records
+anvizent.package.label.ViewErrorLog= View Error Log
+anvizent.admin.label.ViewSourceDetails= View IL Source Details
+anvizent.admin.label.viewcustompackagesource= View Custom Package Source
+anvizent.package.label.Webservice= Web Service
+anvizent.package.label.xReference= Cross-Reference
+anvizent.package.label.ilxrefdetails= IL X-Ref Details
+anvizent.package.label.xreferenceSplitting= X-Ref Splitting
+anvizent.package.label.xref.xreftables= X-Ref Tables
+anvizent.package.label.xref.xrefsources= X-ref Sources
+anvizent.package.label.merging= Merging
+anvizent.package.label.xrefilName= XRef IL Name
+anvizent.package.label.splitting= Splitting
+anvizent.package.label.xref.downloadtemplate= Download
+anvizent.package.label.xref.viewtablestructure=Table Structure
+anvizent.package.label.type=Type
+anvizent.package.label.sourceName=Source Name
+anvizent.package.label.xref.Condition=View Merge Condition
+anvizent.package.label.xReference=Cross Reference
+anvizent.package.label.xref.xrefbycondition=X-Ref By Condition
+anvizent.package.label.xref.xrefbyvalues=X-Ref By Values
+anvizent.package.label.modalHeader.resetschemas=Reset Schema's
+anvizent.package.label.mergeCondition=View Merge Condition
+anvizent.package.label.viewsplitttingCondition=View Split Condition
+anvizent.package.label.unMerge=Un Merge
+#button
+anvizent.package.button.createStandardPackage= Create Standard Package
+anvizent.package.button.createCustomPackage= Create Custom Package
+anvizent.package.button.yes= Yes
+anvizent.package.button.no= No
+anvizent.package.button.createNewConnection= Create New Connection
+anvizent.package.button.saveConnection= Save Connection
+anvizent.package.button.save= Save
+anvizent.package.button.save&Schedule= Save & Schedule
+anvizent.package.button.close= Close
+anvizent.package.button.deleteConnection= Delete Connection
+anvizent.package.button.editConnection=Edit Connection
+anvizent.package.button.updateConnection=Update Connection
+anvizent.package.label.modalHeader.deleteIlConnection= Delete IL Connection
+anvizent.package.message.deletePackage.alltheMappingsWithTheseConnectionWillBeDeleted= All the mappings with this connection will be deleted.
+anvizent.package.message.deletePackage.areYouSureYouWantToDeleteIlConnection= Are you sure, you want to delete the Connection?
+anvizent.package.message.deletePackage.areYouSureYouWantToEditSource= Are you sure, you want to edit the source?
+anvizent.package.standardPackage.NoModuleMapped= No module is mapped. Please select a module from below section.
+anvizent.package.standardPackage.ViewMappedModules= View Mapped Modules
+anvizent.package.message.updatePackage.areYouSureYouWantToUpdateConnection= Are you sure, you want to update this Connection?
+anvizent.package.message.deleteSource.areYouSureYouWantToResetSchemas=Are you sure, you want to reset schema selection?
+anvizent.package.button.reset=Reset
+#message
+anvizent.package.message.emptyStandardPackage= No Packages Found
+anvizent.package.message.deletePackage.areYouSureYouWantToDeletePackage= Are you sure, you want to Archive the Package?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteSource= Are you sure, you want to delete the Source?
+anvizent.package.message.deleteSource.areYouSureYouWantToUnMerge= Are you sure, you want to Un Merge?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteTargetTable= Are you sure, you want to delete the Target Table?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteTargetTableForScheduled= All Datasets associated with this package will be deleted and the Dashboards associated with this package may stop working. Are you sure you want to edit the package ?
+anvizent.package.message.deleteSource.areYouSureYouWantToDeleteDerivedTable= Are you sure, you want to delete the Derived Table?
+anvizent.package.message.modulesAreNotAssignedPleaseContactSuperAdmin= Modules are not assigned. Please contact Super Admin.
+anvizent.package.message.deletePackage.packagewillbedeactivated= Package will be deactivated. 
+anvizent.package.message.deletePackage.sourcesandtableswillnotbedeleted= You will be not able to delete the Sources and Tables associated with this package.
+anvizent.package.message.deletePackage.youwillnotbeableusethesamepackagenameagain= You will not be able use the same package name again.
+anvizent.package.message.targetTableDoesNotExist= Target table does not exist.
+anvizent.package.message.deleteSource.areYouSureYouWantToTruncateeUserTables= Are you sure, you want to truncate all selected tables?
+anvizent.package.message.areYouSureYouWantToDeleteThisIL = Are you sure, you want to delete this IL? 
+anvizent.package.message.areYouSureYouWantToDeleteThisDL = Are you sure, you want to delete this DL?
+anvizent.package.message.packageNameShouldContainAtleast3Characters = Package Name length should between $-?.
+anvizent.package.message.packageNameShouldNotBeEmpty = Package name should not be empty.
+anvizent.package.message.addAtLleastAnAlphanumericCharacter=Add at least an alphanumeric character.
+anvizent.package.message.specialCharactersandOnlyAllowed= Special characters  "_"  and  "-"  only allowed.
+anvizent.package.message.specialCharacterunderscoreonlyAllowed= Special character "_" only allowed.
+anvizent.package.message.invalidData=Invalid Data
+anvizent.package.message.defaultValueLengthIsExceeded=Default Value length is exceeded.
+anvizent.package.message.constantValueLengthIsExceeded=Constant Value length is exceeded.
+anvizent.package.message.pleaseSelectAtleastOneSchema=Please select at least one schema.
+anvizent.package.message.pleasechoosefromdate=Please choose from date.
+anvizent.package.message.pleasechoosetodate=Please choose to date.
+anvizent.package.message.pleasechooseloadinterval=Please choose load interval.
+anvizent.package.message.variblesnotfound=Either {fromDate} or  {toDate} are not found in IL Query.
+anvizent.package.message.datevariablenotfound={date} variable is not found in Il Query.
+anvizent.package.message.pleasechoosedatabasevariable=Please choose data base variable.
+anvizent.package.message.pleasechoosedatabasename=Please choose data base Name.
+anvizent.package.message.pleasechooseschemavariable=Please choose schema variable.
+anvizent.package.message.pleasechooseschemaname=Please choose schema Name.
+anvizent.package.message.pleaseselectdatabase=Please Select Data Base.
+anvizent.package.message.pleaseselectwebservice=Please Select Web Service.
+anvizent.message.error.text.connectorIdisShouldNotBeEmpty=Connector Id is should not be empty.
+anvizent.message.error.text.parameterIdisShouldNotBeEmpty=Id is should not be empty.
+anvizent.package.message.pleasechoosewebservice=Please choose web service.
+anvizent.package.message.text.areYouSureYouWantToUnscheduleThePackage=Are you sure, you want to UnSchedule the package?
+
+#accessDenied.jsp
+anvizent.package.label.accessDenied=Access Denied
+
+#addILSource.jsp
+anvizent.package.label.addilSource=Add IL Source 
+anvizent.package.label.moduleName=Module Name
+anvizent.package.label.inputLayout=Input Layout
+anvizent.package.link.viewSourceDetails=View Source Details
+#manish
+anvizent.package.link.runNow=RunNow
+anvizent.package.link.runwithScheduler=Run With Scheduler
+anvizent.package.link.viewResults=View Results
+
+anvizent.package.button.viewTableStructure=View Table Structure
+anvizent.package.label.template=Template
+anvizent.package.label.direct=Direct
+anvizent.package.button.testConnection=Test Connection
+anvizent.package.label.query=Query
+anvizent.package.label.storedProcedure=Stored Procedure
+anvizent.package.label.ispaginationrequired=Is Pagination Required
+anvizent.package.label.incrementalUpdate=Incremental Update
+anvizent.package.label.incrementalUpdateDetails=Incremental Update Details
+anvizent.package.label.historicalLoad=Historical load
+anvizent.package.label.storedProcedureName=Stored Procedure Name
+anvizent.package.button.addParameters=Add Parameters
+anvizent.package.label.name=Name
+anvizent.package.label.value=Value
+anvizent.package.button.preview=Preview
+anvizent.package.button.initiateBuildQuery=Initiate Build Query
+anvizent.package.button.buildQuery=Build Query
+anvizent.package.label.DownloadTemplate=Download Template
+anvizent.package.label.historicalload=Historical Load
+anvizent.package.label.fromdate=From Date
+anvizent.package.label.startdate=Start Date
+anvizent.package.label.todate=To Date
+anvizent.package.label.enddate=End Date
+anvizent.package.label.loadinterval=Load Interval
+anvizent.package.label.incremental=Incremental 
+anvizent.package.label.start=Start
+anvizent.package.label.replaceVariable=Replace Variable
+anvizent.package.label.databaseandschema=Database And Schema
+anvizent.package.label.selectdbvariable=Select DB Variable
+anvizent.package.label.selectdbname=Select DB Name
+anvizent.package.label.selectschemavariable=Select Schema Variable
+anvizent.package.label.selectschemaname=Select Schema Name
+
+anvizent.package.label.responseobjectname=Response Object Name :
+anvizent.package.label.defaultMapping=Default Mapping :
+anvizent.package.label.enterresponseobjectname=Enter Response Object Name
+anvizent.package.label.apiName=Name
+anvizent.package.label.enterAPIName=Enter API Name
+anvizent.package.label.url=URL:
+anvizent.package.label.enterUrl=Enter URL
+anvizent.package.label.isAuthenticationRequiredYes=Yes
+anvizent.package.label.authenticationUrl=Authentication URL
+anvizent.package.button.validAuthenticationURL=Validate Authentication URL
+anvizent.package.label.enterAuthenticationURL=Validate Authentication URL :
+anvizent.package.label.authenticationParametersfromURL=Authentication Parameters from URL :
+anvizent.package.label.key=Key
+anvizent.package.label.cookieRequired=Cookie Required :
+anvizent.package.label.methodType=Method Type 
+anvizent.package.label.get=GET
+anvizent.package.label.post=POST 
+anvizent.package.label.put=PUT
+anvizent.package.label.DELETE=DELETE
+anvizent.package.label.options=OPTIONS
+anvizent.package.label.headerDetails=Header Details :
+anvizent.package.label.rawHeader=Raw Header
+anvizent.package.label.rawHeaderExContentTypeApplicationjsonAuthorizationBasictoken=Raw Header Ex: Content-Type:Application/json,Authorization:basic token
+anvizent.package.label.pathParameters=Path Parameters :
+anvizent.package.label.enterKey=Enter Key
+anvizent.package.label.enterValue=Enter Value
+anvizent.package.label.EnterValue=Enter Value
+anvizent.package.label.requestBody=Request Body :
+anvizent.package.label.rawPayLoad=Raw Pay load 
+anvizent.package.label.RawExKeyValuekeyvalue=Raw Ex: {"key"="value","key"="value"} 
+anvizent.package.label.requsetparam=Request Params
+anvizent.package.label.responsetokenname=Token Name :
+anvizent.package.label.enterresponsetokenname=Enter Response Token Name
+anvizent.package.label.pleaseEnterTokenName=Please Enter Token Name.
+anvizent.package.label.responseColumnObjectName=Response Column Object Name
+anvizent.package.label.pleaseEnterResponseColumnObject=Please enter Response Column Object 
+anvizent.package.label.requestParameter=Request Parameter
+anvizent.package.label.bodyParameter=Body Parameter
+#Manish2
+anvizent.message.success.text.successfullyMadeTheConnection=Successfully made the {0} connection.
+anvizent.message.error.text.failedToConnectServer=Failed To Connect {0} Server.
+anvizent.message.error.text.unableToFetchILcoloumnsList=Unable to fetch Il columns list
+anvizent.message.error.text.tablesNotFoundFor=For {0} schema,Tables are not available.
+anvizent.message.error.text.unableToPrepareLoginUrl=Unable to prepare login URL
+anvizent.message.validation.text.alreadyRunning=Already Running.
+anvizent.message.success.text.runNowInitiated=Run Now Initiated.
+
+
+anvizent.package.label.yes=Yes
+anvizent.package.label.no=No
+anvizent.package.label.notePleaseMakeSureFileIsHavingHeaders=Note* : Please make sure file is having headers.
+anvizent.package.label.noteDateTimeFormat=Note* : Date Time Format
+anvizent.package.button.mapFileHeadersUpload=Map File Headers & Upload
+anvizent.package.button.mapFileHeadersUpdate=Map File Headers & Update
+anvizent.package.button.upload=Upload
+anvizent.package.label.noteSourceFileHeadersAndInputLayoutTableColumnsShouldHaveSamePositionalIdentity=Note* : Source file headers and Input Layout table columns should have same positional identity.
+anvizent.package.link.back=Back
+anvizent.package.label.mapFileHeadersUpload=Map File Headers & Upload
+anvizent.package.label.default=Default
+anvizent.package.label.constant=Constant
+anvizent.package.link.mapOneMoredL=Map one more DL
+anvizent.package.button.cancel=Cancel
+anvizent.package.button.ok=Ok
+
+#advanceAddILSource.jsp
+
+anvizent.package.label.dlName=DL Name
+anvizent.package.label.ilName=IL Name
+anvizent.package.button.xrefDetails=X-Ref Details
+anvizent.package.label.tunnel=Tunnel
+anvizent.package.labelTestConnection=Test Connection
+anvizent.package.button.validateQuerySP=Validate Query/SP
+anvizent.package.button.saveMapping=Save Mapping
+anvizent.package.button.updateMapping=Update Mapping
+
+#advancedPackage.jsp
+anvizent.package.label.xrefPackage=X-Ref Package
+anvizent.package.link.createxrefPackage=Create X-RefPackage
+anvizent.package.label.isProcessed=isProcessed
+anvizent.package.label.editView=Edit/View
+anvizent.package.link.done=Done
+anvizent.package.label.pending=Pending
+anvizent.package.label.targetTable=Target Table
+anvizent.package.label.tableName=Table Name
+anvizent.package.label.totalRecords=Total Records
+anvizent.package.label.processedRecords=Processed Records
+anvizent.package.label.failedRecords=Failed Records
+anvizent.package.label.derivedTables=Derived Table(s)
+
+#advancedStandardPackage.jsp
+anvizent.package.label.sourceMapping=Source Mapping
+anvizent.package.label.xRefData=X Ref Data
+anvizent.package.label.ilData=Il Data
+anvizent.package.button.xrefTable=Xref Table
+anvizent.package.button.ilTable=Il table
+anvizent.package.button.x=X
+anvizent.package.label.fileName=File Name
+anvizent.package.label.mapping=Mapping
+anvizent.package.button.splitSelectedRows=Split selected rows
+anvizent.package.button.addGroup=Add Group
+anvizent.package.button.add=ADD
+anvizent.package.button.removeGroup=Remove Group
+anvizent.package.label.conditionName=Condition Name
+anvizent.package.label.columnValues=Column Values
+anvizent.package.button.proceed=Proceed
+anvizent.package.label.mergingStatusof=Merging status of
+anvizent.package.label.conditions=Conditions:
+anvizent.package.label.addressCompanyName=Address1-Company_Name
+anvizent.package.label.noOfXRefInsertedRecords=No. of X-Ref Inserted Records:
+anvizent.package.label.noOfXRefUpdatedRecords=No. of X-Ref updated records:
+anvizent.package.label.noOfIlInsertedRecords=No. of IL inserted records:
+anvizent.package.label.noOfIlFailedRecords=No. of IL failed records:
+anvizent.package.label.addSource=Add Source
+anvizent.package.label.mappingInfo=Mapping Info
+
+#advancedStandardPackage-BeforeXrefPackage.jsp
+anvizent.package.label.advanced=Advanced
+anvizent.package.label.Parameters=Parameters
+
+#clientDLMapping.jsp
+anvizent.package.label.client=Client
+anvizent.package.label.selectAll=Select All
+anvizent.package.label.dlId=DL Id
+anvizent.package.label.lockUnLock=Lock/UnLock
+anvizent.package.label.locked=Locked
+anvizent.package.label.unLocked=UnLocked
+anvizent.package.label.source=Source
+anvizent.package.label.pleaseChooseAtLeastOneDL=Please choose at least one DL.
+
+#createContextParameter.jsp
+anvizent.package.label.paramName=Param Name
+anvizent.package.label.paramId=ParamId
+
+#createDL.jsp
+anvizent.package.label.enterDLName=Enter DL Name
+anvizent.package.label.enterTableName=Enter Table Name
+anvizent.package.label.description=Description
+anvizent.package.label.enterDLDescription=Enter DL Description
+anvizent.package.label.enterJobName=Enter Job Name
+anvizent.package.label.select=-------------------------------------------Select-------------------------------------------
+
+
+#createIL.jsp
+anvizent.package.label.ilNameDisplayName=IL Name : (Display Name)
+anvizent.package.label.enterILName=Enter IL Name
+anvizent.package.label.enterILDescription=Enter IL Description
+
+#customPackage.jsp
+anvizent.package.label.createPackage=Create Package
+anvizent.package.label.SelectPackage=--Select Package--
+anvizent.package.label.createPackageAsToCompleteThisActionSelectAnExistingPackage=Create Package As (To complete this action, select an existing package)
+anvizent.package.label.noteThisOptionWillCopyOnlySourcesFromTheSelectedPackage=This option will copy only sources from the selected package
+anvizent.package.label.createNewDataSetTables=Create New Data Set / Tables
+anvizent.package.label.allSourcesHavingSameSetOfHeaders=All Sources having same set of headers :
+anvizent.package.label.noteIfItIsSingleFileChooseOptionYes=Note* : If it is a single file , choose option Yes.
+anvizent.package.label.noteIfItIsASingleSourceChooseOptionYes=Note* : If it is a single source , choose option Yes.
+anvizent.package.button.viewQuery=View Query
+anvizent.package.button.proceedForMapping=Proceed For Mapping
+anvizent.package.label.length=Length
+anvizent.package.button.createTable=Create Table
+anvizent.package.label.tableCreation=Table Creation
+anvizent.package.label.primary=Primary
+anvizent.package.label.TargetTableIsAlreadyCreatedForThisPackageIfyouAddSourceAllMappingsWillBeDestroyed=Target Table is already created for this package. If you Add Source, all mappings will be destroyed.
+anvizent.package.label.areYouSureYouWantToAddSource=Are you sure, you want to Add Source?
+anvizent.package.label.nA=N/A
+anvizent.package.button.undo=Refresh
+
+#derivedTable.jsp
+anvizent.package.label.existingTablesFromCloudDerivedTables=Existing Tables from Cloud ( Derived Tables )
+anvizent.package.title.addToBelowTable=Add To Below Table
+anvizent.package.button.saveUpload=Save & Upload
+anvizent.package.label.source=Source
+
+#easyquerybuilder.jsp
+anvizent.package.label.queryBuilder=Query Builder
+anvizent.package.link.packageDetails=Package Details
+anvizent.package.label.resultTableWithColumns=Result Table With Columns
+anvizent.package.label.addTablesAndColumnsFromEntitiesAndAttributes=Add Tables and Columns from Entities And Attributes
+anvizent.package.label.joinTables=Join Tables
+anvizent.package.label.joinConditions=Join Conditions
+anvizent.package.button.enableQuery=Enable Query
+anvizent.package.button.disableQuery=Disable Query
+anvizent.package.label.schemas=Schemas:
+anvizent.package.label.selectSchema=------------ Select Schema ------------
+anvizent.package.link.ok=OK
+anvizent.package.button.validateQuery=Validate Query
+
+#ETLAdmin.jsp
+
+#fileSettings.jsp
+
+#home.jsp
+
+anvizent.package.label.userDetailsScreen=User details screen
+
+#iLDLMapping.jsp
+anvizent.package.label.selectDL=Select DL
+anvizent.package.label.dlMapped=DL Mapped
+anvizent.package.label.ilId=IL Id
+anvizent.package.button.submit=Submit
+
+#modifyXref.jsp
+anvizent.package.label.xRefKey=X- Ref Key
+anvizent.package.button.splitSelectedRows=Split selected rows
+anvizent.package.label.noSourceFileIsAdded=No Source file is added
+
+#package.jsp
+anvizent.package.label.no=No
+anvizent.package.link.completed=Completed
+anvizent.package.label.filterPackagesBy=Filter Packages By:
+anvizent.package.label.all=All
+anvizent.package.label.active=Active
+anvizent.package.label.Archived=Archived
+
+#queryBuilder.jsp
+anvizent.package.label.joins=Joins
+anvizent.package.label.innerJoin=INNER JOIN
+anvizent.package.label.leftOuterJoin=LEFT OUTER JOIN
+anvizent.package.label.rightOuterJoin=RIGHT OUTER JOIN
+anvizent.package.label.with=With
+anvizent.package.label.joinConditions=JOIN CONDITIONS
+anvizent.package.label.selectTable=Select Table
+anvizent.package.label.selectColumn=Select Column
+
+#schedule.jsp
+anvizent.package.label.schedule=Schedule
+anvizent.package.label.standard=Standard
+anvizent.package.label.custom=Custom
+anvizent.package.label.recurrence=Recurrence :
+anvizent.package.label.startTime=Start time :
+anvizent.package.label.endTime=End time :
+anvizent.package.label.range=Range :
+anvizent.package.link.reSchedule=Reschedule
+anvizent.package.link.unschedule=Unschedule
+anvizent.package.label.runNow=Run Now
+anvizent.package.label.runwithscheduler = Run With Scheduler
+anvizent.package.label.recurrencePattern=Recurrence Pattern
+anvizent.package.label.once=Once
+anvizent.package.label.hourly=Hourly
+anvizent.package.label.daily=Daily
+anvizent.package.label.weekly=Weekly
+anvizent.package.label.monthly=Monthly
+anvizent.package.label.yearly=Yearly
+anvizent.package.label.recurEvery=Recur every
+anvizent.package.label.weeksOn=week(s) on:
+anvizent.package.label.day=Day
+anvizent.package.label.every=Every
+anvizent.package.label.selecthours=Select Hours
+anvizent.package.label.hours=hour(s)
+anvizent.package.label.ofEvery=of every
+anvizent.package.label.months=month(s)
+anvizent.package.label.noteIfSelectedDayIsNotAvailableForAMonthLastDayOfThatMonthWillBeConsidered=Note* : If selected day is not available for a month, last day of that month will be considered.
+anvizent.package.label.years=year(s)
+anvizent.package.label.on=On:
+anvizent.package.label.scheduleTime=Schedule Time
+anvizent.package.label.rangeOfRecurrence=Range of Recurrence
+anvizent.package.label.noEndDate=No end date
+anvizent.package.label.endAfter=End after
+anvizent.package.label.occurrences=occurrences
+anvizent.package.label.endBy=End by :
+anvizent.package.label.MaxOccurences=MaxOccurences
+anvizent.package.label.ScheduleEndDate=ScheduleEndDate
+anvizent.package.label.schedulePackages=Schedule Packages
+anvizent.package.label.order=Order
+#manish
+anvizent.package.label.unschedule=UnSchedule
+anvizent.package.label.runOnlyIL=Run Only IL(s)
+anvizent.package.label.runOnlyModule=Run Only Module(s)
+anvizent.package.label.runBothIlandModule=Run both IL(s) and Module(s)
+anvizent.package.label.fetchFrom=Fetch From
+anvizent.package.label.jobRunType=Job Run Type
+anvizent.package.label.source=Source
+anvizent.package.label.advancedOptions=Advanced Options
+anvizent.package.label.clientScheduler=Client Scheduler
+anvizent.package.label.welcome=Welcome
+anvizent.package.label.executionStartDate=Execution Start Date
+anvizent.package.label.lastExecutionDate=Last Execution Date
+
+
+#standardPackage.jsp
+anvizent.package.label.mappedModulesDataSets=Mapped Modules / DataSets
+anvizent.package.label.modules=Modules
+anvizent.package.label.kPI=KPI
+anvizent.package.label.kPIs=KPIs
+anvizent.package.label.pathParams= Path Params:
+
+#tableBuilder.jsp
+anvizent.package.label.derivedTableBuilder=Derived Table Builder
+anvizent.package.label.select=Select
+anvizent.package.label.dimensionMeasure=Dimension/Measure
+anvizent.package.label.dimension=Dimension
+anvizent.package.label.measure=Measure
+anvizent.package.label.derivedTableName=Derived Table Name
+anvizent.package.label.valueType=Value Type
+anvizent.package.button.saveTable=Save Table
+anvizent.package.button.validate=Validate
+anvizent.package.button.validateandsave=Validate & Save
+anvizent.package.label.addCustomColumn=Add Custom Column
+anvizent.package.label.derived=Derived
+anvizent.package.label.aggregates=Aggregates
+anvizent.package.label.sum=Sum
+anvizent.package.label.min=Min
+anvizent.package.label.max=Max
+anvizent.package.label.avg=Avg
+anvizent.package.label.count=Count
+anvizent.package.label.operations=Operations
+anvizent.package.label.multiplication=Multiplication
+anvizent.package.label.addition=Addition
+anvizent.package.label.subtraction=Subtraction
+anvizent.package.label.division=Division
+anvizent.package.label.varchar=VARCHAR
+anvizent.package.label.int=INT
+anvizent.package.label.bigInt=BIGINT
+anvizent.package.label.float=FLOAT
+anvizent.package.label.bit=BIT
+anvizent.package.label.dateTime=DATETIME
+anvizent.package.label.date=DATE
+anvizent.package.button.createDerivedTable=Create Derived Table
+anvizent.package.label.noteColumnsonwhichaggregatesareapplicablewillappearinSelectColumnlist=Note: Columns on which aggregates are applicable will appear in Select Column list.
+anvizent.package.label.entitiesAndAtrributes= Entities and Attributes
+
+#userprofile.jsp
+anvizent.package.label.clientId=Client Id
+anvizent.package.label.roleId=Role Id
+anvizent.package.label.roleName=Role Name
+anvizent.package.label.version=Version
+anvizent.package.label.availableDatabases=Available Database(s)
+anvizent.package.label.databaseName=Database Name
+anvizent.package.label.drivername=Driver Name
+anvizent.package.label.protocal=Protocal 
+anvizent.package.label.urlformat=Url Format
+anvizent.package.label.connectorJar=Connector Jar
+
+
+#viewCustomPackageSource.jsp
+anvizent.package.label.delimeter=Delimeter :
+
+#viewILDL.jsp
+anvizent.package.label.viewIL=View IL
+anvizent.package.label.ViewDL=View DL
+anvizent.package.label.ilQuery=IL Query
+anvizent.package.label.saveQuery=Save Query
+anvizent.package.label.dlNameDisplayName=DL Name : (Display Name)
+anvizent.package.button.update=Update
+anvizent.package.label.deleteFile=Delete File
+anvizent.package.label.areYouSureYouWantToDeleteThisFile?=Are you sure, you want to delete this file?
+anvizent.package.label.webserviceName=Web Service Name
+anvizent.package.label.apiname=API Name
+anvizent.package.label.url=URL 
+
+#viewIlSource.jsp
+anvizent.package.label.typeOfcommand=Type of command 
+anvizent.package.label.noSourceIsAdded=No Sources found.
+
+#viewResults.jsp
+anvizent.package.label.searchResults=Search Results
+anvizent.package.label.jobStartDate=Job Start Date :
+anvizent.package.label.from=From
+anvizent.package.label.to=To
+anvizent.package.label.0errors=0 Error(s)
+#manish
+anvizent.package.label.failure=failure
+anvizent.package.label.success=success
+
+anvizent.package.link.errors=Error(s)
+anvizent.package.label.errorLog=Error Log
+anvizent.package.label.errorId=Error Id
+anvizent.package.label.errorCode=Error Code
+anvizent.package.label.errorType=Error Type
+anvizent.package.label.errorMessage=Error Message
+anvizent.package.label.errorSyntax=Error Syntax
+
+#xRefDetails.jsp
+anvizent.package.label.ilSourceDetails=IL Source Details
+anvizent.package.button.sequence=Sequence
+anvizent.package.label.conditionName=Condition Name
+anvizent.package.label.constraints=Constraints
+anvizent.package.label.sequence=Sequence
+anvizent.package.label.constraint=Constraint
+
+#xRefDetails2.jsp
+anvizent.package.label.ilColumnName=IL Column Name
+anvizent.package.label.SourceColumnName=Source column name
+anvizent.package.button.addCondition=Add Condition
+
+#xReferenceAddILSource.jsp
+anvizent.package.label.sourceDetails=Source Details
+
+#############################################
+# new props #
+############################################
+
+#advancedStandardPackage.jsp
+anvizent.package.label.sourceampMapping=Source & Mapping
+
+#advancedStandardPackage-BeforeXrefPackage.jsp
+anvizent.package.label.source=Source
+
+#clientDLMapping.js
+anvizent.package.label.thereisNoDlFor= There is No DL For
+anvizent.package.label.pleasechooseClientName= Please choose Client Name
+anvizent.package.label.PleasechooseDlNames= Please select DL Names
+anvizent.package.label.dependencyJars=Dependency Jars
+anvizent.package.label.dlDescription=Description
+
+#createContextParameter.js
+anvizent.package.label.paramNameShoudnotbeEmpty= Parameter Name should not be empty
+
+#createDL.js
+anvizent.package.label.dLCreatedSuccesfully= DL Created Successfully
+anvizent.package.label.pleaseEnterDLName= Please enter DL Name
+anvizent.package.label.pleaseEnterTableName= Please enter Table Name
+anvizent.package.label.pleaseEnterDLDescription= Please enter DL description
+anvizent.package.label.pleaseEnterJobName= Please enter Job Name
+anvizent.package.label.pleaseChooseFile= Please choose file
+anvizent.package.label.pleaseChooseEitherTxtorJarFile= Please choose either .txt or .jar file
+anvizent.package.label.pleasechooseContextParameters= Please choose Context Parameters
+
+#createIL.js
+anvizent.package.label.pleaseEnterILName= Please enter IL Name
+anvizent.package.label.pleaseEnterILDescription= Please enter IL description
+
+#customPackage.js
+anvizent.package.label.selectConnection= Select Connection
+anvizent.package.label.selectSchema= Select Schema
+anvizent.package.label.lengthShouldNotBeEmptyforVARCHARBIT= length should not be empty for VARCHAR, BIT
+anvizent.package.label.selectColumnsToProcess= Select columns to process
+anvizent.package.label.viewDetails= View Details
+anvizent.package.label.note= Note:
+anvizent.package.label.targetTableAlreadyCreatedForThisPackageIfyouDeletetheSourceallmappingswillbeDestroyed= Target Table already created for this package. If you delete the source, all mappings will be destroyed.
+anvizent.package.label.targetTableAlreadyCreatedForThisPackageIfyouEdittheSourceallmappingswillbeDestroyed= Target Table already created for this package. If you edit the source, all mappings will be destroyed.
+anvizent.package.label.sourceDeletedSuccessfully= Source deleted successfully
+anvizent.package.label.sourceDeletionFailed= Source deletion failed
+anvizent.package.label.pleaseMentionPortNumberAfterServerIPAddressSeperatedby= Please mention port number after server IP address separated by
+anvizent.package.label.pleaseSelectTheConnectionToCompleteTheProcess= Please select the connection to complete the process.
+anvizent.package.label.pleaseSelectFirstRowHasColumnNames= Please select First Row Has Column Names
+anvizent.package.label.pleaseFillRequiredFields= Please fill required fields
+anvizent.package.label.operationFailedPleaseTryAgain= Unable to process your request. Please Try Again.
+anvizent.package.label.delimeterShouldContainOnlyOneCharacter= Delimiter should contain only one character.
+anvizent.package.label.fileExtensionIsNotMatchingWithFileTypeSelected= File extension is not matching with file type selected.
+anvizent.package.label.pleaseEnterTargetTableName= Please enter target table name
+anvizent.package.label.tableNameShouldNotContainSpace= Table name should not contain space.
+anvizent.package.label.tableNameContainsIllegalSpecialCharacters= Table name contains illegal special character(s).
+anvizent.package.label.onlyUnderscoreIsAllowedInTableName= Only Underscore( _ ) is allowed in table name.
+anvizent.package.label.columNameShouldntBeEmpty= Column Name should not be empty
+anvizent.package.label.columnNameShouldNotContainSpace= Column name should not contain space.
+anvizent.package.label.columNameContainsIllegalSpecialCharacters= Column name contains illegal special character(s).
+anvizent.package.label.onlyUnderscoreIsAllowedInColumnName= Only Underscore( _ ) is allowed in Column name.
+anvizent.package.label.tableDoesNotExist= table does not exist
+anvizent.package.label.noRecordsAvailableInTable= No Records available in Table
+anvizent.package.label.shouldNotBeEmpty= should not be empty.
+anvizent.package.label.noRecordsAvailable= No Records available
+anvizent.package.label.pleaseSelectPrimaryFile= Please Select Primary File
+anvizent.package.label.pleaseSelectOnePrimaryFile= Please Select One Primary File
+anvizent.package.label.pleaseChooseaFile= Please Choose a File
+anvizent.package.label.thisFieldRequired= This field required
+anvizent.package.label.selectYesOrNo=Select Yes or No
+anvizent.package.label.connectionNameContainsIllegalSpecialCharacters = Connection name contains illegal special character(s).
+
+#derivedTable.js
+anvizent.package.label.derivedTable=Derived Table
+anvizent.package.label.selectExistingTables= Select Existing Tables
+anvizent.package.label.alreadyAdded= already added
+anvizent.package.label.pleaseSelectExistingTables= Please select Existing Table(s)
+
+#easyquerybuilder.js
+anvizent.package.label.search= Search
+anvizent.package.label.addColumns= Add Columns
+anvizent.package.label.add= Add
+anvizent.package.label.remove= Remove
+anvizent.package.label.aliasName= Alias Name
+anvizent.package.label.aggregation= Aggregation
+anvizent.package.label.createsDuplicateRow= Creates Duplicate Row
+anvizent.package.label.createsDuplicateColumn= Creates Duplicate Column
+anvizent.package.label.whereConditions= Where Conditions
+anvizent.package.label.addcustomColumn=Add Custom Column
+anvizent.package.label.newColumnName= New Column Name
+anvizent.package.label.customColumnFormula=Custom Column Formula
+anvizent.package.label.clauses= Clauses
+anvizent.package.label.inputValue= Input Value
+anvizent.package.label.clause= Clause
+anvizent.package.label.innerJoin= Inner Join
+anvizent.package.label.leftOuterJoin= Left Outer Join
+anvizent.package.label.rightOuterJoin= Right Outer Join
+anvizent.package.label.with= With
+anvizent.package.label.orderByColumnSorting= Order By ( Column Sorting )
+anvizent.package.label.orderBy= Order By
+anvizent.package.label.pleaseSelectTableToJoin= Please select table to join.
+anvizent.package.label.pleaseSelectJoinType= Please select join type.
+anvizent.package.label.selectClause= Select Clause
+anvizent.package.label.queryShouldNotBeEmpty= Query should not be empty.
+anvizent.package.label.connectionIsisEmpty= Connection does not exists.
+anvizent.package.label.clearSelection=Clear Selection
+
+#purge
+anvizent.package.label.purgeTables=Purge Tables
+anvizent.navLeftTabLink.label.purge=Purge
+
+#fileSettings.js
+anvizent.package.label.maxFIleSizeEmpty=File Max size should not be empty.
+anvizent.package.label.maxFIleSizeshouldnot= File Max size should not be 0.
+anvizent.package.label.allowsOnlyNumeric=Allows only Numeric
+
+#home.js
+
+#iLDLMapping.js
+anvizent.package.label.thereisNoIlFor=There is No IL For
+anvizent.package.label.pleaseChooseDlName=Please choose DL Name
+anvizent.package.label.pleaseChooseilNames=Please choose IL Names
+
+#modifyXref.js
+anvizent.package.label.startMapping=Start mapping
+anvizent.package.label.selectXRefKey=Select XRef Key
+anvizent.package.label.thisFieldIsRequired=This field is required
+
+#queryBuilder.js
+anvizent.package.label.lengthShouldNotBeEmptyFor=length should not be empty for
+anvizent.package.label.selectColumns=Select Columns
+
+#schedule.js
+anvizent.package.label.pleaseChooseAtLeastOneDay=Please choose at least one Day
+anvizent.package.label.pleaseChooseAnyOneOfRecurrencePattern=Please choose any one of Recurrence Pattern.
+anvizent.package.label.pleaseFillScheduleStartDate=Please Fill Schedule Start Date
+anvizent.package.label.pleaseFillScheduleEndDate=Please Fill schedule End Date
+anvizent.package.label.pleaseChooseAnyOneOfRangeOfRecurrence=Please choose any one of Range of Recurrence
+anvizent.package.label.pleaseChooseRunNowOrSchedule=Please choose RunNow or Schedule
+
+#standardPackage.js
+anvizent.package.label.selectFileColumn=Select file column
+anvizent.package.label.yyyyMMdd=yyyy-MM-dd
+anvizent.package.label.delimeterShouldBeOneCharacter=Delimiter should be one character.
+anvizent.package.label.fileMustHaveColumnNamesInFirstRow=File must have column names in first row.
+anvizent.package.label.pleaseChooseMandatoryField=Please choose mandatory field
+anvizent.package.label.notFoundInAuthorisationKeys=not found in authorization keys
+anvizent.package.label.pleaseEnterAPIName=Please enter API Name
+anvizent.package.label.pleaseEnterAPIURL=Please enter API URL
+anvizent.package.label.pleaseChooseIsAuthenticationRequired=Please Choose Is Authentication Required
+anvizent.package.label.pleaseEnterAuthenticationURL=Please enter Authentication URL
+anvizent.package.label.pleaseEnterResponseObject=Please enter Response Object
+anvizent.package.label.pleaseEnterapiName=Please enter ApiName
+anvizent.package.label.pleaseChooseCookieRequired=Please Choose Cookie Required
+anvizent.package.label.pleaseEnterAuthenticationDetails=Please Enter Authentication Details
+anvizent.package.label.pleaseChooseMethodType=Please Choose Method Type
+anvizent.package.label.pleaseChoosemethodTypeAuthSelection=Please Choose Method Type Selection.
+anvizent.package.label.pleaseEnterKeyvalueForAuthentication=Please enter keys and values for Authentication.
+anvizent.package.label.pleaseEnterHeaderDetails=Please enter header details.
+
+#tableBuilder.js
+anvizent.package.label.forCustomFormulaEgColumn= Custom formula applicable for only integral type columns ( Allowed symbols : +, -, *, /, % )  Ex: Column1 * Column2
+anvizent.package.label.setDefaultValueforaColumn=Set Constant value for a Column
+anvizent.package.label.pleaseEnterColumnName=Please enter column name
+anvizent.package.label.pleaseSelectValueType=Please select value type
+anvizent.package.label.pleaseEnterValue=Please enter value
+anvizent.package.label.pleaseSelectValues=Please Select Values
+anvizent.package.label.duplicateColumnName=Duplicate Column Name
+anvizent.package.label.selectAtleastOneColumnFromTargetTable=Select at least one column from Target Table.
+anvizent.package.label.successfullyValidated=Successfully Validated
+anvizent.package.label.errorWhileValidatingSelectedColumns=Error while validating selected columns
+anvizent.package.label.unableToProcessYourRequest=Unable to process your request
+anvizent.package.label.pleaseSelectClient=Please select Client
+anvizent.message.error.text.errorWhileSavingClientVerticalMapping=Error while saving client vertical mapping.
+anvizent.message.error.text.errorWhileTestingConnection=Error while testing connection
+anvizent.package.label.pleaseEnterTableName=Please enter table name
+anvizent.package.label.errorOcucredPleaseTryAgain=Error Occurred, Please try again
+anvizent.package.label.tableCreated=Table Created
+anvizent.package.label.Selected=Selected
+anvizent.package.label.pleaseEnterValidColumnLength=Please enter valid column length
+
+#viewCustomPackageSource.js
+#viewILDL.js
+anvizent.package.label.selectIL=Select IL
+anvizent.package.label.selectDL=Select DL
+anvizent.package.label.pleaseChooseIL=Please choose IL
+anvizent.package.label.pleaseChooseDL=Please choose DL
+anvizent.package.label.paramName=Param Name
+anvizent.package.label.paramValue=Param Value
+anvizent.package.label.pleaseEnterILQuery=Please enter IL Query
+anvizent.package.label.querySaved=Query Saved.
+anvizent.package.label.iLIsupdated=IL is updated
+anvizent.package.label.dLIsUpdated=DL is updated
+
+#viewIlSource.js
+#viewResults.js
+#xRefDetails.js
+anvizent.package.label.pleaseSelectColumnName=Please select column name
+anvizent.package.label.conditionPairAlreadyExistInThisGroup=condition pair already exist in this group
+anvizent.package.label.conditionNameShouldNotBeEmpty=Condition name should not be empty
+anvizent.package.label.conditionGroupsNotFound=Condition Groups not found
+anvizent.package.label.newRecordsInXReferenceTable=New records in X-Reference table
+anvizent.package.label.newRecordsInILTable=New records in IL table
+anvizent.package.label.updatedRecordsInXReferenceTable=Updated records in X-Reference table
+anvizent.package.label.success=Success
+
+#xRefDetails2.js
+anvizent.package.label.xRef=Cross-Reference record
+
+#xreferenceIl.js
+anvizent.package.label.loading=Loading...
+
+#common.js
+anvizent.package.label.unableToConnectPleaseVerifyNetwork=Unable to connect. Please verify network.
+anvizent.package.label.internalServerErrorPleaseContactSystemAdministrator=Internal Server Error. Please contact System administrator
+anvizent.package.label.requestedJSONParseFailed=Requested JSON parse failed.
+anvizent.package.label.ajaxRequestAborted=Ajax request aborted.
+anvizent.package.label.uncaughtError=Uncaught Error.
+anvizent.package.label.unselectAll=Unselect All
+anvizent.package.label.pleaseChooseTables=Please Choose Table(s)
+anvizent.package.label.package=Package
+anvizent.package.label.isDeleted=is archived.
+anvizent.package.label.pleaseSelectAtleastOneTable=Please select at least One Table
+anvizent.package.label.errorlog=Error Logs
+anvizent.package.label.errorCode=Error Code
+anvizent.package.label.errorBody=Error Body
+anvizent.package.label.errorDatetime = Error Date & Time
+anvizent.package.label.errorMessage=Error Message
+anvizent.package.label.requestedService=Requested Service
+anvizent.package.label.receivedParameters=Request Parameters
+anvizent.package.label.from=From
+anvizent.package.label.to=To
+anvizent.package.label.submit=Submit
+anvizent.package.label.userId=User Id
+anvizent.package.label.clientDetails=Client Details 
+
+anvizent.package.label.search=Search
+anvizent.package.label.clear=Clear
+anvizent.package.label.searchErrorLog=Search Error Log
+anvizent.package.label.tableNameShouldNotContainILsandDLsNames = Table Name Should not Contain IL and DL Names
+anvizent.navLeftTabLink.label.template=Templates
+anvizent.package.label.ilID=IL ID
+anvizent.package.label.fielName=File Name
+anvizent.package.label.xrefFileName=X ref File Name
+anvizent.package.label.uploadFile=Upload File
+anvizent.package.label.ilTemplate=IL Template
+anvizent.package.label.xrefTemplate=X-REF Template
+anvizent.package.label.sameAsIl=Same As IL
+anvizent.package.label.pleaseChooseCSVFile=Please choose a csv file.
+anvizent.package.label.downloadILFile=Download IL Template
+anvizent.package.label.downloadXrefFile=Download Xref Template
+
+#S3AuditLog.jsp
+anvizent.package.label.s3AuditLogs=S3 Audit Logs
+anvizent.package.label.s3AuditLogsForClient=S3 Audit Logs For Client
+anvizent.package.label.s3AuditLogsForUser=S3 Audit Logs For User
+anvizent.package.label.s3AuditLogsForPackage=S3 Audit Logs For Package
+anvizent.package.label.uploadedFilesSize=Uploaded Files Size
+anvizent.package.label.noOfUsers=No. Of Users
+anvizent.package.label.noOfPackages=No. Of Packages
+anvizent.package.label.uploadedOn=Uploaded On
+anvizent.package.label.enterWebServiceName=Please Enter Web Service Name
+anvizent.package.button.edit=EDIT
+anvizent.package.button.delete=DELETE
+
+#webServiceClientMapping
+
+anvizent.package.label.clientId=Client Id
+anvizent.package.label.clientName=Client Name
+anvizent.package.label.pleasechoosewebservice= Please choose web service
+anvizent.package.label.pleasechooseclients=Please select the clients
+
+## cross reference
+anvizent.package.label.automerge= Auto Merge
+anvizent.package.label.merge= Merge
+anvizent.package.label.bulkmerge= Bulk Merge
+anvizent.package.label.split= Split
+anvizent.package.label.selectDimension=Select Dimension
+anvizent.package.label.xReferenceType=Cross Reference Type
+anvizent.package.label.dataSource=Data Source Name
+anvizent.package.label.values=Values
+anvizent.package.label.getRecords=Get Records
+anvizent.package.label.splitSelectedRecords=Split selected Records
+anvizent.package.label.pleaseSelectIl=Please select Il
+anvizent.package.label.pleaseSelectAtLeastOneRecordForSplit=Please select at least one record for split
+anvizent.package.label.pleaseSelectMoreThanOneRecordForMerge=Please select more than one record for merge
+anvizent.package.label.pleaseSelectAtLeastOneRecordForMerge=Please select at least one record for merge
+anvizent.package.label.pleaseEnterXRefValue=Please enter X-Ref value
+
+anvizent.package.label.pleasechooseDl= Please choose Dl
+anvizent.package.label.pleasechooseKpi=Please choose Kpi
+
+#defaultQueries
+anvizent.admin.label.defaultQueries=Default Queries
+anvizent.package.label.connectorName=Connector Name
+anvizent.package.label.incrementalUpdateQuery=Incremental Update Query
+anvizent.package.label.isactive=Active
+anvizent.package.label.mappingId=Mapping Id
+anvizent.package.label.ilIncrementalupdate=Incremental Update
+anvizent.package.label.historicalLoad=Historical Load
+anvizent.package.label.databaseTypeId=DatabaseType Id
+anvizent.package.label.connector=Connector
+anvizent.package.label.pleaseSelectConnectorType=Please select connector.
+anvizent.package.label.ilPreBuildQueries=IL PreBuild Queries
+anvizent.package.label.maxDateQuery=Max Date Query
+
+#database.jsp
+anvizent.package.label.databaseConnector=Database Connector
+anvizent.package.label.pleaseEnterDatabaseName=Please Enter Database Name
+anvizent.package.label.pleaseEnterDatabaseDriverName=Please Enter Database Driver Name
+anvizent.package.label.pleaseEnterDatabaseProtocal=Please Enter Database Protocal
+anvizent.package.label.pleaseEnterDatabaseUrlFormat=Please Enter Database Url Format
+anvizent.package.label.PleaseChooseActiveStatus=Please Choose Active Status
+anvizent.package.label.pleaseEnterConnectorName=Please Enter Connector Name
+anvizent.package.label.pleaseChooseDatabase=Please choose database
+
+anvizent.package.label.pleaseEnterParameterName=Please Enter Parameter Name
+anvizent.package.label.pleaseEnterParameterValue=Please Enter Parameter Value
+anvizent.package.label.pleaseEnterParameterDescription=Please Enter Parameter Description
+
+#connector.jsp
+anvizent.package.label.id=Id
+anvizent.package.label.connector=Connector
+
+#vertical.jsp
+anvizent.package.label.vertical=Vertical
+anvizent.package.label.create=Create
+anvizent.package.label.createVertical=Create Vertical
+anvizent.package.label.editVertical=Edit Vertical
+anvizent.package.label.deleteVertical=Delete Vertical
+anvizent.package.label.verticalName=Vertical Name
+anvizent.package.label.enterVerticalName=Enter Vertical Name
+anvizent.package.label.verticalDescription=Vertical Description
+anvizent.package.label.enterVerticalDescription=Enter Vertical Description
+anvizent.package.label.createNewVertical=Create New Vertical
+anvizent.package.label.activeStatus=Active Status
+anvizent.package.label.updateVertical=Update Vertical
+anvizent.package.message.areYouSureYouWantToDeleteThisVertical=Are you sure, you want to delete this vertical?
+anvizent.package.label.pleaseEnterVerticalName=Please enter vertical name.
+anvizent.package.label.pleaseEnterVerticalDescription=Please enter vertical description.
+
+#kpi.jsp
+anvizent.package.label.createKpi=Create Kpi
+anvizent.package.label.editKpi=Edit Kpi
+anvizent.package.label.kpiName=Kpi Name
+anvizent.package.label.kpiDescription=Kpi Description
+anvizent.package.label.enterKpiName=Enter Kpi Name
+anvizent.package.label.enterKpiDescription=Enter Kpi Description
+anvizent.package.label.createNewKpi=Create New Kpi
+anvizent.package.label.updateKpi=Update Kpi
+anvizent.package.label.pleaseEnterKpiName=Please enter kpi name
+anvizent.package.label.pleaseEnterKpiDescription=Please enter kpi description
+
+#clientVerticalMapping.jsp
+anvizent.package.label.clientVerticalMapping=Client Vertical Mapping
+anvizent.package.label.selectClient=Select Client
+anvizent.package.label.verticals=Verticals
+anvizent.package.label.selectVerticals=Select Verticals
+anvizent.package.label.pleaseChooseAtLeastOneVertical=Please choose at least one vertical
+
+#clientDatabaseMapping.jsp
+anvizent.package.label.selectDatabase=Select Database
+anvizent.package.label.clientDatabaseMapping=Client Database Mapping
+anvizent.package.label.databases=Databases
+anvizent.package.label.selectDatabases=Please select Databases
+anvizent.package.label.pleaseChooseAtLeastOneDatabse=Please choose at least one database
+anvizent.package.label.databaseClientMapping=Database Client Mapping
+anvizent.package.label.clients=Clients
+anvizent.package.label.selectClients=Select Clients
+anvizent.package.label.pleaseChooseAtLeastOneClient=Please choose at least one client 
+
+#clientConnectorMapping.jsp
+anvizent.package.label.clientConnectorMapping=Client Connector Mapping
+anvizent.package.label.connectors=Connectors
+anvizent.package.label.connections=Connections
+anvizent.package.label.selectConnectors=Please select Connectors
+anvizent.package.label.pleaseChooseAtLeastOneConnector=Please choose at least one Connector 
+
+#iLInfo.jsp
+anvizent.package.label.iLInfo=IL Info
+anvizent.package.label.iLType=IL Type
+anvizent.package.label.iLDetails=IL Details
+anvizent.package.label.iLDescription=IL Description
+anvizent.package.label.iLTableName=IL Table Name
+anvizent.package.label.xrefILTableName=Xref IL Table Name
+anvizent.package.label.purgeScript=Purge Script
+anvizent.package.label.contextParameters=Context Parameter
+anvizent.package.label.transaction=Transaction
+anvizent.package.label.jobFile=Job File
+anvizent.package.label.pleaseEnterILTableName=Please enter IL table name.
+anvizent.package.label.pleaseEnterXrefILTableName=Please enter xref IL table name.
+anvizent.package.label.pleaseEnterPurgeScript=Please enter purge script.
+anvizent.package.label.xrefTableNotAllowedForILType=Xref table not allowed for IL type.
+anvizent.package.label.jobFileName=Job File Name
+anvizent.package.label.pleaseAddAtLeastOneJobFile=Please add at least one job file.
+anvizent.package.label.pleaseChooseJarFile= Please choose .jar file.
+anvizent.package.label.duplicateJobFiles=Duplicate job files.
+
+#clientSpecificIL.jsp
+anvizent.package.label.clientSpecificIL=Client Specific IL
+anvizent.package.label.iL=IL
+anvizent.package.label.sameAsDefaultJobPleaseChangeTheJob=Same as default job, Please change the job name ?
+anvizent.package.label.sameAsDefaultJobJarFilesChangeTheJarFiles=Same as default jar files, Please change the jar file name ?
+anvizent.package.label.defaultJobName=Default Job Name
+anvizent.package.label.defaultJarFileNames=Default Jar File Names
+anvizent.package.label.useDefault=Use Default
+anvizent.package.label.currentClientSpecificJobName=Current Client Specific Job Name
+anvizent.package.label.currentClientSpecificJarFileNames=Current Client Specific Jar File Names
+anvizent.package.label.clientSpecificJobName=Client Specific Job Name
+anvizent.package.label.clientSpecificJarFileNames=Client Specific Jar File Names
+anvizent.package.label.clientSpecificJarFiles=Client Specific Jar Files
+anvizent.package.label.currentClientSpecificJarFiles=Current Client Specific Jar Files Names
+anvizent.package.label.pleaseEnterJobVersion=Please enter job version
+
+#clientSpecificDL.jsp
+anvizent.package.label.clientSpecificDL=Client Specific DL
+anvizent.package.label.dL=DL
+
+#allMappingInfo.jsp
+anvizent.package.label.allMappingInfo=All Mapping Info
+anvizent.package.label.assignMore=Assign More
+anvizent.package.label.assign=Assign
+anvizent.package.label.numberOfVerticals=Number of Verticals
+anvizent.package.label.numberOfTableScripts=Number of Table Scripts
+anvizent.package.label.numberOfDatabases=Number of Databases
+anvizent.package.label.numberOfConnectors=number of Connectors
+anvizent.package.label.numberOfDLs=Number of DLs
+anvizent.package.label.commonMappings=Common Mappings
+anvizent.package.label.numberOfWebSerices=Number of Web Services
+
+#commonJob.jsp
+anvizent.package.label.commonJob=Common Jobs
+anvizent.package.label.jobType=Job Type
+anvizent.package.label.jobFileName=Job File Name
+anvizent.package.label.selectJobType=Select Job Type
+anvizent.package.label.jobFile=Job File
+
+#dashBoardLayoutMaster.jsp
+anvizent.package.label.ils=Ils
+anvizent.package.label.kpis=Kpis
+anvizent.package.label.contextparameters=Context Params
+anvizent.package.label.active = Active
+anvizent.package.label.existingfiles=Existing Files 
+
+#clientTableScriptExecution.jsp
+anvizent.package.label.scripttype = Script Type
+anvizent.package.label.scriptname = Script Name
+anvizent.package.label.sqlscript  = Script  
+anvizent.package.label.executionstatus = Status
+anvizent.package.label.executescripts = Execute
+anvizent.package.label.pleasechoosetablescripts=Please choose table scripts.
+anvizent.package.label.pleasechooseatleastonependingscript = Please choose at least one pending script. 
+anvizent.package.label.pleasechooseclientid = Please choose client Id.
+anvizent.package.label.createdDate=Created Date
+anvizent.package.label.modifiedDate=Modified Date
+anvizent.package.label.executedDate=Execution Date
+
+#clientTableScriptsMapping.jsp
+anvizent.package.label.pleasechoosepriority=Please choose priority.
+anvizent.package.label.pleasedontusesamepriority=Please do not use same priorities.
+anvizent.package.label.executionorder=Execution Order
+anvizent.package.label.scriptid=Script Id
+anvizent.package.label.savemapping=Save Mapping
+anvizent.package.label.youarenotmappedanyscriptpleaseaddtablescriptforyourclient=You are not mapped any script.Please add Table Script for your client.
+anvizent.package.label.pleasechooseatleastonenotmappedscript = Please choose at least one not mapped script.
+
+#clientTableScripts.jsp
+anvizent.package.label.targetschema=Target Schema
+anvizent.package.label.pleasechoosescriptname=Please enter script name.
+anvizent.package.label.pleasechoosesqlscript=Please enter sql script.
+anvizent.package.label.pleasechoosescripttype=Please choose script type.
+anvizent.package.label.noqueryfound=No query found.
+anvizent.package.label.clientId=Client Id
+anvizent.package.label.pleasechoosetargetschema=Please choose target schema.
+anvizent.package.label.PleaseChoosedescription=Please enter description.
+anvizent.package.label.pleaseEnterVersion=Please enter version.
+anvizent.package.message.specialCharacters_and-and.AreOnlyAllowed=Special characters "_", "-" and "." are only allowed.
+
+#dashboardLayoutmaster
+anvizent.package.label.dlmaster=DL Master
+anvizent.package.label.pleasechooseils=Please Choose Ils.
+anvizent.package.label.pleasechoosekpis=Please Choose Kpis.
+anvizent.package.label.pleasechooseparameters=Please Choose Context parameters.
+anvizent.package.label.pleasechooseverticalname=Please choose vertical name.
+anvizent.package.label.dLInfo=DL Info
+
+#webServiceMapping
+anvizent.package.label.clientWebServiceMapping=Client Web Service Mapping
+anvizent.package.label.pleaseChooseAtLeastOneWebservice=please choose at least one web-service
+anvizent.package.label.noOfApis=No. Of APIs
+anvizent.package.label.addEditView=Add / Edit / View
+anvizent.package.label.webServiceTemplateName=Web Service Template Name
+anvizent.package.label.webServiceApiDetails=Web Service API Details
+anvizent.package.label.webServiceApi=Web Service API
+anvizent.package.label.deleteWebServiceILMapping=Delete Web service - IL mapping
+anvizent.package.label.areYouSure,YouWantToDeleteThisWebServiceILMapping=Are you sure, you want to delete this Web service - IL mapping?
+anvizent.package.label.manual=Manual
+anvizent.package.label.subUrl=Sub URL
+anvizent.package.label.pathParamsDetails=Path Param Details
+anvizent.package.label.getPathParams=Get Path Params
+
+anvizent.package.label.specialcharactersnotallowedexceptunderscoredigitsandalphabets=Special characters are not allowed except underscore, digits, spaces and alphabets.
+anvizent.message.label.unableToCheckQuerySyntax=Unable to check query syntax.
+anvizent.message.label.errorOccurredWhileCreatingTable=Error occurred while creating table.
+anvizent.message.label.filesarenothavingsamecolumns=Added sources are not having selected columns.Please check.
+anvizent.message.label.fileUploadingFailed=File uploading failed.
+anvizent.message.label.errorWhileGettingTableDetails=Error while getting table details
+anvizent.message.label.unableToGetSchemaRelatedTables=Unable to get schema related tables
+anvizent.message.label.unableToGetTableRelatedColumns=Unable to get table related columns
+anvizent.message.label.errorWhileGettingTableRelatedColumns=Error while getting table related columns
+anvizent.message.label.QueryShouldNoBeEmptyPleaseCheckTheSourceQueries=Query should not be empty. Please check the source queries
+anvizent.message.label.schemaNotFound=Schema not found
+anvizent.message.label.errorWhileGettingSchema=Error while getting schema Info
+anvizent.package.label.errorWhileGettingCustTempTablesDataFromRestService=Error while getting the custom temporary tables data from the rest service
+anvizent.message.label.errorWhileGettingTableStructure=Error while getting table structure
+anvizent.message.label.unableToGetXrefTableDetails=Unable to get xref table details
+anvizent.message.label.errorWhileGettingXrefTableDetails=Error while getting Xref table details
+anvizent.message.label.unableToGetDetails=Unable to get details
+anvizent.package.label.specialcharactersnotallowedexceptunderscoredigitsdotsandalphabets=Special characters are not allowed except underscore(_), digits,dots(.) and alphabets.
+anvizent.message.error.text.clientNameShouldNotbeEmpty=Client name should not be empty
+anvizent.message.label.dliShouldNotbeEmpty=DL is should not be empty.
+anvizent.message.label.failedToUploadJarFiles=Failed to upload jar files
+anvizent.message.error.text.errorWhileSavingClientSpecificDLInfo=Error while saving client specific DL Info.
+anvizent.message.error.text.databaseIdisShouldNotbeEmpty=Database Id is should not be empty.
+anvizent.message.error.text.errorWhileSavingClientSpecificILInfo=Error while saving client specific IL info.
+
+
+anvizent.package.label.find=Find
+anvizent.package.label.replaceWith=Replace with
+anvizent.package.label.pleaseEnterVariable=Please enter variable name ?
+anvizent.package.label.areyousureyouwanttoReplaceAll=Are you sure, you want to replace all?
+
+
+#historicalLoad
+anvizent.package.label.queryScript=Query Script
+anvizent.package.label.runstatus = Run Status
+anvizent.package.label.run=Run
+anvizent.package.label.interval=Interval
+anvizent.package.label.historicalquery=Historical Query
+anvizent.package.label.pleasechooseilid=Please choose Il.
+anvizent.package.label.pleasechooseconnectorid=Please select connector id.
+anvizent.package.label.pleasechoosehistoricalfromdate=Please select historical from date.
+anvizent.package.label.pleasechoosehistoricaltodate=Please select historical to date.
+anvizent.package.label.pleasechooseloadinterval=Please select load interval.
+anvizent.package.label.pleasechoosehistoricalqueryscript=Please select historical query script.
+anvizent.package.label.runJobs=Run Jobs
+anvizent.package.label.terminate=Terminate
+anvizent.package.label.lastUpdatedDate=Last updated date
+anvizent.package.label.noOfRecords=No of records 
+anvizent.package.label.fileSize=File Size
+anvizent.package.label.select=Select
+anvizent.package.label.days=Days
+anvizent.package.label.historyLoadStatus=History load status
+anvizent.package.label.sourceRowsCount=Row count at DB Source ?
+anvizent.package.label.iLExecutionStatus=IL Execution Status
+anvizent.package.label.comment=Comment
+anvizent.package.label.historyLoadAlreadyStopped=HistoricalLoad already stopped
+anvizent.package.label.historyLoadIsNotRunning=HistoricalLoad is not running
+anvizent.package.label.historyLoadSuccessfullyTerminated=HistoricalLoad successfully terminated
+anvizent.package.label.initiattedSuccessfully=Initiated successfully
+anvizent.package.label.historyLoadAlreadyCompleted=HistoricalLoad already completed
+anvizent.package.label.noDataFound=No Data Found
+anvizent.package.label.mergeSelectedRecords=Merge selected Records
+
+#defaultMappingConfiguration
+anvizent.package.label.defaultMappingConfiguration=Default Mapping Configuration 
+anvizent.package.label.dls=DLs
+anvizent.package.label.tableScripts=Table Scripts
+anvizent.package.label.pleaseChooseAtLeastOneTableScript=Please select at least one TableScript
+anvizent.package.label.pleaseChooseAtLeastOneDL=Please select at least one DL
+anvizent.package.label.pleaseChooseAtLeastOneConnector=Please select at least one connector
+anvizent.package.label.pleaseChooseAtLeastOneVertical=Please select at least one vertical
+anvizent.package.label.decimal=DECIMAL
+anvizent.package.label.trialTemplate=Trial Template
+anvizent.package.label.generalSettings=General Settings
+anvizent.package.label.webService=Web Service
+anvizent.package.label.pleaseEnterTemplateName=Please enter template name
+anvizent.package.label.templateId=Template Id
+anvizent.package.label.templateName=Template Name
+anvizent.package.label.currencyMapping=Currency Mapping
+anvizent.package.label.clientS3Bucket=Client S3 Bucket
+anvizent.package.label.schedulerMasterClientMapping=Scheduler Master Client
+anvizent.package.label.fileMultiPart=File MultiPart
+anvizent.package.label.pleaseChooseBucket=Please choose Bucket
+anvizent.package.label.pleaseChooseSchedulerMasterClient=Please choose Scheduler Master Client
+anvizent.package.label.pleaseChooseFileMultiPart=Please choose File MultiPart
+
+
+
+#clientTableScriptExecution
+anvizent.package.label.execution=Execute
+anvizent.package.label.instantScriptExecution=Instant Script Execution
+anvizent.package.label.showPreviousExecutedScripts=Previous Executed Scripts
+anvizent.package.label.ScriptDescription=Script Description
+anvizent.package.label.ExecutionStatusMessage=Status Message
+anvizent.package.label.errorMessage=Error Message
+anvizent.package.label.createdBy=Created By
+anvizent.package.label.executedBy=Executed By
+
+anvizent.package.message.editdetailswouldnotbepossiblepleaseverifythedetailsbeforeproceding=Edit details would not be possible.Please verify the details before proceeding !
+anvizent.package.message.sslauthenticationdisable=SSL Authentication disable ! ( data transmit over un secured layer ).
+anvizent.package.message.deletePackage.doyouwanttocontinuesavewebservice=Do you want to continue save web service connection?
+anvizent.package.message.deletePackage.doyouwanttocontinue=Do you want to continue ?
+anvizent.package.label.requestParameters=Request Parameters
+anvizent.package.label.requestBodyParameters=Request Body Parameters
+#webService Authentication
+anvizent.package.label.calBackUrl=Call Back URL
+anvizent.package.label.tokenName=Token Name
+anvizent.package.label.accessTokenUrl=Access Token URL
+anvizent.package.label.clientSecret=Client Secret
+anvizent.package.label.scope=Scope
+anvizent.package.label.state=State
+anvizent.package.label.grantType=Grant Type
+anvizent.package.label.isMandatory=isMandatory
+anvizent.package.label.selectWebservice=Select WebService
+anvizent.package.label.authenticationType=Authentication Type 
+anvizent.package.label.sslDisable=SSL Disable
+anvizent.package.label.WebserviceType=Web Service Type
+anvizent.package.label.soapBodyElement=Soap Body Element
+anvizent.package.label.PaginationSoapBody= PaginationSoapBody
+anvizent.package.label.selecAuthentication=Select Authentication
+anvizent.package.label.authorizationCode=Authorization Code
+anvizent.package.label.clientCredentials=Client Credentials
+anvizent.package.label.pleaseEnterWebServiceName=Please enter web service template name
+anvizent.package.label.enterAuthenticationUrl=Enter authentication url
+anvizent.package.label.enterAccessTokenUrl=Enter access token url
+anvizent.package.label.enterCallBackUrl=Enter call back url
+anvizent.package.label.enterGrantType=Please enter the grant Type
+anvizent.package.label.enterReqparams=Please enter request params
+anvizent.package.label.isPassword=isPassword
+anvizent.package.label.webServiceTemplate=Web Service Template
+anvizent.package.label.requestparamsToApi=Request parameters
+anvizent.package.label.bodyparamsToApi=Body parameters
+anvizent.package.label.requestHeadersToApi=Request headers
+anvizent.package.label.enterHeaderDetails=Enter header details
+anvizent.package.label.requestHeaders=Request headers
+anvizent.package.label.duplicateName=duplicate name
+anvizent.package.label.methodtype=Method Type 
+anvizent.package.label.dateFormat=Date Format
+anvizent.package.label.pleaseChooseDateformat=Please choose date format
+anvizent.package.label.selectDateFormat=Select Date Format
+anvizent.package.label.selectGrantType=Select grant type
+
+#defaultMappingInfo.jsp
+anvizent.package.label.defaultMappingInformation=Default Mapping Information
+anvizent.package.label.template=Template
+anvizent.package.label.selectTemplate=Select Template
+anvizent.package.label.saveDefaultMappings=Save Default Mappings
+anvizent.package.label.skip=Skip
+anvizent.package.label.dashboardLayouts=Dashboard Layouts
+anvizent.package.label.webServices=Web Services		  
+
+anvizent.package.label.enterWebserviceNames=Enter webService template name
+ 
+ 
+#standard package web service
+
+anvizent.package.label.viewAuthenticationDetails=View Authentication Details
+anvizent.package.label.authenticationMethodType=Authentication Method Type
+anvizent.package.label.callbackUrl=Callback URL
+anvizent.package.label.clientIdentifier=Client Identifier 
+anvizent.package.label.params=Params
+ 
+anvizent.package.label.requiredApiRequestParames=Required API Request Params
+anvizent.package.label.requiredApiBodyParames=Required API Body Params
+anvizent.package.label.requiredApiHeaderParams=Required API Header Params
+anvizent.package.label.addNewApi=Add New API
+anvizent.package.label.apiDetails=API Details
+anvizent.package.label.webServiceConfirmation=Web Service Confirmation
+anvizent.package.label.sslDisableConfirmation=SSL Confirmation
+anvizent.package.label.apiUrl=URL
+ 
+anvizent.package.label.addRequsetParam=Add Request Params
+anvizent.package.label.requestparams=Request Params
+anvizent.package.label.requestbodyparams=Request Body Params
+anvizent.package.label.apiMethodType=Method Type
+anvizent.package.label.apiResponseObjectname=Response Object Name
+anvizent.package.label.apiResponseColumnObjectname=API Response Column Object Name
+anvizent.package.label.pathParamDetails=Path Param details
+anvizent.package.label.paramValueFrom=Param Value from
+ 
+anvizent.package.label.subApiUrl=Sub API URL
+anvizent.package.label.subApiMethodType=Sub API Method Type
+anvizent.package.label.subApiResponseObjectName=Sub API Response Object Name 
+
+anvizent.package.label.offsetparamnameandstartsfrom= Offset Param Name and Value
+anvizent.package.label.pagenumberparamnameandstartsfrom=Page Number Param Name and Value
+anvizent.package.label.paginationObjectName=Pagination Object Name
+anvizent.package.label.paginationSearchId = Pagination SearchId Param
+anvizent.package.label.limitparamnameandvalue=Limit Param Name and Value
+anvizent.package.label.pagesizeparamnameandvalue=Page Size Param Name and Value
+
+
+anvizent.package.label.getPathParam=Get Path Param
+anvizent.package.label.addRequsetBodyParam=Add Body Params
+
+anvizent.package.label.mapHeaders=Map Headers
+anvizent.package.button.mapFileHeadersAndSave = Map Headers & Save
+#web service validation Messages
+anvizent.package.message.pleaseEnterWebserviceApiName = Please enter web service api name.
+anvizent.package.message.pleaseEnterWebserviceApiName = Please enter web service api name.
+anvizent.package.message.pleaseEnterSoapBodyParameter = Please enter soap body element.
+anvizent.package.message.pleaseChooseMethodtype = Please select method Type.
+anvizent.package.message.pleaseEnterWebServiceResponseObjecName = Please Enter web service response object name.
+anvizent.package.message.pleaseEnterWebServiceResponseColumnObjecName = Please Enter web service response column object name.
+anvizent.package.message.pleaseEnterRequestParamName = Please enter Request Param Name.
+anvizent.package.message.pleaseEnterRequestParamValue=Please enter Request Param Value.
+anvizent.package.message.pleaseEnterPathParam=Please enter Path Param.
+anvizent.package.message.pleaseEnterParamValue = Please enter Param value.
+anvizent.package.message.pleaseEnterSubApiUrl=Please enter sub api url.
+anvizent.package.message.pleaseChooseSubApiMethodtype=Please select sub API method type.
+anvizent.package.message.pleaseEnterSubApiResponseTypeObject=Please enter sub API response type object.
+anvizent.package.message.pleaseEnterRequestParamName=Please enter Request Param Name.
+anvizent.package.message.pleaseEnterRequestParamValue=Please enter Request Param Value.
+anvizent.package.message.invalidurl=Invalid url.
+anvizent.package.message.nopathparamfound=No Path Param found.
+
+#webServiceConnection.jsp
+anvizent.package.label.webServiceConnectionDetails=Web Service Connection Details
+anvizent.package.label.enterClientIdentifier=Enter client identifier
+anvizent.package.label.enterClientSecret=Enter client secret
+anvizent.package.label.enterScope=Enter scope
+anvizent.package.label.enterState=Enter state
+anvizent.package.label.enterParamValue=Enter param value
+anvizent.package.label.headerKeyValues=Header Key Values 
+anvizent.package.label.requestParamHeader=Request Param Header
+anvizent.package.label.webServiceConnectionName=Web Service Connection Name
+anvizent.package.label.pleaseEnterwebServiceConnectionName=Please enter Web Service Connection Name
+anvizent.package.label.connectionId=Connection Id
+anvizent.package.label.authenticationType=Authentication Type
+anvizent.package.label.webserviceconnectiondetails=Web Service Connection Details
+
+
+#General Settings.jsp
+anvizent.package.label.pleaseChooseOption=Please select option
+anvizent.package.label.pleaseChooseFileSize=Please enter fileSize
+anvizent.package.label.timeZone=Time Zone
+anvizent.package.label.pleaseChooseTimeZone=Please select Time Zone
+anvizent.package.label.selectTimeZone=Select Time Zone
+
+anvizent.package.msg.pleaseChoosetimezone=please select Time Zone
+anvizent.package.msg.datePlaceholderNotFoundInQuery={date} placeholder not found in query
+anvizent.package.label.columnNameShouldNotContain=Column Name should not contain '-'
+
+
+#Client Configuration Settings
+anvizent.package.label.clientConfigurationSettings = Client Configuration Settings
+anvizent.navLeftTabLink.label.templateMigration=Template Migration
+
+
+#templateMigration
+anvizent.package.label.Template=Template
+anvizent.package.label.migrate=Migrate
+anvizent.package.label.export=Export
+anvizent.package.label.selectUser=Select User
+anvizent.package.label.import=Import
+
+#currency Integration
+anvizent.package.label.accessKey=Access key
+anvizent.package.label.currencies=currencies
+anvizent.package.label.s3BucketMapping=S3 Bucket Mapping
+anvizent.package.label.startPeriod=Start Period
+anvizent.package.label.endPeriod=End Period
+anvizent.package.label.datasource=Datasource Name
+anvizent.package.label.enterDataSourceName=Please choose datasource name
+anvizent.package.label.enterDataSource=Enter data source name
+anvizent.package.label.PleaseEnterFilePath=Please enter file path
+anvizent.package.label.pleaseEnterVersionNumber=Please enter version number
+anvizent.package.label.versionId=Version Id
+anvizent.package.label.versionNumber=Version Number
+
+anvizent.package.label.modalHeader.deleteddltable= Delete DDL Table
+anvizent.package.message.deletePackage.areYouSureYouWantToDeleteDDLTable= Are you sure, you want to Delete the DDl Table?
+
+
+#client currency maping
+anvizent.package.label.currencytype=Currency Type
+anvizent.package.label.dashboardcurrencycode=DashBoard Currency Code
+anvizent.package.label.accountingcurrencycode=Accounting Currency Code
+anvizent.package.label.othercurrencycode=Other Currency Code
+anvizent.package.label.SelectCurrency=Select Currency
+anvizent.package.label.ClientSpecific=Client Specific
+anvizent.package.label.currencies=Currencies
+anvizent.package.label.change=Change
+ 
+ #ddl layout
+anvizent.package.label.ddlsources=DDL Source's
+anvizent.package.label.runtype=Run Type
+anvizent.message.error.text.unabletogetddlayouttables=DD Layout Tables list are not found.
+anvizent.package.label.pleaseChooseStartDate=Please choose start date
+anvizent.package.label.pleaseChooseEndDate=Please choose end date
+
+
+### Admin properties
+
+#button
+anvizent.admin.button.createContextParameter=Create Context Parameter
+anvizent.admin.button.createIL=Create IL
+anvizent.admin.button.createDL=Create DL
+anvizent.admin.button.iLDLMapping=IL - DL Mapping
+anvizent.admin.button.clientDLMapping=Client DL Mapping
+anvizent.admin.button.Back=Back
+anvizent.admin.button.Submit=Submit
+anvizent.admin.button.CreateParameter=Create Parameter
+anvizent.admin.button.createOrViewContextParameter=Create / View Context Parameter
+anvizent.admin.button.viewILDL=View IL / DL
+anvizent.admin.button.Edit=Edit
+anvizent.admin.button.Update=Update
+anvizent.admin.button.Delete=Delete
+anvizent.admin.button.historicalload=History Load
+anvizent.admin.button.currencyLoad = Currency Load
+anvizent.navLeftTabLink.label.multiClientTableScriptExecution = MultiClient TableScript Execution
+
+#label
+anvizent.admin.label.createContextParameter=Create Context Parameter
+anvizent.admin.label.contextParameter=Context Parameter
+anvizent.admin.label.createIL=Create IL
+anvizent.admin.label.createDL=Create DL
+anvizent.admin.label.iLDLMapping=IL - DL Mapping
+anvizent.admin.label.clientDLMapping=Client DL Mapping
+anvizent.admin.label.ParamName=ParamName
+anvizent.admin.label.ExistingContextParameters=Existing Context Parameters
+anvizent.admin.label.DLName=DL Name
+anvizent.admin.label.ClientId=Client Id
+anvizent.admin.label.maxfilesize=Max File Size
+anvizent.admin.label.multiPartEnabled=MultiPart File Enabled
+anvizent.admin.label.noOfRecordsPerFile=No Of Records Per FIle
+anvizent.admin.label.mb=Max File Size in MB.
+anvizent.admin.label.webservice=Web Service
+anvizent.admin.button.webService=Web Service
+anvizent.package.label.webServicename=Web Service Name
+anvizent.package.label.enterWebServiceName=Enter Web Service Name
+anvizent.package.label.authenticationUrl=Authentication URL
+anvizent.package.label.enterAuthenticationURL=Enter Authentication URL
+anvizent.admin.label.webserviceClientMapping=Web Service Client Mapping
+ 
+anvizent.admin.label.dlKpiMapping=DL KPI Mapping
+anvizent.admin.label.tablescripts=Table Scripts
+anvizent.admin.label.addTableScripts=Add Table Scripts
+anvizent.admin.label.scriptName=Script Name
+anvizent.admin.label.sqlScript=Script
+anvizent.admin.label.priority=Priority 
+anvizent.admin.label.webServiceILMapping=Web Service IL Mapping
+anvizent.admin.label.dlKpiMapping=DL KPI Mapping
+ 
+#### Login properties   
+
+#header
+anvizent.login.heading = Sign In
+#label
+anvizent.login.label.username = Username
+anvizent.login.label.password = Password
+anvizent.login.label.forgotPassword = Forgot Password ?
+anvizent.login.label.staySignedIn = Stay Signed in
+#button
+anvizent.login.button.login = Login
+#message
+anvizent.login.message.usernameAndOrPasswordIsNotValid = The username or password you entered is invalid
+
+
+
+#### nav-left properties
+
+anvizent.navLeftTabLink.label.ETLAdmin=ETL Admin
+anvizent.navLeftTabLink.label.userProfile=Profile
+anvizent.navLeftTabLink.label.myPackages=My Packages
+anvizent.navLeftTabLink.label.dataSets=Data Sets
+anvizent.navLeftTabLink.label.schedule=Schedule
+anvizent.navLeftTabLink.label.xRefCommonColoumn=X-Ref CommonColumn
+anvizent.navLeftTabLink.label.logOut=LogOut
+anvizent.navLeftTabLink.label.derivedtables=Derived Tables
+anvizent.navLeftTabLink.label.FileSettings=File Settings
+anvizent.navLeftTabLink.label.databaseConnection=Database Connection
+anvizent.navLeftTabLink.label.purge=Purge
+anvizent.navLeftTabLink.label.logs=Logs
+anvizent.navLeftTabLink.label.miscellaneous=Miscellaneous
+anvizent.navLeftTabLink.label.quicklinks=Quick Links
+anvizent.navLeftTabLink.label.errorlogs=Error Logs
+anvizent.navLeftTabLink.label.s3AuditLogs=S3 Audit Logs
+anvizent.navLeftTabLink.label.webServiceClientMapping=Web Service Client Mapping
+anvizent.navLeftTabLink.label.dlKpiMapping=DL KPI Mapping
+anvizent.navLeftTabLink.label.ilPreBuildQueries=IL PreBuild Queries
+anvizent.navLeftTabLink.label.webServiceClientMapping=Web Service Client Mapping
+anvizent.navLeftTabLink.label.dlKpiMapping=DL KPI Mapping
+anvizent.navLeftTabLink.label.tablescripts=Table Scripts
+anvizent.navLeftTabLink.label.connector=Connectors
+anvizent.navLeftTabLink.label.clientTableScriptsMapping=Table Scripts Mapping
+anvizent.navLeftTabLink.label.database=Databases
+anvizent.navLeftTabLink.label.clientTableScriptsExecution=Table Scripts Execution
+anvizent.navLeftTabLink.label.home=Home
+anvizent.navLeftTabLink.label.mappingInfo=Mapping Info
+anvizent.navLeftTabLink.label.defaultMappingConfiguration=Default Mapping Configuration
+anvizent.navLeftTabLink.label.vertical=Verticals
+anvizent.navLeftTabLink.label.clientVerticalMapping=Client Vertical Mapping
+anvizent.navLeftTabLink.label.clientConnectorMapping=Client Connector Mapping
+anvizent.navLeftTabLink.label.iLInfo=IL Info
+anvizent.navLeftTabLink.label.kPI=KPIs
+anvizent.navLeftTabLink.label.dLInfo=DL Info
+anvizent.navLeftTabLink.label.clientSpecificIL=Client Specific IL
+anvizent.navLeftTabLink.label.clientSpecificDL=Client Specific DL
+anvizent.navLeftTabLink.label.commonJob=Common Jobs
+anvizent.navLeftTabLink.label.clientWebServiceMapping=Client Web Service Mapping
+anvizent.navLeftTabLink.label.standardPackage=Standard Package
+anvizent.navLeftTabLink.label.customPackage=Custom Package
+anvizent.navLeftTabLink.label.customDataSets=Custom Data Sets
+anvizent.navLeftTabLink.label.xReference=Cross-Reference
+anvizent.navLeftTabLink.label.archivedPackages=Archived Packages
+anvizent.navLeftTabLink.label.clientDLMapping=Client DL Mapping
+anvizent.navLeftTabLink.label.createOrViewContextParameter=Create / View Context Parameter
+anvizent.navLeftTabLink.label.webService=Web Service
+anvizent.navLeftTabLink.label.viewDetails=View Details
+anvizent.navLeftTabLink.label.master=Master
+anvizent.navLeftTabLink.label.modules=Modules
+anvizent.navLeftTabLink.label.instantExecution=Instant Script Execution
+anvizent.navLeftTabLink.label.clientSettings=Client Settings
+anvizent.navLeftTabLink.label.executeScripts=Execute Scripts
+anvizent.navLeftTabLink.label.webseviceConnection=Web Service Connection
+anvizent.navLeftTabLink.label.generalSettings=General Settings
+anvizent.navLeftTabLink.label.existingjars=Existing Jars
+anvizent.navLeftTabLink.label.webServiceTemplate=Web Service Template
+anvizent.navLeftTabLink.label.clientConfigurationSettings = Client Configuration Settings
+anvizent.navLeftTabLink.label.templateMigration=Template Migration
+anvizent.navLeftTabLink.label.configTags=Config Tags
+anvizent.navLeftTabLink.label.jobTags=Job Tags
+anvizent.navLeftTabLink.label.masterConfiguration=MasterConfiguration
+anvizent.navLeftTabLink.label.loadParameters=Load Parameters
+anvizent.navLeftTabLink.label.ELT=ELT
+anvizent.navLeftTabLink.label.eltErrorlogs=ELT error Logs
+
+
+# Ai nav-left
+anvizent.navLeftTabLink.label.ai=AI
+anvizent.navLeftTabLink.label.aiSourceDefinition=Source Definition
+anvizent.navLeftTabLink.label.AISourceUpload=Jobs Upload
+
+### Schedule Properties
+
+#label
+anvizent.schedule.label.scheduleTime =Schedule Time
+anvizent.schedule.label.schedule = Schedule
+anvizent.schedule.label.scheduleCurrentStatus =  Schedule Current Status
+anvizent.schedule.label.scheduleTime = Schedule Time
+
+### Site properties
+
+footer.copyright = MINI-DW 
+
+header.logo = Argha
+header.welcome = Welcome
+
+nav.title=Data modal tool
+nav.home = Home
+
+nav.application = Applications
+
+nav.search = Search
+nav.orderentry = Order Entry
+nav.support = Support
+nav.signIn = Sign In
+nav.signOut = Sign Out
+nav.welcome = Welcome
+
+quicklinks.title = Quick Links
+quicklinks.button = Quick Links
+
+site.customer = Customer
+site.password = Password
+site.search = Search
+site.submit = Submit
+site.username = Username
+
+### User profile properties
+
+#header
+anvizent.userProfile.header = User Profile
+#label
+anvizent.userProfile.label.clientId = Client Id
+anvizent.userProfile.label.userName = User Name
+ anvizent.userProfile.label.email = Email Id
+anvizent.userProfile.label.mobileNumber = Mobile Number 
+#button
+anvizent.userProfile.button.createSchema = Create Schema 
+anvizent.userProfile.button.updateSchma = Update Schema
+
+anvizent.userProfile.button.rajesh = Update Schema
+#Middle Level Manager
+anvizent.package.label.contextPath = Context Path
+anvizent.package.label.uploadListEndPoint = Upload List End Point
+anvizent.package.label.writeEndPoint = Write End Point
+anvizent.package.label.deleteEndPoint = Delete End Point
+anvizent.package.label.upgradeEndPoint = Upgrade End Point
+anvizent.package.label.userAuthToken = User Authentication Token
+anvizent.package.label.clientAuthToken = Client Authentication Token
+anvizent.package.label.encryptionPrivateKey = Encryption Private Key
+anvizent.package.label.encryptionIV = Encryption IV
+
+#MultiClientTableScriptExecution
+anvizent.package.label.multiClientScriptExecution = MultiClientScriptExecution
+anvizent.package.label.multiClient = Multi Client Id
+anvizent.package.label.multiClients = Multi Clients
+anvizent.package.label.clientIds = Client Id's
+anvizent.package.label.sqlscript = SqlScript
+anvizent.package.label.createdDate = Created Date
+anvizent.package.label.modifiedDate = Modified Date
+anvizent.package.label.isActive = Is Active
+anvizent.package.label.selectClientIds= Please Select ClientId's
+anvizent.package.label.trailingmonths=Trailing Months
+anvizent.package.message.trailingmonthsShouldNotBeEmpty=Trailing Months Should not be Empty.
+
+#Client Job Execution Parameters
+anvizent.package.label.NullReplacementValues=Null Replacement Values
+anvizent.package.label.ClienJobExecutionParameters=Client Job Execution Parameters
+anvizent.package.label.SourceTimeZone=Source Time Zone
+anvizent.package.label.DestinationTimeZone=Destination Time Zone
+anvizent.package.label.CaseSensitive=Case Sensitive
+anvizent.package.label.trailingMonths=Trailing Months
+anvizent.package.label.selectInterval=Select Month
+
+
+
+
+#sudheer
+
+#clientJobExecutionParameters.jsp
+anvizent.package.label.ClientJobExecutionParameters = Client Job Execution Parameters
+anvizent.package.label.SourceTimeZone=Source Time Zone 
+anvizent.package.label.DestinationTimeZone =Destination Time Zone 
+anvizent.package.label.NullReplacementValues =Null Replacement Values
+anvizent.package.label.CaseSensitive=Case Sensitive 
+anvizent.package.label.TrialInterval =Trial Interval 
+anvizent.package.label.selectInterval=Select Interval
+
+
+#allMappingInfo.jsp
+anvizent.package.label.DefaultMappings=Default Mappings
+anvizent.package.label.change=change
+
+
+
+
+
+
+#webServiceILMapping.jsp
+anvizent.package.label.BodyParameters = Body Parameters
+anvizent.package.label.SelectWebServiceTemplate = Select Web Service Template
+anvizent.package.label.RequestParameter =Request Parameter
+anvizent.package.label.Details=Details
+anvizent.package.label.BodyParameter =Body Parameter
+
+
+
+
+#existingJars.jsp
+anvizent.package.label.ExistingJars = Existing Jars
+
+
+#clientCurrencyMapping.jsp
+anvizent.package.label.ClientCurrencyMapping = Client Currency Mapping
+anvizent.package.label.ClientMappingDetails = Client Mapping Details
+anvizent.package.label.Add=Add
+
+
+
+#clientsInstantScriptExecution.jsp
+anvizent.package.label.ClientsInstantScriptExecution = Clients Instant Script Execution
+
+
+#clientsInstantScriptExecution.jsp
+anvizent.package.label.ScriptId=Script Id
+anvizent.package.label.ViewResults=View Results
+anvizent.package.label.InstantExecutionId=Instant Execution Id
+
+anvizent.package.label.ExecutionMessage=Execution Message
+anvizent.package.label.ViewScript=View Script
+
+
+#clientchange.jsp
+anvizent.package.label.ChangeClient=Change Client
+anvizent.package.label.Master=Master
+
+#connector.jsp
+anvizent.package.label.Update=Update
+
+
+
+#database.jsp
+anvizent.package.label.DatabaseDetails=Database Details
+
+
+
+#dashBoardLayoutMaster.jsp
+anvizent.package.label.selectvertical=select vertical
+
+#clientTableScripts.jsp
+anvizent.package.label.ExecutedScripts=Executed Scripts
+
+
+#errorLogs
+anvizent.package.label.Close=Close
+
+#addWebService.jsp
+anvizent.package.label.StatusCode=Status Code
+anvizent.package.label.SelectWebService=Select WebService
+anvizent.package.label.View=View
+anvizent.package.label.Show=Show
+
+
+#appDbVersionTableScripts.jsp
+anvizent.package.label.AppDbVersionTableScripts=ApplicationDB Version Table Scripts
+anvizent.package.label.Id=Id
+anvizent.package.label.AnvizentScript=Anvizent Script
+anvizent.package.label.MinidwScript=Minidw Script
+anvizent.package.label.Default=Default
+anvizent.package.label.View=View
+anvizent.package.label.AppDBVersionTableScriptsDetails=ApplicationDB Version Table Scripts Details
+anvizent.package.label.AppDBScript=ApplicationDB Script
+anvizent.package.label.Script=Script
+
+#clientConfigurationSettings.jsp
+anvizent.package.label.EmailDetails=Email Details
+anvizent.package.label.From=From
+anvizent.package.label.Password=Password
+anvizent.package.label.To=To
+anvizent.package.label.CC=CC
+anvizent.package.label.BCC=BCC
+anvizent.package.label.ReplyTo =Reply To 
+anvizent.package.label.SMTPDetails=SMTP Details
+anvizent.package.label.SMTPHost=SMTP Host
+anvizent.package.label.SocketFactoryPorts=Socket Factory Ports
+anvizent.package.label.SMTPPort=SMTP Port
+anvizent.package.label.Save=Save
+
+
+#clientDLMapping.jsp
+anvizent.package.label.Lock=Lock
+anvizent.package.label.UnLock=UnLock
+
+#clientSpecificDL.jsp
+anvizent.package.label.DefaultJob=Default Job
+anvizent.package.label.ClientSpecificJob=Client Specific Job 
+ 
+
+#clientSpecificIL.jsp
+anvizent.package.label.AddUpdateClientSpecificILInfo=Add / Update Client Specific IL Info  
+anvizent.package.label.ClientSpecificJob=Client Specific Job 
+anvizent.package.label.ExistedJarFiles=Existed Jar Files 
+
+#clientTableScriptExecution.jsp
+anvizent.package.label.ExecutedDate=Executed Date 
+anvizent.package.label.ErrorMsg=Error Msg 
+
+#clientTableScripts.jsp
+anvizent.package.label.Yes=Yes
+anvizent.package.label.No=No
+anvizent.package.label.ScriptType=Script Type
+anvizent.package.label.TableScript=Table Script
+anvizent.package.label.Client=Client
+anvizent.package.label.TargetSchema=Target Schema
+
+anvizent.package.label.Reset=Reset
+
+
+#commonJob.jsp
+anvizent.package.label.Back=Back
+
+
+
+#Client Job Execution Parameters.jsp
+anvizent.package.label.ClienJobExecutionParameters=Client Job Execution Parameters
+
+
+#contextParameters.jsp
+
+#currencyIntegration.jsp
+anvizent.package.label.CurrencyIntegration=Currency Integration
+anvizent.package.label.CurrencyApiDetails=Currency Api Details
+anvizent.package.label.Apiurl=API URL
+anvizent.package.label.AccessKey=Access Key
+anvizent.package.label.ScheduleRecurrence=Schedule Recurrence
+anvizent.package.label.Time=Time
+anvizent.package.label.Jobname=Job name
+anvizent.package.label.ClientSpecific=Client Specific
+anvizent.package.label.Edit=Edit
+anvizent.package.label.Cancel=Cancel
+anvizent.package.label.InstantRun=InstantRun
+anvizent.package.label.EndDate=End Date
+anvizent.package.label.Run=Run
+
+#defaultMappingConfiguration.jsp
+anvizent.package.label.CurrencyType=Currency Type
+anvizent.package.label.DashBoardCurrency=DashBoard Currency 
+anvizent.package.label.AccountingCurrencyCode=Accounting Currency Code 
+anvizent.package.label.SelectCurrency=Select Currency 
+anvizent.package.label.OtherCurrency=Other Currency 
+anvizent.package.label.SelectBucket=Select Bucket 
+
+#defaultMappingInfo.jsp
+anvizent.package.label.BucketName=Bucket Name 
+anvizent.package.label.SecretKey=Secret Key
+
+anvizent.package.label.maxFileSizeinMB = Max File Size in MB
+anvizent.package.label.multiPartFileEnabled = MultiPart File Enabled
+anvizent.package.label.noOfRecordsperFile = No of Records per File
+anvizent.package.label.ipAddress = IP Address
+
+
+ 
+
+#dlKpiMapping.jsp
+anvizent.package.label.KPIId=KPI Id 
+anvizent.package.label.KPIName=KPI Name
+
+#generalSettings.jsp
+anvizent.package.label.GeneralSettings=select options
+anvizent.package.label.selectoptions=select options
+anvizent.package.label.Enable=Enable
+anvizent.package.label.Disable=Disable 
+anvizent.package.label.NotDisplay=Not Display
+
+#hybridClientsGrouping.jsp
+anvizent.package.label.HybridClientsGrouping=Hybrid Clients Grouping
+anvizent.package.label.Name=HybridClient Grouping Name
+anvizent.package.label.Clients=Clients 
+anvizent.package.label.Active=Active
+anvizent.package.label.Description=Description 
+anvizent.package.label.ThreadCount=Thread Count 
+anvizent.package.label.Seconds=Seconds
+anvizent.package.label.Minute=Minute
+anvizent.package.label.Hour=Hour
+anvizent.package.label.PackageRetrievalInterval=Package Retrieval Interval
+
+#internalization.jsp
+anvizent.package.label.Internalization=Internalization
+anvizent.package.label.LocaleId=Locale Id
+anvizent.package.label.LocaleName=Locale Name
+anvizent.package.label.SelectLanguage=Select Language
+anvizent.package.label.ProceedForMapping=Proceed For Mapping
+anvizent.package.label.ApplicationProperties=Application Properties
+anvizent.package.label.ServiceProperties=Service Properties
+anvizent.package.label.EnglishKey=English Key
+anvizent.package.label.EnglishValue=English Value
+anvizent.package.label.SelectedLanguage=Selected Language
+anvizent.package.label.Submit=Submit
+
+#middleLevelManager.jsp
+anvizent.package.label.MiddleLevelManager=Middle Level Manager
+anvizent.package.label.MiddleLevelManagerDetails=Middle Level Manager Details
+anvizent.package.label.UserAuthenticationToken=User Authentication Token 
+anvizent.package.label.ClientAuthenticationToken=Client Authentication Token
+
+
+#migrateTemplate.jsp
+anvizent.package.label.SourceServer=Source Server
+anvizent.package.label.Select=Select
+anvizent.package.label.DestinationServer=Destination Server
+anvizent.package.label.SourceClient= Source Client
+anvizent.package.label.DestinationClient=Destination Client
+anvizent.package.label.Users=Users
+anvizent.package.label.Packages=Packages
+anvizent.package.label.DatabaseConnections=Database Connections
+anvizent.package.label.WebServiceConnections=Web Service Connections
+anvizent.package.label.ClientILJars=Client IL Jars
+anvizent.package.label.ClientDLJars=Client DL Jars
+anvizent.package.label.TableScripts=Table Scripts
+anvizent.package.label.PackageName=Package Name
+anvizent.package.label.SourceUser=Source User
+anvizent.package.label.DestinationUsers=Destination Users
+anvizent.package.label.Migrationstatus=Migration status
+anvizent.package.label.UserId=UserId
+anvizent.package.label.UserName=UserName
+anvizent.package.label.JobVersion=Job Version
+anvizent.package.label.ILId=IL Id
+anvizent.package.label.TemplateName=Template Name
+anvizent.package.label.TemplateId=Template Id
+anvizent.package.label.ScriptName=Script Name
+anvizent.package.label.DestinationServerClientMetaInfo=Destination Server Client Meta Info
+anvizent.package.label.TableScripts=Table Scripts
+anvizent.package.label.CreatedBy=Created By
+anvizent.package.label.DatabaseName=Database Name
+anvizent.package.label.WebServiceName=Web Service Name
+anvizent.package.label.VerticalId=Vertical Id
+anvizent.package.label.VerticalName=Vertical Name
+anvizent.package.label.SelectAll=Select All
+
+#s3BucketInfo.jsp
+anvizent.package.label.S3BucketInfo=S3Bucket Info 
+anvizent.package.label.IsActive=IsActive
+anvizent.package.label.S3Details=S3 Details
+anvizent.package.label.ActiveStatus=Active Status
+anvizent.package.label.YES=YES
+anvizent.package.label.NO=NO
+
+#s3ClientMapping.jsp
+anvizent.package.label.ClientS3BucketMapping=Client S3Bucket Mapping 
+anvizent.package.label.SelectClient=Select Client 
+#scheduleStatus.jsp
+anvizent.package.label.ClientScheduler=Client Scheduler 
+anvizent.package.label.SchedulerStatus=Scheduler Status 
+anvizent.package.label.Running=Running 
+anvizent.package.label.Stop=Stop 
+anvizent.package.label.Stopped=Stopped 
+anvizent.package.label.Start=Start 
+anvizent.package.label.FromDate=From Date 
+anvizent.package.label.ToDate=To Date 
+anvizent.package.label.PAUSED=PAUSED 
+anvizent.package.label.READY=READY 
+anvizent.package.label.FilterBy=Filter By 
+anvizent.package.label.Search=Search 
+anvizent.package.label.ClientId=Client Id 
+anvizent.package.label.Change=Change 
+anvizent.package.label.JobId=Job Id 
+anvizent.package.label.JobName=Job Name 
+anvizent.package.label.GroupName=Group Name 
+anvizent.package.label.StartTime=Start Time 
+anvizent.package.label.EndTime=End Time 
+anvizent.package.label.NextFireTime=Next Fire Time 
+anvizent.package.label.Action=Action 
+anvizent.package.label.ViewJobResults=View Job Results 
+anvizent.package.label.TriggerID=Trigger ID 
+
+
+
+#serverConfiguration.jsp
+anvizent.package.label.ServerConfiguration=Server Configuration 
+anvizent.package.label.Sr.No.=Server Number
+anvizent.package.label.ServerName=Server Name 
+anvizent.package.label.IPHostName=IP / Host Name 
+anvizent.package.label.ShortName=Short Name 
+anvizent.package.label.IPAddress=IP Address 
+anvizent.package.label.PortNumber=Port Number 
+anvizent.package.label.MinidwSchemaName=Minidw Schema Name 
+anvizent.package.label.AnvizentSchemaName=Anvizent Schema Name 
+anvizent.package.label.Clientschemadetailsendpoint=Client schema details end point 
+
+
+#tablescripts.jsp
+anvizent.package.label.S.No=S.No 
+anvizent.package.label.SQLScript=SQL Script 
+anvizent.package.label.NoDataFound.=No Data Found.
+anvizent.package.label.AddUpdateTableScripts=Client schema details end point 
+anvizent.package.label.SelectOrder=Select Order 
+
+#templateMigration.jsp
+anvizent.package.label.PackageId=PackageId
+anvizent.package.label.PackageName=Package Name
+anvizent.package.label.PackageType=Package Type
+anvizent.package.label.NoPackagesFoundforuser=No Packages Found for user
+
+#templates.jsp
+anvizent.package.label.csv=csv
+
+#versionUpgrade.jsp
+anvizent.package.label.VersionUpgrade=Version Upgrade
+anvizent.package.label.Latestversion=Latest version
+anvizent.package.label.LatestVersionToUpgrade=Please upgrade the Latest Version
+anvizent.package.label.selectDataSource=Select Data Source
+anvizent.package.label.other=Other
+
+#webServiceTemplate.jsp
+anvizent.package.label.RequestParametersHeadersRequiredforAPIfromAuthenticationResponse=Request Parameters/headers Required for API from Authentication Response
+
+#addIlSource
+anvizent.package.label.CreateNewWebServiceConnection=Create New Web Service Connection
+anvizent.package.label.webService=Web Service
+
+#xReference.jsp
+anvizent.package.label.ViewDetails=View Details
+
+ # 24-11-2017
+ #crossReference.jsp
+anvizent.package.button.Id=Id
+anvizent.package.button.ColumnName=Column Name
+anvizent.package.button.ColumnValues=Column Values
+anvizent.package.button.XrefColumnValues=Xref Column Values
+anvizent.package.button.MergeColumns=Merge Columns
+anvizent.package.button.AutoMergeQueries=Auto Merge Queries
+anvizent.package.button.ViewDetails=View Details
+anvizent.package.button.ColumnValue=Column Value 
+anvizent.package.button.UpdateRow=Update Row
+anvizent.package.button.SNo=S No
+anvizent.package.label.Manual=Manual
+
+#manish_24_11
+anvizent.package.label.viewExecutionStatus=View execution Status
+anvizent.package.label.executed=Executed
+anvizent.package.label.running=Running
+anvizent.package.label.pending=Pending
+
+
+ #date:24/11/2017 @mahender
+anvizent.package.label.baseUrl=Base URL
+anvizent.package.label.baseUrlRequired=Base URL Required 
+
+
+#Date:28/11/17 @usha
+anvizent.package.label.replaceSchemas=Replace Schemas
+anvizent.package.label.selectDataSource=Select Data Source
+anvizent.package.label.undo=Refresh
+anvizent.package.label.replaceAll=Replace All
+anvizent.package.label.availableColumns=Available Columns
+anvizent.package.label.optional=Optional
+anvizent.package.label.selectSchemas=Select Schemas
+anvizent.package.label.go=GO
+anvizent.package.label.saveWebServiceConnection=Save Web Service Connection
+anvizent.package.label.formatResponse=Format Response
+anvizent.package.label.editSource=Edit Source
+anvizent.package.label.viewDetails=View Details
+anvizent.package.label.manual=Manual
+anvizent.package.label.newXref=New Cross Reference
+anvizent.package.label.existingXref=Existing Cross Reference
+anvizent.package.label.selectOption=Select
+anvizent.package.label.selectWebServiceTemplate=Select Web service template
+anvizent.package.label.startsFrom=Starts From
+anvizent.package.label.noSchemaSelected=No schema selected.
+anvizent.package.label.areYouSure=Are you sure ?
+anvizent.package.label.selectALLOpt=Select ALL
+anvizent.package.label.selectedAll=ALL Selected
+anvizent.package.label.editQuery=Edit Query
+
+anvizent.package.label.loadPreBuildQuery=Load PreBuild Query
+anvizent.package.label.selectDataSource=Select Data source
+anvizent.package.label.joinUrls=Join Urls 
+anvizent.package.label.joinQuery=Join Query
+anvizent.package.label.viewX-REFColumnValue=View X-REF Column Value
+anvizent.package.label.autoMergeQueries=Auto merge Queries
+anvizent.package.label.defualtMappingNotFoundForSelectedIl=Default mapping not found for selected Il.
+anvizent.package.label.selectXref=Select Xref
+anvizent.package.label.archivedRowCount=Archived Row Count
+anvizent.package.label.archivedUploadedTime=Archived Uploaded Time
+anvizent.package.label.sourceArchived=Source/Archived
+anvizent.package.label.packageExecution=Package Execution
+anvizent.package.label.thisPackageExecutionAlreadyStarted=This package execution already started !
+anvizent.package.label.terminateStart=Terminate & Start
+anvizent.package.label.pleaseSelectAtLeastoneColumn=Please select at least one column
+
+anvizent.package.label.pleaseChooseAuthenticationType=Please choose Authentication Type
+anvizent.package.label.pleaseEnterParamName=Please enter param name
+ 
+#date:29/11/2017 @mahender
+anvizent.package.message.RequestParameter=Request Parameter
+anvizent.package.message.BodyParameter=Body Parameter
+
+anvizent.package.label.paginationType=Pagination Type
+anvizent.package.label.paginationoffset=Offset
+anvizent.package.label.paginationdate=Date
+anvizent.package.label.incrementalpaginationdate=Incremental Date
+anvizent.package.label.incrementalpaginationdatepagination=Incremental Date Pagination
+anvizent.package.label.datepagination=Date Pagination
+anvizent.package.label.paginationdaterange=Date Range
+
+anvizent.package.label.pleaseSelectdaterange=Please Select Date Range.
+anvizent.package.label.pleasechoosestartdate=Please Choose start date.
+anvizent.package.label.pleasechooseenddate=Please Choose end date.
+anvizent.package.label.SelectParamType=Select Param Type
+anvizent.package.message.BodyParameters=Body Parameters
+anvizent.package.message.EnddateshouldbegreaterthanStartdate=End date should be greater than Start date.
+ 
+#date:30/11/2017 @mahender
+anvizent.package.label.executionStatus=Execution Status
+anvizent.package.label.executed=executed
+anvizent.package.label.running=running
+anvizent.package.label.pending=pending
+ 
+#date:12/12/2017 @mahender
+anvizent.package.label.pleaseentersuburloffsetparamname=Please enter sub URL off set param name.
+anvizent.package.label.pleaseentersuburloffsetparamvalue=Please enter sub URL off set param value.
+anvizent.package.label.pleaseentersuburllimitparamname=Please enter sub URL limit param name.
+anvizent.package.label.pleaseentersuburllimitparamvalue=Please enter sub URL limit param value.
+anvizent.package.label.pleaseentersuburlfromdateparamname=Please enter sub URL from date param name.
+anvizent.package.label.pleaseentersuburltodateparamname=Please enter sub URL to date param name.
+anvizent.package.label.pleaseentersuburlstartdate=Please enter sub URL start date.
+anvizent.package.label.pleaseentersuburlstartdate=Please enter sub URL end date.
+anvizent.package.label.pleasechoosedaterange=Please choose date range.
+anvizent.package.label.pleaseenternumericvalueexcept0=Please enter numeric value except 0.
+anvizent.package.label.pleaseenternumericvalue=Please enter numeric value.
+anvizent.package.label.pleaseenterRequestParamValue=Please enter Request Param Value.
+anvizent.package.label.pleasechoosepathparamvaluetype=Please choose path param value type.
+anvizent.package.label.pleaseentersuburl.hypermedia.pattern=Please enter Hypermedia object pattern.
+anvizent.package.label.pleaseentersuburl.hypermedia.record.limit=Please enter record limit.
+
+
+anvizent.package.label.pleaseenterauthenticationurl=Please enter authentication URL.
+anvizent.package.label.pleaseenteraccesstokenurl=Please enter access token URL.
+anvizent.package.label.pleaseenterclientIdentifier=Please enter client Identifier.
+anvizent.package.label.pleaseentercallbackuri=Please enter call back URI.
+anvizent.package.label.pleaseenterclientsecret=Please enter client secret.
+anvizent.package.label.pleaseentersuburl=Please enter sub URL.
+anvizent.package.label.Pleaseentersuburlresponseobject=Please enter sub URL  response object.
+anvizent.package.label.pleasechoosesuburlpaginationtype=Please choose sub URL pagination type.
+anvizent.package.label.pleasechooseauthenticationtype=Please choose authentication type.
+
+anvizent.package.label.pleaseReplaceDatabaseOrSchemasInDefaultQuery=Please Replace {0} Database's Or Schema's In Default Query.
+anvizent.package.label.packageExecutionDetailsNotFound =Package Execution Details are not Found
+
+anvizent.package.label.pleaseReplace=Please Replace
+anvizent.package.label.DatabasesOrSchemasInDefaultQuery=Database's Or Schema's In Default Query.
+anvizent.package.label.pleaseEnterBaseUrl=Please enter Base URL
+anvizent.package.label.pleaseentervalidurl=Please enter valid url.
+
+
+anvizent.package.label.contextPath=Context Path
+anvizent.package.label.uploadListEndPoint=Upload List End Point
+anvizent.package.label.writeEndPoint = Write End Point
+anvizent.package.label.deleteEndPoint = Delete End Point
+anvizent.package.label.upgradeEndPoint = Upgrade End Point
+anvizent.package.label.userAuthToken = User Authentication Token
+anvizent.package.label.clientAuthToken = Client Authentication Token
+anvizent.package.label.encryptionPrivateKey = Encryption Private Key
+anvizent.package.label.encryptionIV = Encryption IV
+anvizent.message.error.text.errorOccurredWhileMapping= Error Occured While File Mapping
+anvizent.package.success.recordsProcessedSuccessfully=Records Processed Successfully
+anvizent.package.message.Lock=Lock
+anvizent.package.message.UnLock=UnLock
+
+anvizent.package.label.Source=Source
+
+
+#apisDate 31/1/18
+anvizent.package.label.endPointUrl=End Point Url
+anvizent.package.label.apiDescription = API Description
+anvizent.package.label.query = Query
+anvizent.package.label.apisData = Data Apis
+anvizent.package.label.pleaseEnterEndPointUrl=Please enter end point url
+anvizent.package.label.pleaseEnterApiDescription = Please enter api description
+anvizent.package.label.pleaseEnterQuery = Please enter query
+anvizent.package.label.testLink = Test Link
+
+#datavalidationAdmin
+anvizent.package.label.businesscases = Business Cases Validation
+anvizent.navLeftTabLink.label.datavalidation = Data Validation
+anvizent.navLeftTabLink.label.businesscases = Business Cases 
+anvizent.package.label.validationname = Validation Name
+anvizent.package.label.validationscripts = Validation Scripts
+anvizent.package.label.preparedStatement = Prepared Statement
+anvizent.package.label.status = Status
+anvizent.package.label.businesscasesvalidation = Business Cases Validation
+anvizent.package.label.moduleordl = Module / DL
+anvizent.package.label.selectmodule = Select Module / DL
+anvizent.package.label.pleaseEnterValidationName = Please Enter Validation Name
+anvizent.package.label.pleaseEnterValidationScripts = Please Enter Validation Scripts
+anvizent.package.label.pleaseChoosedls = Please choose DL
+anvizent.navLeftTabLink.label.preload = Pre Load
+anvizent.package.label.dlnames = DLs
+anvizent.package.message.ViewResults = View Results
+anvizent.package.message.ViewScript =  View Script
+anvizent.package.label.script = Script
+anvizent.package.button.runselected = Run Selected
+anvizent.package.label.run = Run
+anvizent.package.label.selectAtleastonescript = Select At least One Script
+anvizent.package.label.results = Results
+anvizent.package.label.noscriptfound = No Script Found
+anvizent.package.label.download = Download
+
+#CrossReference
+anvizent.package.label.type.of.merge=Type of Merge
+
+anvizent.package.label.preload = Preload Validation
+anvizent.package.label.selectIl = Select IL
+anvizent.package.label.selectConnector = Select Connector
+anvizent.package.label.pleaseChooseil = Please choose IL
+anvizent.package.label.pleaseChooseconnector = Please choose Connector
+anvizent.package.label.ilname = IL Name
+anvizent.package.label.validationtype = Validation Type
+anvizent.package.label.selectvalidationtype = Select Validation Type
+anvizent.package.label.pleaseChooseValidationtype = Please choose Validation type
+anvizent.message.text.runinitiated = Run Initiated
+anvizent.message.text.failedtorunselectedsources = Failed To Run Selected Sources
+anvizent.message.text.unabletorunsources = Unable to run Sources
+anvizent.package.label.isDlExecutionRequired = Is DL Execution Required
+anvizent.admin.label.fileEncryptionRequired = File Encryption Required
+anvizent.package.message.text.areYouSureYouWantToUnscheduleTheModule=Are you sure, you want to UnSchedule the Module?
+anvizent.package.label.noInputlayoutMapped = No Input Layout is Mapped
+
+#ELT 28/03/2018
+anvizent.package.label.tagName=Tag Name
+anvizent.package.label.clone=Clone
+anvizent.package.label.tagDetails=Tag Details
+anvizent.package.label.key=Key
+anvizent.package.label.value=Value
+anvizent.package.label.addOrDelete=Add/Delete
+anvizent.package.label.configTags=Config Tags
+anvizent.package.label.pleaseEnterTagName=Please Enter Tag Name
+anvizent.package.label.pleaseChoosePropertiesFile=Please choose properties file
+anvizent.package.label.mappingID=Mapping ID
+anvizent.package.label.configTagName=Config Tag Name
+anvizent.package.label.valueTagName=Value Tag Name
+anvizent.package.label.statsTagName=Stats Tag Name
+anvizent.package.label.derivedComponent=Derived Component
+anvizent.package.label.jobTagName=Job Tag Name
+anvizent.package.label.tagDetails=Tag Details
+anvizent.package.label.globalConfigValues=Global Config Values
+anvizent.package.label.selectGlobalValue=Select Global Value
+anvizent.package.label.updateSeq=Update Seq
+anvizent.package.label.configInfo=Config Info
+anvizent.package.label.selectTag=Select Tag
+anvizent.package.label.environmentVariables=Environment Variables
+anvizent.package.label.makeDefault=Make Default
+anvizent.package.label.sourceType=Source Type
+anvizent.package.label.sparkMaster=Spark Master
+anvizent.package.label.deployMode=Deploy Mode
+anvizent.package.label.sparkPath=Spark Path Name
+anvizent.package.label.eltClassName=ELT Class Name
+anvizent.package.label.eltJobPath=ELT Job Path
+anvizent.package.label.default=Default
+anvizent.package.label.master=Master
+anvizent.package.label.yarn=Yarn
+anvizent.package.label.local=Local
+anvizent.package.label.select=Select
+anvizent.package.label.s3=S3
+anvizent.package.label.masterConfiguration=Master Configuration
+anvizent.package.label.noOfExecutors=NO Of Executors
+anvizent.package.label.executorMemory=Executer Memory
+anvizent.package.label.executorCores=Executor Cores
+anvizent.package.label.eLTLoadParameters=ELT Load Parameters
+#05/04/18
+anvizent.package.label.applicableDate=Applicable Date
+anvizent.package.label.referenceFields=Reference fields
+anvizent.package.label.crossReferenceFields=Cross Reference fields
+anvizent.package.label.fileHeadersMapping=File Headers Mapping
+anvizent.package.label.fileHeaders=File Headers
+anvizent.package.label.selectedILHeaders=Selected IL Headers
+anvizent.package.label.stats=Stats
+anvizent.package.label.selectColumnNames=Select Column Names
+anvizent.package.label.enterConditionName=Enter Condition Name
+anvizent.package.label.selectApplicableFromDate=Select applicable from date
+anvizent.package.label.pleaseSelectReferenceColumns=Please select Reference columns
+anvizent.package.label.pleaseSelectXReferenceColumns=Please select X Reference columns
+
+anvizent.message.error.text.targetTableDoesNotExistPleaseCreateATargetTableForThePackageAndSchedulePackageWillbeNotBeShownInSchedulePageWithoutATargetTable = ? : Target table does not exist. Please create a target table for the package and runnow/schedule.
+anvizent.package.label.cluster=Cluster
+anvizent.package.label.mesos=Mesos
+anvizent.package.label.standalone=Standalone
+anvizent.package.label.kubernetes=Kubernetes
+anvizent.package.label.sparkSubmitMode=Spark Submit Mode
+anvizent.package.label.jobSubmitModeType=Job Submit Mode 
+anvizent.package.label.java=Java
+anvizent.package.label.aurora=Aurora
+anvizent.package.label.ppkFile=PPK File
+anvizent.package.label.host=Host
+anvizent.package.label.port=Port
+anvizent.admin.button.hierarchicalData = Hierarchical Data
+anvizent.navLeftTabLink.label.hierarchical = Hierarchy Group
+anvizent.package.button.createNewHierarchy = Create New Hierarchy
+anvizent.package.label.groupName = Group Name
+anvizent.package.button.addHierarchy =  Add Hierarchy
+anvizent.package.label.mapHierarchy = Map Hierarchy
+anvizent.package.label.Map = Map
+anvizent.package.label.selectilordl = IL/DL
+anvizent.package.label.selectmeasure= Measure
+anvizent.package.label.selectdimension = Dimension
+anvizent.package.label.dimensionvalues = Dimension Values
+anvizent.package.label.associationname = Association Name
+anvizent.package.label.report.source.table = Source Table
+anvizent.package.label.columns = Columns
+anvizent.package.label.addtolevel = Add to Level
+anvizent.package.label.columndaterange = Range
+anvizent.package.label.fetch = Fetch
+anvizent.package.label.pattern = Pattern
+anvizent.package.label.autoManual = Manual
+anvizent.package.label.fetchPatternData = FetchPatternData
+anvizent.package.label.selectExclusions = Select Exclusions
+anvizent.package.label.hierarchyType = Hierarchy Type
+anvizent.package.label.financial = Financial
+anvizent.package.label.financialTemplate = Financial Template
+anvizent.package.label.pagination.nextpage.pattern.and.Limit = Hypermedia Pattern & Limit
+anvizent.package.label.pleaseEnterKeyParam = Please Hypermedia pattern
+anvizent.package.label.pagination.nextpage = Hypermedia
+anvizent.package.label.placeholder.hyperlink.next.record.pattern=Hypermedia pattern
+
+anvizent.package.message.structual.changes.custom.package.edit=Mapping column changes found. Would you like to review the query and proceed for mapping?
+
+anvizent.package.label.placeholder.hyperlink.next.record.pattern=Hypermedia pattern
+anvizent.package.label.addConditions = Add Conditions
+anvizent.package.label.crossRefName = Cross-Reference Name
+anvizent.package.label.selectDimensiontable = Select Dimension Table
+anvizent.package.button.addorviewresults = Add / View Results
+anvizent.package.label.patternormatchChars =  Pattern / Match No Of Chars
+
+anvizent.message.error.text.unableToSaveDetails=Unable to save details
+anvizent.package.label.doUWantUnMergetheExistingCross-ref=Do you want Un-Merge/ Nullify/Revert the Existing Cross references ?
+anvizent.package.label.non-deleted = Non-Deleted
+anvizent.package.label.deleted = Deleted
+anvizent.package.label.autoSplit = Auto Split
+anvizent.package.label.successfullyDeleted = Successfully deleted
+anvizent.package.label.doUWantdroptheexistingmergeCondition = Do you want to drop the existing merge conditions ?
+anvizent.package.label.successfullyunmerged = Successfully Un-Merged
+anvizent.package.label.alreadyMapped=Already Mapped
+anvizent.package.label.alertonDropColumnwhileheadersmapping = If you alter existing target table, respective Custom Data Sets will be effected.
+anvizent.package.label.reset=Reset
+
+#datavalidationAdmin
+anvizent.package.label.businesscases = Business Cases Validation
+anvizent.navLeftTabLink.label.datavalidation = Data Validation
+anvizent.navLeftTabLink.label.businesscases = Business Cases 
+anvizent.package.label.validationname = Validation Name
+anvizent.package.label.validationscripts = Validation Scripts
+anvizent.package.label.status = Status
+anvizent.package.label.businesscasesvalidation = Business Cases Validation
+anvizent.package.label.moduleordl = Module / DL
+anvizent.package.label.selectmodule = Select Module / DL
+anvizent.package.label.pleaseEnterValidationName = Please Enter Validation Name
+anvizent.package.label.pleaseEnterValidationScripts = Please Enter Validation Scripts
+anvizent.package.label.pleaseChoosedls = Please choose DL
+anvizent.navLeftTabLink.label.preload = Pre Load
+anvizent.package.label.dlnames = DLs
+anvizent.package.message.ViewResults = View Results
+anvizent.package.message.ViewScript =  View Script
+anvizent.package.label.script = Script
+anvizent.package.button.runselected = Run Selected
+anvizent.package.label.run = Run
+anvizent.package.label.selectAtleastonescript = Select At least One Script
+anvizent.package.label.results = Results
+anvizent.package.label.noscriptfound = No Script Found
+anvizent.package.label.download = Download
+anvizent.package.label.chooseconnector = Choose Connector
+anvizent.package.button.validationJobUpload = ValidationType Job Upload
+anvizent.package.label.validationTypeJobsUpload = ValidationType Jobs Upload
+anvizent.package.label.addvalidationTypeJobsUpload = Add ValidationType Jobs Upload
+anvizent.package.button.ValidationTypeFormUpload = ValidationType Form Upload
+anvizent.package.button.AddPreLoadValidation = Add-PreLoadValidation
+anvizent.package.label.JobFile_ExistedJarFile= Either Job File or Existed Jar Files need to be Uploaded.
+anvizent.package.label.dataValidationType  = Data Validation Type
+anvizent.package.label.validationTypeName  = ValidationType Name
+anvizent.package.label.validationTypeDescription = Validation Type Description
+anvizent.package.label.validation = Validation
+anvizent.package.label.dataValidationType = DataVaildation Type
+anvizent.navLeftTabLink.label.dataValidationType = DataValidation Type 
+anvizent.package.button.saveDataTypeValidation = Save
+anvizent.package.button.updateDataTypeValidation = Update
+anvizent.package.button.AddBusinessCaseValidation = Business Case Validation
+anvizent.package.label.pleaseEnterValidationDesc = Please Enter ValidationDescription
+anvizent.package.button.editDataValidationType = Edit Data Validation Type
+anvizent.package.button.createDataValidationType = Create Data Validation Type
+anvizent.message.error.text.noResultsFoundToDownload = No Results found to  download
+anvizent.message.error.text.scriptsExecutionFailed = Scripts Execution Failed
+anvizent.message.error.text.noscriptIdFound = No script found
+anvizent.message.error.text.unableToRetrieveDataValidationInfo = Unable to Retrieve DataValidation Info
+anvizent.message.success.text.scriptsExecutedSuccessfully = Scripts Executed Successfully
+anvizent.message.error.text.unabletodownloadFile = Unable to download File
+anvizent.message.error.text.unableToProcessYourRequest = Unable to process your Request
+anvizent.message.error.text.jarFilesAreNotAvailable =  Jars are not available
+anvizent.package.success.dvJobIsExecuted = Job is executed
+anvizent.package.error.dvJobExecutionFailed = Job Execution Failed
+anvizent.package.error.dvJobFailed = Job Failed
+anvizent.package.error.jobnotfound = Job not Found
+anvizent.package.message.text.areYouSureYouWantToProceedToChange=Are you sure, you want to proceed ?
+anvizent.package.message.text.pleasesettoselectfilecolumn=Please set to select file column
+
+anvizent.package.message.pleaseEnterWebserviceApiUrl = Please enter web service API URL.
+anvizent.package.label.pleaseChooseMinutes=Please choose minutes
+anvizent.package.label.minutes=Minute(s)
+anvizent.package.label.frequency=Frequency
+anvizent.package.label.pleasechoosepagination = Please Choose Pagination
+
+#AI Source Definition
+
+anvizent.package.label.businessModal=Business Use Case
+anvizent.package.label.stagingTable=Staging Table
+anvizent.package.label.sourceQuery=Source Query
+anvizent.package.label.aiSourceDefinition=AI Source Definition
+
+#AI Jobs Upload 
+
+anvizent.navLeftTabLink.label.AIJobsUpload = AI-Jobs Upload
+anvizent.package.label.aiJobsUpload = AI-Jobs Upload
+anvizent.package.label.jobType = Job Type
+anvizent.package.label.jobType_Transform = Transform
+anvizent.package.label.jobType_BackTransform = Back Transform
+anvizent.package.label.aiJobsUploadContextParameters = Global Parameters
+anvizent.package.label.aijobName = Job Name
+anvizent.package.label.aiJobFileName = Job File Name
+anvizent.package.label.aiJobFile = Job File
+anvizent.package.label.aiJobExistedJarFiles = Existed R Files
+anvizent.package.label.aiJobUpload = AI-Jobs Upload
+anvizent.package.label.aiModelName=Model Name
+anvizent.package.link.viewStatus=Job Status
+anvizent.package.label.aiModelDescription=Model Description
+anvizent.package.label.existedAIModal=Existing Model
+anvizent.package.label.modalParameters=Model Parameters
+anvizent.package.label.pleaseEnterParamValue=Please enter param value
+anvizent.package.label.pleaseEnterParamName=Please enter param name
+anvizent.package.label.pleaseSelectBusinessModal=Please choose business use case
+anvizent.package.label.pleaseSelectAiModel=Please select model
+anvizent.package.label.pleaseSelectStagingTable=Please choose staging table
+anvizent.package.label.pleaseSelectGenericContextParams=Please select model parameters
+anvizent.package.label.pleaseEnterSourceQuery=Please enter source query
+anvizent.package.label.pleaseChooseRFile=Please choose R file
+
+#Business Problem 
+
+anvizent.package.label.pleaseEnterBusinessProblem = Please Enter Business Use Case
+anvizent.package.label.pleaseSelectModelName= Please select Model Name
+anvizent.package.label.jobDuration=Job Duration(Mins)
+anvizent.package.label.pleaseEnterStagingTableScript = Please Enter Staging Table Script
+anvizent.package.label.pleaseEnterAlTableScript = Please Enter AIL Table Script
+anvizent.package.label.pleaseEnterOlTableScript = Please Enter OL Table Script
+anvizent.package.label.tableScriptTablesAreDifferent = Table Name not matched
+
+#ai model
+anvizent.package.label.pleaseEnterModelName = Please Enter Model Name
+
+#R Job Execution
+anvizent.package.label.runId=Run Id
+anvizent.package.label.aiModel=AI Model
+anvizent.package.label.sourceCount=Source Count
+anvizent.package.label.stagingCount=Staging Count
+anvizent.package.label.aILCount=AIL Count
+anvizent.package.label.aOLCount=AOL Count
+anvizent.package.label.errorMessage=Error Message
+anvizent.package.label.jobStartTime=Job Start Tiime
+anvizent.package.label.jobEndTime=Job End Time
+anvizent.package.label.jobRunStatus=Job Run Status
+anvizent.package.label.jobLogFileName=Log File
+anvizent.package.label.aiJobExecutionStatus=AI Job Execution
+anvizent.package.button.aIerrorLog=Log
+anvizent.package.button.viewExecutionComments=View Execution Comments
+
+#Business Problem Labels
+anvizent.package.label.bid = Business ID
+anvizent.package.label.businessProblem = Business Use Case
+anvizent.package.label.stagingTableName = Staging Table Name
+anvizent.package.label.stagingTableScript = Staging Table Script
+anvizent.package.label.aILTableName = AIL Table Name
+anvizent.package.label.aILTableScript = AIL Table Script
+anvizent.package.label.aOLTableName = AOL Table Name
+anvizent.package.label.aOLTableScript = AOL Table Script
+
+anvizent.package.label.pid = PID
+
+anvizent.package.label.pagination.conditionaldate = Conditional Date
+anvizent.package.label.pagination.page = Page
+anvizent.package.label.pagination.conditionalParams = Conditional Params
+anvizent.package.label.pagination.filtercondition= Filter & Condition
+anvizent.package.label.pagination.selectDayRange = Select Day Range
+
+anvizent.package.label.pagenumber = Page Number
+anvizent.package.label.retrylimit = Retry Limit
+anvizent.package.label.sleeptime = Sleep Time
+anvizent.package.label.dataBasevariables = DataBase Variables
+anvizent.package.label.dbParams=DB Query Params(Optional)
+
+anvizent.package.label.allowedfilesizeexceededmax5mb = Allowed file size exceeded. (Max. 5 MB)
+anvizent.package.message.Details = Details

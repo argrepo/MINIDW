@@ -1,0 +1,5 @@
+
+
+.ui-datepicker-prev,.ui-datepicker-next {  
+      background-color: rgb(26, 85, 67);
+}

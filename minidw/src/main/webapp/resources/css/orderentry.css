@@ -1,0 +1,40 @@
+
+
+.col-md-2 form-group glyphicon glyphicon-minus {
+     position: right;
+     top: 30px;
+}
+
+.glyphicon {
+	top: 30px;
+}
+
+/* .control-label {
+	font-size: 12px;
+} */
+/* .nav-tabs,.tabs {
+  color: rgb(26, 85, 67);
+	
+} */
+
+#searchFormId{
+align:left;	
+}
+
+.nav-pills>li>a{
+ background-color:rgb(26, 85, 67);
+ color: rgb(230, 229, 178);
+ text-decoration: none;
+
+}
+
+ .nav-pills > li.tabs > a:hover {
+ color:rgb(26, 85, 67);
+background-color: rgb(230, 229, 178);		
+	} 
+	
+	#container{
+	 line-height:1.2;
+	}
+	
+	

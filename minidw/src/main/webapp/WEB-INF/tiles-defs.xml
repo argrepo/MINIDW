@@ -1,0 +1,121 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+<!-- *************************************************************************************
+	 MINI-DW
+	 ************************************************************************************* 
+-->
+<definition name="anvizent" template="/WEB-INF/layouts/anvizent/template.jsp">
+        <put-attribute name="head" value="/WEB-INF/layouts/common/head.jsp" />
+        <put-attribute name="app" value="app" />
+        <put-attribute name="page" value="page" />
+        <put-attribute name="footer" value="/WEB-INF/layouts/anvizent/footer.jsp" /> 
+        <put-attribute name="scripts" value="/WEB-INF/layouts/common/scripts.jsp" />
+    </definition>
+    <definition name="*/*/*" extends="anvizent">
+        <put-attribute name="content" value="/WEB-INF/tiles/{1}/{2}/{3}.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/{1}/{2}/_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/{1}/{2}/_styles.jsp" />
+        <put-attribute name="page" value="{1}-{2}-{3}-page" />
+        <!-- make sure class name of the body tag same as jsp name -->
+        <put-attribute name="app" value="{1}" />
+    </definition>
+    
+    <definition name="*/*" extends="anvizent">
+        <put-attribute name="content" value="/WEB-INF/tiles/{1}/{2}.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/{1}/_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/{1}/_styles.jsp" />
+        <put-attribute name="page" value="{1}-{2}-page" />
+         <!-- make sure class name of the body tag same as jsp name -->
+        <put-attribute name="app" value="{2}" />
+    </definition>
+    
+    <definition name="errorunableToLoggedIn" template="/WEB-INF/tiles/auth/unableToLoggedIn.jsp">
+    
+    </definition>
+    <definition name="packageExecutionDetails" template="/WEB-INF/tiles/auth/packageExecutionDetails.jsp">
+    
+    </definition>
+    
+    <definition name="packageExecutionInfo" template="/WEB-INF/tiles/anvizent/packageExecutionInfo.jsp">
+    
+    </definition>
+    <definition name="tiles-anvizent-entry:*" extends="anvizent">
+    	<put-attribute name="header" value="/WEB-INF/layouts/anvizent/header.jsp" />
+    	<put-attribute name="nav-left" value="/WEB-INF/layouts/anvizent/nav-left.jsp" />
+        <put-attribute name="content" value="/WEB-INF/tiles/anvizent/{1}.jsp" />
+        <put-attribute name="error" value="/WEB-INF/tiles/anvizent/_error.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/anvizent/_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/anvizent/_styles.jsp" />
+        <put-attribute name="page" value="{1}-page" />
+        <!-- value is class name of the body tag-->
+        <put-attribute name="app" value="bg-db" />
+    </definition>
+    
+    <definition name="tiles-anvizent-newEntry:*" extends="anvizent">
+    	<put-attribute name="header" value="/WEB-INF/layouts/anvizent/header.jsp" />
+    	<!-- <put-attribute name="nav-left" value="/WEB-INF/layouts/anvizent/nav-left.jsp" /> -->
+        <put-attribute name="content" value="/WEB-INF/tiles/anvizent/{1}.jsp" />
+        <put-attribute name="error" value="/WEB-INF/tiles/anvizent/_error.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/anvizent/_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/anvizent/_styles.jsp" />
+        <put-attribute name="page" value="{1}-page" />
+        <!-- value is class name of the body tag-->
+        <put-attribute name="app" value="bg-db" />
+    </definition>
+    <definition name="tiles-anvizent-admin:*" extends="anvizent">
+    	<put-attribute name="header" value="/WEB-INF/layouts/anvizent/header.jsp" />
+    	<put-attribute name="nav-left" value="/WEB-INF/layouts/anvizent/nav-left.jsp" />
+        <put-attribute name="content" value="/WEB-INF/tiles/admin/{1}.jsp" />
+        <put-attribute name="error" value="/WEB-INF/tiles/admin/admin_error.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/admin/admin_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/admin/admin_styles.jsp" />
+        <put-attribute name="page" value="{1}-page" />
+        <!-- value is class name of the body tag-->
+        <put-attribute name="app" value="bg-db" />
+    </definition>
+    <definition name="tiles-anvizent-admin-plain:*" extends="anvizent">
+        <put-attribute name="content" value="/WEB-INF/tiles/admin/{1}.jsp" />
+        <put-attribute name="error" value="/WEB-INF/tiles/admin/admin_error.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/admin/admin_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/admin/admin_styles.jsp" />
+        <put-attribute name="page" value="{1}-page" />
+        <!-- value is class name of the body tag-->
+        <put-attribute name="app" value="bg-db" />
+    </definition>
+<!-- *************************************************************************************
+	 Portal 
+	 ************************************************************************************* 
+-->
+	<!-- <definition name="portal" template="/WEB-INF/layouts/portal/template.jsp">
+        <put-attribute name="head" value="/WEB-INF/layouts/common/head.jsp" />
+        <put-attribute name="app" value="app" />
+        <put-attribute name="page" value="page" />
+        <put-attribute name="navbar" value="/WEB-INF/layouts/portal/navbar.jsp" />
+        <put-attribute name="error" value="/WEB-INF/layouts/portal/error.jsp" />
+        <put-attribute name="content" value="/WEB-INF/layouts/portal/content.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/layouts/portal/footer.jsp" />
+        <put-attribute name="scripts" value="/WEB-INF/layouts/common/scripts.jsp" />
+        <put-attribute name="pageStyles" />
+        <put-attribute name="pageScripts" />
+    </definition>
+    
+    <definition name="*/*/*" extends="portal">
+        <put-attribute name="content" value="/WEB-INF/tiles/{1}/{2}/{3}.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/{1}/{2}/_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/{1}/{2}/_styles.jsp" />
+        <put-attribute name="page" value="{1}-{2}-{3}-page" />
+        <put-attribute name="app" value="{1}" />
+    </definition>
+    
+    <definition name="*/*" extends="portal">
+        <put-attribute name="content" value="/WEB-INF/tiles/{1}/{2}.jsp" />
+        <put-attribute name="pageScripts" value="/WEB-INF/tiles/{1}/_scripts.jsp" />
+        <put-attribute name="pageStyles" value="/WEB-INF/tiles/{1}/_styles.jsp" />
+        <put-attribute name="page" value="{1}-{2}-page" />
+        <put-attribute name="app" value="{1}" />
+    </definition>
+ -->
+    
+</tiles-definitions>

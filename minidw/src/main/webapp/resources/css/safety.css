@@ -1,0 +1,52 @@
+.safety-incidents-enter-page #incidentDetails{
+	width: 710px;
+	height: 310px;
+	
+}
+
+
+.safety-search-page #monthIn, .safety-enter-page #yearIn {
+	
+	width:100px;
+	text-align: center;
+}
+
+.safety-monthlymetrics-search-page #monthIn,.safety-monthlymetrics-search-page #yearIn{
+	
+	text-align: center;	
+}
+
+
+
+.safety-search-page #yearIn {
+	width: auto;
+	width: 100px;
+	text-align: center;	
+}
+
+.col-md-14,#exampleInputFile{
+	width:250px;
+}
+
+.safety-incidents-enter-page #datepicker {
+	width: 100px;
+}
+
+.form-group.required .control-label:before {
+  content:"*";
+  color:red;
+}
+
+i {
+ font-size:90%;
+ }
+ 
+
+
+.ui-datepicker-prev,.ui-datepicker-next {  
+      background-color: rgb(26, 85, 67);
+       
+}  
+
+
+

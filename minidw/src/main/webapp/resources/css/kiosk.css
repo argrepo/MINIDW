@@ -1,0 +1,28 @@
+#frame{
+	align: center;
+	width: 900px;
+	height:1000px;
+    }
+
+.myIframe well well-small{
+	border:0;
+}
+
+iframe#frame {
+	padding:0;
+	border: 1px solid #fff;
+}
+
+.kiosk-search-page .jumbotron  {
+	    padding: 0.5em 0.6em;
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.2em;
+        .btn {
+            padding: 0.5em;
+        }
+    }
+}
+
