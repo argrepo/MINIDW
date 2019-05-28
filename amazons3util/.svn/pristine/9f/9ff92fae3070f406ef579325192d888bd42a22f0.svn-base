@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.anvizent</groupId>
+  <artifactId>amazons3util</artifactId>
+  <name>amazons3util</name>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>DownLoad, upload and copy from bucket to bucket</description>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer>
+                  <resources>
+                    <resource>.SF</resource>
+                    <resource>.RSA</resource>
+                    <resource>.DSA</resource>
+                  </resources>
+                </transformer>
+                <transformer>
+                  <resource>reference.conf</resource>
+                </transformer>
+                <transformer>
+                  <resource>META-INF/spring.handlers</resource>
+                </transformer>
+                <transformer>
+                  <resource>META-INF/spring.schemas</resource>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <com.amazonaws.java.sdk.s3.version>1.11.149</com.amazonaws.java.sdk.s3.version>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+</project>
+
