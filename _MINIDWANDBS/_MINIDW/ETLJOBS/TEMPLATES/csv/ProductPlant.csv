@@ -1,0 +1,11 @@
+Company_Id,Product_Id,Plant_Id,DataSource_Id,Plant_Capacity,Safty_Level,Currency_Code,Unit_Price,UOM_Id,Product_Type,Effective_Start_Date,Effective_End_Date,Primary_Supplier_ID,Lot_Size,Inventory_UOM_Id,BCharacter01,BCharacter02,BNumber01,BNumber02,BDateTime01,BBoolean,IsActive,Added_Date,Added_User,Updated_Date,Updated_User
+Cmpy05,SFP01,Plant01,,11.1,2.22,USD,102.36,UOM5,PTYP1,2015-03-17 00:00:17,2015-03-20 00:00:20,Supplier1,56.3,UOM1,,,,,,,,,,,
+Cmpy06,SFP02,Plant01,,12.1,3.22,USD,103.36,UOM6,PTYP2,2015-03-18 00:00:18,2015-03-21 00:00:21,Supplier1,57.3,UOM2,,,,,,,,,,,
+Cmpy03,FP01,Plant02,,13.1,4.22,USD,104.36,UOM7,PTYP3,2015-03-19 00:00:19,2015-03-22 00:00:22,Supplier1,58.3,UOM3,,,,,,,,,,,
+Cmpy04,FP02,Plant02,,14.1,5.22,USD,105.36,UOM8,PTYP4,2015-03-20 00:00:20,2015-03-23 00:00:23,Supplier11,59.3,UOM4,,,,,,,,,,,
+Cmpy05,FP03,Plant03,,15.1,6.22,USD,106.36,UOM5,PTYP5,2015-03-21 00:00:21,2015-03-24 00:00:24,Supplier11,60.3,UOM5,,,,,,,,,,,
+Cmpy06,SFP01,Plant01,,16.1,7.22,USD,107.36,UOM6,PTYP6,2015-03-22 00:00:22,2015-03-25 00:00:25,Supplier11,61.3,UOM6,,,,,,,,,,,
+Cmpy07,SFP02,Plant01,,17.1,8.22,USD,108.36,UOM7,PTYP7,2015-03-23 00:00:23,2015-03-26 00:00:26,Supplier18,62.3,UOM7,,,,,,,,,,,
+Cmpy02,FP01,Plant02,,18.1,9.22,USD,109.36,UOM8,PTYP8,2015-03-24 00:00:24,2015-03-27 00:00:27,Supplier18,63.3,UOM8,,,,,,,,,,,
+Cmpy03,FP02,Plant02,,19.1,10.22,USD,110.36,UOM9,PTYP9,2015-03-25 00:00:25,2015-03-28 00:00:28,Supplier18,64.3,UOM9,,,,,,,,,,,
+Cmpy04,FP03,Plant03,,20.1,11.22,USD,111.36,UOM10,PTYP10,2015-03-26 00:00:26,2015-03-29 00:00:29,Supplier19,65.3,UOM10,,,,,,,,,,,

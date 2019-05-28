@@ -1,0 +1,47 @@
+[1] "Log File Name: 1010014_Sales_Forecasting_Sales_Forecast_20190119144112.log"
+[1] "DB Connection to usha_1010014 Successfully Established"
+[1] "DB Connection to usha_1010014_staging Successfully Established"
+[1] "DB Connection to usha_1010014_appdb Successfully Established"
+<MySQLResult:512,1,1>
+[1] "Database Connection is still Valid"
+
+[1] "The Staging Table Name for the Sales_Forecast is: AIL_Sales_Forecast_Staging"
+[2] "The Staging Table Name for the Sales_Forecast is: sample"                    
+[1] "The AIL Table Name for the Sales_Forecast is: AIL_Sales_Forecast"
+[2] "The AIL Table Name for the Sales_Forecast is: sample"            
+[1] "The AOL Table Name for the Sales_Forecast is: AOL_Sales_Forecast"
+[2] "The AOL Table Name for the Sales_Forecast is: sample"            
+
+[1] "Staging Source SQL Query"
+[1] "select Company_Name as DIMENSION1,\nCustomer_Country_Name as DIMENSION2,\n Customer_RegionStateName as DIMENSION3,\n'' as DIMENSION4,\n'' as DIMENSION5,\nYears as YEAR, \nMonthId as MONTH, \nsum(Order_Amount) as ACTUAL_SALES,\nnow() as CREATED_DATETIME,\n'AI_User' as CREATED_BY,\nnow() as MODIFIED_DATETIME,\n'AI_User' as MODIFIED_BY\nfrom DL_Customer_Service_Days\ngroup by Company_Name,Customer_Country_Name,Customer_RegionStateName,Years,MonthId"
+
+[1] "Transformation Rules are not defined for the Staging Table"
+[1] "Staging Database Connection is still Valid"
+[1] "Database Connection is still Valid"
+[1] "The Record Count of Source Result Set is: 55"
+[1] "Source Data Summary"
+  DIMENSION1         DIMENSION2         DIMENSION3         DIMENSION4       
+ Length:55          Length:55          Length:55          Length:55         
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+  DIMENSION5             YEAR          MONTH         ACTUAL_SALES   
+ Length:55          Min.   :2014   Min.   : 1.000   Min.   :  2034  
+ Class :character   1st Qu.:2015   1st Qu.: 3.500   1st Qu.: 13880  
+ Mode  :character   Median :2016   Median : 6.000   Median : 26452  
+                    Mean   :2016   Mean   : 6.309   Mean   : 38502  
+                    3rd Qu.:2017   3rd Qu.: 9.000   3rd Qu.: 52435  
+                    Max.   :2018   Max.   :12.000   Max.   :413305  
+ CREATED_DATETIME    CREATED_BY        MODIFIED_DATETIME  MODIFIED_BY       
+ Length:55          Length:55          Length:55          Length:55         
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+[1] "The Record Count of Staging Table is : 55"
+[1] "All the records from the source result set are loaded into Staging Table"
+<MySQLResult:318316272,1,8>
+[1] "Source Query Result set contains: 55"

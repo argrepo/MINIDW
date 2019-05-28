@@ -1,0 +1,6 @@
+"Adjustment_Code","Adjustment_Name","Adjustment_Descr","DataSource_Id","BCharacter01","BCharacter02","BNumber01","BNumber02","BDateTime01","BBoolean","Added_Date","Added_User","Updated_Date","Updated_User"
+"AD","Count Adjust","Count Adjust",,,,,,,,"2016-12-14 02:56:02","ETL_Admin","2016-12-14 02:56:02","ETL_Admin"
+"CC","Cycle Count Adjust","Cycle Count Adjust",,,,,,,,"2016-12-14 02:56:02","ETL_Admin","2016-12-14 02:56:02","ETL_Admin"
+"SC","Scrap Adjust","Scrap Adjust",,,,,,,,"2016-12-14 02:56:02","ETL_Admin","2016-12-14 02:56:02","ETL_Admin"
+"SQ","Sample for Quality Control","Sample for Quality Control",,,,,,,,"2016-12-14 02:56:02","ETL_Admin","2016-12-14 02:56:02","ETL_Admin"
+"SR","Samples for Sales Rep","Samples for Sales Rep",,,,,,,,"2016-12-14 02:56:02","ETL_Admin","2016-12-14 02:56:02","ETL_Admin"

@@ -1,0 +1,5 @@
+"Order_Rel_Num","Company_id","Order_Number","Order_LineNumber","Product_Id","Release_Date","Release_Qty","Release_Status","MTS_Flag","DataSource_Id","BCharacter01","BCharacter02","BNumber01","BNumber02","BDateTime01","BBoolean","Added_Date","Added_User","Updated_Date","Updated_User"
+1,"ABC3","Or001",111,"KNUT","2009-03-12 00:00:00.000",240,0,0,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+1,"ABC4","Or002",222,"MPP","2008-11-19 00:00:00.000",10,0,0,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+1,"ABC5","Or003",333,"KNUT","2009-03-12 00:00:00.000",1,0,0,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+1,"ABC3","Or004",444,"MPP","2008-11-19 00:00:00.000",1,0,0,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"

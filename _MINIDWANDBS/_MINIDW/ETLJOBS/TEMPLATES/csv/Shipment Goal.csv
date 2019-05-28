@@ -1,0 +1,5 @@
+"Company_Id","Product_Id","Plant_Id","Start_Date","End_Date","Ship_Goal_Qty","DataSource_Id","BCharacter01","BCharacter02","BNumber01","BNumber02","BDateTime01","BBoolean","Added_Date","Added_User","Updated_Date","Updated_User"
+"ABC3","KNUT","PL","2010-09-06 15:15:41","2010-09-11 15:15:41",23,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC4","MPP","PL","2012-03-08 13:06:37","2012-03-13 13:06:37",94,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC5","KNUT","PL","2011-07-27 20:19:57","2011-08-01 20:19:57",22,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC3","MPP","PL","2012-01-02 10:44:21","2012-01-07 10:44:21",78,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"

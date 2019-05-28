@@ -1,0 +1,17 @@
+[1] "Log File Name: 1010014_Sales_Forecasting_Actual_Sales_Forecasting_Actual_20190130154725.log"
+[1] "DB Connection to usha_1010014 Successfully Established"
+[1] "DB Connection to usha_1010014_staging Successfully Established"
+[1] "DB Connection to usha_1010014_appdb Successfully Established"
+<MySQLResult:-223356703,1,1>
+[1] "Database Connection is still Valid"
+
+[1] "The Staging Table Name for the Sales_Forecasting_Actual is: "
+[1] "The AIL Table Name for the Sales_Forecasting_Actual is: "
+[1] "The AOL Table Name for the Sales_Forecasting_Actual is: "
+
+[1] "Staging Source SQL Query"
+character(0)
+
+[1] "Transformation Rules are not defined for the Staging Table"
+[1] "Staging Database Connection is still Valid"
+[1] "Database Connection is still Valid"

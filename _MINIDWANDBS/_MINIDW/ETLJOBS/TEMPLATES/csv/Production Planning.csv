@@ -1,0 +1,6 @@
+"Company_Id","Product_Id","Plant_Id","Plan_Date","Production_Line","Plant_Capacity","Plant_Capacity_Revenue","Prod_Planned_Qty","Prod_Planned_Revenue","Actual_Produced_Qty","DataSource_Id","BCharacter01","BCharacter02","BNumber01","BNumber02","BDateTime01","BBoolean","Added_Date","Added_User","Updated_Date","Updated_User"
+"ABC3","KNUT","PL","2012-03-03 06:53:07","PL",1000,10000,164,1640,1804,"TEST","unknown","unknown",1,1,2008-03-13 00:00:00,1,2008-04-02 00:00:00,"unknown",2008-03-13 00:00:00,"unknown"
+"ABC4","MPP","PL","2010-05-07 01:19:48","PL",0,0,0,0,0,"TEST","unknown","unknown",1,1,2008-03-19 00:00:00,1,2008-01-08 00:00:00,"unknown",2008-03-19 00:00:00,"unknown"
+"ABC5","KNUT","PL","2011-08-03 23:44:46","PL",1000,200000,110,22000,1210,"TEST","unknown","unknown",1,1,2008-10-12 00:00:00,1,2008-05-12 00:00:00,"unknown",2008-10-12 00:00:00,"unknown"
+"ABC3","MPP","PL","2009-09-19 17:01:02","PL",1000,200000,255,51000,2805,"TEST","unknown","unknown",1,1,2008-09-25 00:00:00,1,2008-05-25 00:00:00,"unknown",2008-09-25 00:00:00,"unknown"
+"ABC4","KNUT","PL","2008-09-30 17:09:41","PL",1000,21000,403,8463,4433,"TEST","unknown","unknown",1,1,2008-12-31 00:00:00,1,2008-10-31 00:00:00,"unknown",2008-12-31 00:00:00,"unknown"

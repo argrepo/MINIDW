@@ -1,0 +1,6 @@
+"Company_Id","Product_Id","Plant_Id","Plant_Capacity","Safty_level","Currency_Id","Unit_Price","Unit_Of_Measure","product_type","Effective_Start_date","Effective_End_date","Supplier_Id","DataSource_Id","BCharacter01","BCharacter02","BNumber01","BNumber02","BDateTime01","BBoolean","Added_Date","Added_User","Updated_Date","Updated_User"
+"ABC3","KNUT","PL",20,1,"USD",10,"EA","P",2009-03-05 00:00:00,2009-03-25 00:00:00,1,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC4","MPP","PL",40,1,"USD",0,"FT","M",2010-01-04 00:00:00,2010-01-20 00:00:00,2,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC5","KNUT","PL",25,2,"USD",200,"EA","M",2008-11-19 00:00:00,2008-12-19 00:00:00,1,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC3","MPP","PL",45,0,"USD",200,"EA","M",2008-11-19 00:00:00,2008-12-09 00:00:00,2,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"ABC4","KNUT","PL",50,4,"USD",21,"EA","M",2008-11-19 00:00:00,2008-12-20 00:00:00,1,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"

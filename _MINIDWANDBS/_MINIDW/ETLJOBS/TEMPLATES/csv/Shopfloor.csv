@@ -1,0 +1,7 @@
+"ShopfloorID","ShopfloorName","ShopfloorDescr","Company_Id","Plant_id","IsActive","no_of_mechines","std_Q_Hours","crew_size","emp","work_hours_per_day","min_capacity","max_capacity","DataSource_Id","BCharacter01","BCharacter02","BNumber01","BNumber02","BDateTime01","BBoolean","Added_Date","Added_User","Updated_Date","Updated_User"
+"SERVC","Rockford Welding","Rockford Welding","ABC3","PL",0,1,2,1,0,8,100,1000,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"SERVC","Rockford Welding","Rockford Welding","ABC4","PL",0,1,4,1,0,8,100,1000,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"SERVC","Midwest Region","Midwest Region","ABC5","PL",0,4,2,1,8,8,100,1000,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"SERVC","Service Technician","Service Technician","ABC3","PL",0,4,5,1,8,8,100,1000,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"SERVC","Service Technician with equip","Service Technician with equip","ABC4","PL",0,1,1,1,0,8,100,1000,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"
+"SERVC","Service Technician with equip","Service Technician with equip","ABC5","PL",0,1,6,1,0,8,100,1000,"unknown","unknown","unknown",1,1,2008-09-02 00:00:00,1,2008-09-02 00:00:00,"unknown",2008-09-02 00:00:00,"unknown"

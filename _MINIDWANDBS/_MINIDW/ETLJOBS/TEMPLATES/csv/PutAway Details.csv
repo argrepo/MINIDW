@@ -1,0 +1,3 @@
+Company_Id,DataSource_Id,PutAway_Transaction_No,PO_Number,PO_Line_Number,PO_Type,Sequence_Number,Plant_Id,Warehouse_ID,Bin_Id,PutAway_Zone,Container_Id,PutAway_Requested_Date,PutAway_Date,Product_Id,PutAway_Type,Max_PutAway_Qty,PutAway_Status,UOM_Id,PutAway_Qty,Open_Qty,Closed_Qty,Resource_Id,Resource_Worked_Hours,BCharacter01,BCharacter02,BNumber01,BNumber02,BDateTime01,BBoolean,Added_Date,Added_User,Updated_Date,Updated_User
+C001,,PTXN876,P0876,1,Order,2,P008,W156,B87,Pzone,C87,12/19/16 02:16 PM,12/20/16 02:16 PM,P567,open,67,open,KG,20,15,10,R001,1345,,,,,,,,,,
+CS001,,PTYG328,P7623,1,Order,1,P45,W34,B543,Pzone,C87,12/19/16 02:16 PM,12/20/16 02:16 PM,PR324,open,158,open,LB,50,15,10,Testt45,45789,,,,,,,,,,

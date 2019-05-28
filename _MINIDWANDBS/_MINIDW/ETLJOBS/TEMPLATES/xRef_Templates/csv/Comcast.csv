@@ -1,0 +1,6 @@
+"ID","ItemNumber","CustomerName","City","State","Qty","Ext_Cost","Vendor","Division","Month","ProdType","ProdCategory","Year"
+1,"2000BP","Addison","SAVANNAH","GA",60,229.2,"TVC","South","Dec","MGT","TAP",2009
+2,"2000BP","Dalton","PETERSBURG","MI",40,152.8,"TVC","North","Mar","MGT","TAP",2009
+3,"2000BP","Barriston","PANAMA CITY","FL",30,114.6,"TVC","South","Jul","MGT","TAP",2009
+4,"2000BP","Addison","PANAMA CITY","FL",40,152.8,"TVC","South","Mar","MGT","TAP",2009
+5,"2000BP","Dalton","COLUMBUS","GA",30,114.6,"TVC","South","Mar","MGT","TAP",2009

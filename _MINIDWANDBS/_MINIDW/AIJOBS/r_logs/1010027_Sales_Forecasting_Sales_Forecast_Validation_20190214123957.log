@@ -1,0 +1,17 @@
+[1] "Log File Name: 1010027_Sales_Forecasting_Sales_Forecast_Validation_20190214123957.log"
+[1] "DB Connection to mahender_1010009_1010027 Successfully Established"
+[1] "DB Connection to mahender_1010009_1010027_staging Successfully Established"
+[1] "DB Connection to mahender_1010009_1010027_appdb Successfully Established"
+<MySQLResult:1836216174,1,1>
+[1] "Database Connection is still Valid"
+
+[1] "The Staging Table Name for the Sales_Forecast_Validation is: AIL_Sales_Forecast_Staging"
+[1] "The AIL Table Name for the Sales_Forecast_Validation is: AIL_Sales_Forecast"
+[1] "The AOL Table Name for the Sales_Forecast_Validation is: AOL_Sales_Forecast"
+
+[1] "Staging Source SQL Query"
+[1] "select Company_Name as DIMENSION1,\nCustomer_Country_Name as DIMENSION2,\n Customer_RegionStateName as DIMENSION3,\n'' as DIMENSION4,\n'' as DIMENSION5,\nYears as YEAR, \nMonthId as MONTH, \nsum(Order_Amount) as ACTUAL_SALES,\nnow() as CREATED_DATETIME,\n'AI_User' as CREATED_BY,\nnow() as MODIFIED_DATETIME,\n'AI_User' as MODIFIED_BY\nfrom DL_Customer_Service_Days_AI\ngroup by Company_Name,Customer_Country_Name,Customer_RegionStateName,Years,MonthId"
+
+[1] "Transformation Rules are not defined for the Staging Table"
+[1] "Staging Database Connection is still Valid"
+[1] "Database Connection is still Valid"

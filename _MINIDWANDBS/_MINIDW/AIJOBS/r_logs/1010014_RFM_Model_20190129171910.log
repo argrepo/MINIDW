@@ -1,0 +1,33 @@
+[1] "Log File Name: 1010014_RFM_Model_20190129171910.log"
+package 'httpuv' successfully unpacked and MD5 sums checked
+package 'mime' successfully unpacked and MD5 sums checked
+package 'jsonlite' successfully unpacked and MD5 sums checked
+package 'xtable' successfully unpacked and MD5 sums checked
+package 'htmltools' successfully unpacked and MD5 sums checked
+package 'sourcetools' successfully unpacked and MD5 sums checked
+package 'later' successfully unpacked and MD5 sums checked
+package 'promises' successfully unpacked and MD5 sums checked
+package 'shiny' successfully unpacked and MD5 sums checked
+package 'ggthemes' successfully unpacked and MD5 sums checked
+package 'lubridate' successfully unpacked and MD5 sums checked
+package 'xplorerr' successfully unpacked and MD5 sums checked
+package 'rfm' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\mahender.alaveni\AppData\Local\Temp\Rtmp2vVOgX\downloaded_packages
+[1] "DB Connection to usha_1010014 Successfully Established"
+[1] "DB Connection to usha_1010014_staging Successfully Established"
+[1] "DB Connection to usha_1010014_appdb Successfully Established"
+<MySQLResult:328081272,1,1>
+[1] "Database Connection is still Valid"
+
+[1] "The Staging Table Name for the RFM_Model is: AIL_Customer_Segmentation_Staging"
+[1] "The AIL Table Name for the RFM_Model is: AIL_Customer_Segmentation"
+[1] "The AOL Table Name for the RFM_Model is: AOL_Customer_Segmentation"
+
+[1] "Staging Source SQL Query"
+[1] "select CustomerID as CUSTOMER_ID, \nmin(datediff(sysdate(),Sales_Order_Date)) as RECENCY,\ncount(1) as FREQUENCY,\nsum(Order_Amount) as MONETARY,\nsum(Order_Amount)/count(1) as AVERAGE_ORDER_VALUE,\nmax(datediff(sysdate(),Sales_Order_Date)) as LONGEVITY,\ncount(distinct Product_Id) as UNIQUE_PRODUCTS_BOUGHT,\nsum(Ordered_Qty) as ORDERED_QUANTITY,\nsum(ShippedQuantity) as SHIPPED_QUANTITY,\nsum(onTime_Quantity) as ONTIME_DELIVERED_ORDERS,\nsum(ReturnedQty) as RETURNED_ORDERS,\nsum(BackOrder_Quantity) as BACK_ORDERS,\nsum(Open_Qty) as OPEN_ORDERS,\nnow() as CREATED_DATETIME,\n'AI_User' as CREATED_BY,\nnow() as MODIFIED_DATETIME,\n'AI_User' as MODIFIED_BY\nfrom DL_Customer_Service_Days_AI\ngroup by CustomerID"
+
+[1] "Transformation Rules are not defined for the Staging Table"
+[1] "Staging Database Connection is still Valid"
+[1] "Database Connection is still Valid"

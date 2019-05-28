@@ -1,0 +1,9 @@
+"Company_Id","Company_Name","Address1","Address2","City","Zipcode","Email","State","Country","Region","Sub_Region","Currency_Code","Hierarchy_Lvl1","Hierarchy_Lvl2","Hierarchy_Lvl3","Hierarchy_Lvl4","DataSource_Id","Bcharacter01","Bcharacter02","BNumber01","BNumber02","BDateTime01","BBoolean"
+"ABC1","ABC Corporation","415 Madison Avenue"," TEST","New York",10017," TEST","NY","USA"," TEST"," TEST","USD"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,
+"ABC2","ABC Distribution","12600S Torrence Ave"," TEST","Chicago",60644," TEST","IL","USA"," TEST"," TEST","USD"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1
+"ABC3","ABC USA","12600 S Torrence Ave"," TEST","Chicago",60633,"administrator@epicorsi.americas.epicor.net","IL","USA"," TEST"," TEST","USD"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1
+"ABC4","ABC Financial Co."," TEST"," TEST"," TEST",," TEST","IL","USA"," TEST"," TEST","USD"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1
+"ABC5","ABC Europe","2630 Kings Court","Birmingham Business Park","Birmingham","B37 7Ye"," TEST","IL","United Kingdom"," TEST"," TEST","Euro"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1
+"ABC6","ABC Education","12600 S Torrence Ave"," TEST","Chicago",60633,"administrator@salesdemo.mfgdemo.com","IL","USA"," TEST"," TEST","USD"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1
+"ABC7","ABC Mexico","Ave Gomez Morin #350-802","Col Valle Campestre","San Pedro Garza Garcia, NL CP",66265,,"IL","USA"," TEST"," TEST","Peso"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1
+"ABC8","ABC Printing Co.","americas.epicor"," TEST"," TEST",,"administrator@epicorsi.americas.epicor.net","IL","USA"," TEST"," TEST","USD"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST"," TEST",1,1,2008-09-02 00:00:00,1

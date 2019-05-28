@@ -1,0 +1,11 @@
+UOM_Id,DataSource_Id,UOM_Type,UOM_Name,UOM_Descr,UOM_Short_Descr,UOM_Precision,BCharacter01,BCharacter02,BNumber01,BNumber02,BBoolean,Added_Date,Added_User,Updated_Date,Updated_User
+UOM001,,UOMTYP,UOMName1,UOMName1,UOMName1,1,,,,,,,,,
+UOM002,,UOMTYP,UOMName2,UOMName2,UOMName2,2,,,,,,,,,
+UOM003,,UOMTYP,UOMName3,UOMName3,UOMName3,3,,,,,,,,,
+UOM004,,UOMTYP,UOMName4,UOMName4,UOMName4,4,,,,,,,,,
+UOM005,,UOMTYP,UOMName5,UOMName5,UOMName5,5,,,,,,,,,
+UOM001,,UOMTYP,UOMName6,UOMName6,UOMName6,6,,,,,,,,,
+UOM002,,UOMTYP,UOMName7,UOMName7,UOMName7,7,,,,,,,,,
+UOM003,,UOMTYP,UOMName8,UOMName8,UOMName8,8,,,,,,,,,
+UOM004,,UOMTYP,UOMName9,UOMName9,UOMName9,9,,,,,,,,,
+UOM010,,UOMTYP,UOMName10,UOMName10,UOMName10,10,,,,,,,,,

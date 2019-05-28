@@ -1,0 +1,524 @@
+############################################################################
+################# Customer Profiling Model
+################################################################################
+
+################################################################################
+############## Clearing the Plots and existing Objects
+################################################################################
+
+options(repos=structure(c(CRAN="https://cran.rstudio.com/")))
+
+cores <- parallel::detectCores()
+
+options(Ncpus = cores)
+
+pdf(NULL)
+
+rm(list=ls())
+
+##########################################################################
+#################################################################
+##################### Input Parameters
+#################################################################
+############## DB Connectivity Parameters #########
+
+args <- commandArgs(TRUE)
+
+parameter_file_name <- args[1]
+
+
+#param_input <- read.csv("param.csv",header=TRUE,stringsAsFactors = FALSE)
+
+##### Reading the Parameter File
+param_input <- read.csv(parameter_file_name,header=TRUE,stringsAsFactors = FALSE)
+
+print("Preview of the Parameter File")
+print(param_input)
+
+client <- as.character(param_input$VALUE[param_input$PARAM=="client"])
+app_db_host <- as.character(param_input$VALUE[param_input$PARAM=="app_db_host"])
+app_db_port <- as.integer(as.character(param_input$VALUE[param_input$PARAM=="app_db_port"]))
+app_db_name <- as.character(param_input$VALUE[param_input$PARAM=="app_db_name"])
+app_db_user_name <- as.character(param_input$VALUE[param_input$PARAM=="app_db_user_name"])
+app_db_password <- as.character(param_input$VALUE[param_input$PARAM=="app_db_password"])
+staging_db_host <- as.character(param_input$VALUE[param_input$PARAM=="staging_db_host"])
+staging_db_port <- as.integer(as.character(param_input$VALUE[param_input$PARAM=="staging_db_port"]))
+staging_db_name <- as.character(param_input$VALUE[param_input$PARAM=="staging_db_name"])
+staging_db_user_name <- as.character(param_input$VALUE[param_input$PARAM=="staging_db_user_name"])
+staging_db_password <- as.character(param_input$VALUE[param_input$PARAM=="staging_db_password"])
+db_host <- as.character(param_input$VALUE[param_input$PARAM=="db_host"])
+db_port <- as.integer(as.character(param_input$VALUE[param_input$PARAM=="db_port"]))
+db_name <- as.character(param_input$VALUE[param_input$PARAM=="db_name"])
+db_user_name <- as.character(param_input$VALUE[param_input$PARAM=="db_user_name"])
+db_password <- as.character(param_input$VALUE[param_input$PARAM=="db_password"])
+log_file_path <- as.character(param_input$VALUE[param_input$PARAM=="log_file_path"])
+user_defined_functions_path <- as.character(param_input$VALUE[param_input$PARAM=="user_defined_functions_path"])
+#user_defined_functions_path <- "/usr/_MINIDW/AIJOBS/AI_COMMON_JOBS/"
+
+Business_Problem <- as.character(param_input$VALUE[param_input$PARAM=="Business Problem"])
+Model_Name <- as.character(param_input$VALUE[param_input$PARAM=="Model Name"])
+
+###################################################################################
+######################## Creating a Log File with the entire console execution
+#############################################################################################
+
+timestamp <- gsub(pattern=" ","",gsub(pattern = "[[:punct:]]","",as.character(Sys.time())))
+log_file_name <- paste(client,"_",gsub(pattern = " ","_",Model_Name),"_",timestamp,".log",sep="")
+
+#### Sinking the console output to the Log File
+sink(paste(log_file_path,"/",log_file_name,sep=""))
+
+print(paste0("Log File Name: ",log_file_name,sep=""))
+
+#Capturing the system Start Time
+
+start_time <- Sys.time()
+
+
+####################################################################################
+###################### Installing the required Packages and loading the libraries
+#################################################################################
+
+if(!require("rfm")) install.packages("rfm"); library("rfm")
+if(!require("dplyr")) install.packages("dplyr"); library("dplyr")
+if(!require("plyr")) install.packages("plyr"); library("plyr")
+if(!require("DBI")) install.packages("DBI"); library("DBI")
+if(!require("RMySQL")) install.packages("RMySQL"); library("RMySQL")
+if(!require("sqldf")) install.packages("sqldf"); library("sqldf")
+if(!require("data.table")) install.packages("data.table"); library("data.table")
+if(!require("stringr")) install.packages("stringr"); library("stringr")
+if(!require("readr")) install.packages("readr"); library("readr")
+
+###################### Setting the default options #################
+
+###### setting default driver of sqldf library to SQLite
+options(sqldf.driver = "SQLite")
+
+###### Turning off the scientific Notation of Numbers
+options(scipen = 999)
+
+##################################################################################
+############# Load the user defined functions ##################
+##################################################################################
+
+source(paste0(user_defined_functions_path,"connect_mysql_db.R",sep=""))
+source(paste0(user_defined_functions_path,"get_AI_Model_Metadata.R",sep=""))
+source(paste0(user_defined_functions_path,"staging_data_load.R",sep=""))
+source(paste0(user_defined_functions_path,"data_quality_report.R",sep=""))
+source(paste0(user_defined_functions_path,"missing_data_pattern_report.R",sep=""))
+source(paste0(user_defined_functions_path,"numerical_data_summary_report.R",sep=""))
+source(paste0(user_defined_functions_path,"string_data_summary_report.R",sep=""))
+source(paste0(user_defined_functions_path,"basic_data_summary_report.R",sep=""))
+source(paste0(user_defined_functions_path,"random_forest_imputation.R",sep=""))
+
+
+############################################################################
+############### Connecting to the managaeDB Database
+#############################################################################
+
+mysql_db_connection <- connect_mysql_db(db_host,db_port,db_name,db_user_name,db_password)
+mysql_staging_db_connection <- connect_mysql_db(staging_db_host,staging_db_port,staging_db_name,
+                                                staging_db_user_name,staging_db_password)
+mysql_app_db_connection <- connect_mysql_db(app_db_host,app_db_port,app_db_name,app_db_user_name,app_db_password)
+
+
+##################################################################################
+#################### Updating the AI Job Execution Summary 
+##################################################################################
+
+AI_Job_RUN_ID <- dbGetQuery(mysql_staging_db_connection,"select max(RUN_ID) from AI_Jobs_Execution_Summary")
+
+new_AI_Job_RUN_ID <- if(is.na(AI_Job_RUN_ID)){1}else{AI_Job_RUN_ID+1}
+
+dbSendQuery(mysql_staging_db_connection,paste0("insert into AI_Jobs_Execution_Summary(
+                                               RUN_ID,BUSINESS_PROBLEM,AI_MODEL,JOB_START_DATETIME,JOB_RUN_STATUS,JOB_LOG_FILENAME)
+                                               VALUES(",
+                                               new_AI_Job_RUN_ID,",",
+                                               "'",Business_Problem,"',",
+                                               "'",Model_Name,"',",
+                                               "'",start_time,"'",",",
+                                               "'","Started","'",",",
+                                               "'",log_file_name,"')",
+                                               sep=""))
+
+############################################################################
+############### Getting the AI Metadata
+#############################################################################
+
+AI_Metadata_Details <- get_AI_Model_Metadata(mysql_app_db_connection,Business_Problem,Model_Name)
+
+############################################################################
+############### Loading Source Data into Staging Table
+#############################################################################
+
+staging_sql <- as.character(AI_Metadata_Details$in_staging_sql_query)
+
+staging_table_name <- as.character(AI_Metadata_Details$STAGING_TABLE)
+
+system.time(
+
+source_records <- staging_data_load(mysql_staging_db_connection,mysql_db_connection,staging_sql,staging_table_name)
+
+)
+
+##################################################################################
+#################### Updating the AI Job Execution Summary 
+##################################################################################
+
+dbSendQuery(mysql_staging_db_connection,paste0("UPDATE AI_Jobs_Execution_Summary
+                                               SET SOURCE_RECORD_COUNT=",
+                                               source_records,
+                                               " , JOB_RUN_STATUS=",
+                                               "'","Source Data Reading Completed","'",
+                                               " WHERE RUN_ID=",new_AI_Job_RUN_ID,sep=""))
+
+############################################################################
+########### Conditional Execution of AI Model
+############################################################################
+
+if(exists("source_records") & source_records>0){
+  
+  print(paste0("Source Query Result set contains: ",source_records,sep=""))
+  
+  ############################################################################
+  ############### Displaying the Source Data Summary Report
+  #############################################################################
+  
+  data_quality_report(mysql_staging_db_connection,staging_table_name)
+  
+  ############################################################################
+  ############### Applying Statistical Transformations
+  #############################################################################
+  
+  staging_data <- dbGetQuery(mysql_staging_db_connection,paste0("select * from ",staging_table_name,sep=""))
+  
+  staging_records <- nrow(staging_data)
+  
+  ##################################################################################
+  #################### Updating the AI Job Execution Summary 
+  ##################################################################################
+  
+  dbSendQuery(mysql_staging_db_connection,paste0("UPDATE AI_Jobs_Execution_Summary
+                                                 SET STAGING_RECORD_COUNT=",
+                                                 staging_records,
+                                                 " , JOB_RUN_STATUS=",
+                                                 "'","Staging Load Completed","'",
+                                                 " WHERE RUN_ID=",new_AI_Job_RUN_ID,sep=""))
+  
+  transformed_data <- random_forest_imputation(staging_data,4,1234)
+  
+  ############################################################################
+  ############### Loading Transformed Data into AIL Table
+  #############################################################################
+  
+  ail_table_name <- as.character(AI_Metadata_Details$AIL_TABLE)
+  
+  if(exists("transformed_data") & nrow(transformed_data)>0){
+    dbSendQuery(mysql_db_connection,paste0("truncate table ",ail_table_name,sep=""))
+    for(i in 1:nrow(transformed_data)){
+      dbSendQuery(mysql_db_connection,paste0("insert into ",ail_table_name, 
+                                             "(CUSTOMER_ID,
+                                             RECENCY,
+                                             FREQUENCY,
+                                             MONETARY,
+                                             AVERAGE_ORDER_VALUE,
+                                             LONGEVITY,
+                                             UNIQUE_PRODUCTS_BOUGHT,
+                                             ORDERED_QUANTITY,
+                                             SHIPPED_QUANTITY,
+                                             ONTIME_DELIVERED_ORDERS,
+                                             RETURNED_ORDERS,
+                                             BACK_ORDERS,
+                                             OPEN_ORDERS) ",
+                                             "values(",
+                                             "'",transformed_data$CUSTOMER_ID[i],"',",
+                                             transformed_data$RECENCY[i],",",
+                                             transformed_data$FREQUENCY[i],",",
+                                             transformed_data$MONETARY[i],",",
+                                             transformed_data$AVERAGE_ORDER_VALUE[i],",",
+                                             transformed_data$LONGEVITY[i],",",
+                                             transformed_data$UNIQUE_PRODUCTS_BOUGHT[i],",",
+                                             transformed_data$ORDERED_QUANTITY[i],",",
+                                             transformed_data$SHIPPED_QUANTITY[i],",",
+                                             transformed_data$ONTIME_DELIVERED_ORDERS[i],",",
+                                             transformed_data$RETURNED_ORDERS[i],",",
+                                             transformed_data$BACK_ORDERS[i],",",
+                                             transformed_data$OPEN_ORDERS[i],")",sep=""))
+    }
+    print("Transformed Data Successfully Loaded into AIL Table")
+    
+    ##################################################################################
+    #################### Updating the AI Job Execution Summary 
+    ##################################################################################
+    
+    ail_record_count <- dbGetQuery(mysql_db_connection,
+                                   paste0("select count(1) from ",ail_table_name,sep=""))
+    
+    dbSendQuery(mysql_staging_db_connection,paste0("UPDATE AI_Jobs_Execution_Summary
+                                                 SET AIL_RECORD_COUNT=",
+                                                   ail_record_count,
+                                                   " , JOB_RUN_STATUS=",
+                                                   "'","AIL Data Load Completed","'",
+                                                   " WHERE RUN_ID=",new_AI_Job_RUN_ID,sep=""))
+    
+  } else {
+    print("Staging Table doesn't contains any Records")
+  }
+  
+  ############################################################################
+  ############### Customer Profiling Model
+  #############################################################################
+  
+  ################################## Reading the Input File ###############################
+  
+  suppressWarnings(
+    input_customer <- dbGetQuery(mysql_db_connection,paste0("select * from ",ail_table_name,sep=""))
+  )
+  
+  ################################# Calculating the RFM Scores #################
+  
+  rfm_customers <- rfm_table_customer(data = input_customer, 
+                                      customer_id = CUSTOMER_ID, 
+                                      n_transactions = FREQUENCY, 
+                                      recency_days = RECENCY, 
+                                      total_revenue = MONETARY, 
+                                      analysis_date = Sys.time())
+  
+  rfm_customers <- rfm_customers$rfm
+  
+  ####################### Changing the column Names of the Data Frame
+  
+  colnames(rfm_customers) <- c("CUSTOMER_ID", "RECENCY","FREQUENCY","MONETARY","R_SCORE","F_SCORE","M_SCORE","RFM_SCORE")
+  
+  ################ Selecting only the IDs and their respective scores to merge with the input Data
+  
+  rfm_customers <- select(rfm_customers,CUSTOMER_ID, R_SCORE, F_SCORE, M_SCORE, RFM_SCORE)
+  
+  ################# Applying the Labelling Rules - Clusters  
+  ########### We can modify the Labelling Rules
+  
+  #############################################################
+  ######################## Another Level of Labelling Clusters
+  ####################################################################
+  #Customer Segment	Recency Score Range	Frequency & Monetary Combined Score Range
+  #Champions	4-5	4-5
+  #Loyal Customers	2-5	3-5
+  #Potential Loyalist	3-5	1-3
+  #Recent Customers	4-5	0-1
+  #Promising	3-4	0-1
+  #Customers Needing Attention	2-3	2-3
+  #About To Sleep	2-3	0-2
+  #At Risk	0-2	2-5
+  #Can’t Lose Them	0-1	4-5
+  #Hibernating	1-2	1-2
+  #Lost	0-2	0-2
+  ##########################################################
+  #############################################################################
+  
+  ####################################################################
+  ########################## Segment	Description	R	F	M
+  ######################################################################
+  #Champions	Bought recently, buy often and spend the most	4 - 5	4 - 5	4 - 5
+  #Loyal Customers	Spend good money. Responsive to promotions	2 - 5	3 - 5	3 - 5
+  #Potential Loyalist	Recent customers, spent good amount, bought more than once	3 - 5	1 - 3	1 - 3
+  #New Customers	Bought more recently, but not often	4 - 5	<= 1	<= 1
+  #Promising	Recent shoppers, but haven’t spent much	3 - 4	<= 1	<= 1
+  #Need Attention	Above average recency, frequency & monetary values	2 - 3	2 - 3	2 - 3
+  #About To Sleep	Below average recency, frequency & monetary values	2 - 3	<= 2	<= 2
+  #At Risk	Spent big money, purchased often but long time ago	<= 2	2 - 5	2 - 5
+  #Can’t Lose Them	Made big purchases and often, but long time ago	<= 1	4 - 5	4 - 5
+  #Hibernating	Low spenders, low frequency, purchased long time ago	1 - 2	1 - 2	1 - 2
+  #Lost	Lowest recency, frequency & monetary scores	<= 2	<= 2	<= 2
+  
+  
+  ##############################################################################################################
+  ############ Getting the Customer Segmentation Rules from the APP DB
+  ###########################################################################################
+  
+  customer_segment_rules <- dbGetQuery(mysql_app_db_connection,"select CUSTOMER_LABEL,R_SCORE,F_SCORE,M_SCORE
+                                       from AI_Customer_Segmentation_Rules")
+  
+  ###### Labelling the customer Label - Champions
+  ### Getting the rules for the Champion
+  
+  ################ Function ######################
+  ########### Redefining the Rules
+  get_new_r_rule <- function(input){if(length(grep(">=",input))>0) {
+    new_rule <- paste("R_SCORE>=",parse_number(input),sep="")
+  } else if (length(grep("-",input))>0) {
+    new_rule <- paste("between(R_SCORE,",parse_number(input),",",
+                      parse_number(substr(input,3,10)),")",sep="")
+  } else if(length(grep("<=",input))>0) {
+    new_rule <- paste("R_SCORE<=",parse_number(input),sep="")
+  } else {
+    new_rule <- paste("R_SCORE==",parse_number(input),sep="")
+  }
+    return(new_rule)
+  }
+  
+  get_new_f_rule <- function(input){if(length(grep(">=",input))>0) {
+    new_rule <- paste("F_SCORE>=",parse_number(input),sep="")
+  } else if (length(grep("-",input))>0) {
+    new_rule <- paste("between(F_SCORE,",parse_number(input),",",
+                      parse_number(substr(input,3,10)),")",sep="")
+  } else if(length(grep("<=",input))>0) {
+    new_rule <- paste("F_SCORE<=",parse_number(input),sep="")
+  } else {
+    new_rule <- paste("F_SCORE==",parse_number(input),sep="")
+  }
+    return(new_rule)
+  }
+  
+  get_new_m_rule <- function(input){if(length(grep(">=",input))>0) {
+    new_rule <- paste("M_SCORE>=",parse_number(input),sep="")
+  } else if (length(grep("-",input))>0) {
+    new_rule <- paste("between(M_SCORE,",parse_number(input),",",
+                      parse_number(substr(input,3,10)),")",sep="")
+  } else if(length(grep("<=",input))>0) {
+    new_rule <- paste("M_SCORE<=",parse_number(input),sep="")
+  } else {
+    new_rule <- paste("M_SCORE==",parse_number(input),sep="")
+  }
+    return(new_rule)
+  }
+  
+  ############### End of the Function ######################
+  
+  list.cust_segment_data <- list()
+  
+  for(i in 1:nrow(customer_segment_rules))
+    
+  {
+    
+    x_cust_label <- customer_segment_rules$CUSTOMER_LABEL[i]
+    x_r_filter <- get_new_r_rule(customer_segment_rules$R_SCORE[i])
+    x_f_filter <- get_new_f_rule(customer_segment_rules$F_SCORE[i])
+    x_m_filter <- get_new_m_rule(customer_segment_rules$M_SCORE[i])
+    
+    x_data <- filter(rfm_customers,eval(parse(text=x_r_filter)) & 
+                       eval(parse(text=x_f_filter)) & eval(parse(text=x_m_filter)))
+    
+    x_data$SEGMENT_LABEL <- x_cust_label
+    
+    list.cust_segment_data[[i]] <- x_data
+    
+  }
+  
+  final_cust_segment <- do.call(rbind, list.cust_segment_data)
+  
+  ############### Removing the Multiple Labelling for the same customer
+  
+  final_cust_segment <- sqldf("select * from final_cust_segment group by CUSTOMER_ID")
+  
+  print(paste0(nrow(final_cust_segment)," Customers are segmented ","out of ", nrow(rfm_customers),sep=""))
+  
+  print(paste0("% of Customer Segmentation Completed: ", 
+               (nrow(final_cust_segment)/nrow(rfm_customers))*100))
+  
+  print("Please define the Segmentation Rules for the remaining set of Customers")
+  
+  
+  ############## Identifying the unknown segments where Rule is not defined
+  
+  final_cust_segment <- sqldf("select a.*, b.SEGMENT_LABEL from rfm_customers a
+                              left outer join  final_cust_segment b
+                              on a.CUSTOMER_ID=b.CUSTOMER_ID")
+  
+  final_cust_segment$SEGMENT_LABEL[is.na(final_cust_segment$SEGMENT_LABEL)] <- "unknown"
+  
+  
+  #######################################################################################
+  ########### Loading the segmentation data into the AOL Table ################
+  ####################################################################################
+  
+ 
+  aol_table_name <- as.character(AI_Metadata_Details$AOL_TABLE)
+
+  if(exists("final_cust_segment") & nrow(final_cust_segment)>0){
+    dbSendQuery(mysql_db_connection,paste0("truncate table ",aol_table_name,sep=""))
+    for(i in 1:nrow(final_cust_segment)){
+      dbSendQuery(mysql_db_connection,paste0("insert into ",aol_table_name, 
+                                             "(CUSTOMER_ID,
+                                             R_SCORE,
+                                             F_SCORE,
+                                             M_SCORE,
+                                             RFM_SCORE,
+                                             CLUSTER_LABEL) ",
+                                             "values(",
+                                             "'",final_cust_segment$CUSTOMER_ID[i],"',",
+                                             final_cust_segment$R_SCORE[i],",",
+                                             final_cust_segment$F_SCORE[i],",",
+                                             final_cust_segment$M_SCORE[i],",",
+                                             final_cust_segment$RFM_SCORE[i],",",
+                                             "'",
+                                             final_cust_segment$SEGMENT_LABEL[i],"')",sep=""))
+    }
+    print("Customer Segmentation Model Output Loaded into AOL Table")
+  } else {
+    print("Model Output doesn't have any Data")
+    print("Please check for any Errors in Code Execution")
+  }
+  
+  ##################################################################################
+  #################### Updating the AI Job Execution Summary 
+  ##################################################################################
+  
+  aol_record_count <- dbGetQuery(mysql_db_connection,
+                                            paste0("select count(1) from ",aol_table_name,sep=""))
+  
+  dbSendQuery(mysql_staging_db_connection,paste0("UPDATE AI_Jobs_Execution_Summary
+                                                 SET AOL_RECORD_COUNT=",
+                                                 aol_record_count,
+                                                 " , JOB_RUN_STATUS=",
+                                                 "'","Completed","'",
+                                                 " WHERE RUN_ID=",new_AI_Job_RUN_ID,sep=""))
+  
+  
+  #######################################################################################
+  ############## Conditional Execution End Statements
+  #######################################################################################
+  
+} else {
+  
+  print("Source Query Result set doesn't have any Records")
+  
+  print("Please Check the Staging SQL Query in the Source Definition Table")
+  
+}
+
+
+##################################################################################################
+############  Closing the Active Connections and clearing the workspace if needed
+#######################################################################################
+end_time <- Sys.time()
+
+execution_duration <- round(as.numeric(difftime(end_time, start_time,units="mins")),2)
+
+cat("The Execution Time(in Minutes) for the Model is:", execution_duration)
+
+##################################################################################
+#################### Updating the AI Job Execution Summary 
+##################################################################################
+
+dbSendQuery(mysql_staging_db_connection,paste0("UPDATE AI_Jobs_Execution_Summary
+                                               SET JOB_END_DATETIME=",
+                                               "'",end_time,"'",
+                                               " , JOB_DURATION=",execution_duration,
+                                               " , JOB_RUN_STATUS=",
+                                               "'","Completed","'",
+                                               " , MODIFIED_DATETIME=",
+                                               "'",end_time,"'",
+                                               " WHERE RUN_ID=",new_AI_Job_RUN_ID,sep=""))
+
+print("Disconnecting the open MYSQL Connections")
+dbDisconnect(mysql_db_connection)
+dbDisconnect(mysql_staging_db_connection) 
+dbDisconnect(mysql_app_db_connection)
+
+####### Turning off the Log Sinking
+print("Closing the Log Sink Connection to the File")
+sink()
+
+#######################################################################################
+##################################### End of the Code 
+######################################################################################
