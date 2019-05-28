@@ -1,0 +1,2257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="existContextParameter">
+		<![CDATA[
+			SELECT 
+			count(param_name) as paramcount 
+		    FROM minidwcm_context_parameters 
+		    where 
+		    param_name = ?	 
+		]]>
+	</entry>
+	<entry key="createContextParameter">
+		<![CDATA[
+			INSERT INTO minidwcm_context_parameters(
+			param_name,
+			created_by,
+			created_date) VALUES(?,?,?)	
+		]]>
+	</entry>
+		<entry key="getContextParameters">
+		<![CDATA[
+		    SELECT
+		    *
+		    FROM minidwcm_context_parameters order by param_id  
+			 
+		]]>
+	</entry>	
+	<entry key="getContextParametersById">
+		<![CDATA[
+		    SELECT
+		    *
+		    FROM minidwcm_context_parameters where param_id = ?   
+			 
+		]]>
+	</entry>				
+	<entry key="updateILDetailsById">
+		<![CDATA[
+			update minidwcm_il_info set 
+			   	   IL_name = ?,
+			   	   version = ?,
+			   	   il_type = ?,
+			   	   il_table_name = ?,
+			   	   xref_il_table_name = ?,
+			   	   description=?,
+			   	   Job_name = ?,
+			   	   dependency_jars = ?,
+			   	   purge_script = ?,
+			   	   isActive = ?,
+			   	   job_execution_type = ?,
+			   	   elt_job_tag = ?,
+			   	   elt_load_parameter = ?,
+			   	   elt_master_id = ?,
+			   	   modified_by = ?,
+			   	   modified_time = ? 
+			where IL_id = ?			
+		]]>
+	</entry>	
+	<entry key="getDLInfoByDLId">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwcm_dl_info 
+			where 
+			DL_id = ?
+		]]>
+	</entry>	
+	<entry key="getParamInfoByDLId">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwcm_context_parameters_dl_mapping 
+			where dl_id = ?
+		]]>
+	</entry>
+	<entry key="updateDLInfo">
+		<![CDATA[
+			update minidwcm_dl_info set 
+				DL_name=?, 
+				version = ?,
+				dl_table_name=?,
+				description=?,
+				Job_name=?,
+				job_execution_type = ?,
+			    elt_job_tag = ?,
+			   	elt_load_parameter = ?,
+			   	elt_master_id = ?,
+				modified_by=?,
+				modified_time=? , 
+				isActive = ? , 
+				industry_id = ?,
+				dependency_jars = ?  
+			where DL_id=?			
+		]]>
+	</entry>
+	<entry key="deleteDLFileInfo">
+		<![CDATA[
+			delete from minidw_admin_dl_jobs_mapping where dl_id=?			
+		]]>
+	</entry>
+	<entry key="getDBDetailsByILId">
+		<![CDATA[
+			select  a.mapping_id,a.il_id,a.database_type_id,a.il_query,
+					b.id,b.name 
+					from minidwcm_il_prebuild_queries_mapping a , minidwcm_database_connectors b
+					where a.il_id = ? and a.database_type_id = b.id;
+		]]>
+	</entry>	
+	<entry key="deleteILQueryByIlId">
+		<![CDATA[
+			delete from minidwcm_il_prebuild_queries_mapping where il_id=?			
+		]]>
+	</entry> 
+	<entry key="updateILQueryByIlId">
+		<![CDATA[			
+			insert into minidwcm_il_prebuild_queries_mapping 
+			(mapping_id, il_id, database_type_id, il_query) values(?,?,?,?)			
+		]]>
+	</entry>
+	<entry key="saveEtlDlIlMapping">
+		<![CDATA[
+			INSERT INTO minidwcm_dl_il_mapping(
+			dl_id,
+			il_id,
+			il_name,
+			created_by,
+			created_time 
+			) VALUES (?,?,?,?,?)  
+		]]>
+	</entry>
+	<entry key="deleteEtlDlIlMappingByDlId">
+		<![CDATA[
+			delete from minidwcm_dl_il_mapping where dl_id = ?
+		]]>
+	</entry>
+	
+     <entry key="createIl">
+		<![CDATA[
+			INSERT INTO minidwcm_il_info (
+			IL_name,
+	   	  	il_type,
+	   	   	il_table_name,
+	   	   	xref_il_table_name,
+	   	   	description,
+	   	   	Job_name,
+	   	   	dependency_jars,
+	   	   	purge_script,
+	   	   	isActive,
+	   	   	created_by,
+	   	   	created_time,version,
+	   	   	job_execution_type,
+	   	   	elt_job_tag,
+	   	   	elt_load_parameter, elt_master_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+		]]>
+	</entry>	 
+  	<entry key="getContextParamValue">
+		<![CDATA[
+			select  
+			paramval 
+			from minidwcm_context_parameters 
+			where
+			paramval is not null order by param_id 
+		]]>
+	</entry>
+	   <entry key="createDl">
+		<![CDATA[
+		    INSERT INTO minidwcm_dl_info (
+			DL_name,
+			dl_table_name,
+			description,
+			Job_name,
+			created_by,
+			created_time,
+			isActive,industry_id,dependency_jars,version,
+			job_execution_type,
+	   	   	elt_job_tag,
+	   	   	elt_load_parameter, elt_master_id ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	     <entry key="saveEtDIlJobsMapping">
+		<![CDATA[
+			INSERT INTO minidw_admin_dl_jobs_mapping (
+			dl_id,
+			file_name,
+			created_by,
+			created_time 
+			) values(?,?,?,?)
+		]]>
+	</entry>
+	 <entry key="saveEtldlContextParameters">
+		<![CDATA[
+          INSERT INTO minidwcm_context_parameters_dl_mapping(
+		  param_id, 
+		  dl_id,
+		  param_value,
+		  created_by,
+		  created_date) values(?,?,?,?,?)
+		]]>
+	</entry>
+	 <entry key="saveDlClientidMapping">
+		<![CDATA[
+           INSERT INTO minidwcs_dl_client_mapping(
+           client_id,
+           dl_id, 
+           created_by, 
+           created_time,
+           isLocked 
+           ) values(?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="deleteSourceDetailsByClientId">
+		<![CDATA[
+           delete from minidwcs_client_source_option where client_id=?
+		]]>
+	</entry>
+	<entry key="deleteDlClientidMapping">
+		<![CDATA[
+			delete 
+			from 
+			minidwcs_dl_client_mapping 
+			where 
+			client_id = ?
+		]]>
+	</entry>
+	<entry key="getDlClientidMapping">
+		<![CDATA[
+		select mst.*, mst.DL_name, map.isLocked from 
+			minidwcm_dl_info mst 
+			inner join
+			minidwcs_dl_client_mapping map
+			on mst.DL_id = map.dl_id
+			and map.client_id = ?
+			where mst.industry_id in (select id from minidwcm_verticals 
+			where id in(select vertical_id from minidwcs_verticals_client_mapping where client_id = ? and isActive = 1) 
+			and isActive = 1)
+			and mst.isActive = 1;
+		]]>
+	</entry>
+	<entry key="getVerticalMappedDLsByClientId">
+		<![CDATA[
+			select DL_id, DL_name
+			from minidwcm_dl_info 
+			where industry_id in (select id from minidwcm_verticals 
+			        where id in(select vertical_id from minidwcs_verticals_client_mapping where client_id = ? and isActive = 1) 
+					and isActive = 1)
+			and isActive = 1;
+		]]>
+	</entry>
+	
+	<entry key="getClientSourceDetails">
+		<![CDATA[
+			select 
+			is_flat_file_locked,
+			is_database_locked 
+			from minidwcs_client_source_option 
+			where
+			client_id = ?
+		]]>
+	</entry>
+	
+	<entry key="updateFileSettings">
+		<![CDATA[
+           update minidwcs_file_settings set max_file_size_in_mb=? , multipart_file_enabled =? ,  no_of_records_per_file = ?,file_encryption = ?, modified_by=? , modified_time= ? where  IsActive = '1'
+		]]>
+	</entry>
+	
+	<entry key="updateFileSettingsWithoutNoOfRecords">
+		<![CDATA[
+           update minidwcs_file_settings set max_file_size_in_mb=? , multipart_file_enabled =? , file_encryption = ?, modified_by=? , modified_time= ? where  IsActive = '1'
+		]]>
+	</entry>
+	
+		<entry key="getMaxFileSize">
+		<![CDATA[
+           SELECT max_file_size_in_mb FROM  minidwcs_file_settings where IsActive = '1' 
+		]]>
+	</entry>
+	<entry key="deleteILById">
+		<![CDATA[
+           delete from minidwcm_il_info where IL_id = ? 
+		]]>
+	</entry>
+	<entry key="deleteDLById">
+		<![CDATA[
+           delete from minidwcm_dl_info where DL_id = ? 
+		]]>
+	</entry>
+	<entry key="getTemplate">
+		<![CDATA[
+			  SELECT il.il_id, il.IL_name,tm.filename,tm.xref_filename FROM minidwcm_il_info il
+ 				left join minidwcm_il_templates tm on il.IL_id=tm.il_id where il.isActive=1;
+		]]>
+	</entry>
+	<entry key="addNewILAndXrefTemplateInfo">
+		<![CDATA[
+		  	insert into minidwcm_il_templates(il_id, filename, xref_filename, created_by, created_time) values(?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="updateILAndXrefTemplateInfo">
+		<![CDATA[
+			update minidwcm_il_templates set filename = ? ,xref_filename = ?, modified_by = ?, modified_time = ? where il_id = ?;			
+		]]>
+	</entry>
+	<entry key="getTopErrorLog">
+		<![CDATA[
+			    SELECT `id`,
+			    `error_code`,
+			    `error_message`,
+			    `error_body`,
+			    `error_datetime`,
+			    `requested_service`,
+			    `received_parameters`,
+			    `user_id`,
+			    `client_details`
+			FROM `minidwcm_error_logs` ORDER BY id DESC LIMIT 20;
+		]]>
+	</entry>
+	<entry key="getClientErrorLogById">
+		<![CDATA[
+			    SELECT * FROM `minidwcm_error_logs` where id=?;
+		]]>
+	</entry>
+	<entry key="searchClientErrorLog">
+		<![CDATA[
+			   SELECT `id`,
+			    `error_code`,
+			    `error_message`,
+			    `error_body`,
+			    `error_datetime`,
+			    `requested_service`,
+			    `received_parameters`,			    
+			    `client_details`
+			FROM `minidwcm_error_logs` where 
+			    `error_code` like ? AND			   	   
+				`received_parameters` like ? AND			    
+			    `client_details` like ?;
+		]]>
+	</entry>
+	<entry key="createWebService">
+		<![CDATA[
+				insert into minidw_web_service_api_master(
+				web_service_name,
+				authentication_url,
+				authentication_method_type,
+				authentication_request_params,
+				created_by, 
+				created_time) 
+				values(?,?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="createNewVertical">
+		<![CDATA[
+				insert into minidwcm_verticals(name, description, created_by, created_time) values(?,?,?,?);
+		]]>
+	</entry>
+	<entry key="getExistingVerticals">
+		<![CDATA[
+				select * from minidwcm_verticals;
+		]]>
+	</entry>
+	<entry key="getVerticalDetailsById">
+		<![CDATA[
+				select * from minidwcm_verticals where id = ?;
+		]]>
+	</entry>
+	<entry key="updateVerticalById">
+		<![CDATA[
+				update minidwcm_verticals set 
+					   name = ?, 
+					   description = ?,
+					   isActive = ?,
+					   modified_by = ?,
+					   modified_time = ?
+				where id = ?;
+		]]>
+	</entry>
+	<entry key="deleteVerticalById">
+		<![CDATA[
+				delete from minidwcm_verticals where id = ?;
+		]]>
+	</entry>
+	<entry key="getExistingkpis">
+		<![CDATA[
+				select * from minidwcm_kpis;
+		]]>
+	</entry>
+	<entry key="createNewKpi">
+		<![CDATA[
+				insert into minidwcm_kpis(kpi_name, kpi_description, created_by, created_time) values(?,?,?,?);
+		]]>
+	</entry>
+	<entry key="getKpiDetailsById">
+		<![CDATA[
+				select * from minidwcm_kpis where id = ?;
+		]]>
+	</entry>
+	<entry key="updateKpiById">
+		<![CDATA[
+				update minidwcm_kpis set 
+					   kpi_name = ?, 
+					   kpi_description = ?,
+					   isActive = ?,
+					   modified_by = ?,
+					   modified_time = ?
+				where id = ?;
+		]]>
+	</entry>
+	<entry key="getExistingILsInfo">
+		<![CDATA[
+			select * from minidwcm_il_info; 
+		]]>
+	</entry>
+	<entry key="getILInfoById">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwcm_il_info 
+			where IL_id = ?
+		]]>
+	</entry>
+	<entry key="getClientSpecificILInfoById">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwcs_il_client_specific_jobs 
+			where il_id = ? and client_id = ?;
+		]]>
+	</entry>
+	<entry key="getContextParamsByILId">
+		<![CDATA[
+			select mst.param_id, mst.param_name, mst.paramval from minidwcm_context_parameters mst
+			left join minidwcm_context_parameters_il_mapping map 
+			on mst.param_id = map.param_id
+			where map.il_id = ?;
+		]]>
+	</entry>
+		
+	<entry key="getJobFilesByILId">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwcm_il_info 
+			where IL_id = ?
+		]]>
+	</entry>
+	<entry key="deleteILJobFileInfo">
+		<![CDATA[
+			delete from minidw_admin_il_jobs_mapping where il_id = ?			
+		]]>
+	</entry>
+	<entry key="deleteILContextParams">
+		<![CDATA[
+			delete from minidwcm_context_parameters_il_mapping where il_id = ?;		
+		]]>
+	</entry>
+	<entry key="saveILJobFileInfo">
+		<![CDATA[
+			insert into minidw_admin_il_jobs_mapping (
+				il_id,
+				file_name,
+				created_by,
+				created_time
+				) values(?,?,?,?)
+		]]>
+	</entry>
+	<entry key="saveEtlilContextParameters">
+		<![CDATA[
+			insert into minidwcm_context_parameters_il_mapping(
+			param_id, 
+			il_id,
+			param_value,
+			created_by,
+		    created_date) values(?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getVerticalsByClientId">
+		<![CDATA[
+			select 
+				mst.id, 
+			    mst.name,
+			    mst.description
+			from minidwcm_verticals mst
+			inner join
+			minidwcs_verticals_client_mapping map
+			on mst.id = map.vertical_id
+			where map.client_id = ? and mst.isActive = '1';
+		]]>
+	</entry>
+	<entry key="deleteClientVerticalMappingById">
+		<![CDATA[
+			delete from minidwcs_verticals_client_mapping where client_id = ?;
+		]]>
+	</entry>
+	<entry key="saveClientVerticalMapping">
+		<![CDATA[
+			insert into minidwcs_verticals_client_mapping(client_id, vertical_id, created_by, created_time) values (?,?,?,?);
+		]]>
+	</entry>
+	<entry key="deleteClientVerticalMappedDLsByClientId">
+		<![CDATA[
+			delete from minidwcs_dl_client_mapping where client_id = ? and dl_id not in (
+				select DL_id from minidwcm_dl_info where industry_id in (
+					select vertical_id from minidwcs_verticals_client_mapping where client_id = ? and isActive = 1)
+			    and isActive = 1
+			) and IsActive = 1;
+		]]>
+	</entry>
+	<entry key="getAllDatabases">
+		<![CDATA[
+			select * from minidwcm_database_types where isActive = '1';
+		]]>
+	</entry>
+	<entry key="getDatabasesByClientId">
+		<![CDATA[
+			select name, database_id,
+			mst.driver_name as driver_name,
+            mst.protocal as protocal,
+            mst.url_format as url_format
+			from minidw_admin_client_database_mapping map 
+			join 
+		    minidwcm_database_types mst
+			on map.database_id = mst.id 
+			where map.client_id = ? and mst.isActive = 1;
+		]]>
+	</entry>
+	<entry key="getConnectorsByClientId">
+		<![CDATA[
+			 SELECT con.id as connectorid,con.name as connectorname,con.connector_id as dbid,db.name as databasename ,
+			 db.driver_name as driver_name,
+             db.protocal as protocal,
+             db.url_format as url_format
+			 FROM minidwcm_database_connectors con 
+			 inner join minidwcm_database_types db on db.id=con.connector_id 
+			 where db.isActive=1  
+		]]>
+	</entry>
+	<entry key="getClientsByDatabaseId">
+		<![CDATA[
+			select client_id from minidw_admin_client_database_mapping where database_id = ? and isActive = '1';
+		]]>
+	</entry>
+	<entry key="deleteClientDatabaseMappingById">
+		<![CDATA[
+			delete from minidw_admin_client_database_mapping where placeholder = ?;
+		]]>
+	</entry>
+	<entry key="saveClientDatabaseMapping">
+		<![CDATA[
+			insert into minidw_admin_client_database_mapping(client_id, database_id, created_by, created_time) values (?,?,?,?);
+		]]>
+	</entry>
+	<entry key="deleteClientConnectorMapping">
+		<![CDATA[
+			delete from minidwcs_database_connectors_client_mapping where client_id = ? and connector_id not in(
+				select id from minidwcm_database_connectors where connector_id in (
+				select database_id from minidw_admin_client_database_mapping where client_id = ?
+				)
+			);
+		]]>
+	</entry>
+	<entry key="saveDatabaseClientMapping">
+		<![CDATA[
+			insert into minidw_admin_client_database_mapping(database_id, client_id, created_by, created_time) values (?,?,?,?);
+		]]>
+	</entry>
+	<entry key="getDatabaseMappedConnectors">
+		<![CDATA[
+			select connector_id from minidwcs_database_connectors_client_mapping 
+			where client_id = ?
+
+		]]>
+	</entry>
+	<entry key="deleteClientConnectorMappingById">
+		<![CDATA[
+			delete from minidwcs_database_connectors_client_mapping where client_id = ?;
+		]]>
+	</entry>
+	<entry key="saveClientConnectorMapping">
+		<![CDATA[
+			insert into minidwcs_database_connectors_client_mapping(client_id, connector_id, created_by, created_time) values (?,?,?,?);
+		]]>
+	</entry>
+	<entry key="getILInfoByClientId">
+		<![CDATA[
+			select mst.IL_id, mst.IL_name from minidwcm_il_info mst
+			inner join minidwcm_dl_il_mapping map
+			on mst.IL_id = map.il_id
+			where map.dl_id in(
+			select dl_id from minidwcs_dl_client_mapping where client_id = ?)
+			and mst.isActive = '1'
+			group by map.il_id;
+		]]>
+	</entry>
+	<entry key="saveclientSpecificIL">
+		<![CDATA[
+			insert into minidwcs_il_client_specific_jobs(client_id, il_id, job_version, Job_name, dependency_jars, created_by, created_time) values(?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="updateClientSpecificIL">
+		<![CDATA[
+			update minidwcs_il_client_specific_jobs 
+			set job_version = ?, Job_name = ?, dependency_jars = ?, modified_by = ?, modified_time = ?, is_default = 0
+			where client_id = ? and il_id = ?;
+		]]>
+	</entry>
+	<entry key="updateClientSpecificILToDefault">
+		<![CDATA[
+			update minidwcs_il_client_specific_jobs 
+			set is_default = 1, modified_by = ?, modified_time = ?
+			where client_id = ? and il_id = ?;
+		]]>
+	</entry>
+	<entry key="getDLInfoByClientId">
+		<![CDATA[
+			select mst.DL_id, mst.DL_name 
+			from minidwcm_dl_info mst 
+			inner join minidwcs_dl_client_mapping map
+			on mst.DL_id = map.dl_id 
+			where map.client_id = ? 
+			and mst.isActive = 1 
+			and mst.industry_id in (select id from minidwcm_verticals where id in(
+				select vertical_id from minidwcs_verticals_client_mapping where client_id = ? and isActive = 1) 
+		    and isActive = 1);
+		]]>
+	</entry>
+	<entry key="getClientSpecificDLInfoById">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwcs_dl_client_specific_jobs 
+			where dl_id = ? and client_id = ?;
+		]]>
+	</entry>
+	<entry key="saveClientSpecificDLInfo">
+		<![CDATA[
+			insert into minidwcs_dl_client_specific_jobs(client_id, dl_id, job_version, Job_name, dependency_jars, created_by, created_time) values(?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="updateClientSpecificDLInfo">
+		<![CDATA[
+			update minidwcs_dl_client_specific_jobs 
+			set job_version = ?, Job_name = ? , dependency_jars = ?, modified_by = ?, modified_time = ?, is_default = 0
+			where client_id = ? and dl_id = ?;
+		]]>
+	</entry>
+	<entry key="updateClientSpecificDLToDefault">
+		<![CDATA[
+			update minidwcs_dl_client_specific_jobs 
+			set is_default = 1, modified_by = ?, modified_time = ?
+			where client_id = ? and dl_id = ?;
+		]]>
+	</entry>
+	<entry key="getAllmappingInfoById">
+		<![CDATA[
+ 			select  
+				(select count(*) from minidwcs_verticals_client_mapping where client_id = ?) as number_of_verticals,
+				
+				(select count(*) from minidwcs_database_connectors_client_mapping where client_id = ?
+					and connector_id in ( select id from minidwcm_database_connectors where isActive=1 )) as number_of_connectors,
+				(select count(*) from minidwcm_dl_info mst where DL_id in (select dl_id from minidwcs_dl_client_mapping where client_id=?) 
+					and industry_id in (select vertical_id from minidwcs_verticals_client_mapping where client_id=?))  as number_of_dls,
+				(select count(*) from minidwcs_ws_client_mapping where client_id = ? and isActive = 1) as number_of_ws;
+ 
+		]]>
+	</entry>
+	<entry key="getTableScriptsandS3MappingInfoById">
+		<![CDATA[
+ 			select (select count(*) from minidwcm_etl_table_scripts_client_mapping where client_id = ? ) 
+			as number_of_table_scripts,
+			(select count(*) from minidwm_s3_client_mapping where client_id = ? ) as number_of_s3_mappings ,
+				(select count(*) from minidwm_client_currency_mapping where clientId =?) as number_of_currencies,
+				(select count(*) from minidwm_scheduler_master_client_mapping where client_id =?) as number_of_schedulers
+ 
+		]]>
+	</entry>
+	<entry key="getCommonJobInfo">
+		<![CDATA[
+			select * from minidwm_common_etl_jobs;  
+		]]>
+	</entry>
+	<entry key="saveCommonJobInfo">
+		<![CDATA[
+			insert into minidwm_common_etl_jobs(job_type, job_file, is_active, created_by, created_time) values (?,?,?,?,?);  
+		]]>
+	</entry>
+	<entry key="getCommonJobInfoById">
+		<![CDATA[
+			select * from minidwm_common_etl_jobs where id = ?;  
+		]]>
+	</entry>
+	<entry key="updateCommonJobInfo">
+		<![CDATA[
+			update minidwm_common_etl_jobs set job_type = ?, is_active = ?, modified_by = ?, modified_time = ? where id = ?;  
+		]]>
+	</entry>
+	<entry key="getAllWebServices">
+		<![CDATA[
+				SELECT id , 
+					   web_service_name 
+				FROM  minidwcm_ws_template_mst 
+				where isActive = '1'
+		]]>
+	</entry>
+	<entry key="getWebServiceAuthDetailsById">
+		<![CDATA[		
+				select  ws.id, 
+						ws.web_service_name, 
+						ifnull(ws.authentication_url, map.authentication_url) as authentication_url,
+						ifnull(ws.authentication_method_type, map.authentication_method_type) as authentication_method_type,
+						ifnull(ws.authentication_request_params, map.authentication_request_params) as authentication_request_params
+				from minidw_web_service_api_master ws 
+				left join 
+				minidw_web_service_api_mapping map
+				on ws.id = map.web_service_id
+				where ws.isActive = '1' and 
+					  ws.id = ?					
+				group by map.web_service_id;			  
+		]]>
+	</entry>	
+	<entry key="getWSILMappingDetailsById">
+		<![CDATA[
+			  select wsam.*,
+			  wstm.base_url as base_url,
+			  wstm.base_url_required as base_url_required
+			  from minidwcm_ws_api_mapping wsam join minidwcm_ws_template_mst wstm on wsam.ws_template_id = wstm.id
+			  where wsam.ws_template_id = ? and wsam.il_id = ? and wsam.is_active = '1' order by id;
+		]]>
+	</entry>
+	<entry key="updateWebServicesById">
+		<![CDATA[
+			   update minidw_web_service_api_master set 
+			   web_service_name = ? ,
+			   authentication_url = ?, 
+			   authentication_method_type = ?, 
+			   authentication_request_params = ?, 
+			   modified_by = ?,
+			   modified_time = ? where id = ? and isActive = 1;
+		]]>
+	</entry>
+	<entry key="getWebserviceClients">
+		<![CDATA[
+			   select 
+			   client_id 
+			   from minidw_webservice_client_mapping 
+			   where  webservice_id = ? and isActive = 1;
+		]]>
+	</entry>
+	<entry key="saveWebserviceClientMapping">
+		<![CDATA[
+			INSERT INTO minidw_webservice_client_mapping(
+			webservice_id,
+			client_id,
+			created_by,
+			created_time 
+			) VALUES (?,?,?,?)  
+		]]>
+	</entry>
+	<entry key="deleteWebserviceClientMapping">
+		<![CDATA[
+			delete from minidwcs_ws_client_mapping where ws_template_id = ? and isActive = 1
+		]]>
+	</entry>
+	<entry key="getAllKpis">
+		<![CDATA[
+				SELECT id , 
+					   kpi_name 
+				FROM  minidwcm_kpis 
+				where isActive = '1'
+		]]>
+	</entry>
+	
+	<entry key="getKpiListByDlId">
+		<![CDATA[
+			    select kpi_name from minidwcm_kpis mst
+				join minidwcm_kpis_dl_mapping map on mst.id = map.kpi_id
+				where  dl_id = ? and mst.isActive = '1';
+		]]>
+	</entry>
+	
+	<entry key="deleteDlKpiMapping">
+		<![CDATA[
+			delete from minidwcm_kpis_dl_mapping where dl_id = ? and isActive = 1
+		]]>
+	</entry>
+	
+	<entry key="saveDlKpiMapping">
+		<![CDATA[
+			INSERT INTO minidwcm_kpis_dl_mapping(
+			dl_id,
+			kpi_id,
+			created_by,
+			created_time 
+			) VALUES (?,?,?,?)  
+		]]>
+	</entry>
+    <entry key="getDefaultQuery">
+		<![CDATA[
+	        select dmap.mapping_id,
+	        dmap.il_id,
+	        dmap.database_type_id, 
+	        ilmst.IL_name,
+	        il_query,
+	        il_incremental_update_query,
+            historical_load,
+            max_date_query,
+	        dmst.isActive from 
+			minidwcm_il_prebuild_queries_mapping dmap
+			inner join minidwcm_database_connectors dmst on dmst.id =  dmap.database_type_id 
+			inner join minidwcm_il_info ilmst on ilmst.IL_id =  dmap.il_id where dmap.database_type_id=?
+		]]>
+	</entry>
+	<entry key="getIlQueryById">
+		<![CDATA[
+			SELECT il_query FROM minidwcm_il_prebuild_queries_mapping where il_id = ? and database_type_id = ? and isActive = '1';
+		]]>
+	</entry>
+	<entry key="getIlincrementalQueryById">
+		<![CDATA[
+			SELECT il_incremental_update_query FROM minidwcm_il_prebuild_queries_mapping where il_id = ? and database_type_id = ? and isActive = '1' 
+		]]>
+	</entry>
+	
+	<entry key="gethistoryLoadById">
+		<![CDATA[
+			SELECT historical_load FROM minidwcm_il_prebuild_queries_mapping where il_id = ? and database_type_id = ? and isActive = '1';
+		]]>
+	</entry> 
+	
+	<entry key="geMaxDateQueryById">
+		<![CDATA[
+			SELECT max_date_query FROM minidwcm_il_prebuild_queries_mapping where il_id = ? and database_type_id = ? and isActive = '1';
+		]]>
+	</entry> 
+	
+	<entry key="getNotMappedILsByDBTypeId">
+		<![CDATA[
+			select IL_id, 
+				   IL_name 
+			from minidwcm_il_info 
+			where IL_id not in(
+			      select il_id 
+			      from minidwcm_il_prebuild_queries_mapping 
+			      where database_type_id = ?
+		          ) and isActive = 1;
+		]]>
+	</entry>
+	<entry key="saveILDefaultQuery">
+		<![CDATA[
+			insert into minidwcm_il_prebuild_queries_mapping(il_id,database_type_id,il_query,il_incremental_update_query,historical_load,max_date_query,created_by,created_time)values(?,?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="editILDefaultQuery">
+		<![CDATA[
+			select dmap.mapping_id,
+	        dmap.il_id,
+	        dmap.database_type_id, 
+	        ilmst.IL_name,
+	        il_query,
+	        il_incremental_update_query,
+	        historical_load,
+	        max_date_query,
+	        dmst.isActive from 
+			minidwcm_il_prebuild_queries_mapping dmap
+			inner join minidwcm_database_connectors dmst on dmst.id =  dmap.database_type_id 
+			inner join minidwcm_il_info ilmst on ilmst.IL_id =  dmap.il_id 
+            where dmap.il_id=? and dmap.database_type_id =?
+		]]>
+	</entry>
+	<entry key="updateILDefaultQuery">
+		<![CDATA[
+			update minidwcm_il_prebuild_queries_mapping set 
+			il_query = ?,
+            il_incremental_update_query = ?,
+            historical_load = ?,
+            max_date_query = ?,
+            modified_by = ?,
+            modified_time = ?
+            where il_id = ? and database_type_id =?
+		]]>
+	</entry>
+	
+	<entry key="getDatabase">
+		<![CDATA[
+			select * from minidwcm_database_types; 
+		]]>
+	</entry>
+	
+	<entry key="getDBDetailsById">
+		<![CDATA[
+			select * from minidwcm_database_types where id=? 
+		]]>
+	</entry>
+	
+	<entry key="updateDatabase">
+		<![CDATA[
+			update minidwcm_database_types set 
+			name = ?,
+			driver_name=?,
+			protocal=?,
+			connection_string_params = ?, 
+			url_format=?,
+			connector_jars=?,
+            isActive = ?,
+            modified_by = ?,
+            modified_time =?
+            where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="createDB">
+		<![CDATA[
+			insert into minidwcm_database_types(name,driver_name,protocal,url_format,connector_jars,isActive,created_by,created_time)values(?,?,?,?,?,?,?,?);  
+		]]>
+	</entry>
+	
+	<entry key="getconnector">
+		<![CDATA[
+			select
+			con.id as connector_id, 
+			con.name as connector_name, 
+			db.name as database_name, 
+			con.isActive,
+			con.is_default,
+			db.driver_name as driver_name,
+			db.protocal as protocal,
+			db.url_format as url_format
+			from minidwcm_database_types db join minidwcm_database_connectors con
+			on db.id = con.connector_id;
+		]]>
+	</entry>
+	
+	<entry key="getConnectorDetailsById">
+		<![CDATA[
+			SELECT * FROM minidwcm_database_connectors where id = ?; 
+		]]>
+	</entry>
+	
+	<entry key="updateConnector">
+		<![CDATA[
+			update minidwcm_database_connectors set 
+			name = ?,
+			connector_id = ?,
+            isActive = ?,
+            modified_by = ?,
+            modified_time =?
+            where id = ?;
+		]]>
+	</entry>
+	<entry key="createConnector">
+		<![CDATA[
+			insert into minidwcm_database_connectors(name,connector_id,isActive,created_by,created_time)values(?,?,?,?,?); 
+		]]>
+	</entry>
+   	
+	<entry key="createContextParams">
+		<![CDATA[
+			INSERT INTO minidwcm_context_parameters (`param_name`, `paramval`, `description`, `IsActive`, `created_by`, `created_date` ) VALUES (?, ?, ?, ?, ?, ?);
+		]]>
+	</entry>
+	<entry key="updateContextParams">
+		<![CDATA[
+			update minidwcm_context_parameters set `param_name` = ?, `paramval`=?, `description`=?, `IsActive`=?, `modified_by`=?, `modified_time`=? where param_id =? ;
+		]]>
+	</entry>
+	<entry key="getTableScripts">
+		<![CDATA[
+			 SELECT * FROM minidwm_etl_table_scripts;
+		]]>
+	</entry>
+	
+	<entry key="addTableScripts">
+		<![CDATA[
+			INSERT INTO table_scripts(
+			script_name,
+			sql_script,
+			isActive,
+			created_by 
+			) VALUES (?,?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updateTableScripts">
+		<![CDATA[
+			update table_scripts set priority = ?, script_name = ? ,sql_script = ?, modified_by = ?, modified_time = ? , isActive = ? where id = ?  ;			
+		]]>
+	</entry>
+	
+	<entry key="updateScriptHistoryTable">
+		<![CDATA[
+			insert into minidwm_etl_table_scripts_history ( script_id, script_type, client_id, target_schema, script_description, script_name, sql_script, isActive, is_default, created_by, created_time, modified_by, modified_time)
+       select id, script_type, client_id, target_schema, script_description, script_name, sql_script, isActive, is_default, created_by, created_time, modified_by, modified_time from minidwm_etl_table_scripts where id = ?;			
+		]]>
+	</entry>
+	
+	<entry key="getAllILs">
+	 
+		<![CDATA[
+				select * from minidwcm_dl_il_mapping where isActive='1' and  dl_id = ?
+		]]>
+	</entry>
+	<entry key="getAllKpisByDlId">
+	 
+		<![CDATA[
+				select mst.id,kpi_name from minidwcm_kpis mst
+				join minidwcm_kpis_dl_mapping map on mst.id = map.kpi_id
+				where  dl_id = ? and mst.isActive = 1;
+		]]>
+	</entry>
+	
+	<entry key="deleteEtlDlJobsmapping">
+		<![CDATA[
+			delete from minidw_admin_dl_jobs_mapping where dl_id = ? and file_name = ?  
+		]]>
+	</entry>
+	
+	
+<entry key="deleteDLContextParams">
+		<![CDATA[
+			delete from minidwcm_context_parameters_dl_mapping where dl_id = ?  	
+		]]>
+	</entry>	
+ 
+	
+	<entry key="getTableScriptsByClient">
+		<![CDATA[
+			 SELECT * FROM minidwm_etl_table_scripts where client_id = ? or script_type = 'Default' 
+			 and isActive = 1; 
+		]]>
+	</entry>
+	
+	<entry key="addTableScriptsMapping">
+		<![CDATA[
+			INSERT INTO minidwm_etl_table_scripts(
+			client_id,
+			script_type,
+			target_schema,
+			script_name,
+			version,
+			script_description,
+			sql_script,
+			isActive,
+			created_by 
+			) VALUES (?,?,?,?,?,?,?,?,?)  
+		]]>
+	</entry>
+		<entry key="getTableScriptsMappingById">
+		<![CDATA[
+			 SELECT * FROM minidwm_etl_table_scripts where id = ?  
+		]]>
+	</entry>
+	<entry key="updateTableScriptsMapping">
+		<![CDATA[
+			update minidwm_etl_table_scripts set 
+				script_type = ? , 
+				script_name = ? ,
+				version = ?,
+				script_description = ? ,
+				sql_script = ?, 
+				modified_by = ?,
+				modified_time = ? , 
+				isActive = ? , 
+				client_id = ? , 
+				target_schema = ? 
+			where id = ?  			
+		]]>
+	</entry>
+	<entry key="saveClientTableScriptsMapping">
+		<![CDATA[
+			INSERT INTO minidwcm_etl_table_scripts_client_mapping(
+			client_id,
+			script_id,
+			priority,
+			isChecked,
+			created_by,
+			created_time
+			) VALUES (?,?,?,?,?,?)  
+		]]>
+	</entry>
+	<entry key="deleteClientTableScriptsMapping">
+		<![CDATA[
+				delete from minidwcm_etl_table_scripts_client_mapping where client_id = ? and isExecuted=0
+		]]>
+	</entry>
+		<entry key="getTableScriptsMappingByClient">
+		<![CDATA[
+				SELECT 
+				map.script_id ,
+			    map.isChecked ,
+			    map.isExecuted, 
+			    map.priority,
+			    mst.script_type,
+			    mst.sql_script,
+			    mst.target_schema,
+			    mst.script_name,
+			    mst.created_time,
+			    map.modified_time,
+			    map.isError
+			    FROM minidwm_etl_table_scripts mst 
+                inner join minidwcm_etl_table_scripts_client_mapping map on mst.id=map.script_id 
+                where map.client_id = ?  and mst.isActive=1
+		]]>
+	</entry>
+	<entry key="getSqlScriptByScriptIds">
+		<![CDATA[
+				select 
+				a.id,
+				a.script_type , 
+				a.target_schema ,
+				a.script_name ,
+				a.sql_script ,
+				b.priority,
+				b.isExecuted 
+                from minidwm_etl_table_scripts a ,minidwcm_etl_table_scripts_client_mapping b 
+                where a.id = b.script_id and 
+                b.isExecuted = 0 and isActive=1 and 
+                b.client_id =? and 
+                a.id  in ({scriptIds}) order by priority
+		]]>
+	</entry>
+ <entry key="updateTableScriptsMappingIsExecuted">
+		<![CDATA[
+			update minidwcm_etl_table_scripts_client_mapping set isExecuted = ? , modified_by = ?, modified_time = ?  where script_id = ?  and client_id = ? and isExecuted = 0
+		]]>  
+	</entry>
+	<entry key="getWebserviceByClientId">
+		<![CDATA[
+			select ws_template_id from minidwcs_ws_client_mapping where client_id = ? and isActive = '1';
+		]]>
+	</entry>
+	 <entry key="getJobFilesByDLId">
+		<![CDATA[
+			SELECT * FROM minidwcm_dl_info where dl_id = ?	
+		]]>
+	</entry>
+	<entry key="saveClientWebserviceMapping">
+		<![CDATA[
+			INSERT INTO minidwcs_ws_client_mapping(
+						client_id,
+						ws_template_id,
+						created_by,
+						created_time 
+						) VALUES (?,?,?,?)  
+		]]>
+	</entry>
+	<entry key="getExecutedtableScriptCount">
+		<![CDATA[
+			 SELECT count(1) FROM  minidwcm_etl_table_scripts_client_mapping  where script_id = ? and isExecuted = 1
+		]]>
+	</entry>
+	<entry key="getMappedTableScriptCount">
+		<![CDATA[
+			  SELECT count(1) FROM  minidwcm_etl_table_scripts_client_mapping  where script_id = ?  
+		]]>
+	</entry>
+	
+	 <entry key="updateTableScriptsMappingIsNotExecutedErrorMsg">
+		<![CDATA[
+			INSERT INTO minidwm_etl_table_scripts_error_logs(
+			client_id,
+			script_id,
+			error_msg,
+			modified_by,
+			modified_time
+			) VALUES(?,?,?,?,?)	 
+		]]>
+	</entry>
+	
+	<entry key="getTableScriptsMappingIsNotExecutedErrorMsg">
+		<![CDATA[
+			  SELECT error_msg FROM  minidwm_etl_table_scripts_error_logs  where client_id = ?  and script_id = ? order by id desc limit 1
+		]]>
+	</entry>
+	
+	<entry key="updateTableScriptsMappingIsError">
+		<![CDATA[
+			update minidwcm_etl_table_scripts_client_mapping set isError = ? , modified_by = ?, modified_time = ?  where script_id = ?  and client_id = ?  
+		]]> 
+	</entry>
+	<entry key="saveDefaultTemplateMasterMappingData">
+		<![CDATA[
+				insert into minidwm_default_templates_mapping(template_id, type_of_mapping, master_id, created_by, created_time) values(?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="updateInstantTableScriptExecution">
+		<![CDATA[
+			insert into  minidwcs_etl_instant_table_scripts_execution 
+			(client_id, target_schema, script_description, sql_script, execution_status, execution_status_msg, created_by, created_time )
+			 values ( ? ,? ,? ,? ,? ,? ,? ,? )
+		]]>  
+	</entry>
+	<entry key="getPreviousExecutedScripts">
+		<![CDATA[
+				SELECT * FROM minidwcs_etl_instant_table_scripts_execution where client_id = ?
+		]]>
+	</entry>
+	<entry key="getInstantTableScriptsIsNotExecutedErrorMsg">
+		<![CDATA[
+			 SELECT execution_status_msg FROM minidwcs_etl_instant_table_scripts_execution where id = ? and client_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getPreviousTableScriptView">
+		<![CDATA[
+			 SELECT sql_script FROM minidwcs_etl_instant_table_scripts_execution where id = ? and client_id = ?;
+		]]>
+	</entry>
+	<entry key="getAllDefaultTemplatesInfo">
+		<![CDATA[
+			 select * from minidwm_default_templates;
+		]]>
+	</entry>
+	<entry key="createDefaultTemplate">
+		<![CDATA[
+			  insert into minidwm_default_templates(template_name, description, is_active,trial_template,created_by, created_time) values(?,?,?,?,?,?);
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateVerticalMappedData">
+		<![CDATA[
+			  select id, name, description, CASE WHEN m.master_id is null then 0 else 1 end as 'default' 
+			  from minidwcm_verticals i 
+			  left join (select master_id from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?) m 
+			  on m.master_id = i.id
+			  where isActive = 1 order by `default` desc ;
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateConnectorMappedData">
+		<![CDATA[
+			  select con.id as connector_id, con.name as connector_name, db.name as database_name,
+			  db.driver_name as driver_name,
+              db.protocal as protocal,
+              db.url_format as url_format,
+			  CASE WHEN m.master_id is null then 0 else 1 end as 'default'
+			  from minidwcm_database_types db join minidwcm_database_connectors con
+			  on db.id = con.connector_id
+			  left join (select master_id from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?) m
+			  on m.master_id = con.id
+			  where con.isActive = 1 order by `default` desc ;
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateDLsMappedData">
+		<![CDATA[
+			  select DL_id, DL_name, dl_table_name, description, industry_id, CASE WHEN m.master_id is null then 0 else 1 end as 'default'
+			  from minidwcm_dl_info dl 
+			  left join (select master_id from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?) m
+			  on m.master_id = dl.DL_id
+			  where isActive = 1 order by `default` desc ;
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateTblScriptsMappedData">
+		<![CDATA[
+			  select id, script_type, target_schema,version, script_description, script_name, CASE WHEN m.master_id is null then 0 else 1 end as 'default'
+			  from minidwm_etl_table_scripts ts
+			  left join (select master_id from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?) m
+			  on m.master_id = ts.id
+			  where isActive = 1 order by `default` desc ; 
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateWebServicesMappedData">
+		<![CDATA[
+			  select ws.id, web_service_name, auth.authentication_type, case when m.master_id is null then 0 else 1 end as 'default'
+			  from minidwcm_ws_template_mst ws
+			  left join (select master_id from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?) m
+			  on ws.id = m.master_id
+			  inner join minidwcm_ws_authentication_types auth
+			  on auth.id = ws.authentication_type
+			  where ws.isActive = 1 order by `default` desc ;
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateCurrenciesMappedData">
+		<![CDATA[
+		SELECT template_id, currency_type, dashboard_currency, accountCurrencyCode, otherCurrencyCode FROM minidwm_default_templates_currency where template_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getDefaultTemplateS3BucketMappedData">
+		<![CDATA[
+			  	select master_id from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?
+		]]>
+	</entry>
+	
+	<entry key="getDefaultTemplateSchedularMasterData">
+		<![CDATA[
+			  	SELECT * FROM minidwm_default_templates_mapping where template_id = ? and type_of_mapping= ? ;
+		]]>
+	</entry>
+	
+	<entry key="deleteDefaultTemplateMasterMappedData">
+		<![CDATA[
+			  delete from minidwm_default_templates_mapping where template_id = ? and type_of_mapping = ?;
+		]]>
+	</entry>
+	<entry key="getDefaultTemplateInfoById">
+		<![CDATA[
+			  select * from minidwm_default_templates where id = ?;
+		]]>
+	</entry>
+	<entry key="deleteClientWSMappings">
+		<![CDATA[
+			delete from minidwcs_ws_client_mapping where client_id = ? and isActive = 1;
+		]]>
+	</entry>
+	<entry key="saveWsILMappingDetails">
+		<![CDATA[
+			insert into minidwcm_ws_api_mapping(
+				ws_template_id, 
+				il_id, 
+				api_name, 
+				api_url, 
+				base_url_required,
+				api_method_type,
+				api_path_params, 
+				api_request_params, 
+				response_object_name,
+				created_by, 
+				created_time,
+				api_body_params,
+				incremental_update,
+				response_column_object_name, 
+				incremental_update_params,
+				pagination_required,
+				pagination_type,
+				pagination_request_params,
+				soap_body_element,
+				default_mapping
+				)
+			values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ? , ?, ? ,?);
+		]]>
+	</entry>
+	<entry key="updateWsILMappingDetails">
+		<![CDATA[
+			update minidwcm_ws_api_mapping set 
+				api_name = ?, 
+				api_url = ?, 
+				base_url_required = ?,
+				api_method_type = ?,
+				api_path_params = ?, 
+				api_request_params = ?, 
+				response_object_name = ?,
+				modified_by = ?, 
+				modified_time = ?, 
+				api_body_params = ?, 
+				incremental_update = ?, 
+				incremental_update_params = ?,
+				response_column_object_name = ? ,
+				pagination_required = ? ,
+				pagination_type = ?,
+				pagination_request_params = ? ,
+				soap_body_element = ? ,
+				default_mapping = ?
+			
+			where id = ?;
+		]]>
+	</entry>
+	<entry key="deleteWSILMappingDetailsById">
+		<![CDATA[
+			update minidwcm_ws_api_mapping set is_active = 0 where id = ?;
+		]]>
+	</entry>
+	<entry key="getILsByWSMappingId">
+		<![CDATA[
+			select mst.IL_id, IL_name, version, il_type, il_table_name, xref_il_table_name, description, count(map.il_id) api_count 
+			from minidwcm_il_info mst
+			left join (select * from minidwcm_ws_api_mapping where ws_template_id = ? and is_active = 1) map 
+			on mst.IL_id = map.il_id
+			where isActive = 1 
+			group by map.ws_template_id,mst.IL_id
+			order by mst.IL_id;
+		]]>
+	</entry>
+	<entry key="updateDefaultTemplate">
+		<![CDATA[
+			update minidwm_default_templates set template_name = ? ,
+			description = ?,is_active = ?,trial_template = ?,modified_by = ?,modified_time = ?
+			where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="saveGeneralSettings">
+		<![CDATA[
+			insert into minidwm_default_templates_general_settings(
+				clientId, 
+				flat_file, 
+				database_settings, 
+				webservice, 
+				file_size,
+				created_by,
+				created_time)
+			values (?, ?, ?, ? ,? ,? ,?);
+		]]>
+	</entry>
+	
+	<entry key="getSettingsInfoByID">
+		<![CDATA[
+			  select * from minidwm_default_templates_general_settings where clientId = ?;
+		]]>
+	</entry>
+	
+	
+	<entry key="updateGeneralSettings">
+		<![CDATA[
+			update minidwm_default_templates_general_settings set flat_file = ? ,
+			database_settings = ?,webservice = ?,file_size = ?,modified_by = ?,modified_time = ?,clientId = ?
+			where id = ?;
+		]]>
+	</entry>
+	
+		<entry key="saveclientConfigSettings">
+		<![CDATA[
+			insert into minidwcs_client_config_settings(
+				clientId, 
+				mail_from, 
+				password, 
+				mail_to,
+				cc,
+				bcc,
+				reply_to,
+				smtp_host,
+				socket_factory_port,
+				smtp_port,
+				created_by,
+				created_time,
+				mac_address)
+			values (?, ?, ? ,? ,? ,? ,? ,?, ?, ?, ?, ?, ?);
+		]]>
+	</entry>
+	<entry key="getConfigSettingsInfoByID">
+		<![CDATA[
+			  select * from minidwcs_client_config_settings where clientId = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateclientConfigSettings">
+		<![CDATA[
+			update minidwcs_client_config_settings set mail_from = ? ,
+			password = ?,mail_to = ?,cc = ?,bcc = ?,reply_to = ?,smtp_host=?,socket_factory_port=?,smtp_port=?,modified_by=?,modified_time=?,clientId = ?, mac_address=? 
+			where id = ?;
+		]]>
+	</entry>
+	<entry key="getAllServerConfigurations">
+		<![CDATA[
+			select * from minidwm_migration_servers_details;
+		]]>
+	</entry>
+	<entry key="saveServerConfigurationDetails">
+		<![CDATA[
+			insert into minidwm_migration_servers_details(
+				name,
+				short_name,
+				description,
+				ip_address,
+				port_number,
+				minidw_schema_name,
+				anvizent_schema_name,
+				user_name,
+				password,
+				is_active,
+				client_db_details_end_point) 
+			values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+		]]>
+	</entry>
+	<entry key="updateServerConfigurationDetails">
+		<![CDATA[
+			update minidwm_migration_servers_details set
+				name = ?,
+				short_name = ?,
+				description = ?,
+				ip_address = ?,
+				port_number = ?,
+				minidw_schema_name = ?,
+				anvizent_schema_name = ?,
+				user_name = ?,
+				password = ?,
+				is_active = ?,
+				client_db_details_end_point=? 
+			where 
+				id = ?; 	
+		]]>
+	</entry>
+	<entry key="getServerConfigurationDetailsById">
+		<![CDATA[
+			select * from minidwm_migration_servers_details where id = ? 
+		]]>
+	</entry>
+		<entry key="getUsersByClientId">
+		<![CDATA[
+			select userId,user_name from user where client_id = ? 
+		]]>
+	</entry>
+		<entry key="getAllUserPackages">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.schedule_status,
+				p.isActive,
+				p.isAdvanced,				
+				p.created_time,
+				p.isClientDbTables,
+				p.trailing_months,
+				p.files_having_same_columns  
+				FROM minidwcs_package p
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.user_id= ?
+		]]>
+	</entry>
+	
+	<entry key="saveCurrencyIntegration">
+		<![CDATA[
+			insert into minidwm_currency_integration(
+				api_url, 
+				access_key, 
+				currencies, 
+				source,
+				time_hours,
+				time_minutes,
+				created_by,
+				created_time,
+				time_zone,
+				Job_name,
+				job_file_names,
+				client_specific_Job_name,
+				client_specific_job_file_names)
+			values (?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?);
+		]]>
+	</entry>
+	
+	<entry key="getCurrencyIntegration">
+		<![CDATA[
+		    SELECT * FROM minidwm_currency_integration
+		]]>
+	</entry>
+	
+	<entry key="updateCurrencyIntegration">
+		<![CDATA[
+		   update minidwm_currency_integration set 
+		   api_url = ?,
+		   access_key = ?,
+		   currencies = ?,
+		   source = ?,
+		   time_hours = ?,
+		   time_minutes = ?,
+		   modified_by = ?,
+		   modified_time = ?,
+		   time_zone = ?,
+		   Job_name = ?,
+		   job_file_names = ?,
+		   client_specific_Job_name = ?,
+		   client_specific_job_file_names =?
+		    where id = ?;   
+		]]>
+	</entry>
+	
+	<entry key="getVersionUpgrade">
+		<![CDATA[
+		    SELECT * FROM minidwm_application_versions;   
+		]]>
+	</entry>
+	<entry key="createVersionUpgrade">
+		<![CDATA[
+			insert into minidwm_application_versions(version_id,version_number,description,file_path,created_by,created_time,is_latest_version)values(?,?,?,?,?,?,?);  
+		]]>
+	</entry>
+	
+		
+	<!-- template migration strat -->
+	
+	<entry key="getAllClientsByServer">
+		<![CDATA[
+		  SELECT distinct client_id FROM user
+		]]>
+	</entry>
+	<entry key="getPackageList">
+		<![CDATA[
+		 select * from minidwcs_package where user_id in (select userid from user where client_id = ? )
+		]]>
+	</entry>
+	<entry key="getUsersList">
+		<![CDATA[
+		 select userId,user_name from user where client_id = ?
+		]]>
+	</entry>
+ 
+	<entry key="getDatabaseConnectionList">
+	<![CDATA[
+		select  connection.connection_id,
+				connection.connection_name,
+				connection.connection_type,
+				connection.username,
+				connection.password,
+				connection.server,
+				connection.date_format,
+				connection.time_zone,
+				db.id as database_Id,
+				db.name as database_Name,
+				dc.id as connectorId,
+				dc.driver_name as driver_name,
+                dc.protocal as protocal,
+                dc.url_format as url_format
+			from minidwcs_database_connections as connection
+			inner join minidwcm_database_connectors as db on db.id = connection.DB_type_id
+			inner join minidwcm_database_types dc on dc.id = db.connector_id
+			where connection.isActive ='1' and connection.userid  in (select userid from user where client_id = ?)
+	]]>
+</entry>
+	
+<entry key="getWsConnectionList">
+	<![CDATA[
+			
+		select 
+		  wcm.id as ws_con_id
+		, wcm.web_service_con_name
+		, wcm.auth_request_params
+		, wcm.auth_body_params
+		, wcm.auth_path_params
+		, wcm.header_key_values
+		, wcm.data_source_name
+		, wcm.authentication_token
+		, wcm.authentication_refresh_token
+		, wcm.isActive as wc_con_active_status
+		, m.id as ws_template_id
+		, m.web_service_name as ws_template_name
+		, t.id as authentication_type_id
+		, t.authentication_type as authentication_type_name
+		, wcm.authentication_url
+		, m.authentication_method_type
+		, m.api_auth_request_params
+		, m.api_auth_request_headers
+		, m.api_auth_request_body_params
+		, m.callback_url
+		, wcm.access_token_url
+		, m.response_type
+		, m.date_format
+		, wcm.clientid
+		, wcm.client_secret
+		, m.grant_type
+		, m.date_format
+		, ifnull(wcm.time_zone,m.time_zone) as time_zone
+		 from minidwcs_ws_connections_mst wcm 
+		 inner join minidwcm_ws_template_mst m on m.id = wcm.ws_template_id
+		 inner join minidwcm_ws_authentication_types t on t.id=m.authentication_type 
+		 inner join minidwcs_ws_client_mapping c on c.ws_template_id=m.id and client_id = ? 
+
+	]]>
+</entry>
+	
+<entry key="getClientSpecificILJarsList">
+	<![CDATA[
+	 SELECT * from minidwcs_il_client_specific_jobs where client_id = ?
+	]]>
+</entry>
+<entry key="getClientSpecificDLJarsList">
+	<![CDATA[
+	SELECT * FROM  minidwcs_dl_client_specific_jobs where client_id = ? 
+	]]>
+</entry>
+ 
+<entry key="getTemplatesList">
+	<![CDATA[
+	select * from minidwcm_verticals where id in(SELECT distinct vertical_id FROM  minidwcs_verticals_client_mapping where client_id = ? )
+	]]>
+</entry>
+ 
+<entry key="getTableScriptsList">
+	<![CDATA[
+	SELECT * FROM  minidwm_etl_table_scripts where id in(SELECT script_id FROM  minidwcm_etl_table_scripts_client_mapping where client_id = ?)
+	]]>
+</entry>
+ <!-- template migration end -->
+	<entry key="getVersionUpgradeDetailsById">
+		<![CDATA[
+			select version_id,version_number,description,file_path, is_latest_version from minidwm_application_versions where version_id = ?;
+		]]>
+	</entry>
+	<entry key="getVersionUpgradeDetailsByVersionNumber">
+		<![CDATA[
+			select version_id,version_number,description,file_path, is_latest_version from minidwm_application_versions where version_number = ?;
+		]]>
+	</entry>
+	<entry key="updateVersionUpgrade">
+		<![CDATA[
+			update minidwm_application_versions set 
+			version_number = ?,
+            description = ?,
+            file_path = ?,
+            is_latest_version = ?,
+            modified_time = ?
+            where version_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getClientCurrencyMapping">
+		<![CDATA[
+			select id, clientId, currency_type
+			,(select concat(currency_code,' - ',currency_name) from minidwcm_currency_list c where m.dashboard_currency= c.currency_code) as dashboard_currency
+			,(select concat(currency_code,' - ',currency_name) from minidwcm_currency_list c where m.accountCurrencyCode= c.currency_code) as accountCurrencyCode
+			,(select concat(currency_code,' - ',currency_name) from minidwcm_currency_list c where m.otherCurrencyCode= c.currency_code) as otherCurrencyCode
+			, isActive from minidwm_client_currency_mapping m
+		]]>
+	</entry>
+	
+	<entry key="getClientCurrencyMappingWithCurrencyIds">
+		<![CDATA[
+			select id, clientId, currency_type
+			,dashboard_currency
+			,accountCurrencyCode
+			,otherCurrencyCode
+			, isActive from minidwm_client_currency_mapping m
+		]]>
+	</entry>
+	<entry key="createClientCurrencyMapping">
+		<![CDATA[
+			insert into minidwm_client_currency_mapping(clientId,currency_type,dashboard_currency,isActive,accountCurrencyCode,otherCurrencyCode,created_by,created_time)values(?,?,?,?,?,?,?,?);  
+		]]>
+	</entry>
+	
+	<entry key="getclientCurrencyMappingDetailsById">
+		<![CDATA[
+			select * from minidwm_client_currency_mapping where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateClientCurrencyMapping">
+		<![CDATA[
+			update minidwm_client_currency_mapping set
+			clientId = ?,
+			currency_type = ?,
+			dashboard_currency = ?,
+			isActive = ?,
+			accountCurrencyCode = ?,
+			otherCurrencyCode = ?, 
+			modified_by = ?,
+			modified_time = ?
+		 	where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="checkCurrencyRecordExistance">
+		<![CDATA[
+			select count(1) as count from IL_Client_Currency where Client_Id = ?
+		]]>
+	</entry>
+	<entry key="saveClientTable">
+		<![CDATA[
+			insert into IL_Client_Currency(
+			Client_Id,
+			Currency_Type,
+			Currency_Code,
+			Transe_Curr,
+			Conv_Curr,
+			Rpt_Base_Currency_Flag,
+			Added_User,
+			Added_Date)
+			values(?,?,?,?,?,?,?,?) 
+		]]>
+	</entry>
+	
+	<entry key="updateClientTable">
+		<![CDATA[
+			update IL_Client_Currency set
+			Currency_Type = ?,
+			Currency_Code = ?,
+			Transe_Curr = ?,
+			Conv_Curr = ?,
+			Updated_User = ?,
+			Updated_Date = ?,
+			Rpt_Base_Currency_Flag = ? 
+		 	where Client_Id = ? 
+		]]>
+	</entry>
+	
+	
+	<entry key="createCurrencyMapping">
+		<![CDATA[
+			insert into minidwm_default_templates_currency(
+			template_id,
+			currency_type,
+			dashboard_currency,
+			accountCurrencyCode,
+			otherCurrencyCode)values(?,?,?,?,?) 
+		]]>
+	</entry>
+	<entry key="getDefaultCurrencyInfoById">
+		<![CDATA[
+			select * from minidwm_default_templates_currency where template_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateCurrencyMapping">
+		<![CDATA[
+			update minidwm_default_templates_currency set
+			currency_type = ?,
+			dashboard_currency = ?,
+			accountCurrencyCode = ?,
+			otherCurrencyCode = ? 
+			where template_id= ?;
+		]]>
+	</entry>
+	
+	<entry key="getCurrencyList">
+		<![CDATA[
+			select id, currency_code, concat(currency_code,' - ',currency_name) as currency_name from minidwcm_currency_list;
+		]]>
+	</entry>
+	
+	<entry key="checkCurrencyRecordExist">
+		<![CDATA[
+			select count(1) as count from minidwm_default_templates_currency where template_id = ?
+		]]>
+	</entry>		
+	<entry key="updateAllVersionsToOld">
+		<![CDATA[
+			update minidwm_application_versions set is_latest_version = ?
+			 
+		]]>
+	</entry>
+	
+	<entry key="getclientCurrencyMappingDetailsByClientId">
+		<![CDATA[
+			select * from minidwm_client_currency_mapping where clientId = ?;
+		]]>
+	</entry>
+	
+	<entry key="savePropertiesKeyValuePairs">
+		<![CDATA[
+			INSERT INTO minidwm_internalization(
+			locale_id,
+			locale_name,
+			properties
+			) VALUES (?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updatePropertiesKeyValuePairs">
+		<![CDATA[
+			update minidwm_internalization set 
+			locale_id = ?,
+			locale_name = ?,
+		 	properties = ? where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getPropertiesList">
+		<![CDATA[
+			select * from minidwm_internalization;
+		]]>
+	</entry>
+	
+	<entry key="getpropertiesKeyValuePairsById">
+		<![CDATA[
+			select 
+			* 
+			from 
+			minidwm_internalization 
+			where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getS3InfoList">
+		<![CDATA[
+			select * from minidwm_s3_bucket_info;
+		]]>
+	</entry>
+	
+	<entry key="saveS3BucketInfo">
+		<![CDATA[
+			INSERT INTO minidwm_s3_bucket_info(
+			aws_bucket_name,
+			aws_secret_key,
+			aws_access_key,
+			isActive,
+			created_by,
+			created_time
+			) VALUES (?,?,?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updateS3BucketInfo">
+		<![CDATA[
+			update minidwm_s3_bucket_info set 
+			aws_bucket_name = ?,
+			aws_secret_key = ?,
+		 	aws_access_key = ?,
+		 	isActive = ?,
+		 	modified_by = ?,
+		 	modified_time = ? where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getS3BucketInfoById">
+		<![CDATA[
+			select * from minidwm_s3_bucket_info where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getBucketList">
+		<![CDATA[
+			select id,aws_bucket_name from minidwm_s3_bucket_info where isActive=1;
+		]]>
+	</entry>
+	
+	<entry key="getScheduledMasterInfoList">
+		<![CDATA[
+			select * from minidwm_scheduler_master;
+		]]>
+	</entry>
+	
+	<entry key="getFileSettingsList">
+		<![CDATA[
+			select * from minidwm_file_settings;
+		]]>
+	</entry>
+	
+	<entry key="saveClientMapping">
+		<![CDATA[
+			INSERT INTO minidwm_s3_client_mapping(
+			client_id,
+			s3_bucket_info_id,
+			created_by,
+			created_time
+			) VALUES (?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="deleteClientMapping">
+		<![CDATA[
+			delete from minidwm_s3_client_mapping  where client_id = ?  
+		]]>
+	</entry>
+
+
+	<entry key="createMiddleLevelManager">
+		<![CDATA[
+			INSERT INTO minidwm_middle_level_manager(
+			`context_path`,
+			`upload_list_end_point`,
+			`write_end_point`,
+			`delete_end_point`,
+			`upgrade_end_point`,
+			`user_auth_token`,
+			`client_auth_token`,
+			`encryption_private_key`,
+			`encryption_IV`
+			) VALUES (?,?,?,?,?,?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updateMiddleLevelManager">
+		<![CDATA[
+			update minidwm_middle_level_manager set 
+			`context_path` = ?,
+			`upload_list_end_point` = ?,
+			`write_end_point` = ?,
+			`delete_end_point` = ?,
+			`upgrade_end_point` = ?,
+			`user_auth_token` = ?,
+			`client_auth_token` = ?,
+			`encryption_private_key` = ?,
+			`encryption_IV` = ? 			
+			 where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getMiddleLevelManager">
+		<![CDATA[
+			SELECT * FROM minidwm_middle_level_manager
+		]]>
+	</entry>
+	
+	<entry key="getMiddleLevelManagerDetailsById">
+		<![CDATA[
+			select * from minidwm_middle_level_manager
+		]]>
+	</entry>
+	
+	<entry key="getAppDbVersionTableScripts">
+		<![CDATA[
+			SELECT * FROM anvizentdb_script;
+		]]>
+	</entry>
+	
+	<entry key="createAppDBVersionTableScripts">
+		<![CDATA[
+			INSERT INTO anvizentdb_script(
+			version,
+			anviz_appdbscript,
+			minidw_appdbscript,
+			default_db
+			) VALUES (?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updateAppDBVersionTableScriptsInfo">
+		<![CDATA[
+			update anvizentdb_script set 
+			version = ?,
+		 	anviz_appdbscript = ?,
+		 	minidw_appdbscript = ?,
+		 	default_db = ?
+		 	where id = ?;
+		]]>
+	</entry>
+	
+	
+	<entry key="getAppDbVersionTableScriptDetailsById">
+		<![CDATA[
+			SELECT * FROM anvizentdb_script where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getAppDBScriptById">
+		<![CDATA[
+			SELECT anviz_appdbscript FROM anvizentdb_script where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getMinidwDBScriptById">
+		<![CDATA[
+			SELECT minidw_appdbscript FROM anvizentdb_script where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateDefaultStatus">
+		<![CDATA[
+			update anvizentdb_script set default_db = ?
+			 
+		]]>
+	</entry>
+	
+	<entry key="getHybridClientsGrouping">
+		<![CDATA[
+			SELECT * FROM minidwm_hybrid_clients_grouping_master;
+		]]>
+	</entry>
+	
+	<entry key="getHybridClientsGroupingByGroupId">
+		<![CDATA[
+			select id,clientname from  cloud_client where id in (
+			SELECT client_id FROM minidwm_hybrid_clients_grouping_mapping where group_id = ?)
+		]]>
+	</entry>
+	
+	<entry key="createHybridClientsGroupingInfo">
+		<![CDATA[
+			INSERT INTO minidwm_hybrid_clients_grouping_master(
+			name,
+			access_key,
+			is_active,
+			description,
+			interval_type,
+			interval_time,
+			thread_count,
+			last_modfied_date
+			) VALUES (?,?,?,?,?,?,?,now())  
+		]]>
+	</entry>	
+	
+	<entry key="addHybridClientsGrouping">
+		<![CDATA[
+			INSERT INTO minidwm_hybrid_clients_grouping_mapping(
+			group_id,
+			client_id
+			) VALUES (?,?)  
+		]]>
+	</entry>
+	
+	
+	<entry key="deleteHybridGroupMapping">
+		<![CDATA[
+			delete from minidwm_hybrid_clients_grouping_mapping where group_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="deleteHybridClientMapping">
+		<![CDATA[
+			delete from minidwm_hybrid_clients_grouping_mapping where client_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getHybridClientGroupingDetailsById">
+		<![CDATA[
+			SELECT * FROM minidwm_hybrid_clients_grouping_master where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateHybridClientsGroupingInfo">
+		<![CDATA[
+			update minidwm_hybrid_clients_grouping_master set 
+			name = ?,
+		 	is_active = ?,
+		 	description = ?,
+		 	interval_type = ?,
+		 	interval_time = ?,
+		 	thread_count = ?
+		 	where id = ?;
+		]]>
+	</entry>
+	<entry key="saveClientsInstantScriptExecution">
+		<![CDATA[
+			insert into minidwm_clients_instant_script_execution(
+			 clientIds, 
+			 sqlscript,
+			 created_by,
+			 created_time,
+			 executionType
+			 )values (?,?,?,?,?)
+		]]>  
+	</entry>
+	<entry key="getClientsInstantScriptExecution">
+		<![CDATA[
+				SELECT * FROM minidwm_clients_instant_script_execution
+		]]>
+	</entry>
+	
+	<entry key="saveInstantScriptExecutionOfClient">
+		<![CDATA[
+			insert into minidwm_instant_script_execution_client_auditlog (
+			client_instant_execution_id,
+			client_id, 
+			sqlscript,
+			execution_status,
+			execution_status_msg,
+			created_by,
+			created_time
+			)values (?,?,?,?,?,?,?)
+		]]>  
+	</entry>
+	<entry key="getInstantScriptExecutionOfClient">
+		<![CDATA[
+				SELECT client_instant_execution_id,client_id,sqlscript,execution_status,execution_status_msg FROM minidwm_instant_script_execution_client_auditlog  where client_instant_execution_id = ?
+		]]>
+	</entry>
+	<entry key="getSqlScriptByExecutionId">
+		<![CDATA[
+				 select sqlscript from minidwm_clients_instant_script_execution where clients_instant_script_id = ?
+		]]>
+	</entry>
+	
+	<entry key="updateClientJobExecutionParams">
+		<![CDATA[
+			update minidwcs_client_job_execution_params set 
+			 source_time_zone = ?,
+			 dest_time_zone = ?,
+			 null_raplace_value = ?,
+			 case_sensitive = ?,
+			 trial_interval = ? 	
+			 where id = ?;
+		]]>
+	</entry>
+	<entry key="createClientJobExecutionParams">
+		<![CDATA[
+			insert into minidwcs_client_job_execution_params(
+			 source_time_zone,
+			 dest_time_zone,
+			 null_raplace_value,
+			 case_sensitive,
+			 trial_interval
+			 )values (?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="getclientJobExecutionParametersDetailsById">
+		<![CDATA[
+			select * from minidwcs_client_job_execution_params
+		]]>
+	</entry>
+	<entry key="saveClientSchedularMasterMapping">
+		<![CDATA[
+			INSERT INTO minidwm_scheduler_master_client_mapping(
+						client_id,
+						master_id
+						) VALUES (?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updateFilesetting">
+		<![CDATA[
+			UPDATE minidwcs_file_settings SET multipart_file_enabled = ? WHERE id = ?;
+		]]>
+	</entry>
+	<entry key="getERPList">
+		<![CDATA[
+			select * from erp_master 
+		]]>
+	</entry>
+	<entry key="getDlInfoList">
+		<![CDATA[
+			select * from minidwcm_dl_info 
+		]]>
+	</entry>
+	<entry key="getIlPrebuildQueriesMapping">
+		<![CDATA[
+			select * from minidwcm_il_prebuild_queries_mapping
+		]]>
+	</entry>
+    <entry key="getIlDlMapping">
+		<![CDATA[
+			select * from minidwcm_dl_il_mapping
+		]]>
+	</entry>
+	<entry key="getDlKpiMapping">
+		<![CDATA[
+			select * from minidwcm_kpis_dl_mapping
+		]]>
+	</entry>
+	<entry key="getWsTemplateAuthRequestParams">
+		<![CDATA[
+			select * from minidwcm_ws_template_auth_request_params
+		]]>
+	</entry>
+	<entry key="getWsMappingList">
+		<![CDATA[
+			select * from minidwcm_ws_api_mapping
+		]]>
+	</entry>
+	<entry key="getErpTableList">
+	  <![CDATA[
+	     SELECT * FROM minidw_erp_tables where reference_table_scope in('cm','cs');
+	  ]]>
+	</entry>
+	<entry key="getMasterTablesList">
+	  <![CDATA[
+	     SELECT * FROM minidw_erp_tables where reference_table_scope in('m');
+	  ]]>
+	</entry>
+	<entry key="getUserListFromClient">
+	  <![CDATA[
+	     select id,username from user where cloudclientid = ? and roleid in(2,4,7);
+	  ]]>
+	</entry>
+	<entry key="updateErpToClientMigrationMapping">
+		<![CDATA[
+			INSERT INTO erp_client_migration_mapping(
+			erpId,
+			clientId,
+			created_by,
+			created_date) VALUES(?,?,?,?)	;
+		]]>
+	</entry>
+	<entry key="getErpIdFromNameAndVersion">
+	  <![CDATA[
+	     select id  from erp_master where erp_name = ? and erp_version  = ? ;
+	  ]]>
+	</entry>
+	
+	<!-- add sql statements here  -->
+</properties>

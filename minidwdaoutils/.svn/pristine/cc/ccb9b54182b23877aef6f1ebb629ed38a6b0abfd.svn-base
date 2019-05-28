@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="saveBusinessModalInfo">
+		<![CDATA[
+			INSERT INTO AI_Tables_Master(
+			Business_Problem,
+			AI_Model,
+			AI_Staging_Table,
+			AI_Staging_Table_Script,
+			AI_IL_Table,
+			AI_IL_table_Script,
+			AI_OL_Table,
+			AI_OL_Table_Script,
+			IsActive,
+			Created_By,
+			Created_DateTime	
+			) VALUES (?,?,?,?,?,?,?,?,?,?,?)  
+		]]>
+	</entry>
+	<entry key="getBusinessModalInfo">
+		<![CDATA[
+               SELECT * FROM AI_Tables_Master;
+		]]>
+	</entry>
+	
+	<entry key="getBusinessModalById">
+		<![CDATA[
+			select * from AI_Tables_Master where Bmid = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateBusinessModalInfo">
+		<![CDATA[
+			update AI_Tables_Master set 
+			Business_Problem = ?,
+			AI_Model=?,
+		 	AI_Staging_Table = ?,
+		 	AI_Staging_Table_Script = ?,
+		 	AI_IL_Table = ?,
+		 	AI_IL_table_Script = ?,
+		 	AI_OL_Table = ?,
+			AI_OL_Table_Script = ?,
+			IsActive = ?,
+			Modified_By = ?,
+		 	Modified_DateTime = ? where Bmid = ?;
+		 	
+		]]>
+	</entry>
+	
+		<entry key="deleteBusinessModelById">
+		<![CDATA[
+			delete from AI_Tables_Master where Bmid = ?			
+		]]>
+	</entry>
+
+	<entry key="saveAISourceDefinition">
+			<![CDATA[
+				INSERT INTO AI_Source_Definition(
+				Bmid,
+				Staging_Table,
+				SOURCE_QUERY,
+				IsActive,
+				CREATED_BY,
+				CREATED_DATETIME
+				) VALUES (?,?,?,?,?,?); 
+			]]>
+	</entry>
+
+	<entry key="deleteAISourceDefinitionBYId">
+		<![CDATA[
+			delete from AI_Source_Definition where SdID = ?
+		]]>
+	</entry>
+	
+	<entry key="getAiSourceInfoById">
+			<![CDATA[
+				select * from AI_Source_Definition where SdID = ?
+			]]>
+	</entry>
+
+	<entry key="getAiSourceDefinitionList">
+			<![CDATA[
+				select * from AI_Source_Definition;
+			]]>
+	</entry>
+
+	<entry key="updateSourceDefinition">
+			<![CDATA[
+				update AI_Source_Definition set 
+				Bmid = ?,
+			 	Staging_Table = ?,
+			 	SOURCE_QUERY = ?,
+			 	IsActive = ?
+			 	where SdID = ?;
+			]]>
+	</entry>
+
+	<entry key="saveAIJobUploadInfo">
+			<![CDATA[
+				insert into AI_RJobs_Master(
+		               Bmid,
+					   RJobName,
+					   RJobJars,
+			           isActive,
+			           createdBy,
+					   createdTime
+		  			)
+		           values(?,?,?,?,?,?);
+			]]>
+	</entry>
+	
+	<entry key="updateAIJobUploadInfo">
+			<![CDATA[
+				update AI_RJobs_Master set 
+				Bmid = ?,
+			 	RJobName = ?,
+			 	RJobJars = ?,
+			 	IsActive = ?,
+			 	modifiedBy = ?,
+			 	modifiedTime = ?
+			 	where RID = ?;
+			]]>
+	</entry>
+	
+
+	<entry key="saveAIJobContextParams">
+			<![CDATA[
+				insert into AI_RJobs_Context_Parameter_Mapping(
+					   RID,
+		               PID,
+					   ParamVal,
+					   CREATED_BY,
+			           CREATED_DATETIME
+		  			)
+		           values(?,?,?,?,?);
+			]]>
+	</entry>
+	
+	
+	
+
+	<entry key="saveAiContextParameters">
+		<![CDATA[
+			INSERT INTO AI_Context_Parameter(
+			ParamName,
+			ParamVal,
+			Isactive,
+			CREATED_BY,
+			CREATED_DATETIME	
+			) VALUES (?,?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="UpdateAiContextParameters">
+		<![CDATA[
+			update AI_Context_Parameter set 
+			ParamName = ?,
+			ParamVal = ?,
+			Isactive = ?,
+			MODIFIED_BY = ?,
+		 	MODIFIED_DATETIME = ? where PID = ?;
+		 	
+		]]>
+	</entry>
+	
+	<entry key="getAiContextParametersInfo">
+		<![CDATA[
+			select * from AI_Context_Parameter;  
+		]]>
+	</entry>
+	<entry key="getAiContextParametersById">
+		<![CDATA[
+			select * from AI_Context_Parameter where PID = ?;
+		]]>
+	</entry>
+	
+	<entry key="deleteAiContextParametersById">
+		<![CDATA[
+			delete from AI_Context_Parameter where PID = ?			
+		]]>
+	</entry>
+	
+	<entry key="saveAiModelInfo">
+		<![CDATA[
+			INSERT INTO AI_Model(
+			AI_Model_Name,
+			AI_Model_Type,
+			AI_Model_Context_params,
+			CREATED_BY,
+			CREATED_DATETIME	
+			) VALUES (?,?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="updateAiModelInfo">
+		<![CDATA[
+			update AI_Model set 
+			AI_Model_Name = ?,
+			AI_Model_Type = ?,
+			AI_Model_Context_params = ?,
+			MODIFIED_BY = ?,
+		 	MODIFIED_DATETIME = ? where ID = ?;
+		 	
+		]]>
+	</entry>
+	
+	<entry key="getaiModelInfo">
+		<![CDATA[
+			select * from AI_Model;  
+		]]>
+	</entry>
+	<entry key="getAiModelById">
+		<![CDATA[
+			select * from AI_Model where ID = ?;
+		]]>
+	</entry>
+	
+	<entry key="deleteAiModelById">
+		<![CDATA[
+			delete from AI_Model where ID = ?			
+		]]>
+	</entry>
+	
+	<entry key="saveAISpecificContextParams">
+		<![CDATA[
+			INSERT INTO AI_RJob_Specific_Context_Parameters_mapping(
+			RID,
+			BMID,
+			AID,
+			contextparam_object,
+			created_by,
+			created_time	
+			) VALUES (?,?,?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="getAIJobsUploadList">
+		<![CDATA[
+			select * from AI_RJobs_Master;
+		]]>
+	</entry>
+	
+	<entry key="getAIUploadedJobById">
+		<![CDATA[
+			select *,aiJob.PID,aiJob.ParamVal from AI_RJobs_Master rmst
+				join AI_RJobs_Context_Parameter_Mapping aiJob on rmst.RID = aiJob.RID
+				where  rmst.RID = ? and rmst.isActive = '1';
+		]]>
+	</entry>
+	
+	<entry key="deleteAIUploadedJobById">
+		<![CDATA[
+			delete from AI_RJobs_Master where RID = ?;
+		]]>
+	</entry>
+	
+	<entry key="deleteAIGenericContextParams">
+		<![CDATA[
+			delete from AI_RJobs_Context_Parameter_Mapping where RID = ?;
+		]]>
+	</entry>
+	
+	<entry key="deleteAISpecificContextParam">
+		<![CDATA[
+			delete from AI_RJob_Specific_Context_Parameters_mapping where RID = ?;
+		]]>
+	</entry>
+	
+	<entry key="getSpecificContextParams">
+		<![CDATA[
+			select * from AI_RJob_Specific_Context_Parameters_mapping where RID = ?;
+		]]>
+	</entry>
+	
+	<entry key="saveBusinessAIMapping">
+		<![CDATA[
+			INSERT INTO AI_Business_AIModal_Mapping(
+			BMID,
+			AID,
+			created_by,
+			created_time	
+			) VALUES (?,?,?,?)  
+		]]>
+	</entry>
+	
+	<entry key="getAIModalInfoBYBMID">
+		<![CDATA[
+			select * from AI_Business_AIModal_Mapping where BMID = ?;
+		]]>
+	</entry>
+	
+	<entry key="deleteBusinessAIMapping">
+		<![CDATA[
+			delete from AI_Business_AIModal_Mapping where BMID = ?;
+		]]>
+	</entry>
+	<entry key="getAIModelFromBid">
+		<![CDATA[
+			SELECT 
+			aim.ID, 
+			aim.AI_Model_Name, 
+			aim.AI_Model_Type, 
+			aim.AI_Model_Context_params
+			FROM  AI_Model aim inner join AI_Business_AIModal_Mapping aibm on aibm.AID = aim.ID where aibm.BMID = ? ;
+		]]>
+	</entry>
+	<entry key="getAIUploadedJobFromBid">
+		<![CDATA[
+			SELECT * FROM  AI_RJobs_Master where Bmid = ? ;
+		]]>
+	</entry>
+	<entry key="getBusinessAImappingInfo">
+		<![CDATA[
+			select * from AI_Business_AIModal_Mapping where BMID = ?;
+		]]>
+	</entry>
+	<entry key="getExecutionInfoByBusinessId">
+		<![CDATA[
+			select execution_id,dl_id,run_type,execution_status,execution_comments,exection_start_date,last_executed_date from minidwcs_package_execution where dl_id = ? and run_type = 'r';
+		]]>
+	</entry>
+	
+	<entry key="getSourceQueryById">
+		<![CDATA[
+			select SOURCE_QUERY from AI_Source_Definition where SdID = ?;
+		]]>
+	</entry>
+	
+	<entry key="getrJobExecutionInfo">
+		<![CDATA[
+			SELECT * FROM AI_Jobs_Execution_Summary where BUSINESS_PROBLEM = ? and AI_MODEL = ?;
+		]]>
+	</entry>
+	
+	<entry key="getExecutionCommentsById">
+		<![CDATA[
+			select execution_comments from minidwcs_package_execution where execution_id = ?;
+		]]>
+	</entry>
+		<entry key="getBusinessCaseByModelName">
+		<![CDATA[
+			 SELECT * FROM AI_Tables_Master where AI_Model = ?;
+		]]>
+	</entry>
+	<entry key="getModelInfoByModelName">
+		<![CDATA[
+			 SELECT * FROM AI_Model where AI_Model_Name = ?;
+		]]>
+	</entry>
+	<entry key="getAIStagingTableByBusinessCaseName">
+		<![CDATA[
+			 SELECT distinct(AI_Staging_Table) as AI_Staging_Table FROM  AI_Tables_Master where Business_Problem = ? ;
+	    ]]>
+	</entry>
+	<entry key="getAiModelInfoByByName">
+		<![CDATA[
+		SELECT 
+			aim.ID, 
+			aim.AI_Model_Name, 
+			aim.AI_Model_Type, 
+			aim.AI_Model_Context_params
+			FROM  AI_Model aim inner join AI_Tables_Master aitm on aitm.AI_Model = aim.AI_Model_Name where aim.AI_Model_Name = ? ;
+		]]>
+	</entry>
+	
+	</properties>

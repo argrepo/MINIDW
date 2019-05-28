@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="insertFileColumnDetails">
+		<![CDATA[
+				insert into minidwcs_custom_package_flat_file_headers_info(
+				clientId, 
+				packageId, 
+				file_path,
+				source_file_info_id,
+				file_type,
+				delimeter,
+				is_first_row_has_column_names,
+				file_headers,
+				created_by,
+				created_time,
+				is_temp_table_created,
+				column_datatypes 
+				) 
+				values(?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+
+	<entry key="getFileHeaderColumns">
+		<![CDATA[
+				select file_headers from minidwcs_custom_package_flat_file_headers_info
+				where clientId = ? and packageId = ?
+		]]>
+	</entry>
+	
+	<entry key="updateFileHeaderByFileId">
+		<![CDATA[
+				update minidwcs_custom_package_flat_file_headers_info set file_headers =?   
+				where clientId = ? and packageId = ? and id = ?
+		]]>
+	</entry>
+
+
+	<entry key="getFileInfoForCustomPackage">
+		<![CDATA[
+			select fileType, delimeter, first_row_has_coloumn_names as isFirstRowHasColoumnNames,file_name as filePath from minidwcs_custom_package_flat_file_headers_info fhi
+			join minidwcs_package_source_mapping icm on fhi.clientId = icm.userid and fhi.packageId = icm.Package_id
+			where userid = ? and Package_id = ?
+		]]>
+	</entry>
+	<entry key="getFileInfoByPackage">
+		<![CDATA[
+			select * from minidwcs_custom_package_flat_file_headers_info where isActive = '1' and clientId = ? and packageId = ?
+		]]>
+	</entry>
+
+	<entry key="getFileInfoByFileId">
+		<![CDATA[
+			select * from minidwcs_custom_package_flat_file_headers_info where isActive = '1' and clientId = ? and packageId = ? and id = ? 
+		]]>
+	</entry>
+
+	<entry key="updateFilesHavingSameColumns">
+			<![CDATA[
+				update minidwcs_package set files_having_same_columns = ? where isActive = '1' and user_id = ? and package_id = ? 
+			]]>
+	</entry>
+	<entry key="insertTempTableMapping">
+		<![CDATA[
+			insert into minidwcs_custom_package_temp_tables_mapping 
+			(fileId, packageId, clientId, temp_table_name, is_primary_table, created_by, created_time, il_mapping_id) 
+			values(?, ?, ?, ?, ?, ?, ?, ?)
+		]]>
+	</entry>
+
+	<entry key="getCustomFileTempTableMappings">
+		<![CDATA[
+			select id, packageId, clientId, temp_table_name from minidwcs_custom_package_temp_tables_mapping
+			where packageId = ? and clientId = ? 
+		]]>
+	</entry>
+
+	<entry key="getCustomTempTables">
+		<![CDATA[
+			select file_path, file_type, file_headers, fttm.is_primary_table,fttm.temp_table_name,delimeter from minidwcs_custom_package_flat_file_headers_info as fhi 
+			join minidwcs_custom_package_temp_tables_mapping as fttm 
+			on fhi.id = fttm.fileId and fhi.clientId = fttm.clientId and fhi.packageId = fttm.packageId
+			where fttm.clientId = ? and fttm.packageId = ? order by fttm.is_primary_table desc
+		]]>
+	</entry>
+	
+	<entry key="getCustomTempTableByMappingId">
+		<![CDATA[
+			select fhi.id as fileId, file_path, file_type, file_headers, fttm.is_primary_table,fttm.temp_table_name,delimeter from minidwcs_custom_package_flat_file_headers_info as fhi 
+			join minidwcs_custom_package_temp_tables_mapping as fttm 
+			on fhi.id = fttm.fileId and fhi.clientId = fttm.clientId and fhi.packageId = fttm.packageId
+			where fttm.clientId = ? and fttm.packageId = ? and fttm.il_mapping_id = ? order by fttm.is_primary_table desc
+		]]>
+	</entry>
+
+	<entry key="saveCustomTempTablesQuery">
+		<![CDATA[
+			insert into minidwcs_custom_package_target_table_query (clientId, packageId, temp_query, created_by, created_time)
+			values(?, ?, ?, ?, ?)
+		]]>
+	</entry>
+
+	<entry key="getCustomTempQuery">
+		<![CDATA[
+			select temp_query from minidwcs_custom_package_target_table_query where clientId = ? and packageId = ?
+		]]>
+	</entry>
+
+	<entry key="saveCustomTargetDerivativeTable">
+		<![CDATA[
+			insert into minidwcs_custom_package_derived_tables
+			(target_table_id, client_id, package_id, schemaName, target_table_name,
+			custom_columns_datatypes, custom_target_table_query, created_by, created_time)
+			values( ?, ?, ?, ?, ?, 
+			?, ?, ?, ?)
+		]]>
+	</entry>
+
+	<entry key="getCustomTargetDerivativeTables">
+		<![CDATA[
+			select id, target_table_id, client_id, package_id, schemaName, target_table_name,custom_target_table_query
+			from minidwcs_custom_package_derived_tables
+			where target_table_id=? and client_Id= ? and package_Id = ?
+		]]>
+	</entry>
+
+	<entry key="updateCustomTargetDerivativeTableResults">
+		<![CDATA[
+			update minidwcs_custom_package_derived_tables
+			set isProcessed = ? , no_of_records_processed = ? , no_of_records_failed = ? ,total_records = ?,
+			modified_by = ? , modified_time = ?
+			where target_table_id=? and client_Id= ? and package_Id = ? and id = ?
+		]]>
+	</entry>
+
+	<entry key="getCustomTargetDerivativeTablesById">
+		<![CDATA[
+			select id, target_table_id, client_id, package_id, schemaName, target_table_name,custom_target_table_query
+			from minidwcs_custom_package_derived_tables
+			where id=? and target_table_id=? and client_Id= ? and package_Id = ?
+		]]>
+	</entry>
+	<entry key="deleteCustomTempTableInfo">
+		<![CDATA[
+			delete from minidwcs_custom_package_temp_tables_mapping where packageId=? and clientId = ?
+		]]>
+	</entry>
+	<entry key="deleteFileHeadersInfo">
+		<![CDATA[
+			delete from minidwcs_custom_package_flat_file_headers_info where id = ? and packageId=? and clientId = ? 
+		]]>
+	</entry>
+
+
+	<entry key="fileNameByIlId">
+	<![CDATA[
+		 SELECT filename FROM minidwcm_il_templates where il_id=? and isActive=1;
+	]]>
+	</entry>
+
+	<entry key="fileNameByXRefIlId">
+	<![CDATA[
+		 SELECT xref_filename FROM minidwcm_il_templates where il_id=? and isActive=1;
+	]]>
+	</entry>
+
+	<entry key="getTempTableNameByMappingId">
+	<![CDATA[
+		 SELECT temp_table_name FROM minidwcs_custom_package_temp_tables_mapping where il_mapping_id = ?;
+	]]>
+	</entry>
+
+	<entry key="saveUploadedFileInfo">
+	<![CDATA[
+		 insert into minidw_s3_file_info 
+		 (user_id, 
+		 package_Id,
+		 il_connection_mapping_id,
+		 file_name, 
+		 file_type,
+		 storage_type, 
+		 file_size, 
+		 upload_start_time, 
+		 upload_end_time,
+		 s3_file_path,
+		 bucket_name,
+		 created_by,
+		 created_time)
+		 values(?,?,?,?,?,?,?,?,?,?,?,?,?);
+	]]>
+	</entry>
+
+	<entry key="deleteUploadedFileInfo">
+	<![CDATA[
+		delete from minidwcs_source_file_info where s3_file_path = ?;
+	]]>
+	</entry>
+
+	<entry key="insertPackageWsSourceMapping">
+		<![CDATA[
+			insert into minidwcs_package_web_service_source_mapping ( 
+			fileId,
+			packageId,
+			userid,
+			il_id,
+			web_service_url, 
+            base_url_required,
+			web_service_method_type, 
+			web_service_response_object_name,
+			response_column_object_name,
+			web_service_api_name,
+			api_path_params,
+			api_request_params,
+			api_body_params,
+			pagination_type,
+			pagination_required,
+			pagination_request_params,
+			incremental_update,
+			incremental_update_params,
+			temp_table_name, 
+			temp_table_structure,
+		    created_by,
+		    created_time,
+		    soap_body_element
+		    )  values(?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)   
+		]]>
+	</entry>
+
+	<entry key="getCustomTempTablesForWebservice">
+		<![CDATA[
+			 select 
+			 ilwsmng.id as wsm_id,
+			 file_path, 
+			 file_type,
+			 file_headers,
+			 ilwsmng.temp_table_name,
+			 delimeter,
+			 ilwsmng.fileId,
+			 ilwsmng.web_service_url,
+			 ilwsmng.web_service_api_name
+			 from 
+			 minidwcs_custom_package_flat_file_headers_info as fhi 
+			 join minidwcs_package_web_service_source_mapping as ilwsmng 
+			 on fhi.id = ilwsmng.fileId and fhi.clientId = ilwsmng.userid and fhi.packageId = ilwsmng.packageId
+			 where ilwsmng.userid = ? and ilwsmng.packageId = ? and ilwsmng.il_id = ? and il_connection_mapping_id is null
+		]]>
+	</entry>
+
+	<entry key="deleteIlConnectionWebServiceMapping">
+	<![CDATA[
+		delete from minidwcs_package_web_service_source_mapping where il_id = ? and userid = ? and packageId = ? and il_connection_mapping_id is null 
+	]]>
+	</entry>
+	<entry key="deletefileHeader">
+	<![CDATA[
+		delete FROM  minidwcs_custom_package_flat_file_headers_info where id = ? and clientId = ? and packageId = ?
+	]]>
+	</entry>
+<entry key="insertIlConnectionWebServiceMappingForJsonOrXml">
+		<![CDATA[
+			insert into minidwcs_package_web_service_source_mapping ( 
+			packageId,
+			userid,
+			il_id,
+			web_service_url, 
+            base_url_required,
+			web_service_method_type, 
+			web_service_response_object_name,
+			response_column_object_name,
+			web_service_api_name,
+			api_path_params,
+			api_request_params,
+			api_body_params,
+			pagination_type,
+			pagination_required,
+			pagination_request_params,
+			incremental_update,
+			incremental_update_params,
+		    created_by,
+		    created_time
+		    )  values(?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)   
+		]]>
+	</entry>
+	<entry key="updateSSLTrustKeyStorePathsAtDbConnection">
+	<![CDATA[
+	         update 
+			 minidwcs_database_connections set 
+			 ssl_trust_key_store_file_paths = ? ,
+			 modified_by = ? ,
+			 modified_time = ?
+			 where DB_type_id = ?
+			 and connection_id = ? 
+	]]>
+	</entry>
+		<entry key="deleteDbConSSlAuthCertFilesInfo">
+		<![CDATA[
+				 delete from  minidwcs_db_con_ssl_auth_cert_files_info where db_type_id = ? and  con_id = ? and  file_name = ?
+		]]>
+	</entry>
+	
+	
+		<entry key="getDbConSslAuthCertFilesInfo">
+		<![CDATA[
+				SELECT file_path FROM  minidwcs_db_con_ssl_auth_cert_files_info where db_type_id = ? and file_path = ? 
+		]]>
+	</entry>
+ 
+	
+</properties>

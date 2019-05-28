@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="createUser">
+			<![CDATA[
+					insert into user (
+					client_id,
+					userId,
+					user_name,
+					role_id,
+					role_name,
+					isTrailUser,
+					created_by,
+					created_time) values (?,?,?,?,?,?,?,?)
+			]]>
+	</entry>
+	<entry key="getUser">
+		<![CDATA[
+				select * from user where isActive='1' and id=? or username =?
+		]]>
+	</entry>
+	<entry key="isClientValid">
+		<![CDATA[
+				select count(*) from user where isActive='1' and (userId=? or user_name =?)
+		]]>
+	</entry>
+	<entry key="getAllIndustries">
+		<![CDATA[
+				select * from minidwcm_verticals where isActive='1'
+		]]>
+	</entry>
+	
+	<entry key="getUserActivationKeyStatus">
+		<![CDATA[
+				select activation_key from minidw_client_key_mapping where isActive='1' and client_id =?
+		]]>
+	</entry>
+	
+	<entry key="saveConnection">
+		<![CDATA[
+				insert into connection (connection_name,userid,DB_type,server,username,password) values (?,?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="createClientSchema">
+		<![CDATA[
+				create schema ?
+		]]>
+	</entry>
+	
+	<entry key="getAllDLs">
+		<![CDATA[
+				select * from minidwcm_dl_info where industry_id=? 
+		]]>
+	</entry>
+	<entry key="getAllILs">
+		<![CDATA[
+				select * from minidwcm_il_info where isActive='1' and IL_id in (SELECT il_id FROM minidwcm_dl_il_mapping where dl_id=?)
+		]]>
+	</entry>
+	
+	<entry key="getStagingIlsByDlId">
+		<![CDATA[
+				select concat(IL_name, '_Stg') as IL_name, IL_schema from minidwcm_il_info 
+				where isActive='1' and IL_id in (##)
+		]]>
+	</entry>
+	
+	<entry key="getIndustryById">
+		<![CDATA[
+				select id, name from minidwcm_verticals where isActive='1' and id = ? 
+		]]>
+	</entry>
+	
+	<entry key="getUserRoles">
+		<![CDATA[
+				SELECT  r.role ,r.id FROM user_role ur 
+				join user u on u.client_id = ur.user_id 
+				join minidw_roles r on r.id = ur.role_id 
+				where ur.isActive='1' and (u.user_name = ? or u.client_id = ?)
+		]]>
+	</entry>
+	<entry key="verifyUserAuthentication">
+		<![CDATA[
+				select * from user where isActive='1' and user_name =? and password = ? 
+		]]>
+	</entry>
+	<entry key="isClientExist">
+		<![CDATA[
+				select count(*) from user where isActive='1' and client_id = ?
+		]]>
+	</entry>
+	<entry key="mapDLToClient">
+		<![CDATA[
+           INSERT INTO minidwcs_dl_client_mapping(
+           client_id,
+           dl_id, 
+           created_by, 
+           created_time,
+           isLocked 
+           ) values(?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getLatestMinidwVersion">
+		<![CDATA[
+          select * from minidwm_application_versions where is_latest_version='1'
+		]]>
+	</entry>
+	<entry key="getS3BucketInfoByClientId">
+		<![CDATA[
+        select 
+        s3b.id,
+        s3b.aws_bucket_name , 
+        s3b.aws_access_key ,
+        s3b.aws_secret_key 
+        from minidwm_s3_bucket_info s3b join minidwm_s3_client_mapping s3cm 
+        on s3b.id = s3cm.s3_bucket_info_id 
+        where s3cm.client_id = ?
+		]]>
+	</entry>
+	<entry key="getS3BucketInfoById">
+		<![CDATA[
+        select 
+        s3b.id,
+        s3b.aws_bucket_name , 
+        s3b.aws_access_key ,
+        s3b.aws_secret_key 
+        from minidwm_s3_bucket_info s3b join minidwm_s3_client_mapping s3cm 
+        on s3b.id = s3cm.s3_bucket_info_id 
+        where s3cm.client_id = ? and s3b.id = ?
+		]]>
+	</entry>
+	<entry key="getClientDbDetails">
+		<![CDATA[
+        				SELECT cdb.hostname,cdb.portnumber,cc.clientdb_schema,cdb.databasevendor,
+                         cc.clientdb_username,cc.clientdb_password,cdb.clientappdb_name,cdb.clientappdb_username,cdb.clientappdb_password
+                         FROM cloud_client cc,clientdbdetails cdb
+                         where cc.id=cdb.cloudclientid and cc.id=?
+		]]>
+	</entry>
+	
+	<entry key="getActiveClientsList">
+		<![CDATA[
+        				select id, clientname,deployment_type from cloud_client where clientstatus='ACTIVE' and id<> -1
+		]]>
+	</entry>
+	
+	<entry key="getClientDetails">
+		<![CDATA[
+        				select id, clientname, emaildomainname, clientdescription, address, 
+						contactpersonemergencynumber, contactpersonemail, contactpersonname, datecreated, activationdate, 
+						licenseid, deployment_type, case when clientstatus='ACTIVE' then 1 else 0 end as is_active, lastmodified, clientdb_schema, 
+						clientdb_username, clientdb_password, isdruid_enabled, region_id, cluster_id, 
+						partnerid, druid_cluster_id 
+						from cloud_client  
+        				where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerClientConfigInfo">
+		<![CDATA[
+			select * from minidwm_scheduler_client_config;
+		]]>
+	</entry>
+	
+	<entry key="getHybridClientGroupingDetailsByAccessKey">
+		<![CDATA[
+			SELECT * FROM minidwm_hybrid_clients_grouping_master where access_key = ?;
+		]]>
+	</entry>
+	
+	<entry key="getHybridClientsGroupingByGroupId">
+		<![CDATA[
+			select id,clientname from  cloud_client where id in (
+			SELECT client_id FROM minidwm_hybrid_clients_grouping_mapping where group_id = ?)
+		]]>
+	</entry>
+	
+	<entry key="getClientIds">
+	   <![CDATA[
+	        SELECT * FROM cloud_client;
+	    ]]>
+	</entry>
+	
+	<entry key="insertJobLimitProperty">
+	   <![CDATA[
+	      INSERT INTO `anvizent_properties` (`prop_key`,`prop_value`,`prop_context`,`cloudclientid`) VALUES (?, ?, ?, ?);
+	   ]]>
+	</entry>
+	
+</properties>

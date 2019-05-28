@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="addAwsCredentialsInfo">
+		<![CDATA[
+				insert into minidwm_aws_credentials(
+				name,
+				secret_key,
+				access_key,
+				region
+				) values(?,?,?,?);
+		]]>
+	</entry>
+	
+	<entry key="updateAwsCredentialsInfo">
+		<![CDATA[
+				update minidwm_aws_credentials set 
+				name = ?,
+				secret_key = ?,
+				access_key =?,
+				region = ? where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getAwsCredentialsList">
+		<![CDATA[
+				SELECT * FROM minidwm_aws_credentials
+		]]>
+	</entry>
+	
+	<entry key="getAwsCredentialsListById">
+		<![CDATA[
+				select * from minidwm_aws_credentials where id = ?
+		]]>
+	</entry>
+	
+	<entry key="addSchedulerMasterInfo">
+		<![CDATA[
+				insert into minidwm_scheduler_master(
+				name,
+				type,
+				aws_id,
+				instance_id,
+				is_active,
+				ip_address,
+				package_upload_interval,
+				package_execution_interval,
+				history_upload_interval,
+				history_execution_interval,
+				request_schema,
+				thread_count,
+				source_upload_interval,
+				source_execution_interval,
+				slave_heartbeat_interval,
+				is_currency_load_required
+				) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	
+	<entry key="updateSchedulerMasterInfo">
+		<![CDATA[
+				update minidwm_scheduler_master set
+				name = ?,
+				type = ?,
+				aws_id = ?,
+				instance_id = ?,
+				is_active = ?,
+				ip_address = ?,
+				package_upload_interval = ?,
+				package_execution_interval = ?,
+				history_upload_interval = ?,
+				history_execution_interval = ?,
+				request_schema = ?,
+				thread_count = ?,
+				source_upload_interval = ?,
+				source_execution_interval = ?,
+				slave_heartbeat_interval = ?,
+				is_currency_load_required = ?
+				where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerMasterInfo">
+		<![CDATA[
+				select mast.id, mast.name, type, mast.aws_id, aw.name as aws_name,  aw.region as region,  aw.secret_key, aw.access_key, instance_id, 
+				is_active ,ip_address,package_upload_interval,
+				package_execution_interval,history_upload_interval,
+				history_execution_interval,request_schema,thread_count,
+				source_upload_interval,source_execution_interval,
+				slave_heartbeat_interval from minidwm_scheduler_master mast
+				left join minidwm_aws_credentials aw on aw.id= mast.aws_id order by 1
+		]]>
+	</entry>
+	
+	
+	<entry key="getSchedulerMasterById">
+		<![CDATA[
+				select mast.id, mast.name, type, mast.aws_id, aw.name as aws_name, aw.region as region,  aw.secret_key, aw.access_key, instance_id, 
+				is_active ,ip_address,package_upload_interval,
+				package_execution_interval,history_upload_interval,
+				history_execution_interval,request_schema,thread_count,
+				source_upload_interval,source_execution_interval,
+				slave_heartbeat_interval, is_currency_load_required from minidwm_scheduler_master mast
+				left join minidwm_aws_credentials aw on aw.id= mast.aws_id
+				where mast.id = ? ;
+		]]>
+	</entry>
+	
+	
+	<entry key="deleteSchedulerMasterSlaveMapping">
+		<![CDATA[
+				delete from minidwm_scheduler_master_slave_mapping where master_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="addSchedulerMasterSlaveMapping">
+		<![CDATA[
+				insert into minidwm_scheduler_master_slave_mapping values( ?, ?)
+		]]>
+	</entry>
+	<entry key="getSchedulerMasterSlaveMapping">
+		<![CDATA[
+		
+				select sl.id, sl.name, sl.type, sl.aws_id, aw.name as aws_name, aw.secret_key,aw.access_key,aw.region, instance_id, ip_address, no_of_package_source_uploads, no_of_package_executions, no_of_history_load_source_uploads, no_of_history_load_executions, is_active,request_schema  from minidwm_scheduler_slave sl
+                left join minidwm_aws_credentials aw on aw.id=sl.aws_id 
+                where sl.id in (
+					select slave_id from minidwm_scheduler_master_slave_mapping where master_id = ?
+				) order by 1 
+				
+		]]>
+	</entry>
+	
+	<entry key="deleteSchedulerMasterClientMapping">
+		<![CDATA[
+				delete from minidwm_scheduler_master_client_mapping where master_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="addSchedulerMasterClientMapping">
+		<![CDATA[
+				insert into minidwm_scheduler_master_client_mapping values( ?, ?)
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerMasterClientMapping">
+		<![CDATA[
+				select id, clientname, case when clientstatus='ACTIVE' then 1 else 0 end as is_active,
+				deployment_type
+				 from cloud_client where id in (
+					select client_id from minidwm_scheduler_master_client_mapping where master_id = ?
+				)
+		]]>
+	</entry>
+	
+	<entry key="deleteSchedulerMasterClientMappingByClientId">
+		<![CDATA[
+				delete from minidwm_scheduler_master_client_mapping where client_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="addSchedulerSlaveInfo">
+		<![CDATA[
+				insert into minidwm_scheduler_slave (
+				name,
+				type,
+				instance_id,
+				aws_id,
+				ip_address,
+				no_of_package_source_uploads,
+				no_of_package_executions,
+				no_of_history_load_source_uploads,
+				no_of_history_load_executions,
+				is_active,
+				request_schema
+				) values(?,?,?,?,?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	
+	<entry key="updateSchedulerSlaveInfo">
+		<![CDATA[
+				update minidwm_scheduler_slave set 
+				type = ?,
+				name = ?,
+				aws_id = ?,
+				instance_id = ?,
+				no_of_package_source_uploads = ?,
+				no_of_package_executions =?,
+				no_of_history_load_source_uploads = ?,
+				no_of_history_load_executions = ?,
+				is_active =? ,
+				ip_address= ?,
+				request_schema = ?
+				where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerSlaveInfo">
+		<![CDATA[
+				select sl.id, sl.name, sl.type, sl.aws_id, aw.name as aws_name, aw.secret_key,aw.access_key,aw.region, instance_id, ip_address,request_schema, no_of_package_source_uploads, no_of_package_executions, no_of_history_load_source_uploads, no_of_history_load_executions, is_active from minidwm_scheduler_slave sl
+				left join minidwm_aws_credentials aw on aw.id=sl.aws_id
+				order by 1
+
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerSlaveById">
+		<![CDATA[
+		select sl.id, sl.name, sl.type, sl.aws_id, aw.name as aws_name, aw.secret_key,aw.access_key,aw.region, instance_id, ip_address, no_of_package_source_uploads, no_of_package_executions, no_of_history_load_source_uploads, no_of_history_load_executions, is_active,request_schema from minidwm_scheduler_slave sl
+				left join minidwm_aws_credentials aw on aw.id=sl.aws_id where sl.id = ?
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerType">
+		<![CDATA[
+				select * from minidwm_scheduler_server_type where is_active = 1 ;
+		]]>
+	</entry>
+	<entry key="getActiveScheduleClientsList">
+		<![CDATA[
+			select id, clientname, emaildomainname, clientdescription, address, 
+			contactpersonemergencynumber, contactpersonemail, contactpersonname, datecreated, activationdate, 
+			licenseid, deployment_type, case when clientstatus='ACTIVE' then 1 else 0 end as is_active, lastmodified, clientdb_schema, 
+			clientdb_username, clientdb_password, isdruid_enabled, region_id, cluster_id, 
+			partnerid, druid_cluster_id 
+			from cloud_client where clientstatus='ACTIVE' and id in 
+			(select client_id from minidwm_scheduler_master_client_mapping where master_id in 
+				(select id from minidwm_scheduler_master where is_active=1 and id =? )
+			)
+		]]>
+	</entry>
+	<entry key="getActiveScheduleSlavesList">
+		<![CDATA[
+			 select * from minidwm_scheduler_slave where is_active=1 and id in 
+			(select slave_id from minidwm_scheduler_master_slave_mapping where master_id in 
+				(select id from minidwm_scheduler_master where is_active=1 and id =? )) 
+		]]>
+	</entry>
+	
+	<entry key="getAwsRegionsList">
+		<![CDATA[
+			SELECT * FROM minidwm_aws_regions;
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerState">
+		<![CDATA[
+			SELECT * FROM minidwm_scheduler_master where id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getQuartzShedulerMasterInfo">
+		<![CDATA[
+			SELECT * FROM minidwcm_quartz_scheduler_master;
+		]]>
+	</entry>
+	
+	<entry key="updateServerMasterInfoByIpAddressAndId">
+		<![CDATA[
+				
+			update minidwm_scheduler_master set ip_address = ? where id = ? and aws_id<>0;
+		]]>
+	</entry>
+	<entry key="updateServerSlaveInfoBYIpAddressAndId">
+		<![CDATA[
+		
+			update minidwm_scheduler_slave set ip_address = ? where id = ? and aws_id<>0
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerServerMasterBySchedulerId">
+		<![CDATA[
+				
+			select * from minidwm_scheduler_master where id in (select master_id from minidwcm_quartz_scheduler_master where id = ? );
+		]]>
+	</entry>
+	
+	<entry key="getSchedulerJobInfoByJobId">
+		<![CDATA[
+				
+			SELECT * FROM minidwcm_quartz_scheduler_jobs where job_id = ?
+		]]>
+	</entry>
+</properties>

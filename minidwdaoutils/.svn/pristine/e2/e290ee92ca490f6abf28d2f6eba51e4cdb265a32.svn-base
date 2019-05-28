@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="startSchedulerInfo">
+		<![CDATA[
+			insert into minidwcm_quartz_scheduler_master(
+			name,
+			description,
+			started_time,
+			shutdown_time,
+			timezone,
+			ip_address,
+			master_id
+			) values(?,?,?,?,?,?,?); 			
+ 
+		]]>
+	</entry>
+	
+	<entry key="updateScheduleInfo">
+		<![CDATA[
+			update minidwcm_quartz_scheduler_master set shutdown_time = ? where id = ?
+		]]>
+	</entry>
+	
+	<entry key="addSchedulerJobInfo">
+		<![CDATA[
+			insert into minidwcm_quartz_scheduler_jobs(
+			scheduler_id,
+			job_key_name,
+			group_name,
+			job_description,
+			start_time,
+			end_time,
+			cron_expression,
+			status,
+			next_fire_time
+			) values(?,?,?,?,?,?,?,?,?); 
+		]]>
+	</entry>
+	
+	<entry key="updateSchedulerJobInfo">
+		<![CDATA[
+			update minidwcm_quartz_scheduler_jobs set status = ?, next_fire_time = ? where job_id = ? and status in  ( 'READY','PAUSE','RUNNING' )
+		]]>
+	</entry>
+	
+	<entry key="updateSchedulerJobInfoStatusWithNextFireTime">
+		<![CDATA[
+			update minidwcm_quartz_scheduler_jobs set status = ?, next_fire_time = ? where job_id = ?
+		]]>
+	</entry>
+	
+	<entry key="addSchedulerTriggerInfo">
+		<![CDATA[
+			insert into minidwcm_quartz_scheduler_triggerfires(
+			job_id,
+			description,
+			fire_time,
+			start_time,
+			end_time,
+			status
+			) values(?,?,?,?,?,?); 
+		]]>
+	</entry>
+	
+	<entry key="updateSchedulerTriggerInfo">
+		<![CDATA[
+			update minidwcm_quartz_scheduler_triggerfires set status=?, end_time = ? where trigger_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getScheduledJobsInfo">
+		<![CDATA[
+
+			SELECT * FROM minidwcm_quartz_scheduler_jobs 
+
+		]]>
+	</entry>
+	
+	<entry key="getScheduledJobsInfoById">
+		<![CDATA[
+
+			SELECT * FROM minidwcm_quartz_scheduler_jobs where scheduler_id = ? 
+
+		]]>
+	</entry>
+		
+	<entry key="getTriggeredInfoByID">
+		<![CDATA[
+
+			SELECT * FROM minidwcm_quartz_scheduler_triggerfires where job_id = ?  order by 1 desc limit 100 
+
+		]]>
+	</entry>
+		
+	<entry key="saveSchedulerSourceUploadQueue">
+		<![CDATA[
+			INSERT INTO `minidwm_scheduler_upload_queue` ( `master_id`, `total_packages`, `saved_date`) VALUES ( ?, ?, ? )
+		]]>
+	</entry>
+	<entry key="saveSchedulerSourceUploadQueueList">
+		<![CDATA[
+			INSERT INTO `minidwm_scheduler_upload_queue_list` (`upload_id`, `client_id`, `package_id`,`uploadtime`) VALUES (?, ?, ?, ?)
+		]]>
+	</entry>
+	<entry key="getStoredUploadQueueList">
+		<![CDATA[
+			select * from minidwm_scheduler_upload_queue_list where upload_id in (
+			select max(id) from minidwm_scheduler_upload_queue where master_id = ? and total_packages>0)
+		]]>
+	</entry>
+	
+	
+</properties>

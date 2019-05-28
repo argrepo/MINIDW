@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="getSchedulerMasterInfo">
+		<![CDATA[
+			select * from minidwm_scheduler_master where id = ?
+		]]>
+	</entry>
+	<entry key="getClientsOfMasterServer">
+		<![CDATA[
+			select * from minidwm_scheduler_master_client_mapping where master_id = ?
+		]]>
+	</entry>
+	<entry key="getSlavesOfMasterServer">
+		<![CDATA[
+			select * from minidwm_scheduler_master_slave_mapping where master_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getJobUploadandExecutionLimitByClient">
+	    <![CDATA[
+	        SELECT * FROM anvizent_properties;
+	    ]]>
+	</entry>
+
+</properties>

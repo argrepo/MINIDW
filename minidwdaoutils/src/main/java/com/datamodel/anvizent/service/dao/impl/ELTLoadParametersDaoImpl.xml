@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="fetchLoadParametersList">
+		select * from minidwcm_elt_load_parameters order by
+		id;
+	</entry>
+	<entry key="fetchLoadParametersById">
+		select * from minidwcm_elt_load_parameters where id =
+		?;
+	</entry>
+	<entry key="addLoadParameters">
+		insert into minidwcm_elt_load_parameters (name,
+		no_of_executors, executor_memory, executor_memory_type,
+		executor_cores, is_active, created_by, created_date)
+		values (?, ?, ?,
+		?, ?, ?, ?, ? )
+	</entry>
+	<entry key="updateLoadParameters">
+		update minidwcm_elt_load_parameters set name = ?,
+		no_of_executors = ?, executor_memory = ?, executor_memory_type =
+		?,
+		executor_cores = ?, is_active = ?, modified_by = ?, modified_date = ?
+		where id = ?;
+	</entry>
+	<entry key="deleteLoadParametersById">
+		delete from minidwcm_elt_load_parameters where id = ?;
+	</entry>
+
+</properties>

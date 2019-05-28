@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="getWebserviceTemplateMaster">
+		<![CDATA[
+				SELECT 
+				  m.id as web_service_template_id
+				, web_service_name
+				, t.id as authentication_type_id
+				, t.authentication_type as authentication_type_name
+				, base_url
+				, authentication_url
+			    , base_url_required
+				, authentication_method_type
+                , api_auth_request_params
+                , api_auth_request_headers
+                , api_auth_request_body_params
+                , callback_url
+                , access_token_url
+                , webservice_type
+                , soap_body_element
+                , api_auth_body_params
+                /*, response_type */
+                , clientid
+                , client_secret 
+                , grant_type
+                , scope
+                , state
+                , ssl_disable
+                , retry_limit
+                , sleep_time
+                , date_format
+				, m.created_by
+				, m.created_time
+				, m.modified_by
+				, m.modified_time
+				, m.time_zone
+				, m.session_auth_urls
+				, m.oauth1_credentials
+				 FROM minidwcm_ws_template_mst m 
+				inner join minidwcm_ws_authentication_types t on t.id=m.authentication_type
+				inner join minidwcs_ws_client_mapping c on c.ws_template_id=m.id and client_id = ? 
+				where m.id = ? and m.isActive=1 and t.isActive = 1 
+		]]>
+	</entry>
+	<entry key="getWebserviceTemplateRequestMappings">
+		<![CDATA[
+				select * from minidwcm_ws_template_auth_request_params where ws_template_id = ? order by 1 
+		]]>
+	</entry>
+	<entry key="getWebServiceAuthenticationTypes">
+		<![CDATA[
+				SELECT * FROM minidwcm_ws_authentication_types where isActive = 1 
+		]]>
+	</entry>
+ 
+	
+	<entry key="saveWebServiceTemplate">
+		<![CDATA[
+			insert into minidwcm_ws_template_mst (  
+					  web_service_name
+					, authentication_type
+					, date_format
+					, base_url
+					, authentication_url
+					, base_url_required
+					, authentication_method_type
+					, api_auth_request_params
+					, api_auth_body_params
+					, api_auth_request_headers
+					, callback_url
+					, access_token_url
+					, response_type
+					, grant_type
+					, clientid
+					, client_secret
+					, isActive
+					, created_by
+					, created_time
+					, time_zone
+					, api_auth_request_body_params
+					, webservice_type
+					, soap_body_element 
+					, scope 
+					, state 
+					, ssl_disable
+					, retry_limit
+					, sleep_time
+					, session_auth_urls
+					,oauth1_credentials)
+					values
+					(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	
+	<entry key="updateWebServiceTemplate">
+		<![CDATA[
+		
+			update minidwcm_ws_template_mst set  
+					  web_service_name = ? 
+					, authentication_type = ? 
+					, date_format = ?
+					, base_url = ?
+					, authentication_url = ? 
+					, base_url_required = ?
+					, authentication_method_type = ? 
+					, api_auth_request_params = ? 
+					, api_auth_body_params = ? 
+					, api_auth_request_headers = ? 
+					, callback_url = ? 
+					, access_token_url = ? 
+					, response_type = ? 
+					, grant_type = ?
+					, clientid = ?
+					, client_secret =? 
+					, isActive = ? 
+					, modified_by = ? 
+					, modified_time  = ? 
+					, time_zone = ?
+					, api_auth_request_body_params = ?
+					, webservice_type = ?
+					, soap_body_element = ?
+					, scope = ?
+					, state = ?
+					, ssl_disable = ?
+					, retry_limit = ?
+					, sleep_time = ?
+					, session_auth_urls = ?
+					, oauth1_credentials = ?
+					  where id = ?
+		]]>
+	</entry>
+	
+	<entry key="saveWebServiceTemplateAuthenticationRequestParams">
+		<![CDATA[
+			insert into minidwcm_ws_template_auth_request_params ( ws_template_id, param_name, is_mandatory, created_by, created_time,is_passwordtype ) 
+					values
+					( ?,?,?,?,?,? );
+		]]>
+	</entry>
+	
+	<entry key="deleteWebServiceTemplateAuthenticationRequestParams">
+		<![CDATA[
+			delete from minidwcm_ws_template_auth_request_params where ws_template_id = ?;
+		]]>
+	</entry>
+	
+<entry key="saveWebserviceMasterConnectionMapping">
+		<![CDATA[
+				 insert into minidwcs_ws_connections_mst(
+				    web_service_con_name,
+				    time_zone,
+				    base_url,
+				    authentication_url,
+				    base_url_required,
+					ws_template_id,
+					auth_request_params,
+					auth_body_params,
+					auth_path_params,
+					header_key_values,
+					access_token_url,
+					clientid,
+					client_secret,
+					scope,
+					state,
+					authentication_token,
+					authentication_refresh_token,
+					created_by,
+					created_time,
+					user_id,
+					isActive,
+					data_source_name,
+					ssl_disable,
+					session_auth_urls,
+					oauth1_credentials
+				 ) 
+				 values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)    
+		]]>
+	</entry>
+	<entry key="getWebServiceConnections">
+		<![CDATA[
+			select 
+			  wcm.*
+			 from minidwcs_ws_connections_mst wcm 
+			 inner join minidwcm_ws_template_mst m on m.id = wcm.ws_template_id
+			 inner join minidwcs_ws_client_mapping c on c.ws_template_id=m.id and client_id = ? 
+			 where wcm.user_id = ? and wcm.isActive=1
+		]]>
+	</entry>
+	
+	<entry key="getWebServiceConnectionDetails">
+		<![CDATA[
+				
+			select 
+			  wcm.id as ws_con_id
+			, wcm.web_service_con_name
+			, wcm.auth_request_params
+			, wcm.auth_body_params
+			, wcm.auth_path_params
+			, wcm.header_key_values
+			, wcm.authentication_token
+			, wcm.authentication_refresh_token
+			, wcm.data_source_name
+			, wcm.isActive as wc_con_active_status
+			, m.id as ws_template_id
+			, m.web_service_name as ws_template_name
+			, t.id as authentication_type_id
+			, t.authentication_type as authentication_type_name
+			, wcm.base_url
+			, wcm.authentication_url
+			, wcm.base_url_required
+			, m.authentication_method_type
+			, m.api_auth_request_params
+			, m.api_auth_body_params
+			, m.api_auth_request_headers
+			, m.api_auth_request_body_params
+			, m.webservice_type
+			, m.soap_body_element
+			, m.callback_url
+			, wcm.access_token_url
+			, m.response_type
+			, m.date_format
+			, wcm.clientid
+			, wcm.scope
+			, wcm.state
+			, wcm.ssl_disable
+			, wcm.client_secret
+			, m.grant_type
+			, m.date_format
+			, m.retry_limit
+			, m.sleep_time
+			, wcm.session_auth_urls
+			, wcm.oauth1_credentials
+			, ifnull(wcm.time_zone,m.time_zone) as time_zone
+			 from minidwcs_ws_connections_mst wcm 
+			 inner join minidwcm_ws_template_mst m on m.id = wcm.ws_template_id
+			 inner join minidwcm_ws_authentication_types t on t.id=m.authentication_type
+			 inner join minidwcs_ws_client_mapping c on c.ws_template_id=m.id and client_id = ? 
+			 where wcm.id = ? ;
+ 
+		]]>
+	</entry>
+	
+	<entry key="getWebServiceApiDetails">
+		<![CDATA[
+				  select 
+				  wam.id
+				, wam.ws_template_id
+				, wam.api_name
+				, wcm.base_url
+				, wam.api_url
+				, wam.base_url_required
+				, wam.api_method_type
+				, wam.api_path_params
+				, wam.api_request_params
+				, wam.response_column_object_name
+				, wam.response_object_name
+				, wam.is_active as mapping_active_status
+				, wam.incremental_update
+				, wam.incremental_update_params
+				, wam.pagination_required
+				, wam.pagination_type
+				, wam.pagination_request_params
+				, wam.api_body_params 
+				, wam.soap_body_element
+				, wam.default_mapping
+				 from minidwcs_ws_connections_mst wcm 
+				 inner join minidwcm_ws_api_mapping wam  on wam.ws_template_id = wcm.ws_template_id  
+				 inner join minidwcs_ws_client_mapping c on c.ws_template_id=wam.ws_template_id and client_id = ? 
+				 where wam.il_id = ? and wcm.id = ? and wam.is_active=1 order by wam.id ;
+		]]>
+	</entry>
+		<entry key="getWebServiceApi">
+		<![CDATA[
+				select 
+				 wam.id
+				, wam.ws_template_id
+				, wam.api_name
+				, wam.api_url
+				, wam.api_method_type
+				, wam.api_path_params
+				, wam.api_request_params
+				, wam.response_column_object_name
+				, wam.response_object_name
+				, wam.is_active as mapping_active_status
+				 from minidwcs_ws_connections_mst wcm 
+				 inner join minidwcm_ws_api_mapping wam  on wam.ws_template_id = wcm.ws_template_id  
+				 inner join minidwcs_ws_client_mapping c on c.ws_template_id=wam.ws_template_id and client_id = ? 
+				 where wam.il_id = ? and wcm.id = ?  
+		]]>
+	</entry>
+	
+	<entry key="getWebserviceTemplate">
+		<![CDATA[
+			 SELECT m.*,t.authentication_type as authentication_type_name FROM minidwcm_ws_template_mst m
+			 inner join minidwcm_ws_authentication_types t on t.id=m.authentication_type
+			 ;
+		]]>
+	</entry>
+	
+	<entry key="getWebServiceTemplateById">
+		<![CDATA[
+			 SELECT * FROM minidwcm_ws_template_mst where id = ?
+				
+		]]>
+	</entry>
+	
+	<entry key="getWebServiceTempAuthReqParams">
+		<![CDATA[
+			 SELECT * FROM minidwcm_ws_template_auth_request_params where ws_template_id =?;
+		]]>
+	</entry>
+	<entry key="updateWebserviceMasterConnectionMapping">
+		<![CDATA[
+				update minidwcs_ws_connections_mst set
+				    web_service_con_name = ?,
+				    time_zone = ?,
+				    base_url = ?,
+				    authentication_url = ?,
+				    base_url_required = ?,
+					ws_template_id = ?,
+					auth_request_params = ?,
+					auth_body_params = ?,
+					auth_path_params = ?,
+					header_key_values = ?,
+					access_token_url = ?,
+					clientid = ?,
+					client_secret = ?,
+					scope = ?,
+					state = ?,
+					authentication_token = ?,
+					authentication_refresh_token = ?,
+					modified_by = ?,
+					modified_time = ?,
+					user_id = ?, 	
+					isActive = ?,
+					data_source_name = ?,
+					ssl_disable = ?,
+					session_auth_urls = ?,
+					oauth1_credentials = ?
+				where id = ?;	
+		]]>
+	</entry>
+	<entry key="getTimeZones">
+		<![CDATA[
+				SELECT * FROM minidwm_zones_master order by zone_name_display	
+		]]>
+	</entry>
+	<entry key="updateRetryPaginationAtWsMapping">
+		<![CDATA[
+				update minidwcs_package_web_service_source_mapping set  
+					  retry_pagination = ? 
+					  where id = ?
+		]]>
+	</entry>
+	<entry key="updateIncrementalDatePaginationAtWsMapping">
+		<![CDATA[
+				update minidwcs_package_web_service_source_mapping set  
+					  pagination_request_params = ? 
+					  where id = ?
+		]]>
+	</entry>
+</properties>

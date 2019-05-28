@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+ 
+ <entry key="getStandardPackage">
+  <![CDATA[
+     SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.schedule_status,
+				p.isActive,
+				p.isAdvanced,				
+				p.created_time,
+				p.isClientDbTables,
+				p.trailing_months,
+				p.files_having_same_columns
+				FROM minidwcs_package p
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where isStandard=? and p.package_id = 0 
+  ]]>
+ </entry>
+ 
+ <entry key="getClientStandardPackageDLs">
+		<![CDATA[
+				select mst.*, map.isLocked, mps.id as schedule_id, mps.schedule_type, mps.recurrence_pattern,
+				mps.schedule_start_date,mps.schedule_start_time,mps.is_no_end_date,mps.end_date,mps.no_of_max_occurences,mps.time_zone,
+				mps.days_to_run,mps.weeks_to_run,mps.day_of_month,mps.months_to_run,mps.day_of_year,mps.month_of_year,mps.years_to_run,type_of_hours,hours_to_run,
+				mps.minutes_to_run,
+				dltrialmap.trailing_months from minidwcm_dl_info mst 
+				inner join minidwcs_dl_client_mapping map 
+				         on mst.DL_id = map.dl_id and map.client_id = ?
+				left join minidwcs_package_schedule mps 
+				         on mps.dl_id = mst.DL_id 
+				left join minidwcs_dl_trailingmonths_mapping dltrialmap on  dltrialmap.dl_id = mst.DL_id     
+				where mst.industry_id in (select id from minidwcm_verticals 
+				where id in(select vertical_id from minidwcs_verticals_client_mapping where client_id = ? and isActive = 1) 
+							and isActive = 1)
+				and mst.isActive = 1 order by mst.DL_id;
+		]]>
+	</entry>
+	<entry key="getDLKpiList">
+		<![CDATA[
+				select kpi_name from minidwcm_kpis mst
+				join minidwcm_kpis_dl_mapping map on mst.id = map.kpi_id
+				where  dl_id = ? and mst.isActive = 1;
+		]]>
+	</entry>
+ 
+ 
+ <entry key="createStandardPackage">
+		<![CDATA[
+				insert into minidwcs_package 
+					(					
+					package_name,
+					industry_id,
+					isStandard,
+					description,
+					isScheduled,
+					isMapped,
+					schedule_status,
+					trailing_months,
+					isAdvanced,
+					user_id,
+					created_by,
+					created_time) 
+					values (?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="getPackageIdByName">
+		<![CDATA[
+				select package_id from minidwcs_package  where package_name = ? and user_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="updateStandardPackageIdByName">
+	 <![CDATA[
+	    update minidwcs_package set package_id = ? where package_name = ?;
+	 ]]>
+	</entry>
+	
+	<entry key="getSourcesInfo">
+	  <![CDATA[
+	  select il_map.id,                
+	    il_map.isActive,
+        il_map.IL_id,        
+		mil.IL_name,
+        il_map.DL_id,
+		mdl.DL_name,
+		mdl.dl_table_name,
+		mdl.description,
+		mdl.industry_id,
+		mdl.Job_name,
+		mdl.dependency_jars
+			from minidwcs_package_source_mapping as il_map
+			inner join minidwcm_il_info as mil on mil.IL_id = il_map.IL_id
+			inner join minidwcm_dl_info as mdl on mdl.DL_id = il_map.DL_id
+			where il_map.isMapped = '1' and il_map.isActive = '1' and  il_map.Package_id= 0 and il_map.DL_id = ? group by il_map.IL_id;
+	  ]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoByDLAndIL">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+                   il_map.isActive,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   con.available_in_cloud,
+				   db.id as dataBaseId, 
+				   db.name ,
+				   dc.id as connectorId, 
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+				   con.server, 
+				   con.username, 
+				   con.password,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   con.ssl_enable,
+				   con.ssl_trust_key_store_file_paths
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				inner join minidwcs_database_connectors_client_mapping as dbcp on dbcp.connector_id = con.DB_type_id and dbcp.client_id=?
+				where il_map.isMapped = '1' and il_map.Package_id= 0 and il_map.DL_id = ? and il_map.IL_id =? ;
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenWebServiceByDLAndIL">
+		<![CDATA[
+			        select
+			        il_map.id ,
+			   	 	il_map.isWebService,
+			   	 	il_map.il_source_name,
+			   	 	il_map.s3_bucket_id,
+			   	 	il_map.Package_id,
+			   	 	il_map.webservice_Id, 
+			   	    il_map.storage_type,
+			   	    il_map.isActive,
+			   	 	il_map.webservice_mapping_headers,
+			   	 	il_map.IL_id,
+			   	 	il_map.DL_id,
+			   	 	il_map.is_join_web_service,
+			   	 	il_map.IL_query,
+			   	 	il_map.IL_query,
+			   	 	il_map.web_service_join_urls,
+			   	 	iwsm.web_service_url as api_url,
+			   	 	il_map.webservice_Id,
+			   	 	il_map.isFlatFile,
+			   	 	group_concat(iwsm.web_service_api_name) as api_name,
+                    wtm.web_service_name
+			        from minidwcs_package_source_mapping as il_map
+                    inner join minidwcs_package_web_service_source_mapping iwsm on iwsm.il_connection_mapping_id= il_map.id
+			        inner join minidwcs_ws_connections_mst wcm on wcm.id = il_map.webservice_Id 
+                    inner join minidwcm_ws_template_mst wtm on wtm.id = wcm.ws_template_id
+                    inner join minidwcs_ws_client_mapping wtmp on wtm.id = wtmp.ws_template_id and  client_id=?
+			        where wcm.isActive ='1' and il_map.isMapped = '1' and 
+                    il_map.Package_id= 0 and il_map.isWebService = '1' and il_map.DL_id = ? and il_map.IL_id= ? group by il_map.id;
+			  
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenParentTableByDLAndIL">
+		<![CDATA[
+			select il_map.id,
+                   il_map.Package_id,
+                   il_map.isFlatFile,
+                   il_map.s3_bucket_id,
+                   il_map.il_source_name,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive
+				from minidwcs_package_source_mapping as il_map
+				where il_map.isMapped = '1' and il_map.userid = ? and  il_map.Package_id= 0 and il_map.isHavingParentTable = '1' and il_map.DL_id = ? and il_map.IL_id= ?;
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenFileBYDLAndIL">
+		<![CDATA[
+			
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   sfi.s3_file_path as filePath,
+   				   sfi.encryption_required,
+				   il_map.source_file_info_id,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   il_map.procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_source_file_info as sfi on sfi.id = il_map.source_file_info_id
+				where il_map.isMapped = '1' and il_map.Package_id=0 and isFlatFile = '1' and il_map.DL_id = ? and il_map.IL_id =?;
+				
+		]]>
+	</entry>
+	
+	<entry key="getSourcesInfoByIlId">
+	 <![CDATA[
+	    select 
+	        il_map.id,                
+		    il_map.isActive,
+	        il_map.IL_id,        
+			mil.IL_name,
+	        il_map.DL_id,
+			mdl.DL_name
+			from minidwcs_package_source_mapping as il_map
+			left join minidwcm_il_info as mil on mil.IL_id = il_map.IL_id
+			left join minidwcm_dl_info as mdl on mdl.DL_id = il_map.DL_id
+			where il_map.isMapped = '1' and  il_map.Package_id= 0 and il_map.DL_id = ? and il_map.IL_id = ? group by il_map.IL_id;
+	 ]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenFileById">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   sfi.s3_file_path as filePath,
+   				   sfi.encryption_required,
+				   il_map.source_file_info_id,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   il_map.procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_source_file_info as sfi on sfi.id = il_map.source_file_info_id
+				where il_map.id=? and il_map.Package_id = 0 and il_map.isFlatFile = 1
+		]]> 
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenDatabaseById">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now,
+                   il_map.isIncrementalUpdate, 
+                   il_map.is_historical_load,
+                   il_map.isWebService, 
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.available_in_cloud, 
+				   con.connection_type, 
+				   db.id as dataBaseId, 
+				   db.name , 
+				   dc.id as connectorId,
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+				   con.server, 
+				   con.username, 
+				   con.password,
+				   con.db_variables,
+				   con.ssl_enable,
+				   con.ssl_trust_key_store_file_paths
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				where il_map.isActive ='1' and il_map.isMapped = '1' and il_map.id = ? and il_map.Package_id = 0   
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenWebServiceByMappingId">
+		<![CDATA[
+			        select
+			        il_map.id ,
+			   	 	il_map.isWebService,
+			   	 	il_map.il_source_name,
+			   	 	il_map.s3_bucket_id,
+			   	 	il_map.Package_id,
+			   	 	il_map.webservice_Id, 
+			   	    il_map.storage_type,
+			   	    il_map.isActive,
+			   	 	il_map.webservice_mapping_headers,
+			   	 	il_map.IL_id,
+			   	 	il_map.DL_id,
+			   	 	il_map.is_join_web_service,
+			   	 	il_map.IL_query,
+			   	 	il_map.IL_query,
+			   	 	il_map.web_service_join_urls,
+			   	 	iwsm.web_service_url as api_url,
+			   	 	il_map.webservice_Id,
+			   	 	il_map.isFlatFile,
+			   	 	il_map.fileType,
+			   	 	group_concat(iwsm.web_service_api_name) as api_name,
+                    wtm.web_service_name
+			        from minidwcs_package_source_mapping as il_map
+                    inner join minidwcs_package_web_service_source_mapping iwsm on iwsm.il_connection_mapping_id= il_map.id
+			        inner join minidwcs_ws_connections_mst wcm on wcm.id = il_map.webservice_Id 
+                    inner join minidwcm_ws_template_mst wtm on wtm.id = wcm.ws_template_id
+                    inner join minidwcs_ws_client_mapping wtmp on wtm.id = wtmp.ws_template_id 
+			        where il_map.isActive ='1' and wcm.isActive ='1' and il_map.isMapped = '1' and 
+                    il_map.id = ? and  il_map.Package_id = 0 and il_map.isWebService = '1' group by il_map.id;
+			  
+		]]>
+	</entry>
+	
+	
+	<entry key="getILConnectionMappingInfoDataBaseByDLId">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+                   il_map.isActive,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   con.available_in_cloud,
+				   db.id as dataBaseId, 
+				   db.name ,
+				   dc.id as connectorId, 
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+				   con.server, 
+				   con.username, 
+				   con.password,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   con.ssl_enable,
+				   con.ssl_trust_key_store_file_paths
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				inner join minidwcs_database_connectors_client_mapping as dbcp on dbcp.connector_id = con.DB_type_id and dbcp.client_id=?
+				where il_map.isMapped = '1' and il_map.Package_id = 0 and il_map.DL_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenWebServiceByDLId">
+		<![CDATA[
+			        select
+			        il_map.id ,
+			   	 	il_map.isWebService,
+			   	 	il_map.il_source_name,
+			   	 	il_map.s3_bucket_id,
+			   	 	il_map.Package_id,
+			   	 	il_map.webservice_Id, 
+			   	    il_map.storage_type,
+			   	    il_map.isActive,
+			   	 	il_map.webservice_mapping_headers,
+			   	 	il_map.IL_id,
+			   	 	il_map.DL_id,
+			   	 	il_map.is_join_web_service,
+			   	 	il_map.IL_query,
+			   	 	il_map.IL_query,
+			   	 	il_map.web_service_join_urls,
+			   	 	iwsm.web_service_url as api_url,
+			   	 	il_map.webservice_Id,
+			   	 	il_map.isFlatFile,
+			   	 	group_concat(iwsm.web_service_api_name) as api_name,
+                    wtm.web_service_name
+			        from minidwcs_package_source_mapping as il_map
+                    inner join minidwcs_package_web_service_source_mapping iwsm on iwsm.il_connection_mapping_id= il_map.id
+			        inner join minidwcs_ws_connections_mst wcm on wcm.id = il_map.webservice_Id 
+                    inner join minidwcm_ws_template_mst wtm on wtm.id = wcm.ws_template_id
+                    inner join minidwcs_ws_client_mapping wtmp on wtm.id = wtmp.ws_template_id and  client_id=?
+			        where wcm.isActive ='1' and il_map.isMapped = '1' and 
+                    il_map.Package_id = 0 and il_map.isWebService = '1' and il_map.DL_id = ? group by il_map.id;
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenParentTableByDLId">
+		<![CDATA[
+			select il_map.id,
+                   il_map.Package_id,
+                   il_map.isFlatFile,
+                   il_map.s3_bucket_id,
+                   il_map.il_source_name,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive
+				from minidwcs_package_source_mapping as il_map
+				where il_map.isMapped = '1' and il_map.Package_id = 0 and il_map.isHavingParentTable = '1' and il_map.DL_id = ? ;
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenFileByDLId">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   sfi.s3_file_path as filePath,
+   				   sfi.encryption_required,
+				   il_map.source_file_info_id,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   il_map.procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_source_file_info as sfi on sfi.id = il_map.source_file_info_id
+				where il_map.isMapped = '1' and il_map.Package_id = 0 and isFlatFile = '1' and il_map.DL_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="updateDLSchedule">
+		<![CDATA[
+			update minidwcs_package_schedule set schedule_type = ? where id=?
+		]]>
+	</entry> 
+	
+	<entry key="getStandardPackageExecutionResults">
+		<![CDATA[
+		 select * from minidwcs_package_execution where package_id=0 and dl_id = ?;
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getPackageExecutionResultsByPagination">
+		<![CDATA[
+		 SELECT * FROM  minidwcs_package_execution where package_id=0 and dl_id = ? ORDER BY execution_id desc LIMIT ?  OFFSET ? ;
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getStandardPackageJobResults">
+		<![CDATA[
+			    SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? and JOB_NAME NOT LIKE 'anv_temp_%' order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	
+	<entry key="updateAutoIncrementToDefaulSPId">
+	   <![CDATA[
+	      update minidwcs_package set package_id = 0 where package_id = ?; 
+	   ]]>	
+	</entry>
+	
+	<entry key="saveDLTrailingMapping">
+	   <![CDATA[
+	      insert into minidwcs_dl_trailingmonths_mapping (dl_id,trailing_months,created_by,created_time) values(?,?,?,?);
+	   ]]>	
+	</entry>
+	
+	<entry key="updateDLTrailingMapping">
+	   <![CDATA[
+	      update minidwcs_dl_trailingmonths_mapping set  trailing_months = ? where dl_id = ?; 
+	   ]]>	
+	</entry>
+	
+	<entry key="getStandardPackageJobResultsByDate">
+		<![CDATA[
+			   SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? and JOB_NAME NOT LIKE 'anv_temp_%' and DATE_FORMAT(JOB_START_DATETIME,'%Y-%m-%d') between STR_TO_DATE(?, '%Y-%m-%d')  and STR_TO_DATE(?, '%Y-%m-%d') order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	
+	<entry key="getStandardPackageExecutionCount">
+	   <![CDATA[
+	      select count(*) from minidwcs_package_execution  where package_id=0 and dl_id = ?;
+	   ]]>	
+	</entry>
+ 
+</properties>

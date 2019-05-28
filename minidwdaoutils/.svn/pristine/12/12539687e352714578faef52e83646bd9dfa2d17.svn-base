@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<artifactId>minidw.dao</artifactId>
+	<description>All Dao and impl classess</description>
+	<parent>
+		<groupId>com.anvizent.minidw</groupId>
+		<artifactId>minidw.api</artifactId>
+		<version>3.6</version>
+		<relativePath>../minidw.api/pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.anvizent.minidw</groupId>
+			<artifactId>minidw.processors</artifactId>
+			<version>${minidw.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anvizent</groupId>
+			<artifactId>jsch.util</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+	<resources>
+		<resource>
+			<directory>src/main/java/com/datamodel/anvizent/service/dao/impl</directory>
+			<targetPath>com/datamodel/anvizent/service/dao/impl</targetPath>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</resource>
+	</resources>
+</build>
+	<!-- <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<includes>
+						<include>**/*.class</include>
+						<include>**/*.xml</include>
+					</includes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build> -->
+</project>

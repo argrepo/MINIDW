@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="savepackageschedule">
+		<![CDATA[
+		INSERT INTO minidwcs_package_schedule(
+			user_id,
+			package_ID,
+			schedule_type,
+			schedule_start_date,
+			schedule_start_time,
+			recurrence_pattern,
+			days_to_run,
+			weeks_to_run,
+			day_of_month,
+			months_to_run,
+			day_of_year,
+			month_of_year,
+			years_to_run,
+			is_no_end_date,
+			end_date,
+			no_of_max_occurences,
+			isActive,
+			ipAddress,
+			created_by,
+			created_time,
+			time_zone,
+			cron_expression,
+			dl_id,
+			minutes_to_run,
+			priority,
+			type_of_hours,
+			hours_to_run)
+			VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+
+]]>
+	</entry>
+	
+	<entry key="getScheduledPackages">
+		<![CDATA[
+		select * from minidwcs_package_schedule where isActive= '1' and user_Id = ?
+
+		]]>
+	</entry>
+	<entry key="updateStatusOfClientScheduler">
+		<![CDATA[
+		
+		update minidw_schedule_current set 
+			schedule_end_date_time = ?,
+			S3_bucket_name = ?,
+			encrypted_file_name= ?,
+			client_schedular_status= ?,
+			ipAddress= ?,
+			modified_by= ?,
+			modified_time= ? where isActive = '1' and iL_connection_mapping_seq_id = ? and id = ? and client_schedular_status='Pending'
+
+		]]>
+	</entry>
+	
+	<entry key="getUploadedFileInfo">
+		<![CDATA[
+		select * from minidw_schedule_current where isActive= '1' and client_schedular_status = ?  and clientId = ?
+
+		]]>
+	</entry>
+	<entry key="getUploadedFileInfoByStatus">
+		<![CDATA[
+		select * from minidw_schedule_current where isActive= '1' and client_schedular_status = ? and server_schedular_status = 'Pending'
+
+		]]>
+	</entry>
+	<entry key="generateNextScheduleTime">
+		<![CDATA[
+		
+		insert into minidw_schedule_current(
+			clientId,
+			package_Id,
+			iL_connection_mapping_seq_id,
+			schedule_id,
+			schedule_start_date_time,
+			client_schedular_status,
+			server_schedular_status,
+			ipAddress,
+			created_by,
+			created_time)
+			values(?,?,?,?,?,?,?,?,?,?)
+
+		]]>
+	</entry>
+	<entry key="updateStatusOfServerScheduler">
+		<![CDATA[
+		
+		update minidw_schedule_current set 
+			schedule_end_date_time = ?,
+			server_schedular_status= ?,
+			ipAddress = ?,
+			modified_by= ?,
+			modified_time= ? 
+			where isActive = '1' and iL_connection_mapping_seq_id = ? 
+				and client_schedular_status = 'Done' and server_schedular_status = 'Pending'
+
+		]]>
+	</entry>
+	
+	<entry key="getScheduleById">
+	<![CDATA[
+		
+		SELECT * FROM minidwcs_package_schedule where isActive = '1' and id = ?
+
+		]]>
+	
+	</entry>
+	<entry key="updateScheduleCurrent">
+	<![CDATA[
+		
+		INSERT INTO minidw_schedule_current
+			(clientId,
+			iL_connection_mapping_seq_id,
+			schedule_id,
+			schedule_start_date_time,
+			schedule_end_date_time,
+			flat_csv_file,
+			S3_bucket_name,
+			encrypted_file_name,
+			client_schedular_status,
+			server_schedular_status,
+			description,
+			isActive,
+			ipAddress,
+			created_by,
+			created_time
+			)
+			VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+
+		]]>
+	
+	</entry>
+	<entry key="getScheduleCurrent">
+		<![CDATA[
+		
+		select 	   sc.id,
+				   sc.schedule_id,
+				   schedule.time_zone,
+				   il_map.Package_id,
+                   sc.schedule_start_date_time,
+                   il_map.id as il_connection_mapping_id,
+				   il_map.isFlatFile,
+				   il_map.type_of_command, 
+				   il_map.IL_query, 
+				   il_map.Database_Name,
+				   il_map.procedure_parameters,
+				   il_map.isIncrementalUpdate,
+				   il_map.max_date_query,
+				   il_map.DL_id,
+				   il_map.IL_id,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   db.id as dataBaseId, 
+				   db.name , 
+				   dbcon.driver_name,
+                   dbcon.protocal,
+                   dbcon.url_format,
+				   con.server, 
+				   con.username, 
+				   con.password  
+			FROM minidw_schedule_current as sc
+			inner join minidwcs_package_source_mapping as il_map on il_map.id = sc.iL_connection_mapping_seq_id  
+			inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id 
+			inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+			inner join minidwcm_database_types as dbcon on dbcon.id = db.connector_id
+			inner join minidwcs_package_schedule as schedule on schedule.id = sc.schedule_id and schedule.isActive = '1' and schedule.recurrence_pattern <> 'runnow'
+			inner join minidwcs_package on minidwcs_package.package_id = sc.package_Id and minidwcs_package.isMapped = '1' and minidwcs_package.isActive=1 
+			where sc.client_schedular_status = 'Pending' and server_schedular_status = 'Pending' and  sc.isActive = '1' and sc.clientId = ?
+
+		]]>
+	
+	</entry>
+	<entry key="getScheduleCurrentByScid">
+		<![CDATA[
+		
+		select 	   sc.id,
+				   sc.schedule_id,
+				   schedule.time_zone,
+				   il_map.Package_id,
+                   sc.schedule_start_date_time,
+                   il_map.id as il_connection_mapping_id,
+				   il_map.isFlatFile,
+				   il_map.type_of_command, 
+				   il_map.IL_query, 
+				   il_map.Database_Name,
+				   il_map.procedure_parameters,
+				   il_map.isIncrementalUpdate,
+				   il_map.max_date_query,
+				   il_map.DL_id,
+				   il_map.IL_id,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   db.id as dataBaseId, 
+				   db.name , 
+				   dbcon.driver_name,
+                   dbcon.protocal,
+                   dbcon.url_format,
+				   con.server, 
+				   con.username, 
+				   con.password  
+			FROM minidw_schedule_current as sc
+			inner join minidwcs_package_source_mapping as il_map on il_map.id = sc.iL_connection_mapping_seq_id  
+			inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id 
+			inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+			inner join minidwcm_database_types as dbcon on dbcon.id = db.connector_id
+			inner join minidwcs_package_schedule as schedule on schedule.id = sc.schedule_id and schedule.isActive = '1' and schedule.recurrence_pattern <> 'runnow'
+			inner join minidwcs_package on minidwcs_package.package_id = sc.package_Id and minidwcs_package.isMapped = '1' and minidwcs_package.isActive=1 
+			where sc.client_schedular_status = 'Pending' and server_schedular_status = 'Pending' and  sc.isActive = '1' and sc.clientId = ? and sc.id = ? 
+
+		]]>
+	
+	</entry>
+	<entry key="getFilePathFromScheduleCurrent">
+		<![CDATA[
+		
+		 select encrypted_file_name from minidw_schedule_current where clientId= ? and package_Id= ?  and iL_connection_mapping_seq_id = ?
+
+		]]>
+	
+	</entry>
+	<entry key="getAllScheduledPackages">
+		<![CDATA[
+		
+		 select user_id , package_ID from minidwcs_package_schedule where isActive = '1' and recurrence_pattern <> 'runnow'
+
+		]]>
+	
+	</entry>
+	<entry key="getClientSchedulerStatus">
+		<![CDATA[
+		
+		 select client_schedular_status from minidw_schedule_current 
+		 where isActive = '1' and clientId = ? and package_Id =? and iL_connection_mapping_seq_id= ? and server_schedular_status = 'Pending'
+
+		]]>
+	
+	</entry>
+	<entry key="deleteSchedule">
+		<![CDATA[
+		
+		 delete from minidwcs_package_schedule where isActive = '1' and package_ID = ?
+
+		]]>
+	
+	</entry>
+	<entry key="updateSchedule">
+		<![CDATA[
+		update  minidwcs_package_schedule set 
+		    schedule_type = ?,
+			schedule_start_date = ?,
+			schedule_start_time = ?,
+			recurrence_pattern = ?,
+			days_to_run = ?,
+			weeks_to_run = ?,
+			day_of_month = ?,
+			months_to_run = ?,
+			day_of_year = ?,
+			month_of_year = ?,
+			years_to_run = ?,
+			is_no_end_date = ?,
+			end_date = ?,
+			no_of_max_occurences = ?,
+			ipAddress = ?,
+			modified_by = ?,
+			modified_time = ?,
+			time_zone = ?,
+			cron_expression = ?,
+			minutes_to_run = ?,
+			priority = ?,
+			type_of_hours = ?,
+			hours_to_run =?
+			where isActive = '1' and id = ?
+
+]]>
+	</entry>
+	<entry key="updateHistoricalLoadExecutionStatus">
+		<![CDATA[
+			update  minidwcs_il_historical_load set isExecuted = ? where id = ?
+		]]>
+	</entry>
+	
+	<entry key="updateHistoricalLoadRunningStatus">
+		<![CDATA[
+			update  minidwcs_il_historical_load set is_running = ? where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingByMappingId">
+		<![CDATA[
+	    	select * from minidwcs_package_source_mapping where isActive= '1' and id = ? 
+
+	   	]]>
+	</entry>
+	<entry key="getIncrementalUpdate">
+		<![CDATA[
+			select * from mw_inc_update where data_source_id = ? and il_id = ? and type_of_source = ? and package_source_mapping_id = ?;
+		]]>
+	</entry>
+	<entry key="updateIncrementalUpdate">
+		<![CDATA[
+			UPDATE 	mw_inc_update SET 
+					inc_date_from_source = ? , 
+					modified_by = ?,
+					modified_time = ?
+			where 	data_source_id = ? and  
+				  	type_of_source = ? and
+				  	il_id = ? and 
+				  	package_source_mapping_id = ? and 
+				  	is_active = '1' and inc_date_from_source < ?;
+		]]>
+	</entry>
+	<entry key="saveIncrementalUpdate">
+		<![CDATA[
+			INSERT INTO mw_inc_update 
+				(data_source_id, 
+				type_of_source, 
+				il_id, 
+				package_source_mapping_id,
+				inc_date_from_source,
+				created_by,
+				created_time)
+			values(?,?,?,?,?,?,?);		
+		]]>
+	</entry> 
+	
+	<entry key="updateExistedSchduledPackageStatus">
+		<![CDATA[
+			update minidw_schedule_current set 
+				client_schedular_status= (case when client_schedular_status='Done' then 'Done' else ? end)
+				,server_schedular_status=? 
+				,server_scheduler_status_details=? 
+				 where package_Id=? and clientId=? and 
+				 ( client_schedular_status='Pending' or server_schedular_status='Pending' )
+		]]>
+	</entry> 
+	<entry key="getILConnectionMappingS3DetailsInfoByPackage">
+		<![CDATA[
+			select 
+				all_map.IL_id as IL_id, isFlatFile, isWebService, 
+				all_map.id connection_mapping_id,
+				all_map.is_multipart_enabled,
+                all_map.s3_bucket_id,
+				s3_map.storage_type,
+				s3_map.s3_file_path, 
+				s3_map.file_size, 
+				s3_map.row_count, 
+				s3_map.uploaded_time,
+				all_map.isHavingParentTable
+			from 
+				minidwcs_package_source_mapping all_map 
+			left join minidw_il_connection_mapping_s3_details s3_map 
+			on s3_map.s3_file_path = all_map.filePath
+			where 
+				all_map.package_id = ? and all_map.userid = ?
+			order by s3_map.connection_mapping_id asc;	
+		]]>
+	</entry>
+	<entry key="updateScheduleCurrentStatus">
+		<![CDATA[
+			update 	minidw_schedule_current set 
+					client_schedular_status = ?,
+					client_scheduler_status_details = ?,
+					schedule_end_date_time = ?,
+					modified_by = ?,
+					modified_time = ?
+			where
+					id = ? and 
+					clientId = ? and
+					package_Id = ? and 
+					iL_connection_mapping_seq_id = ?;
+		]]>
+	</entry> 
+	<entry key="getScheduleCurrentDetailsById">
+		<![CDATA[
+			select  schedule_id, 
+					schedule_start_date_time 
+			from 	minidw_schedule_current
+			where 	id = ? and 
+				  	clientId = ?;
+		]]>
+	</entry>  
+	
+	<entry key="updateJobExecutionDetails">
+		<![CDATA[
+		INSERT INTO minidwcs_job_execution_detials (
+		job_id,
+		status_code,
+		job_name,
+		job_class,
+		dependent_job_classes,
+		execution_messages,
+		s3_path,
+		created_by,
+		created_time)
+		VALUES ( ?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry> 
+	
+	<entry key="getJobResults">
+		<![CDATA[
+			    SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	
+	<entry key="getJobResultsByDate">
+		<![CDATA[
+			   SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? and DATE_FORMAT(JOB_START_DATETIME,'%Y-%m-%d') between STR_TO_DATE(?, '%Y-%m-%d')  and STR_TO_DATE(?, '%Y-%m-%d') order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	
+	<entry key="savePackageStatus">
+		<![CDATA[
+		insert into minidw_package_schedule_status (user_id,package_id,schedule_id,package_status,no_of_ils_processed,no_of_dls_processed,created_by,created_time) values(?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="updatePackageStatus">
+		<![CDATA[
+		update minidw_package_schedule_status set package_status = ?,no_of_ils_processed=?,no_of_dls_processed=?,modified_by=?,modified_time =? where id=?
+		]]>
+	</entry>
+	
+	<entry key="updateStatusOfServerSchedulerWithDetails">
+		<![CDATA[
+		update minidw_schedule_current set  schedule_end_date_time = ?, server_schedular_status= ?, server_scheduler_status_details = ?, ipAddress = ?, modified_by= ?, modified_time= ? "
+				+ " where isActive = '1' and iL_connection_mapping_seq_id = ?  and client_schedular_status = 'Done' and server_schedular_status = 'Pending' and schedule_start_date_time=? and package_Id=?
+		]]>
+	</entry>
+	
+	<entry key="deleteCustomPackageDerivedTableInfo">
+		<![CDATA[
+		DELETE FROM minidwcs_custom_package_derived_tables where id = ? and target_table_id = ? and package_Id = ?	
+		]]>
+	</entry>
+	
+	<entry key="deleteCustomPackageTargetTableInfo">
+		<![CDATA[
+		DELETE FROM minidwcs_custom_package_target_table_info where id = ? and package_Id = ?
+		]]>
+	</entry>
+	
+	<entry key="deleteCustomTempTablesQuery">
+		<![CDATA[
+		delete from minidwcs_custom_package_target_table_query where clientId =? and packageId = ?
+		]]>
+	</entry>
+	
+	<entry key="updatePackageMappingStatus">
+		<![CDATA[
+		update minidwcs_package set isMapped = ? ,modified_by = ? ,modified_time = ? where isActive = '1' and package_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="updatePackageScheduleStatus">
+		<![CDATA[
+		update minidwcs_package set isMapped = ? ,modified_by = ? ,modified_time = ? where isActive = '1' and package_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="filePathFromScheduleCurrent">
+		<![CDATA[
+		select id,encrypted_file_name from minidw_schedule_current where clientId= ? and package_Id= ? and iL_connection_mapping_seq_id = ? and schedule_start_date_time=?
+		]]>
+	</entry>
+	
+	<entry key="updatePackageErrorStatus">
+		<![CDATA[
+		update minidw_package_schedule_status set package_status = ?,modified_by=?,modified_time =? where id=?
+		]]>
+	</entry>
+	
+	<entry key="saveDLInitiatingStatus">
+		<![CDATA[
+		insert into minidw_schedule_current(clientId,package_Id,dL_Id,schedule_id,schedule_start_date_time,server_schedular_status, ipAddress,created_by,created_time) values (?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="updateDLStatus">
+		<![CDATA[
+		update minidw_schedule_current set schedule_end_date_time=?,server_schedular_status=?,server_scheduler_status_details=?,modified_by=?,modified_time=? where id= ?
+		]]>
+	</entry>
+	
+	<entry key="updateStatusOfServerScheduler">
+		<![CDATA[
+		update minidw_schedule_current set  schedule_end_date_time = ?, server_schedular_status= ?, server_scheduler_status_details = ?, ipAddress = ?, modified_by= ?, modified_time= ? "
+				+ " where isActive = '1' and iL_connection_mapping_seq_id = ?  and client_schedular_status = 'Done' and server_schedular_status = 'Pending' and schedule_start_date_time=? and package_Id=?
+		]]>
+	</entry>
+
+	
+	<entry key="savePackageExectionInfo">
+		<![CDATA[
+		INSERT INTO minidwcs_package_execution (
+		package_id,
+		schedule_id,
+		initiated_from,
+		run_type,
+		upload_status,
+		upload_start_date,
+		time_zone,
+		created_by,
+		created_time,
+		upload_comments,
+		last_uploaded_date,
+		dl_id,
+		ddl_to_run
+		)
+		VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry> 
+	
+	
+	<entry key="updatePackageExecutionUploadInfo">
+		<![CDATA[
+			update 	minidwcs_package_execution set 
+					upload_status = ?,
+					upload_comments = concat(upload_comments,?),
+					last_uploaded_date = ?,
+					modified_by = ?,
+					modified_time = ?
+			        where execution_id = ? and upload_status<>'TERMINATED';
+					
+		]]>
+	</entry> 
+	
+	<entry key="updatePackageExecutionStatus">
+		<![CDATA[
+			update 	minidwcs_package_execution set 
+					execution_status = ?,
+					execution_comments = ?,
+					exection_start_date = ?,
+					modified_by = ?,
+					modified_time = ?
+			        where execution_id = ?;
+					
+		]]>
+	</entry> 
+	
+	<entry key="updatePackageExecutionStatusInfo">
+		<![CDATA[
+			update 	minidwcs_package_execution set 
+					execution_status = ?,
+					execution_comments = concat(execution_comments,?),
+					last_executed_date = ?,
+					modified_by = ?,
+					modified_time = ?
+			where execution_id = ? and upload_status<>'TERMINATED';
+					
+		]]>
+	</entry> 
+
+	<entry key="savePackageRunNowDetails">
+		<![CDATA[
+			INSERT INTO package_runnow_details 
+				(package_id, 
+				start_time, 
+				end_time, 
+				no_of_ils_processed,
+				no_of_dls_processed,
+				no_of_sources_processed,
+				detailed_information,
+				status )
+			values(?,?,?,?,?,?,?,?);		
+		]]>
+	</entry> 
+	
+	<entry key="getCronExpression">
+		<![CDATA[
+			SELECT psch.id as schedule_id,p.package_ID,dl_id,p.package_name, p.isAdvanced,p.isStandard,psch.user_id,time_zone,recurrence_pattern,concat(schedule_start_date,' ',schedule_start_time) as start_date,
+			concat(end_date,' ',schedule_start_time) as 
+			end_date,cron_expression,p.isactive,psch.schedule_type from minidwcs_package_schedule
+			as psch inner join minidwcs_package as p on p.package_id = psch.package_ID 
+			where p.isactive = 1 and (cron_expression IS NOT NULL or (recurrence_pattern='once' and end_date is null))      
+		]]>
+	</entry> 
+
+
+	<entry key="updatePackageExecutionMappingInfo">
+		<![CDATA[
+			        update minidwcs_package_execution_source_mapping_info set 
+					execution_status = ?,
+					execution_comments =  ?,
+					modified_by = ?,
+					modified_time = ?
+			        where id = ?;
+		]]>
+	</entry> 
+   
+   <entry key="updatePackageExecutionMappingInfoStatus">
+		<![CDATA[
+			        update 	minidwcs_package_execution_source_mapping_info set 
+					execution_status = ?,
+					execution_comments = concat(execution_comments, ?),
+					modified_by = ?,
+					modified_time = ?
+			        where id = ? 
+		]]>
+	</entry> 
+   
+     <entry key="updateDruidStartInfo">
+		<![CDATA[
+			        update minidwcs_package_execution set 
+					druid_status = ?,
+					druid_comments = ?,
+                    druid_start_date = ?,
+					modified_by = ?,
+					modified_time = ?
+			        where execution_id = ?
+		]]>
+	</entry> 
+   
+   
+     <entry key="updateDruidEndInfo">
+		<![CDATA[
+			        update minidwcs_package_execution set 
+					druid_status = ?,
+					druid_comments = concat(druid_comments, ?),
+                    druid_end_date = ?,
+					modified_by = ?,
+					modified_time = ?
+			        where execution_id = ?
+		]]>
+	</entry> 
+	
+	<entry key="updatePackageSchedule">
+		<![CDATA[
+		
+			update minidwcs_package_schedule set schedule_type = ? where id=? and user_id=? and package_ID=?
+			
+		]]>
+	</entry> 
+	
+	
+	<entry key="getScheduledPackageInfo">
+		<![CDATA[
+			SELECT psch.id as schedule_id,p.package_ID,p.package_name,p.isStandard,psch.user_id,time_zone,recurrence_pattern,concat(schedule_start_date,' ',schedule_start_time) as start_date,
+			concat(end_date,' ',schedule_start_time) as 
+			end_date,cron_expression,p.isactive,psch.schedule_type from minidwcs_package_schedule
+			as psch inner join minidwcs_package as p on p.package_id = psch.package_ID 
+			where (cron_expression IS NOT NULL or (recurrence_pattern='once' ))
+			and psch.package_ID = ? 	
+		]]>
+	</entry> 
+   <entry key="getPackageSourceMappingListByDlId">
+		<![CDATA[
+		
+			 SELECT * FROM minidwcs_package_source_mapping where DL_id = ? and isWebService IS TRUE
+			
+		]]>
+	</entry> 
+	 
+</properties>

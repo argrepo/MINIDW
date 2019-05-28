@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="fetchAllHierarchicalList">
+		select * from minidwcs_hierarchical_structures order
+		by id;
+	</entry>
+	<entry key="fetchHierarchicalById">
+		select * from minidwcs_hierarchical_structures where
+		id = ?;
+	</entry>
+	<entry key="addHierarchical">
+		insert into minidwcs_hierarchical_structures
+		(name, description, hierarchical_form_data, is_active,
+		created_by, created_time, hierarchical_level_data) values (?, ?, ?, ?, ?, ?, ? );
+	</entry>
+	<entry key="updateHierarchical">
+		update minidwcs_hierarchical_structures set name = ?,
+		description = ?, hierarchical_form_data = ?, is_active = ?,
+		modified_by = ?, modified_date = ? , hierarchical_level_data =?
+		where id = ?;
+	</entry>
+	<entry key="deleteHierarchicalById">
+		delete from minidwcs_hierarchical_structures where id
+		= ?;
+	</entry>
+	
+	<entry key="addHierarchicalAssociation">
+	  insert into minidwcs_hierarchical_association
+		(hierarchy_id, hierarchy_association_name, measures, dimensions,il_table_name,
+		created_by, created_time ) values (?, ?, ?, ?, ?, ?, ? );
+	</entry>
+	<entry key="updateHierarchicalAssociation">
+	  update minidwcs_hierarchical_association set hierarchy_id = ?,
+		hierarchy_association_name = ?, measures = ?, dimensions = ?,il_table_name = ?,
+		modified_by = ?, modified_date = ? 
+		where association_id = ?;
+	</entry>
+	
+	<entry key="getHierarchicalAssociation">
+	   select * from minidwcs_hierarchical_association where hierarchy_id = ?;
+	</entry>
+	<entry key="getHierarchicalandMapping">
+	  select * from minidwcs_hierarchical_structures mhs 
+		join minidwcs_hierarchical_association mha on mha.hierarchy_id = mhs.id
+		where mhs.id = ?;
+	</entry>
+	<entry key="getJobResultsForHierarchical">
+		<![CDATA[
+			    SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? order by JOB_START_DATETIME desc 
+		]]>
+	</entry>
+	<entry key="getJobResultsForHierarchicalByDate">
+		<![CDATA[
+			   SELECT * FROM ETL_JOB_LOAD_SMRY where BATCH_ID like ? and DATE_FORMAT(JOB_START_DATETIME,'%Y-%m-%d') between STR_TO_DATE(?, '%Y-%m-%d')  and STR_TO_DATE(?, '%Y-%m-%d') order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	<entry key="deleteHierarchicalMappingByHierarchyId">
+	  <![CDATA[
+			  delete from minidwcs_hierarchical_association where hierarchy_id = ?;
+		]]>
+	</entry>
+
+</properties>

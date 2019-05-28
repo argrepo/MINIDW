@@ -1,0 +1,2162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="createPackage">
+		<![CDATA[
+				insert into minidwcs_package 
+					(package_name,
+					industry_id,
+					isStandard,
+					description,
+					isScheduled,
+					isMapped,
+					schedule_status,
+					trailing_months,
+					isAdvanced,
+					user_id,
+					created_by,
+					created_time) 
+					values (?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getPackageIdByName">
+		<![CDATA[
+				select package_id from minidwcs_package  where isActive = '1' and package_name = ? and user_id = ? 
+		]]>
+	</entry>
+	<entry key="getUserPackages">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isAdvanced,
+				p.isScheduled,
+				p.isMapped,
+				p.schedule_status,
+				p.isActive,
+				p.created_time,
+				p.isClientDbTables,
+				p.trailing_months
+				FROM minidwcs_package p
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.isActive = '1' and p.user_id= ? and p.isStandard=0
+		]]>
+	</entry>
+	<entry key="getAllUserPackages">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.schedule_status,
+				p.isActive,
+				p.isAdvanced,				
+				p.created_time,
+				p.isClientDbTables,
+				p.trailing_months,
+				p.files_having_same_columns,
+				tf.schemaName,
+                tf.target_table_name,
+                tf.id,
+                tf.isProcessed,
+                tf.direct_or_fetch_from_file,
+                tf.no_of_records_processed,
+                tf.no_of_records_failed,
+                tf.duplicate_records,
+                tf.total_records  
+				FROM minidwcs_package p
+				left join minidwcs_custom_package_target_table_info tf on tf.package_Id=p.package_id
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.user_id= ?  and p.isStandard=0
+		]]>
+	</entry>
+	<entry key="getPackages">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.schedule_status,
+				p.isActive,
+				p.isAdvanced,				
+				p.created_time,
+				p.isClientDbTables,
+				p.trailing_months,
+				p.files_having_same_columns,
+				tf.schemaName,
+                tf.target_table_name,
+                tf.id,
+                tf.isProcessed,
+                tf.direct_or_fetch_from_file,
+                tf.no_of_records_processed,
+                tf.no_of_records_failed,
+                tf.duplicate_records,
+                tf.total_records  
+				FROM minidwcs_package p
+				left join minidwcs_custom_package_target_table_info tf on tf.package_Id=p.package_id 
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.user_id= ? and isStandard=?
+		]]>
+	</entry>
+	<entry key="getPackageById">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.isAdvanced,
+				p.schedule_status,
+				p.files_having_same_columns,
+				p.modified_by,
+				p.isActive,
+				p.isClientDbTables,
+				p.trailing_months 
+				FROM minidwcs_package p
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.isActive = '1' and p.package_id =?
+		]]>
+	</entry>
+	<entry key="getPackageByIdWithOutStatusFlag">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.isAdvanced,
+				p.schedule_status,
+				p.files_having_same_columns,
+				p.modified_by,
+				p.isActive,
+				p.isClientDbTables,
+				p.trailing_months 
+				FROM minidwcs_package p
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.package_id =? and p.user_id= ?
+		]]>
+	</entry>
+	<entry key="deletePackage">
+		<![CDATA[
+			delete from minidwcs_package where isActive = '1' and package_id =? and user_id= ?
+		]]>
+	</entry>
+	<entry key="getDatabaseTypes">
+		<![CDATA[
+			select * from minidwcm_database_connectors where isActive = '1'
+		]]>
+	</entry>
+	<entry key="getClientDatabaseTypes">
+		<![CDATA[
+			  
+			 SELECT con.id ,con.name,con.connector_id,
+			 db.driver_name as driver_name,
+             db.protocal as protocal,
+             db.connection_string_params as connection_string_params,
+             db.url_format as url_format
+			 FROM minidwcm_database_connectors con 
+			 inner join minidwcm_database_types db on db.id=con.connector_id 
+			 inner join minidwcs_database_connectors_client_mapping ccm on ccm.connector_id=con.id
+			 where db.isActive=1 and con.isActive=1 and ccm.client_id=?  order by con.id
+			  
+		]]>
+	</entry>
+	<entry key="createILConnection">
+		<![CDATA[
+			insert into minidwcs_database_connections(
+					connection_name, 
+					connection_type,
+					userid, 
+					DB_type_id, 
+					server, 
+					username, 
+					password, 
+					date_format,
+					time_zone,
+					available_in_cloud,
+					created_by, 
+					created_time,
+					data_source_name,
+					/*ssl_enable,*/
+					db_variables
+					) 
+				values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getILConnections">
+		<![CDATA[
+			select * from minidwcs_database_connections where isActive ='1' and userid = ?
+		]]>
+	</entry>
+	<entry key="getUserILConnections">
+		<![CDATA[
+			 
+			 select * from minidwcs_database_connections ilcon 
+			 inner join minidwcm_database_connectors con on ilcon.DB_type_id=con.id 
+			 inner join minidwcm_database_types db on db.id=con.connector_id 
+			 inner join minidwcs_database_connectors_client_mapping ccm on ccm.connector_id=con.id
+			 where db.isActive=1 and con.isActive=1 and ccm.client_id=? and ilcon.isActive ='1' 
+			 and ilcon.userid = ?
+			 
+		]]>
+	</entry>
+	<entry key="saveILConnectionMapping">
+		<![CDATA[
+			insert into minidwcs_package_source_mapping(
+						isMapped,
+						isFlatFile,
+						fileType,
+						source_file_info_id,
+						delimeter,
+						first_row_has_coloumn_names,
+						connection_id,
+						type_of_command,
+						Database_Name,
+						IL_query,
+						isIncrementalUpdate,
+						procedure_parameters,
+						IL_id,
+						DL_id,
+						target_table_id,
+						Package_id,
+						Database_id,
+						userid,
+						created_by,
+						created_time,
+						isHavingParentTable,
+						parent_table_name,
+						il_source_name,
+						isWebService,
+						webservice_Id,
+						webservice_mapping_headers,
+						is_historical_load,
+						historical_from_date,
+						historical_to_date,
+						historical_load_interval,
+						historical_last_updated_time,
+						is_join_web_service,
+						web_service_join_urls,
+						max_date_query,
+						storage_type
+						)
+					values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)  
+		]]>
+	</entry>
+	<entry key="saveDerivedTableMapping">
+		<![CDATA[
+			insert into minidwcs_package_source_mapping(
+						isMapped,
+						isFlatFile,
+						fileType,
+						filePath,
+						delimeter,
+						first_row_has_coloumn_names,
+						connection_id,
+						type_of_command,
+						IL_query,
+						procedure_parameters,
+						Package_id,
+						Database_id,
+						userid,
+						created_by,
+						created_time,
+						isHavingParentTable,
+						parent_table_name
+						)
+					values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getILConnectionById">
+		<![CDATA[
+			select  connection.connection_id,
+					connection.connection_name,
+					connection.connection_type,
+					connection.username,
+					connection.password,
+					connection.server,
+					connection.date_format,
+					connection.time_zone,
+					connection.data_source_name,
+					connection.db_variables,
+					db.id as database_Id,
+					db.name as database_Name,
+					dc.id as connectorId,
+					dc.driver_name as driver_name,
+					dc.protocal as protocal,
+					dc.url_format as url_format
+					/* connection.ssl_enable,
+					connection.ssl_trust_key_store_file_paths */
+				from minidwcs_database_connections as connection
+				inner join minidwcm_database_connectors as db on db.id = connection.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				where connection.isActive ='1' and connection.connection_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getPendingILs">
+		<![CDATA[
+			select il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query, 
+				   il_map.Database_Name, 
+				   il_map.IL_id, 
+				   il_map.DL_id, 
+				   il_map.Package_id, 
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   db.id, 
+				   db.name , 
+				   con.server, 
+				   con.username, 
+				   con.password 
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				where il_map.isActive='1' and and il_map.isMapped = '1' and il_map.userid= ? 
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfo">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.Database_Name, 
+				   il_map.created_time, 
+				   procedure_parameters,
+				   il_map.iL_job_status_for_run_now,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   db.id, 
+				   db.name , 
+				   con.server, 
+				   con.username, 
+				   con.password 
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				where il_map.isActive ='1' and il_map.isMapped = '1' and il_map.userid = ? and il_map.IL_id = ? and il_map.DL_id = ? and il_map.Package_id= ?
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoWhenFile">
+		<![CDATA[
+			select * from minidwcs_package_source_mapping as il_map
+				where il_map.isActive ='1' and il_map.isMapped = '1' and il_map.userid = ? and il_map.IL_id = ? and il_map.DL_id = ? and il_map.Package_id= ? and isFlatFile = '1'
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoWhenFileBYPackage">
+		<![CDATA[
+			
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   sfi.s3_file_path as filePath,
+				   sfi.encryption_required,
+				   il_map.source_file_info_id,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   il_map.procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive,
+				   il_map.userid 
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_source_file_info as sfi on sfi.id = il_map.source_file_info_id
+				where il_map.isMapped = '1' and il_map.Package_id= ? and isFlatFile = '1'
+				
+		]]>
+	</entry>
+	<entry key="updatePackageMappingStatus">
+		<![CDATA[
+			update minidwcs_package set isMapped = ? ,modified_by = ? ,modified_time = ? where isActive = '1' and package_id = ? 
+		]]>
+	</entry>
+	<entry key="updatePackageScheduleStatus">
+		<![CDATA[
+			update minidwcs_package set isScheduled = ? ,schedule_status=?, modified_by = ? ,modified_time = ? where isActive = '1' and package_id = ?  
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoByPackage">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.source_file_info_id,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+                   il_map.isActive,
+                   il_map.userid,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   con.available_in_cloud,
+				   con.db_variables,
+				   db.id as dataBaseId, 
+				   db.name ,
+				   dc.id as connectorId, 
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+                   dc.connector_jars as connector_jars,
+				   con.server, 
+				   con.username, 
+				   con.password,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				inner join minidwcs_database_connectors_client_mapping as dbcp on dbcp.connector_id = con.DB_type_id and dbcp.client_id=?
+				where il_map.isMapped = '1' and il_map.Package_id= ?
+		]]>
+	</entry>
+	
+	 <entry key="getILConnectionMappingInfoByPackageIsNull">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now,
+                   il_map.is_historical_load, 
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   con.available_in_cloud,
+				   db.id as dataBaseId, 
+				   db.name ,
+				   dc.id as connectorId, 
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+				   con.server, 
+				   con.username, 
+				   con.password,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				inner join minidwcs_database_connectors_client_mapping as dbcp on dbcp.connector_id = con.DB_type_id and dbcp.client_id=?
+				where il_map.isActive ='1' and il_map.isMapped = '1'  and  il_map.Package_id is null and il_map.userid = ?
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoWhenParentTable">
+		<![CDATA[
+			select il_map.id,
+                   il_map.Package_id,
+                   il_map.isFlatFile,
+                   il_map.s3_bucket_id,
+                   il_map.il_source_name,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.isWebService,
+				   il_map.webservice_Id,
+				   il_map.isActive,
+				   il_map.userid 
+				from minidwcs_package_source_mapping as il_map
+				where il_map.isMapped = '1' and  il_map.Package_id= ? and il_map.isHavingParentTable = '1'
+		]]>
+	</entry>
+	<entry key="saveTargetTableInfo">
+		<![CDATA[
+			insert into minidwcs_custom_package_target_table_info(
+						client_Id,
+						package_Id,
+						schemaName,
+						target_table_name,
+						direct_or_fetch_from_file,
+						ipAddress,
+						created_by,
+						created_time)
+					values (?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getTargetTableInfoByPackage">
+		<![CDATA[
+			SELECT * FROM minidwcs_custom_package_target_table_info
+				where isActive ='1' and client_Id =? and package_Id = ?
+		]]>
+	</entry>
+	<entry key="getAllTargetTablesOfCustomPackage">
+		<![CDATA[
+			SELECT * FROM minidwcs_custom_package_target_table_info
+				where isActive ='1' and client_Id =? and package_Id = ?
+		]]>
+	</entry>
+	<entry key="updateDLMappingStatus">
+		<![CDATA[
+			update minidwcs_package_source_mapping set isDLMapped = ?
+				where isActive ='1' and userid =? and Package_id = ? and DL_id = ? and IL_id = ?
+		]]>
+	</entry>
+	<entry key="updateILJobStatusForRunNow">
+		<![CDATA[
+			update minidwcs_package_source_mapping set iL_job_status_for_run_now = ?
+				where isActive ='1' and userid =? and Package_id = ? and DL_id = ? and IL_id = ?
+		]]>
+	</entry>
+	<entry key="updateTargetTableInfo">
+		<![CDATA[
+			update minidwcs_custom_package_target_table_info set 
+			isProcessed = ? , 
+			no_of_records_processed = ?, 
+			no_of_records_failed = ?,
+			duplicate_records = ? ,
+			total_records =? ,
+			modified_by = ?, 
+			modified_time= ?
+			where isActive ='1' and client_Id =? and package_Id = ? and id = ?
+		]]>
+	</entry>
+	<entry key="getDLById">
+		<![CDATA[
+			select * from minidwcm_dl_info where isActive ='1' and DL_id = ?
+		]]>
+	</entry>
+	<entry key="getDLByIdWithJobName">
+		<![CDATA[
+			select dl.DL_id, dl.DL_name, dl.dl_table_name,dl.description,dl.DL_schema,dl.isStandard,dl.industry_id,
+			dl.DL_tgt_key
+			/*, dl.Job_name,dl.dependency_jars,dlm.Job_name, dlm.dependency_jars */
+			, ifnull(dlm.Job_name,dl.Job_name) as Job_name,ifnull(dlm.dependency_jars,dl.dependency_jars) as dependency_jars
+			,job_execution_type, elt_job_tag, elt_load_parameter, dltrialmap.trailing_months,elt_master_id 
+			from minidwcm_dl_info dl 
+			left join minidwcs_dl_trailingmonths_mapping dltrialmap on  dltrialmap.dl_id = dl.DL_id  
+			left join (select * from minidwcs_dl_client_specific_jobs where client_id=? and is_default=0) dlm on dlm.dl_id=dl.DL_id 
+			where isActive ='1' and dl.DL_id = ?;
+		]]>
+	</entry>
+	<entry key="getILById">
+		<![CDATA[
+			select * FROM minidwcm_il_info where isActive ='1' and IL_id = ?
+		]]>
+	</entry>
+	<entry key="getILByIdWithJobName">
+		<![CDATA[
+			select il.IL_id, il.IL_name, il.il_table_name,il.xref_il_table_name,il.description,il.IL_schema,il.DL_id,`src_file_context_param_key`,il.target_table_context_param_key
+			/*, il.Job_name,il.dependency_jars,ilm.Job_name, ilm.dependency_jars*/
+			, ifnull(ilm.Job_name,il.Job_name) as Job_name,ifnull(ilm.dependency_jars,il.dependency_jars) as dependency_jars
+			,job_execution_type, elt_job_tag, elt_load_parameter,elt_master_id 
+			FROM minidwcm_il_info il
+			left join (select * from minidwcs_il_client_specific_jobs where client_id=? and is_default=0) ilm on ilm.il_id=il.IL_id 
+			where isActive ='1' and il.IL_id = ?;
+
+		]]>
+	</entry>
+	<entry key="getClientSourceDetails">
+		<![CDATA[
+			select * FROM minidwcs_client_source_option where client_id = ?
+		]]>
+	</entry>
+	<entry key="deleteConnectionMapping">
+		<![CDATA[
+			delete from minidwcs_package_source_mapping where userid = ? and Package_id = ? and id = ? and isActive = '1'
+		]]>
+	</entry>
+
+	<entry key="deleteIlSource">
+		<![CDATA[
+			delete from minidwcs_package_source_mapping where  isActive = '1' and id = ? 
+		]]>
+	</entry>
+	
+	<entry key="deleteIlSourceByMappingId">
+		<![CDATA[
+			delete from minidw_schedule_current where iL_connection_mapping_seq_id = ? and client_schedular_status = ?; 
+		]]>
+	</entry>
+	
+	<entry key="deleteCustomFileHeaderInfoMapping">
+		<![CDATA[
+			delete from minidwcs_custom_package_flat_file_headers_info where clientId = ? and packageId = ? and source_file_info_id = ?
+		]]>
+	</entry>
+	
+	<entry key="showCustomTargetTableStatus">
+		<![CDATA[
+			select id,target_table_name, no_of_records_processed, no_of_records_failed, total_records from minidwcs_custom_package_target_table_info
+			where client_Id = ? and package_Id = ?
+		]]>
+	</entry>
+	
+	<entry key="showCustomTargetDerivativeTableStatus">
+		<![CDATA[
+			select target_table_name, no_of_records_processed, no_of_records_failed, total_records from minidwcs_custom_package_derived_tables 
+			where client_Id = ? and package_Id = ? and target_table_id = ?
+		]]>
+	</entry>
+	
+	<entry key="getIlContextParams">
+		<![CDATA[
+			select mst.param_name, mst.paramval as param_value from minidwcm_context_parameters mst
+			left join minidwcm_context_parameters_il_mapping map 
+			on mst.param_id = map.param_id
+			where map.il_id = ? 
+			order by mst.param_id;
+		]]>
+	</entry>
+	<entry key="getDlContextParams">
+		<![CDATA[
+			select param_name,paramval from minidwcm_context_parameters_dl_mapping ilm
+			join minidwcm_context_parameters cp on cp.param_id = ilm.param_id
+			where dl_id = ? order by cp.param_id
+		]]>
+	</entry>
+	<entry key="getIlEpicorQuery">
+		<![CDATA[
+			SELECT il_query FROM minidwcm_il_prebuild_queries_mapping where il_id = ? and database_type_id = ? and isActive = '1'
+		]]>
+	</entry>
+
+	<entry key="updateFilePathForDatabaseConnection">
+		<![CDATA[
+			update minidwcs_package_source_mapping set source_file_info_id = ?, filePath = ?, fileType = ?, delimeter=?, storage_type=? , s3_bucket_id = ? , is_multipart_enabled = ? where isActive = '1' and id= ? 
+		]]>
+	</entry>
+
+	<entry key="isTargetTableExist">
+		<![CDATA[
+			select count(*) from minidwcs_custom_package_target_table_info where client_Id = ? and target_table_name = ? 
+		]]>
+	</entry>
+	<entry key="isILMapped">
+		<![CDATA[
+				/*select count(*) from minidwcs_package_source_mapping where isActive='1' and userid= ? and Package_id= ? and IL_id= ?*/
+				select sum(a.cnt) from (
+                    select count(*) as cnt from minidwcs_package_source_mapping where isActive='1' and Package_id= ? 
+                    and IL_id= ? and DL_id= ? and isWebService=0 
+					union 
+                    select count(*) as cnt from minidwcs_package_source_mapping as il_map
+                    inner join minidwcs_package_web_service_source_mapping iwsm on iwsm.il_connection_mapping_id= il_map.id
+                    inner join minidwcs_ws_connections_mst wcm on wcm.id = il_map.webservice_Id 
+                    inner join minidwcs_ws_client_mapping wtmp on wcm.ws_template_id = wtmp.ws_template_id and  client_id=?
+                    where il_map.isActive ='1' and wcm.isActive ='1' and il_map.isMapped = '1' 
+                    and Package_id= ? and il_map.IL_id= ? and il_map.DL_id= ?) a
+                    
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoWhenFilePreview">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   sfi.s3_bucket_id,
+				   il_map.il_source_name,
+				   il_map.storage_type,
+				   sfi.s3_file_path as filePath,
+				   sfi.encryption_required,
+				   il_map.source_file_info_id,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   il_map.isIncrementalUpdate,
+				   il_map.procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now, 
+                   il_map.is_historical_load,
+				   il_map.isHavingParentTable,
+				   il_map.parent_table_name,
+				   il_map.isWebService,
+				   il_map.webservice_Id
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_source_file_info as sfi on sfi.id = il_map.source_file_info_id
+				where il_map.id=? and il_map.Package_id=? and il_map.isFlatFile = 1
+		]]>
+	</entry>
+	<entry key="disablePackage">
+		<![CDATA[
+				update minidwcs_package set isActive = 0 where package_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="updateClientScheduleStatus">
+		<![CDATA[
+				update minidw_schedule_current set client_schedular_status = ? where package_Id=? and client_schedular_status= ? 
+		]]>
+	</entry>
+	
+	
+	<entry key="updateIsScheduled">
+		<![CDATA[
+				update minidwcs_package set isScheduled = 0 where package_id = (select package_ID from minidwcs_package_schedule where recurrence_pattern <> 'runnow' and package_ID = ?) 
+		]]>
+	</entry>
+	
+	<entry key="updateIsScheduledToActive">
+		<![CDATA[
+				update minidwcs_package set isScheduled = 1 where package_id = (select package_ID from minidwcs_package_schedule where recurrence_pattern <> 'runnow' and package_ID = ?) 
+		]]>
+	</entry>
+	
+		<entry key="deleteILConnection">
+		<![CDATA[
+				DELETE FROM minidwcs_database_connections where connection_id = ?  and userid =? and isActive='1'
+		]]>
+	</entry>
+	  	<entry key="deleteIlConnectionMapping">
+		<![CDATA[
+				DELETE FROM minidwcs_package_source_mapping where connection_id = ? and isActive = '1' 
+		]]>
+	</entry>
+	<entry key="updateIlSource">
+		<![CDATA[
+				UPDATE minidwcs_package_source_mapping SET 
+				type_of_command=? ,
+				IL_query =? ,
+				max_date_query = ?,
+				Database_Name =? ,
+				modified_by=?,
+				modified_time=?,
+				isIncrementalUpdate=?
+				WHERE id=? and  isActive='1'
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoWhenDatabaseById">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.storage_type,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.max_date_query,
+				   il_map.Database_Name,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now,
+                   il_map.isIncrementalUpdate, 
+                   il_map.is_historical_load,
+                   il_map.isWebService, 
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.available_in_cloud, 
+				   con.connection_type, 
+				   db.id as dataBaseId, 
+				   db.name , 
+				   dc.id as connectorId,
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+				   con.server, 
+				   con.username, 
+				   con.password,
+				   con.db_variables 
+				   /* con.ssl_enable,
+				   con.ssl_trust_key_store_file_paths */
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				where il_map.isActive ='1' and il_map.isMapped = '1' and il_map.id = ? and il_map.Package_id= ?   
+		]]>
+	</entry>
+	
+<entry key="getILConnectionMappingInfoWhenDatabaseByIdNull">
+		<![CDATA[
+			select il_map.id,
+				   il_map.isFlatFile,
+				   il_map.fileType,
+				   il_map.filePath,
+				   il_map.delimeter,
+				   il_map.first_row_has_coloumn_names,
+				   il_map.type_of_command, 
+				   il_map.IL_query,
+				   il_map.Database_Name,
+				   procedure_parameters,
+				   il_map.IL_id,
+                   il_map.DL_id,
+                   il_map.Package_id,
+                   il_map.iL_job_status_for_run_now,
+                   il_map.isIncrementalUpdate, 
+                   il_map.isWebService,
+				   con.connection_id, 
+				   con.connection_name, 
+				   con.connection_type, 
+				   con.available_in_cloud,
+				   db.id as dataBaseId, 
+				   db.name , 
+				   dc.id as connectorId,
+				   dc.driver_name as driver_name,
+                   dc.protocal as protocal,
+                   dc.url_format as url_format,
+				   con.server, 
+				   con.username, 
+				   con.password 
+				from minidwcs_package_source_mapping as il_map
+				inner join minidwcs_database_connections as con on con.connection_id = il_map.connection_id
+				inner join minidwcm_database_connectors as db on db.id = con.DB_type_id
+				inner join minidwcm_database_types dc on dc.id = db.connector_id
+				where il_map.isActive ='1' and il_map.isMapped = '1' and il_map.Package_id is null and il_map.id = ? and il_map.userid = ?   
+		]]>
+	</entry>
+	<entry key="deleteCustomPackageDerivedTableInfo">
+		<![CDATA[
+				DELETE FROM minidwcs_custom_package_derived_tables where id = ? and target_table_id = ? and package_Id = ? 
+		]]>
+	</entry>
+	<entry key="deleteCustomPackageTargetTableInfo">
+		<![CDATA[
+				DELETE FROM minidwcs_custom_package_target_table_info where id = ? and package_Id = ?
+		]]>
+	</entry>
+	<entry key="deleteCustomTempTablesQuery">
+		<![CDATA[
+			delete from minidwcs_custom_package_target_table_query where clientId =? and packageId = ?
+		]]>	
+	</entry>
+	<entry key="getClientDLs">
+		<![CDATA[
+				select mst.*, map.isLocked from 
+					minidwcm_dl_info mst 
+				inner join
+					minidwcs_dl_client_mapping map
+				on mst.DL_id = map.dl_id
+				and map.client_id = ?
+				where mst.industry_id in (select id from minidwcm_verticals 
+				where id in(select vertical_id from minidwcs_verticals_client_mapping where client_id = ? and isActive = 1) 
+							and isActive = 1)
+				and mst.isActive = 1;
+		]]>
+	</entry>
+	<entry key="getKpiList">
+		<![CDATA[
+				select kpi_name from minidwcm_kpis mst
+				join minidwcm_kpis_dl_mapping map on mst.id = map.kpi_id
+				where  dl_id = ? and mst.isActive = 1;
+		]]>
+	</entry>
+	<entry key="saveTargetTableAliasNames">
+		<![CDATA[
+			    INSERT INTO minidwcs_custom_package_target_table_alias_names( 
+				table_id,
+				original_columnname,
+				alias_columnname,
+				created_by,
+				created_time )
+				VALUES(?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="targetTableAliasColumns">
+		<![CDATA[
+			  SELECT 
+			  original_columnname ,
+			  alias_columnname
+			  FROM minidwcs_custom_package_target_table_alias_names where table_id = ? and isActive='1'
+		]]>
+	</entry>
+	
+	
+	<entry key="getIlConnectionMappingInfoByPackageId">
+		<![CDATA[
+			select
+			psm.id,
+			psm.userid,
+			psm.Package_id,
+			psm.isFlatFile,
+			psm.isDLMapped,
+			psm.isMapped,
+			sfi.file_type,
+			sfi.delimeter,
+			sfi.source_file_info_id,
+			sfi.file_path,
+			psm.first_row_has_coloumn_names,
+			psm.isHavingParentTable,
+			psm.connection_id,
+			psm.type_of_command,
+			psm.IL_query,
+			psm.Database_Name,
+			psm.procedure_parameters,
+			psm.Database_id,
+			psm.created_by,
+			sil.encryption_required
+			FROM
+			minidwcs_package_source_mapping psm
+			INNER JOIN minidwcs_custom_package_flat_file_headers_info sfi ON psm.source_file_info_id = sfi.source_file_info_id
+			INNER JOIN minidwcs_source_file_info sil ON psm.source_file_info_id = sil.id
+			WHERE psm.userid = ? AND psm.package_id = ? and isFlatFile = 1
+		]]>
+	</entry>
+	<entry key="getIlConnectionMappingInfoByPackageIdWhenDb">
+		<![CDATA[
+			select * from minidwcs_package_source_mapping   WHERE  userid = ? AND  package_id = ? and isFlatFile = 0
+		]]>
+	</entry>
+	<entry key="derivedTableMappingInfo">
+		<![CDATA[
+			 select parent_table_name from minidwcs_package_source_mapping where userid=? and package_id=? and isActive='1' and isHavingParentTable='1'
+		]]>
+	</entry>
+	<entry key="updatePackageIsClientDbTablesStatus">
+		<![CDATA[
+			update minidwcs_package set isClientDbTables = ? where isActive = '1' and package_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="getMaxFileSize">
+		<![CDATA[
+	          SELECT 
+	          max_file_size_in_mb 
+	          FROM  minidwcs_file_settings where IsActive = '1' 
+		]]>
+	</entry>
+	<entry key="getMaxFileSizeForTrialUser">
+		<![CDATA[
+	          SELECT 
+	          trail_user_max_file_size_in_mb 
+	          FROM  minidwcs_file_settings where IsActive = '1' 
+		]]>
+	</entry>
+	<entry key="getConnectorId">
+		<![CDATA[
+	          select dc.id  
+	          from  minidwcm_database_connectors db
+	          inner join minidwcm_database_types dc on dc.id = db.connector_id
+	          where db.isActive = '1' and db.id = ?
+		]]>
+	</entry>
+	
+	<entry key="getDbIdDriverNameAndProtocal">
+		<![CDATA[
+	          select dc.id,
+	          dc.driver_name as driver_name,
+              dc.protocal as protocal
+	          from  minidwcm_database_connectors db
+	          inner join minidwcm_database_types dc on dc.id = db.connector_id
+	          where db.isActive = '1' and db.id = ?
+		]]>
+	</entry>
+	
+	<entry key="getTargetTableQuery">
+		<![CDATA[
+	        SELECT 
+	        temp_query
+            FROM minidwcs_custom_package_target_table_query 
+            where clientId = ? and  packageId = ?
+		]]>
+	</entry>
+	<entry key="updateTargetTableQuery">
+		<![CDATA[
+		
+			UPDATE minidwcs_custom_package_target_table_query set temp_query = ?
+            where clientId = ? and  packageId = ?
+		]]>
+	</entry>
+	<entry key="getILDefaultIncrementalQuery">
+		<![CDATA[
+	          select il_incremental_update_query 
+	          from  minidwcm_il_prebuild_queries_mapping
+	          where isActive = '1' and il_id = ? and database_type_id = ?
+		]]>
+	</entry>
+	<entry key="getDatesForHistoricalLoad">
+		<![CDATA[
+	          select is_historical_load, historical_from_date, historical_to_date, historical_load_interval, historical_last_updated_time from minidwcs_package_source_mapping where id = ?  and is_historical_load = 1;
+		]]>
+	</entry>
+	<entry key="getDatesForHistoricalLoading">
+		<![CDATA[
+	          select from_date, to_date, historical_interval, histrorical_updated_date from minidwcs_il_historical_load where id = ? ;
+		]]>
+	</entry>
+	<entry key="updateIlHistoryStatus">
+		<![CDATA[
+	          INSERT INTO `minidwcs_il_historical_load_status`
+				( `historical_load_id`, `from_date`, `to_date`, `start_date`, `end_date`, `load_interval`, `last_updated_date`,
+				`s3_file_path`, `file_size`, `source_records_count`, `il_execution_status`, `created_by`, `created_time`, `comment`, `storage_type`)
+				VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+		]]>
+	</entry>
+	<entry key="updateHistoricalUpdatedTime">
+		<![CDATA[
+	          update minidwcs_il_historical_load set histrorical_updated_date=? where id = ? ;
+		]]>
+	</entry>
+	<entry key="getAnalyticalDLs">
+		<![CDATA[
+	          select * 
+	          from  minidwcm_dl_analytical_info
+	          where isActive = '1' and DL_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="activateUserPackage">
+		<![CDATA[
+			update minidwcs_package set isActive=1 where user_id = ? and package_id = ?
+		]]>
+	</entry>
+	
+	<entry key="deleteUserPackage">
+		<![CDATA[
+			delete from minidwcs_package where user_id = ? and package_id = ? 
+		]]>
+	</entry>
+	
+	<entry key="renameUserPackage">
+		<![CDATA[
+			update minidwcs_package set package_name=? where isActive=0 and user_id = ? and package_id = ?
+		]]>
+	</entry>
+	<entry key="updateDatabaseConnection">
+		<![CDATA[
+			update minidwcs_database_connections set 
+			connection_name=?,
+			connection_type=?,
+			server=?,
+			username=?,
+			password=?,
+			date_format=?,
+			time_zone=?,
+			available_in_cloud=?,
+			modified_by=?,
+			modified_time=?,
+			data_source_name=?,
+			/* ssl_enable = ? , */
+			db_variables = ?
+			 where connection_id=? and userid=? 
+		]]>
+	</entry>
+	<entry key="getClientILsandDLs">
+		<![CDATA[
+			select distinct dl_table_name as tbl_name from minidwcm_dl_info union
+			select distinct il_table_name as tbl_name from minidwcm_il_info;
+		]]>
+	</entry>
+	<entry key="getPackagesByILConnectionId">
+		<![CDATA[
+			 SELECT 
+			 ilm.Package_id,
+			 p.isStandard, 
+			 p.industry_id,
+			 p.files_having_same_columns
+			 FROM minidwcs_package_source_mapping ilm
+			 inner join minidwcs_package p on p.package_id = ilm.Package_id
+			 where ilm. connection_id =? and ilm.isActive = '1' 
+			 group by ilm.Package_id
+		]]>
+	</entry>
+	<entry key="getSourceCountByPackageId">
+		<![CDATA[
+			SELECT COUNT(*) AS rowcount FROM minidwcs_package_source_mapping where Package_id =? and isActive = '1'
+		]]>
+	</entry>
+  
+	
+	<entry key="getAllWebServices">
+		<![CDATA[
+			SELECT mst.id , mst.web_service_name FROM minidwcm_ws_template_mst mst 
+			inner join minidwcs_ws_client_mapping map on map.ws_template_id=mst.id
+			where mst.isActive = 1 and map.client_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getWebServicesByClientId">
+		<![CDATA[
+			SELECT ws.id, ws.web_service_name 
+            FROM minidw_webservice_client_mapping wsm
+            inner join minidw_web_service_api_master ws on ws.id= wsm.webservice_id
+            where wsm.client_id = ? and wsm.isActive ='1'
+		]]>
+	</entry>
+	<entry key="getDefaultILWebServiceMapping">
+		<![CDATA[
+			  SELECT                        
+				 wsmng.default_web_service_url,
+				 wsmng.is_Authentication_Required, 
+				 wsmst.authentication_method_type ,
+				 wsmst.authentication_request_params, 
+				 wsmst.authentication_url,
+				 wsmng.is_Cookie_Required, 
+				 wsmng.token_name,
+				 wsmng.response_object_name,
+				 wsmng.web_service_method_type, 
+				 wsmng.header_details,
+				 wsmng.web_service_path_params, 
+				 wsmng.web_service_request_body_params,
+				 wsmng.api_name,
+				 wsmng.default_web_service_sub_url,
+				 wsmng.web_service_sub_url_param,
+				 wsmng.response_column_object_name,
+				 wsmng.user_token_name,
+				 wsmng.web_service_id
+				 FROM  minidw_web_service_api_mapping wsmng
+                 inner join   minidw_web_service_api_master wsmst on wsmng.web_service_id = wsmst.id 
+				 where wsmng.web_service_id = ? and wsmng.il_id = ?
+		]]>
+	</entry> 
+	
+  	
+  	<entry key="getDbSchemaVaribles">
+		<![CDATA[
+			 SELECT database_variable , schema_variable FROM  minidwm_database_schema_variables where database_connector_id = ? and isActive ='1'
+		]]>
+	</entry>
+  	
+	 
+ 
+	 <entry key="logError">
+		<![CDATA[
+			     INSERT INTO `minidwcm_error_logs`
+				(`error_code`,
+				`error_message`,
+				`error_body`,
+				`requested_service`,
+				`received_parameters`,
+				`user_id`,
+				`client_details`) VALUES ( ?, ?, ?, ?, ?, ?, ?);
+		]]>
+	</entry>
+	<entry key="saveILMappingHeadersForWebService">
+		<![CDATA[
+			   insert into minidw_webservice_iL_headers_mapping (
+			   user_id,
+			   package_Id,
+			   dL_Id,
+			   iL_Id,
+			   mapped_headers) values(?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getILMappingHeadersForWebService">
+		<![CDATA[
+			  select mapped_headers from minidw_webservice_iL_headers_mapping where package_Id = ? and dL_Id = ? and iL_Id = ? and isActive = ?
+		]]>
+	</entry>
+	<entry key="getILConnectionMappingInfoWhenWebService">
+		<![CDATA[
+			        select
+			        il_map.id ,
+			   	 	il_map.isWebService,
+			   	 	il_map.il_source_name,
+			   	 	il_map.s3_bucket_id,
+			   	 	il_map.Package_id,
+			   	 	il_map.webservice_Id, 
+			   	    il_map.storage_type,
+			   	    il_map.isActive,
+			   	    il_map.userid,
+			   	 	il_map.webservice_mapping_headers,
+			   	 	il_map.IL_id,
+			   	 	il_map.DL_id,
+			   	 	il_map.is_join_web_service,
+			   	 	il_map.IL_query,
+			   	 	il_map.IL_query,
+			   	 	il_map.web_service_join_urls,
+			   	 	iwsm.web_service_url as api_url,
+			   	 	il_map.webservice_Id,
+			   	 	il_map.isFlatFile,
+			   	 	il_map.fileType,
+			   	 	group_concat(iwsm.web_service_api_name) as api_name,
+                    wtm.web_service_name
+			        from minidwcs_package_source_mapping as il_map
+                    inner join minidwcs_package_web_service_source_mapping iwsm on iwsm.il_connection_mapping_id= il_map.id
+			        inner join minidwcs_ws_connections_mst wcm on wcm.id = il_map.webservice_Id 
+                    inner join minidwcm_ws_template_mst wtm on wtm.id = wcm.ws_template_id
+                    inner join minidwcs_ws_client_mapping wtmp on wtm.id = wtmp.ws_template_id and  client_id=?
+			        where wcm.isActive ='1' and il_map.isMapped = '1' and 
+                    il_map.Package_id= ? and il_map.isWebService = '1' group by il_map.id;
+			  
+		]]>
+	</entry>
+	
+	<entry key="getILConnectionMappingInfoWhenWebServiceByMappingId">
+		<![CDATA[
+			        select
+			        il_map.id ,
+			   	 	il_map.isWebService,
+			   	 	il_map.il_source_name,
+			   	 	il_map.s3_bucket_id,
+			   	 	il_map.Package_id,
+			   	 	il_map.webservice_Id, 
+			   	    il_map.storage_type,
+			   	 	il_map.webservice_mapping_headers,
+			   	 	il_map.IL_id,
+			   	 	il_map.DL_id,
+			   	 	il_map.is_join_web_service,
+			   	 	il_map.IL_query,
+			   	 	il_map.IL_query,
+			   	 	il_map.web_service_join_urls,
+			   	 	iwsm.web_service_url as api_url,
+			   	 	il_map.webservice_Id,
+			   	 	il_map.isFlatFile,
+			   	 	il_map.fileType,
+			   	 	group_concat(iwsm.web_service_api_name) as api_name,
+                    wtm.web_service_name
+			        from minidwcs_package_source_mapping as il_map
+                    inner join minidwcs_package_web_service_source_mapping iwsm on iwsm.il_connection_mapping_id= il_map.id
+			        inner join minidwcs_ws_connections_mst wcm on wcm.id = il_map.webservice_Id 
+                    inner join minidwcm_ws_template_mst wtm on wtm.id = wcm.ws_template_id
+                    inner join minidwcs_ws_client_mapping wtmp on wtm.id = wtmp.ws_template_id 
+			        where il_map.isActive ='1' and wcm.isActive ='1' and il_map.isMapped = '1' and 
+                    il_map.id = ? and  il_map.Package_id= ? and il_map.isWebService = '1' group by il_map.id;
+			  
+		]]>
+	</entry>
+	
+	<entry key="getWebServiceById">
+		<![CDATA[
+			  SELECT web_service_name FROM minidw_web_service_api_master where id = ? and isActive ='1'
+		]]>
+	</entry>
+	<entry key="getDependentPackagesForScheduling">
+		<![CDATA[
+			select 	il_con.id connection_mapping_id, 
+					il_con.Package_id, 
+					il_con.isHavingParentTable, 
+					il_con.parent_table_name,
+					pkg.industry_id,
+					ps.id schedule_id				
+					from 
+					minidwcs_package_source_mapping il_con 
+					inner join 
+					minidwcs_package pkg
+					on 
+					il_con.Package_id = pkg.package_id
+					inner join
+					minidwcs_package_schedule ps
+					on 
+					pkg.package_id = ps.package_ID
+					where 
+					pkg.isActive = 1 and pkg.isStandard = 0 and pkg.isScheduled=1 and recurrence_pattern='runnow' and il_con.userid = ? and il_con.parent_table_name in ({tableNames}) 
+					group by il_con.Package_id;
+		]]>
+	</entry>
+	<entry key="updateMappedHeadersForWebservice">
+		<![CDATA[
+			 UPDATE  minidwcs_package_source_mapping SET webservice_mapping_headers = ? ,IL_query = ?, modified_by = ? , modified_time = ? WHERE Package_id = ? AND DL_id = ? AND IL_id = ? AND id = ? AND isActive = '1'
+		]]>
+	</entry>
+	<entry key="getMappedHeadersForWebservice">
+		<![CDATA[
+			 SELECT webservice_mapping_headers FROM minidwcs_package_source_mapping WHERE IL_id = ? AND id = ? AND webservice_Id = ? 
+		]]>
+	</entry>
+	
+	<entry key="getDerivedTableQuery">
+		<![CDATA[
+	        SELECT 
+	        custom_target_table_query
+	        FROM  minidwcs_custom_package_derived_tables
+	        where client_Id = ? and package_Id = ? and target_table_name = ? and target_table_id = ? and id = ? and isActive = '1'
+		]]>
+	</entry>
+	<entry key="getILHistoricalLoadQuery">
+		<![CDATA[
+	          select historical_load as historical_load_query 
+	          from  minidwcm_il_prebuild_queries_mapping
+	          where isActive = '1' and il_id = ? and database_type_id = ?
+		]]>
+	</entry>
+	<entry key="getDefaultILWebServiceMappingForExactOnline">
+		<![CDATA[
+			            select api.is_Authentication_Required, 
+                        api.authentication_method_type as authentication_method_type,
+		        		api.authentication_url as authentication_url , 
+						api.is_Cookie_Required as is_Cookie_Required,
+		        		api.token_name as token_name,
+		        		api.response_object_name as response_object_name,
+		        		api.default_web_service_url as default_web_service_url ,
+		        		api.web_service_method_type as web_service_method_type,
+		        		api.header_details as header_details ,
+		        		api.api_name as api_name,
+		        		api.default_web_service_sub_url as default_web_service_sub_url ,
+		        		api.web_service_sub_url_param as web_service_sub_url_param,
+		        		api.response_column_object_name as response_column_object_name,
+		        		oauth2.access_token_url as access_token_url,
+		        		oauth2.authentication_type as authentication_type ,
+		        		oauth2.client_identifier as client_identifier,
+		        		oauth2.client_secret as client_secret,
+		        		oauth2.grant_type as grant_type, 
+		        		oauth2.redirect_uri as redirect_uri,
+		        		oauth2.response_type as response_type ,
+		        		oauth2.scope as scope,
+		        		oauth2.state  as state
+				        from minidw_web_service_api_oauth2 oauth2 
+                        inner join 
+                        minidw_web_service_api_mapping api
+						on oauth2.web_service_id = api.web_service_id    
+                        where  api.web_service_id = ? and api.il_id = ?
+		]]>
+	</entry>
+	<entry key="getAuthenticationTypes">
+		<![CDATA[
+			SELECT id , authentication_type FROM  minidw_web_service_api_authentication_types where isActive = '1'
+		]]>
+	</entry>
+	<entry key="updateAuthenticationCodeForExactOnline">
+		<![CDATA[
+			update minidw_web_service_api_authentication_types set authentication_code = ? , created_by = ? , created_time = ? where authentication_type = ?  and isActive = '1'    
+		]]>
+	</entry>
+	<entry key="getAuthCode">
+		<![CDATA[
+			SELECT authentication_code FROM  minidw_web_service_api_authentication_types where authentication_type = ? and isActive = '1'
+		]]>
+	</entry>
+	<entry key="updateAuthenticationTokenForExactOnline">
+		<![CDATA[
+			update minidwcm_ws_authentication_types set authentication_token = ? , authentication_refresh_token= ? ,created_by = ? , created_time = ? where authentication_type = ?  and isActive = '1'    
+		]]>
+	</entry>
+	<entry key="getAuthToken">
+		<![CDATA[
+			SELECT authentication_token ,authentication_refresh_token FROM  minidwcm_ws_authentication_types where authentication_type = ? and isActive = '1'
+		]]>
+	</entry>
+		<entry key="saveHistoricalLoad">
+		<![CDATA[
+			   insert into minidwcs_il_historical_load (
+			   client_id, 
+			   il_id, 
+			   connector_id,
+			   historical_query, 
+			   from_date,
+			   to_date,
+			   historical_interval,
+			   multipart_enabled,
+			   no_of_records_per_file,
+			   created_by, 
+			   created_time,data_souce_name) values(?,?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getHistoricalLoad">
+		<![CDATA[
+			    SELECT hl.id ,
+				hl.client_id ,
+				hl.il_id,
+                il_con.connection_name,
+				hl.from_date,
+				hl.to_date,
+				hl.historical_interval,
+				hl.multipart_enabled,
+				hl.no_of_records_per_file,
+				hl.histrorical_updated_date,
+				hl.is_running,
+				hl.isExecuted,
+				il.IL_name
+				from minidwcs_il_historical_load hl 
+				inner join minidwcm_il_info il on hl.il_id = il.IL_id 
+                inner join minidwcs_database_connections il_con on il_con.connection_id = hl.connector_id 
+                where client_id = ? ;
+		]]>
+	</entry>
+	 
+	<entry key="getHistoricalLoadDetailsById">
+		<![CDATA[
+			    SELECT hl.id ,
+				hl.client_id ,
+				hl.il_id,
+				hl.data_souce_name,
+				hl.connector_id,
+				hl.historical_query,
+                il_con.connection_name,
+				DATE_FORMAT(hl.from_date,'%Y-%m-%d') as from_date,
+				DATE_FORMAT(hl.to_date,'%Y-%m-%d') as to_date,
+				hl.historical_interval,
+				hl.multipart_enabled,
+				hl.no_of_records_per_file,
+				hl.histrorical_updated_date,
+				hl.is_running,
+				hl.isExecuted,
+				il.IL_name
+				from minidwcs_il_historical_load hl 
+				inner join minidwcm_il_info il on hl.il_id = il.IL_id 
+                inner join minidwcs_database_connections il_con on il_con.connection_id = hl.connector_id 
+                where client_id = ? and hl.id = ?;
+		]]>
+	</entry>
+	
+	 
+	<entry key="getHistoricalLoadDetailsByIdWithConnectionDetails">
+		<![CDATA[
+			    SELECT hl.id ,
+				hl.client_id ,
+				hl.il_id,
+				hl.data_souce_name,
+				il_con.connection_id,
+                il_con.connection_name,
+				hl.from_date,
+				hl.to_date,
+				hl.historical_interval,
+				hl.multipart_enabled,
+				hl.no_of_records_per_file,
+				hl.histrorical_updated_date,
+				hl.is_running,
+				hl.isExecuted,
+				il.IL_name,
+                hl.historical_query,
+                il_con.connection_type,
+                il_con.server,
+                il_con.username,
+                il_con.password,
+				db.name as dbname,
+                db.id as dbid,
+                db.driver_name as driver_name,
+                db.protocal as protocal,
+                db.url_format as url_format,
+                con.name as  connector_name,
+                il_con.available_in_cloud
+				from minidwcs_il_historical_load hl 
+				inner join minidwcm_il_info il on hl.il_id = il.IL_id 
+                inner join minidwcs_database_connections il_con on il_con.connection_id = hl.connector_id 
+                inner join minidwcm_database_connectors con on il_con.DB_type_id = con.id
+                inner join  minidwcm_database_types db on con.connector_id = db.id 
+                where client_id = ? and hl.id = ?;
+		]]>
+	</entry>
+	<entry key="updateHistoricalLoad">
+		<![CDATA[
+	          update minidwcs_il_historical_load set 
+	          client_id=? ,
+	          il_id = ?,
+	          connector_id = ?, 
+	          historical_query = ?, 
+	          from_date = ?, 
+	          to_date = ?, 
+	          historical_interval = ?, 
+	          multipart_enabled = ?,
+	          no_of_records_per_file = ?,
+	          modified_by = ?, 
+	          modified_time = ?,
+	          data_souce_name = ? 
+	          where
+	          id = ? and isActive = 1
+		]]>
+	</entry>
+	
+	<entry key="getHistoricalLoadUploadStatus">
+		<![CDATA[
+			 SELECT *  FROM  minidwcs_il_historical_load_status   where  historical_load_id = ? 
+	  ]]>
+	</entry>
+	<entry key="updateIlConnectionWebServiceMapping">
+		<![CDATA[
+		  update minidwcs_package_web_service_source_mapping set il_connection_mapping_id = ? ,modified_by = ? ,modified_time = ? where il_id = ? and userid = ? and packageId = ? and id in ({wsIds})
+	  ]]>
+	</entry>
+	<entry key="getMappedQueryForWebserviceJoin">
+		<![CDATA[
+			 SELECT IL_query FROM minidwcs_package_source_mapping WHERE IL_id = ? AND id = ? AND webservice_Id = ? AND isActive = '1'
+		]]>
+	</entry>
+		<entry key="getTempTablesAndWebServiceJoinUrls">
+		<![CDATA[
+			  SELECT * FROM  minidwcs_package_web_service_source_mapping where  userid = ? and packageId = ? and il_id = ? and il_connection_mapping_id = ? 
+		]]>
+	</entry> 
+	
+	<entry key="getTempTablebyWebserviceConnectionId">
+	  <![CDATA[
+	    select * from minidwcs_package_web_service_source_mapping where id = ?;
+	  ]]>
+	</entry>
+	
+	 <entry key="getWebServiceMasterById">
+		<![CDATA[
+			  SELECT * FROM minidw_web_service_api_master where id = ? and isActive ='1'
+		]]>
+	</entry>
+	  <entry key="updateWsApiIlConnectionWebServiceMapping">
+		<![CDATA[
+			     INSERT INTO  minidwcs_package_web_service_source_mapping 
+				    ( 
+				     packageId,
+					 userid, 
+					 il_id, 
+					 il_connection_mapping_id, 
+					 web_service_url, 
+                     base_url_required,
+					 web_service_method_type,
+					 web_service_api_name,
+					 web_service_response_object_name, 
+					 response_column_object_name,
+					 api_path_params ,
+					 api_request_params,
+					 api_body_params,
+					 pagination_required,
+					 pagination_type,
+					 pagination_request_params,
+					 incremental_update,
+					 soap_body_element,
+					 incremental_update_params,
+					 created_by, 
+					 created_time)
+				 VALUES ( ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	 <entry key="getIlConnectionWebServiceMapping">
+		<![CDATA[
+			    select * from minidwcs_package_web_service_source_mapping  where  userid = ? and packageId = ? and il_id = ? and il_connection_mapping_id = ? 
+		]]>
+	</entry>
+	<entry key="getILIncrementalUpdateDate">
+		<![CDATA[
+			    select inc_date_from_source from mw_inc_update where il_id = ? and data_source_id = ? and type_of_source = ? and package_source_mapping_id = ?; 
+		]]>
+	</entry>
+	
+	<entry key="getClientUserDeatils">
+		<![CDATA[
+			    select distinct userId from user where client_id = ? 
+		]]>
+	</entry>
+	<!-- start sql injection preventions start -->
+	
+	<entry key="getJobResults">
+		<![CDATA[
+			    SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? and JOB_NAME NOT LIKE 'anv_temp_%' order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	
+	<entry key="getJobResultsByDate">
+		<![CDATA[
+			   SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ?  and JOB_NAME NOT LIKE 'anv_temp_%' and DATE_FORMAT(JOB_START_DATETIME,'%Y-%m-%d') between STR_TO_DATE(?, '%Y-%m-%d')  and STR_TO_DATE(?, '%Y-%m-%d') order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	<entry key="getJobErrorLogs">
+		<![CDATA[
+			   SELECT * FROM  ETL_JOB_ERROR_LOG where BATCH_ID = ? order by  'JOB_START_DATETIME'  desc limit 100
+		]]>
+	</entry>
+	<entry key="getILIncrementalDate">
+		<![CDATA[
+			   select SOURCE_UPD_DATETIME from  ETL_CNTRL where JOB_NAME = ? and DataSource_Id=?
+		]]>
+	</entry>
+	<entry key="getJobResultsForHistoricalLoad">
+		<![CDATA[
+			    SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? order by JOB_START_DATETIME desc 
+		]]>
+	</entry>
+	<entry key="getJobResultsForCurrencyLoad">
+		<![CDATA[
+			    SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? order by JOB_START_DATETIME desc 
+		]]>
+	</entry>
+	<entry key="getJobResultsForCurrencyLoadByDate">
+		<![CDATA[
+			   SELECT * FROM  ETL_JOB_LOAD_SMRY where BATCH_ID like ? and DATE_FORMAT(JOB_START_DATETIME,'%Y-%m-%d') between STR_TO_DATE(?, '%Y-%m-%d')  and STR_TO_DATE(?, '%Y-%m-%d') order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	<entry key="getJobResultsForHistoricalLoadByDate">
+		<![CDATA[
+			   SELECT * FROM ETL_JOB_LOAD_SMRY where BATCH_ID like ? and DATE_FORMAT(JOB_START_DATETIME,'%Y-%m-%d') between STR_TO_DATE(?, '%Y-%m-%d')  and STR_TO_DATE(?, '%Y-%m-%d') order by JOB_START_DATETIME desc
+		]]>
+	</entry>
+	
+	<entry key="getDataSourceList">
+		<![CDATA[
+				SELECT * FROM  minidwcs_client_data_sources where client_id = ? 
+		]]>
+	</entry>
+	
+	
+	<entry key="getClientIlsList">
+		<![CDATA[
+				select * from minidwcm_il_info where Il_id in (select distinct il_id from minidwcm_dl_il_mapping where dl_id in (select dl_id from minidwcs_dl_client_mapping where client_id = ?)) and isActive=1
+		]]>
+	</entry>
+	
+	<entry key="createDataSourceList">
+		<![CDATA[
+			insert into minidwcs_client_data_sources(client_id,datasource_name,datasource_from,created_by,created_time)values(?,?,?,?,?);  
+		]]>
+	</entry>
+	
+	<entry key="updateDataSourceDetails">
+		<![CDATA[
+		  update minidwcs_package_source_mapping set il_source_name = ?  where id = ? and Package_id=?
+	  ]]>
+	</entry>
+	
+	<entry key="updateWsDataSourceDetails">
+		<![CDATA[
+		  update minidwcs_package_web_service_source_mapping set web_service_url = ?  where il_connection_mapping_id = ? and packageId = ?
+	  ]]>
+	</entry>
+	
+	<entry key="updateWsJoinDataSourceDetails">
+		<![CDATA[
+		  update minidwcs_package_web_service_source_mapping set web_service_url = ?  where il_connection_mapping_id = ? and packageId = ? and id = ?
+	  ]]>
+	</entry>
+	
+	<entry key="getWsSourceMappingIdsByMappingId">
+		<![CDATA[
+		 select procedure_parameters from minidwcs_package_source_mapping  where id = ? and Package_id = ? 
+	  ]]>
+	</entry>
+	
+	<entry key="updateWsJoinUrlAtPackageSourceMapping">
+		<![CDATA[
+		  update minidwcs_package_source_mapping set web_service_join_urls = ?  where id = ? and Package_id = ?
+	  ]]>
+	</entry>
+	
+	
+	<entry key="getScheduleStartTime">
+		<![CDATA[
+		select schedule_start_date_time,group_concat(client_schedular_status) as client_schedular_status, group_concat(server_schedular_status) as server_schedular_status,count(*) as count from minidw_schedule_current where package_Id = ?  and dL_Id is null  
+		group by schedule_start_date_time
+	  ]]>
+	</entry>
+	
+	<entry key="getScheduleDetails">
+		<![CDATA[
+		select ss.id as schedulerid,ifnull(dl.DL_name,'-') as DL_name, ifnull(il.IL_name,'-') IL_name,
+		ss.client_schedular_status,ifnull(ss.client_scheduler_status_details,'-') as  client_scheduler_status_details,
+		ss.server_schedular_status,ifnull(ss.server_scheduler_status_details,'-') as  server_scheduler_status_details from minidw_schedule_current ss 
+		inner join minidwcs_package_source_mapping map on map.id=ss.iL_connection_mapping_seq_id
+		left join minidwcm_il_info il on il.IL_id=map.Il_id
+		left join minidwcm_dl_info dl on dl.DL_id=map.Dl_id
+		where ss.package_Id = ? and ss.dL_Id is null and ss.schedule_start_date_time=?
+	  ]]>
+	</entry>
+	
+	<!-- end sql injection preventions start -->
+	
+	<entry key="getDDlayoutTablesList">
+		<![CDATA[
+		  SELECT * FROM  minidwcs_ddls where client_id = ? 
+	  ]]>
+	 </entry>
+	 	<entry key="getDDlayoutTable">
+		<![CDATA[
+		  SELECT * FROM  minidwcs_ddls where id = ? and client_id = ? 
+	  ]]>
+	 </entry>
+	 	<entry key="updateDDlayoutTable">
+		<![CDATA[
+		  update minidwcs_ddls set select_query = ? ,modified_by = ? , modified_time = ?  where id = ?  and client_id = ? and userid = ?
+	  ]]>
+	 </entry>
+	   <entry key="updatePackageExecutorSourceMappingInfo">
+		<![CDATA[
+			insert into minidwcs_package_execution_source_mapping_info(
+						execution_id,
+						il_con_mapping_id,
+						source_file_info_id,
+			            incremental_update,
+                        incremental_date,
+						upload_status,
+						upload_comments,
+						execution_status,
+						execution_comments,
+						created_by,
+						created_time)
+					    values (?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	 
+	 
+	  <entry key="updateSourceFileInfo">
+		<![CDATA[
+			insert into minidwcs_source_file_info(
+		            	multi_part_enabled,
+		            	storage_type,
+						s3_bucket_id,
+						s3_file_path,
+						fileType,
+						delimeter,
+						created_by,
+						created_time,
+						row_count,
+						file_size,
+						encryption_required) values (?,?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getPackageExecutorSourceMappingInfo">
+		<![CDATA[
+		    select 
+		    pe.dl_id,
+		    pe.execution_id,
+		    pem.id as execution_mapping_id,
+		    pe.time_zone, 
+		    msm.IL_id
+		    from minidwcs_package_execution pe 
+			inner join minidwcs_package_execution_source_mapping_info pem on pem.execution_id=pe.execution_id
+			inner join minidwcs_package_source_mapping msm on msm.id = pem.il_con_mapping_id
+			where pe.upload_status='COMPLETED' and pem.source_file_info_id is not null and pe.execution_id = ? 
+		]]>
+	</entry>
+	
+		    <!-- select mpe.package_id,mp.package_name,mp.isStandard,execution_id,mps.id as schedule_id, mp.user_id,concat(u.firstname,' ',u.lastname) as username,mpe.upload_start_date,mpe.last_uploaded_date from minidwcs_package_execution mpe
+			inner join minidwcs_package mp on mp.package_id= mpe.package_id
+            inner join minidwcs_package_schedule mps on mps.package_ID= mpe.package_id
+            inner join user u on mp.user_id=u.id
+			where mp.isActive=1 and upload_status='COMPLETED' and execution_status is null and initiated_from='schedule'  order by mpe.execution_id ; -->
+	
+	<entry key="getScheduledPackagesForExecution">
+		<![CDATA[
+			select mpe.package_id,mpe.dl_id,mp.package_name,mp.isStandard,execution_id,upload_status,
+			run_type,initiated_from,mps.id as schedule_id, mps.user_id,mpe.upload_start_date,mpe.last_uploaded_date,mpe.ddl_to_run 
+			from minidwcs_package_execution mpe
+			inner join minidwcs_package mp on mp.package_id= mpe.package_id
+            inner join minidwcs_package_schedule mps on mps.package_ID= mpe.package_id and mps.dl_id = mpe.dl_id
+			where mp.isActive=1 and (upload_status='COMPLETED' or upload_status='IGNORED') and execution_status is null 
+            and (initiated_from='schedule' or initiated_from='runwithscheduler')  order by mpe.execution_id ;
+		]]>
+	</entry>
+	
+	
+	<entry key="getIlConnectionMappingByPackageExecutorSourceMappingInfo">
+		<![CDATA[
+		    select pe.package_id,
+		    pem.il_con_mapping_id,
+		    pem.id as execution_mapping_id,
+		    pe.execution_id,
+		    icm.IL_id,
+		    icm.DL_id,
+		    pem.source_file_info_id,
+		    smi.multi_part_enabled,
+		    smi.storage_type,
+		    smi.s3_bucket_id, 
+		    smi.s3_file_path,
+		    smi.fileType, 
+		    smi.delimeter,
+		    smi.encryption_required,
+		    icm.il_source_name,
+		    pem.incremental_update,
+		    pem.incremental_date
+			from minidwcs_package_execution pe 
+			inner join minidwcs_package_execution_source_mapping_info pem on pem.execution_id=pe.execution_id
+			inner join minidwcs_package_source_mapping icm on icm.id=pem.il_con_mapping_id
+			inner join minidwcs_source_file_info smi on smi.id=pem.source_file_info_id
+			where pe.upload_status='COMPLETED' and
+			pem.execution_id = ? and pem.id = ?
+		]]>
+	</entry>
+	 
+	 <entry key="saveDDlTableInfo">
+		<![CDATA[
+			insert into minidwcs_ddls(
+						client_id,
+						userid,
+						table_name,
+						table_desc,
+						table_structure,
+						select_query,
+						ddl_tables,
+						modified_by,
+						modified_time)
+					    values (?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	 	<entry key="deleteDDlayoutTable">
+		<![CDATA[
+		 delete from minidwcs_ddls where id = ? and client_id = ? and userid = ?  and isActive = '1'
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getDDlayoutList">
+		<![CDATA[
+		 SELECT * FROM minidwcs_ddls where client_id = ? and ({tableNames})
+	  ]]>
+	 </entry>
+	  <entry key="updateDDlayoutTableAuditLogs">
+		<![CDATA[
+			insert into minidwcs_ddls_audit_logs(
+						client_id,
+						userid,
+						ddl_table_id,
+						records_count,
+						run_type,
+						select_qry,
+						ddl_sources,
+						error_messages,
+						created_by,
+						created_time)
+					    values (?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	  <entry key="getDDlayoutTableAuditLogs">
+		<![CDATA[
+		 SELECT * FROM minidwcs_ddls_audit_logs where client_id = ? and ddl_table_id = ? AND isActive = '1'
+	  ]]>
+	 </entry>
+	 <entry key="viewDDlTableSelectQry">
+		<![CDATA[
+		 SELECT * FROM minidwcs_ddls_audit_logs where client_id = ? and userid = ? and  id = ? AND isActive = '1'
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getScheduleDetails">
+		<![CDATA[
+		 select * from minidwcs_package_execution where package_id=?;
+	  ]]>
+	 </entry>
+	 	<entry key="getILConnectionMappingDlInfoByPackageId">
+		<![CDATA[
+			    select 
+				distinct all_map.DL_id as DL_id 
+			    from 
+				minidwcs_package_source_mapping all_map 
+                inner join minidwcm_dl_info dlnfo on dlnfo.DL_id = all_map.DL_id
+			    where 
+				all_map.package_id = ? and all_map.userid = ?
+		]]>
+	</entry>
+	
+		<entry key="getS3BucketInfoById">
+		<![CDATA[
+        select 
+        s3b.id,
+        s3b.aws_bucket_name , 
+        s3b.aws_access_key ,
+        s3b.aws_secret_key 
+        from minidwm_s3_bucket_info s3b join minidwm_s3_client_mapping s3cm 
+        on s3b.id = s3cm.s3_bucket_info_id 
+        where s3cm.client_id = ? and s3b.id = ?
+		]]>
+	</entry>
+		<entry key="getFileSettingsInfo">
+		<![CDATA[
+           SELECT * FROM  minidwcs_file_settings where IsActive = '1' 
+		]]>
+	</entry>
+	 
+	<entry key="getPackageSchedule">
+		<![CDATA[
+           SELECT * FROM  minidwcs_package_schedule where package_ID = ? and id = ? 
+		]]>
+	</entry>
+	
+	<entry key="getExecutionStatusComments">
+		<![CDATA[
+           SELECT execution_comments FROM  minidwcs_package_execution where execution_id = ?
+		]]>
+	</entry>
+		
+	<entry key="getUploadStatusComments">
+		<![CDATA[
+           SELECT upload_comments FROM  minidwcs_package_execution where execution_id = ?
+		]]>
+	</entry>
+	<entry key="getDruidStatusComments">
+		<![CDATA[
+           SELECT druid_comments FROM  minidwcs_package_execution where execution_id = ?
+		]]>
+	</entry>
+	<entry key="getUploadStatusAndExecutionStatusComments">
+		<![CDATA[
+           SELECT concat(upload_comments,execution_comments)  as upload_and_execute  FROM  minidwcs_package_execution where execution_id = ?
+		]]>
+	</entry>
+	 	<entry key="getInProgressPackageExecutionList">
+		<![CDATA[
+            select * from minidwcs_package_execution where package_id= ? 
+            and 
+            (upload_status = 'INPROGRESS' 
+            or 
+            execution_status = 'INPROGRESS' 
+            or 
+            upload_status = 'STARTED' 
+            or 
+            execution_status = 'STARTED') 
+		]]>
+	</entry>
+	
+	  <entry key="updatePackageExecutionTargetTableInfo">
+		<![CDATA[
+             insert into minidwcs_package_execution_target_table_info(
+           	 execution_id,
+			 table_name,
+			 execution_status,
+			 execution_comments, 
+			 execution_start_date, 
+			 execution_end_date, 
+			 druid_execution_status,
+			 druid_execution_comments, 
+			 created_by, 
+			 created_time) 
+			 values (?,?,?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	<entry key="getPackageExecutionSourceMappingInfo">
+		<![CDATA[
+           SELECT * FROM  minidwcs_package_execution_source_mapping_info where execution_id = ?
+		]]>
+	</entry>
+	<entry key="getPackageExecutionTargetTableInfo">
+		<![CDATA[
+           SELECT * FROM  minidwcs_package_execution_target_table_info where execution_id = ?
+		]]>
+	</entry>
+	
+	<entry key="updateDatesForOnceRecurrence">
+		<![CDATA[
+           update minidwcs_package_schedule set 
+           schedule_start_date = ?,schedule_start_time = ?, end_date = ?,time_zone = ? where id = ? and 
+           recurrence_pattern = 'once'
+		]]>
+	</entry>
+	
+	<entry key="getClientJobExecutionParams">
+		<![CDATA[
+           SELECT * FROM  minidwcs_client_job_execution_params
+		]]>
+	</entry>
+	<entry key="getDlLoadType">
+		<![CDATA[
+       select 
+       case when count(*)>0 then true else false end as dl_load_type 
+       from minidwcs_package_execution_source_mapping_info
+       where incremental_update = 1 and execution_id = ?
+		]]>
+	</entry>
+	<entry key="getPackagewithoutUserId">
+		<![CDATA[
+			SELECT p.package_id, 
+				p.package_name, 
+				coalesce(i.id,0) as industryId, 
+				coalesce(i.name,'-') as industryName, 
+				p.isStandard, 
+				p.description,
+				p.isScheduled,
+				p.isMapped,
+				p.isAdvanced,
+				p.schedule_status,
+				p.files_having_same_columns,
+				p.modified_by,
+				p.isActive,
+				p.isClientDbTables,
+				p.trailing_months,
+				p.user_id
+				FROM minidwcs_package p
+				left join minidwcm_verticals i on i.id = p.industry_id
+				where p.isActive = '1' and p.package_id =?
+		]]>
+	</entry>
+	
+	<entry key="getDDlayoutListByClinetId">
+		<![CDATA[
+		 SELECT * FROM minidwcs_ddls where client_id = ? and ({tableNames})
+	  ]]>
+	 </entry>
+	 <entry key="getPackageExecutionInfo">
+		<![CDATA[
+		 select * from minidwcs_package_execution where package_id= ? and execution_id =? 
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getIncrementaLoads">
+		<![CDATA[
+       select count(*) as incrementalLoads from minidwcs_package_execution_source_mapping_info where incremental_update = 1 and execution_id = ?
+		]]>
+	</entry>
+	
+	<entry key="updateIsActiveStatusIlSource">
+		<![CDATA[
+			update minidwcs_package_source_mapping set isActive = ? where id = ? 
+		]]>
+	</entry>
+	
+	<entry key="saveApisDataInfo">
+		<![CDATA[
+             insert into minidwcs_data_apis(
+           	 apiname,
+			 endpoint_uri,
+			 api_description,
+			 method_type,
+			 api_query, 
+			 user_id, 
+			 created_by, 
+			 created_date 
+			 ) 
+			 values (?,?,?,?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="getApistDetailsById">
+		<![CDATA[
+		 select * from minidwcs_data_apis where id = ?;
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getApistDetailsByEndPointName">
+		<![CDATA[
+		 select * from minidwcs_data_apis where endpoint_uri = ?;
+	  ]]>
+	 </entry>
+	 
+	 <entry key="updateApisDataInfo">
+		<![CDATA[
+           update minidwcs_data_apis set 
+           apiname = ?,
+           endpoint_uri = ?, 
+           api_description = ?,
+           method_type = ?,
+           api_query = ?,
+           is_active = ?,
+           user_id = ?,
+           modified_by = ?,
+           modified_date = ?
+           where id = ? 
+
+		]]>
+	</entry>
+	
+	<entry key="getApisDetails">
+		<![CDATA[
+		 select * from minidwcs_data_apis;
+	  ]]>
+	 </entry>
+	 
+	 <entry key="getDDlayoutListById">
+		<![CDATA[
+		 SELECT * FROM minidwcs_ddls where client_id = ? and userid = ? and id in ({ddlIds});
+	  ]]>
+	 </entry>
+	 
+	 <entry key="deleteCustomFileHeaderInfoForDbMapping">
+		<![CDATA[
+			delete from minidwcs_custom_package_flat_file_headers_info where clientId = ? and packageId = ? and file_path = ?
+		]]>
+	</entry>
+	 
+	 <entry key="cloneHistoricalLoadDetailsById">
+		<![CDATA[
+			INSERT INTO `minidwcs_il_historical_load` ( `client_id`, `il_id`, `connector_id`, `historical_query`, `from_date`, `to_date`, `historical_interval`, `multipart_enabled`, `no_of_records_per_file`, `data_souce_name`, `created_by`, `created_time` )
+			select client_id,il_id,connector_id,historical_query,from_date,to_date,historical_interval,multipart_enabled,
+			no_of_records_per_file,data_souce_name,concat(created_by,'clone'), now() from minidwcs_il_historical_load where id = ? ;
+		]]>
+	</entry>
+	
+	
+	 <entry key="updatePackageName">
+		<![CDATA[
+			update minidwcs_package set package_name = ? where package_id = ?
+		]]>
+	</entry>
+	
+	<entry key="updatePackageAdvancedField">
+		<![CDATA[
+			UPDATE minidwcs_package set isAdvanced = ? where isActive = '1' and package_id =?
+		]]>
+	</entry>
+	
+	<entry key="getCustomFileTempTableMappingsByMappingId">
+		<![CDATA[
+			select id, packageId, clientId, temp_table_name from minidwcs_custom_package_temp_tables_mapping
+			where packageId = ? and clientId = ? and il_mapping_id = ?;
+		]]>
+	</entry>
+	<entry key="deleteCustomTempTableInfoByMappingId">
+		<![CDATA[
+			delete from minidwcs_custom_package_temp_tables_mapping where packageId=? and clientId = ?  and il_mapping_id = ?;
+		]]>
+	</entry>
+	
+	<entry key="getEltInitiateInfo">
+		<![CDATA[
+			SELECT * FROM minidwcs_elt_job_initiation_object where execution_id = ? ;
+		]]>
+	</entry>
+	
+	<entry key="getDataTypesList">
+		<![CDATA[
+			SELECT * FROM sqldatatypes order by datatypename asc;;
+		]]>
+	</entry>
+	<entry key="getPackageExecutionCount">
+		<![CDATA[
+			select count(*) from minidwcs_package_execution where package_id = ?;
+		]]>
+	</entry>
+	 <entry key="getPackageExecutionByPagination">
+		<![CDATA[
+		 select * from minidwcs_package_execution where package_id=? ORDER BY execution_id desc LIMIT ?  OFFSET ? ;
+	  ]]>
+	 </entry>
+	 <entry key="getSslFileNamesByConId">
+		<![CDATA[
+		 select file_name from minidwcs_db_con_ssl_auth_cert_files_info where con_id=? 
+	  ]]>
+	 </entry>
+	 
+</properties>

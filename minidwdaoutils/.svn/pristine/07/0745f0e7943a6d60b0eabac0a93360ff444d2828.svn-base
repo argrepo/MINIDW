@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="getEltJobTagList">
+		select * from minidwcm_elt_job_tags
+	</entry>
+
+	<entry key="getEltJobTagInfoById">
+		select * from minidwcm_elt_job_tags where tag_id = ?
+	</entry>
+
+	<entry key="addEltJobTagInfo">
+		insert into minidwcm_elt_job_tags
+		(tag_name, global_values, is_active, created_by, created_time) values (?, ?, ?, ?, ?);
+	</entry>
+
+	<entry key="updateEltJobTagInfo">
+		update minidwcm_elt_job_tags set tag_name = ?, global_values =?, is_active = ?, modified_by =
+		?, modified_time = ? where tag_id = ?;
+	</entry>
+	
+	<entry key="deleteEltJobTagInfo">
+		delete from minidwcm_elt_job_tags where tag_id = ?;
+	</entry>
+	
+	<entry key="getEltJobInfo">
+		SELECT 
+		m.id as mappingid,config_prop_tag,job_name,isactive,ct.tag_name as config_prop_tag_name
+		,values_prop_tag, vt.tag_name as values_prop_tag_name
+		,stats_prop_tag, st.tag_name as stats_prop_tag_name
+		FROM minidwcm_elt_job_tags_config_mapping m 
+		left join minidwcm_config_tags ct on ct.tag_id=m.config_prop_tag
+		left join minidwcm_config_tags vt on vt.tag_id=m.values_prop_tag
+		left join minidwcm_config_tags st on st.tag_id=m.stats_prop_tag
+		where m.job_tag_id = ? order by job_seq asc;
+	</entry>
+	
+	
+	<entry key="saveEltJobMappingInfo">
+		insert into minidwcm_elt_job_tags_config_mapping
+		(job_tag_id,job_name,job_seq,config_prop_tag,values_prop_tag,stats_prop_tag) values (?, ?, ?, ?, ?, ?);
+	</entry>
+	
+	<entry key="addDerivedComponentTags">
+		insert into minidwcm_elt_job_tags_config_derived_component_mapping
+		(job_mapping_id,derived_component_config_id) values (?, ?);
+	</entry>
+
+
+	<entry key="deleteDerivedByMappingId">
+		delete from minidwcm_elt_job_tags_config_derived_component_mapping where job_mapping_id = ?;
+	</entry>
+	
+	<entry key="updateEltJobMappingInfo">
+		update minidwcm_elt_job_tags_config_mapping set job_name = ? ,job_seq = ?, config_prop_tag =?, values_prop_tag = ?, stats_prop_tag = ?, isactive = ? where id = ?;
+	</entry>
+	
+	
+	<entry key="updateEltJobSequenceInfo">
+		update minidwcm_elt_job_tags_config_mapping set job_seq = ?  where id = ?
+	</entry>
+	
+	
+	<entry key="getEltJobDerivedMappingInfo">
+	select tag_id,tag_name from minidwcm_elt_job_tags_config_derived_component_mapping d 
+        inner join minidwcm_config_tags t on d.derived_component_config_id=t.tag_id
+        where job_mapping_id = ?  order by d.id
+    </entry>
+	
+</properties>

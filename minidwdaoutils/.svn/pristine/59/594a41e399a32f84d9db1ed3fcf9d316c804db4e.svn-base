@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+  <entry key="getValidationsById">
+     <![CDATA[
+        select dv.*,GROUP_CONCAT(dvdm.dl_id) as dl_ids, GROUP_CONCAT(md.DL_name,'\n') as dl_names, dvdm.il_id, il.IL_name, 
+           dv.database_connector_id, mdc.name as connector_name,dvt.validation_type_name as validationTypeName
+        from minidwcs_data_validation_script dv 
+        left join  minidwcm_data_validation_type dvt on dvt.validation_type_id = dv.validation_type_id
+		left join minidwcs_data_validation_script_dl_il_mapping dvdm on dvdm.script_id = dv.script_id 
+		left join minidwcm_dl_info md on md.DL_id = dvdm.dl_id 
+        left join minidwcm_il_info il on il.IL_id = dvdm.il_id
+        left join minidwcm_database_connectors mdc on mdc.id = dv.database_connector_id
+		where dv.validation_id = ? and dv.active = 1 group by dv.script_id ;
+     ]]>
+  </entry>
+   
+  <entry key="insertDataValidation">
+     <![CDATA[
+        insert into minidwcs_data_validation_script
+          (script_name, 
+           validation_script,
+           validation_id,
+           active,
+           created_by,
+           created_date,
+           modified_date,
+           modified_by,
+           database_connector_id,
+           validation_type_id,prepare_stmt)
+           values(?,?,?,?,?,?,?,?,?,?,?);
+     ]]>
+  </entry>
+  
+  <entry key="saveScriptDlMapping">
+     <![CDATA[
+       insert into minidwcs_data_validation_script_dl_il_mapping 
+           (script_id,
+            dl_id)  
+            values(?,?); 
+       ]]>
+  </entry>
+  
+  <entry key="getValidationScriptById">
+     <![CDATA[
+         select * from minidwcs_data_validation_script where script_id = ?
+       ]]>
+  </entry>
+  
+  <entry key="getDLInfoByValidationScriptId">
+     <![CDATA[
+       select * from minidwcs_data_validation_script_dl_il_mapping where script_id = ?
+       ]]>
+  </entry>
+  
+  <entry key="updateDataValidation">
+     <![CDATA[
+        update minidwcs_data_validation_script 
+        set script_name = ?, 
+        validation_script = ?, 
+        active = ? , 
+        modified_by =?, 
+        modified_date = ?, 
+        database_connector_id = ?,
+        validation_type_id = ?,
+        prepare_stmt = ?
+        where script_id = ?
+       ]]>
+  </entry>
+  
+   <entry key="deleteScriptDlILMapping">
+     <![CDATA[
+        delete from minidwcs_data_validation_script_dl_il_mapping where script_id = ?
+       ]]>
+  </entry>
+  
+  <entry key="getdvIntegration">
+   <![CDATA[
+      select * from minidwm_data_validation_integration;
+   ]]>
+  </entry>
+  
+  <entry key ="getdvJobResutls">
+   <![CDATA[
+      select * from ETL_JOB_LOAD_SMRY where BATCH_ID like ? and JOB_NAME not like 'anv_temp_%' order by JOB_START_DATETIME desc;
+   ]]>
+  </entry>
+  
+  <entry key="getdvErrorlogs">
+   <![CDATA[
+       select * from ETL_JOB_ERROR_LOG where BATCH_ID = ? order by ADDED_DATETIME desc;
+   ]]>
+  </entry>
+  
+  <entry key="saveScriptIlMapping">
+     <![CDATA[
+       insert into minidwcs_data_validation_script_dl_il_mapping 
+           (script_id,
+            il_id)  
+            values(?,?); 
+       ]]>
+  </entry>
+  
+  <entry key="getIlInfoByValidationScriptId">
+   <![CDATA[
+     select * from minidwcs_data_validation_script_dl_il_mapping where script_id = ?
+   ]]>
+  </entry>
+  
+	  <entry key="getValidationsByConnectionId">
+	   <![CDATA[
+			       select dv.script_id,
+					dv.validation_id,
+					dv.script_name,
+					dv.prepare_stmt,
+					dv.database_connector_id,
+					dv.validation_type_id,
+					dv.active,
+					dv.created_by,
+					dv.created_date,
+					dv.modified_by,
+					dv.modified_date,
+					il.il_id,
+					il.IL_name,
+					mdc.connection_id,
+					mdc.connection_name,
+					mdc.available_in_cloud,
+					db.url_format,
+					con.id,
+					con.name,
+					dvt.validation_type_id,
+					dvt.job_name as dvtjobname,
+					dvt.dependency_jars as dvtdependencyjars
+					from minidwcs_database_connections mdc 
+					inner join minidwcm_database_connectors con on mdc.DB_type_id=con.id
+					inner join minidwcs_data_validation_script dv on dv.database_connector_id = con.id
+					inner join minidwcm_database_types db on db.id=con.connector_id 
+					left join minidwcs_data_validation_script_dl_il_mapping dvdm on dvdm.script_id = dv.script_id 
+					left join minidwcm_il_info il on il.IL_id = dvdm.il_id
+					left join  minidwcm_data_validation_type dvt on dvt.validation_type_id = dv.validation_type_id
+					where mdc.connection_id = ? and con.isActive = 1 and dv.validation_id = ? and dv.active = 1; 
+	   ]]>
+	  </entry>
+  
+	  <entry key="validationScriptInfoByIds">
+	   <![CDATA[
+			
+			 select  dv.*,				  
+					   dvdm.il_id,
+	                   il.IL_name, 
+					   dv.database_connector_id, 
+					   mdc.name as connector_name, 
+					   mdc.connector_id,
+					   con.connection_id, 
+					   con.connection_name, 
+					   con.connection_type, 
+					   con.available_in_cloud,
+					   mdc.id as dataBaseId, 
+					   mdc.name ,
+					   dc.id as connectorId, 
+					   dc.driver_name as driver_name,
+	                   dc.protocal as protocal,
+	                   dc.url_format as url_format,
+					   con.server, 
+					   con.username, 
+					   con.password,
+					   mdvt.job_name as dvjobname,
+					   mdvt.dependency_jars as dvdependencyjars
+	        from minidwcs_data_validation_script dv 
+	        left join minidwcm_data_validation_type mdvt on dv.validation_type_id = mdvt.validation_type_id
+			left join minidwcs_data_validation_script_dl_il_mapping dvdm on dvdm.validation_mapping_id = dv.script_id 
+			left join minidwcm_dl_info md on md.DL_id = dvdm.dl_id 
+	        left join minidwcm_il_info il on il.IL_id = dvdm.il_id                
+	        left join minidwcm_database_connectors mdc on mdc.id = dv.database_connector_id
+            left join minidwcm_database_types dc on dc.id = mdc.connector_id	
+	        left join minidwcs_database_connections con on con.connection_id in (?)
+			where dv.script_id in (?) and dv.active = 1 group by dv.script_id;
+			
+	   ]]>
+	  </entry>
+  
+    <entry key="saveDataValidationContextParameters">
+		<![CDATA[
+			insert into minidwcm_context_parameters_data_validation_mapping(
+			param_id, 
+			validation_id,created_by,created_date) values(?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key = "deleteDataValidationContextParams">
+	    <![CDATA[
+	       delete from minidwcm_context_parameters_data_validation_mapping where validation_id = ?
+	    ]]>
+	</entry>
+	
+	<entry key="contextParamDataForDataValidations">
+	    <![CDATA[
+	        select param_id from minidwcm_context_parameters_data_validation_mapping where script_id = ?;
+	    ]]>
+	</entry>
+	
+	<entry key="getDataValidationContextParams">
+	  <![CDATA[
+	  		select mst.param_name, mst.paramval as param_value from minidwcm_context_parameters mst
+			left join minidwcm_context_parameters_data_validation_mapping mcdv 
+			on mst.param_id = mcdv.param_id
+			where mcdv.script_id = ? 
+			order by mst.param_id;
+	  ]]>
+	</entry>
+	
+	 <entry key="getDataValidationType">
+     <![CDATA[
+       select validation_type_id,validation_type_name from minidwcm_data_validation_type where validation_id = ?;
+       ]]>
+  </entry>
+  <entry key="getDataValidationTypeNameById">
+     <![CDATA[
+        select mdvt.validation_type_id,mdvt.validation_type_name,mdvt.validation_type_desc,mdvt.isActive,
+        mdvt.validation_id,mdvt.dependency_jars,mdvt.job_name,mdv.type_name as validationname 
+        from minidwcm_data_validation_type mdvt 
+        inner join minidwcm_data_validation mdv on mdvt.validation_id = mdv.id 
+    	where  mdvt.validation_type_id = ?
+       ]]>
+  </entry>
+  
+   <entry key="getDataValidationTypeContextParamsById">
+     <![CDATA[
+       select param_id from minidwcm_context_parameters where
+ 		param_id in(select param_id from minidwcm_context_parameters_data_validation_mapping 
+		 where validation_id = ?);
+       ]]>
+  </entry>
+  
+  <entry key="getDataValidationTypeJobsandDependencyJars">
+     <![CDATA[
+         select validation_type_id,job_name,dependency_jars from minidwcm_data_validation_type where validation_type_id = ?
+       ]]>
+  </entry>
+  <entry key = "getAllDataValidationTypes">
+	  <![CDATA[
+	    select validation_type_id,validation_type_name,validation_type_desc,isActive,mdv.type_name as validationname from minidwcm_data_validation_type mdvt
+	    inner join minidwcm_data_validation mdv on mdvt.validation_id = mdv.id;
+	  ]]>
+	</entry>
+	<entry key="insertDataValidationType">
+     <![CDATA[
+        insert into minidwcm_data_validation_type
+          (validation_type_name,
+           validation_type_desc,
+           isActive,validation_id,dependency_jars,job_name )
+           values(?,?,?,?,?,?);
+     ]]>
+  </entry>
+   <entry key="updateDataValidationType">
+     <![CDATA[
+        update minidwcm_data_validation_type 
+        set validation_type_name = ?, 
+        validation_type_desc = ?, 
+        isActive = ?,validation_id =?,dependency_jars = ?,job_name = ?
+        where validation_type_id = ?
+       ]]>
+  </entry>
+  
+   <entry key = "getDataValidation">
+	  <![CDATA[
+	    select id,type_name from minidwcm_data_validation;
+	  ]]>
+	</entry>
+	
+	<entry key="getContextParamNameAndValueById">
+		<![CDATA[
+		    select mst.param_name, mst.paramval  from minidwcm_context_parameters mst
+			left join minidwcm_context_parameters_data_validation_mapping mcdv 
+			on mst.param_id = mcdv.param_id
+			where mcdv.validation_id = ? 
+			order by mst.param_id;
+			 
+		]]>
+	</entry>	
+</properties>

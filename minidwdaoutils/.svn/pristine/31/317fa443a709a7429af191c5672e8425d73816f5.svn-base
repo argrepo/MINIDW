@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<!-- entry key="addAwsCredentialsInfo">
+		<![CDATA[
+				insert into aws_credentials(
+				name,
+				secret_key,
+				access_key
+				) values(?,?,?);
+		]]>
+	</entry>
+	
+	<entry key="updateAwsCredentialsInfo">
+		<![CDATA[
+				update aws_credentials set 
+				name = ?,
+				secret_key = ?,
+				access_key =? where id = ?
+		]]>
+	</entry>
+	
+	<entry key="getAwsCredentialsList">
+		<![CDATA[
+				select * from aws_credentials
+		]]>
+	</entry> -->
+	
+</properties>

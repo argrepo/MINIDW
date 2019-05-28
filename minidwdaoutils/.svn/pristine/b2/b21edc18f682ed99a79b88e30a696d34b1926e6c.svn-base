@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="getMasterVerticals">
+		<![CDATA[
+		        select * from minidwcm_verticals where id not in ({verticalIds});
+		]]>
+	</entry>
+	
+	
+	<entry key="saveNotMappedVerticals">
+		<![CDATA[
+		        insert into minidwcm_verticals(
+				 id,
+				 name,
+				 description,
+				 isActive
+			 )values (?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="getMasterDatabases">
+		<![CDATA[
+		        select * from minidwcm_database_types where id not in ({databaseIds});
+		]]>
+	 </entry>
+	 
+	 
+	 <entry key="saveNotMappedDatabases">
+		<![CDATA[
+	        insert into minidwcm_database_types(
+				 id,
+				 name,
+				 driver_name,
+				 protocal,
+				 url_format,
+				 isActive
+			 )values (?,?,?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="getMasterConnectors">
+		<![CDATA[
+		
+		select
+			con.id as connectorid, 
+			con.connector_id as database_id,
+			con.name as connector_name, 
+			db.name as database_name, 
+			con.isActive,
+			con.is_default,
+			db.driver_name as driver_name,
+			db.protocal as protocal,
+			db.url_format as url_format
+			from minidwcm_database_connectors con join minidwcm_database_types db
+			on db.id = con.connector_id where con.id not in ({connectorsIds});
+		
+		]]>
+	 </entry>
+	 
+	  <entry key="saveNotMappedConnectors">
+		<![CDATA[
+	        insert into minidwcm_database_connectors(
+	        	 id,
+				 connector_id,
+				 name,
+				 isActive
+			 )values (?,?,?,?)
+		]]>
+	</entry>
+	
+	<entry key="checkDatabaseIdExistOrNot">
+		<![CDATA[
+		        select id from minidwcm_database_types where id = ?;
+		]]>
+	 </entry>
+	 
+	 <entry key="createDataBase">
+		<![CDATA[
+	        insert into minidwcm_database_types(id,name,driver_name,protocal,url_format,connector_jars,isActive)values(?,?,?,?,?,?,?);
+		]]>
+	</entry>
+</properties>

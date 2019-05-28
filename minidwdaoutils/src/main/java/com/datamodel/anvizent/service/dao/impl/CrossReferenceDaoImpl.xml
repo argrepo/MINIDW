@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="getAllClientILs">
+		<![CDATA[
+			select inf.IL_id,IL_name,il_table_name,xref_il_table_name, 0 as is_mapping_completed, ? as clientid from minidwcm_il_info inf  
+			where inf.xref_il_table_name is not null and isActive='1' 
+            and inf.IL_id in ( 
+            select distinct il_id from minidwcm_dl_il_mapping where dl_id in (select dl_id as dlid from minidwcs_dl_client_mapping where client_id=?) 
+            );
+		]]>
+	</entry>
+	
+	<entry key="getExistingXrefRecord">
+		<![CDATA[
+			select * from {tableName} where {columnName} = ?;
+		]]>
+	</entry>
+	
+	<entry key="crossReferenceAuditLogs">
+		<![CDATA[
+			insert into minidwcs_crossreference_audit_logs(
+			ilid,
+			column_name,
+			xreference_type,
+			column_values,
+			xref,
+			xref_column_values,
+			mergecolumns, 
+			auto_xref_queries,
+			clientid,
+			created_by,
+			created_time
+			)values(?,?,?,?,?,?,?,?,?,?,?);
+		]]>
+	</entry>
+	
+	<entry key="getCrossReferenceInfoById">
+		<![CDATA[
+			select * from minidwcs_crossreference_audit_logs where ilid = ? and clientid = ?;
+		]]>
+	</entry>
+	<entry key="getColumnValues">
+		<![CDATA[
+			select xref_column_values from minidwcs_crossreference_audit_logs where id = ? and clientid = ?;
+		]]>
+	</entry>
+	
+	<entry key="getAutoMergeQueriesById">
+	<![CDATA[
+		select auto_xref_queries from minidwcs_crossreference_audit_logs where id = ? and clientid = ?;
+	]]>
+	</entry>
+	
+	<entry key="bulkmergeLogInsert">
+	<![CDATA[
+		INSERT INTO minidwcs_crossreference_logs (ilid, xreference_type, type_of_merge, condition_name, 
+					bulkmerge_reference_fields, bulkmerge_xreference_fields, source_file_info_id, 
+					applicable_date, start_date, end_date, created_by, created_time )
+					VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	]]>
+	</entry>
+	
+	
+	<entry key="automergeLogUpdate">
+	<![CDATA[
+		INSERT INTO minidwcs_crossreference_logs (ilid, xreference_type, type_of_merge, condition_name, 
+		auto_merge_columns, applicable_date, stats, start_date, end_date, created_by, created_time )
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+	]]>
+	</entry>
+	
+	<entry key="splitLogUpdate">
+	<![CDATA[
+		update minidwcs_crossreference_logs set ilid = ?, xreference_type = ?, stats = ?, start_date = ?, 
+		end_date = ?, created_by = ?, created_time = ?, type_of_merge = ?, condition_name = ?, manual_merge_column_name = ?, manual_merge_column_values = ?, 
+		type_of_xref = ?, existing_selected_xref_value = ?, selected_xref_key_value = ?, bulkmerge_reference_fields = ?, bulkmerge_xreference_fields = ?, 
+		source_file_info_id = ?, auto_merge_columns = ?, applicable_date = ?, auto_merge_column_obj = ?, XRef_Key = ?, stats  = ? where id = ?
+	]]>
+	</entry>
+	
+	<entry key="splitLogInsert">
+	<![CDATA[
+		INSERT INTO minidwcs_crossreference_logs (ilid, xreference_type, stats, start_date, 
+		end_date, created_by, created_time )
+		VALUES (?, ?, ?, ?, ?, ?, ? )
+	]]>
+	</entry>
+	
+	<entry key="manualmergeLogUpdate">
+	<![CDATA[
+		update minidwcs_crossreference_logs set ilid = ?, xreference_type = ?, type_of_merge = ?, condition_name = ?, 
+		manual_merge_column_name = ?, manual_merge_column_values = ?, type_of_xref = ?, existing_selected_xref_value = ?, 
+		selected_xref_key_value = ?, XRef_Key = ?, applicable_date = ?, stats = ?, start_date = ?, 
+		end_date = ?, created_by = ?, created_time = ? where id = ?
+		
+	]]>
+	</entry>
+	
+	<entry key="manualmergeLogInsert">
+	<![CDATA[
+		INSERT INTO minidwcs_crossreference_logs (ilid, xreference_type, type_of_merge, condition_name, 
+		manual_merge_column_name, manual_merge_column_values, type_of_xref, existing_selected_xref_value, 
+		selected_xref_key_value, XRef_Key, applicable_date, stats, start_date, 
+		end_date, created_by, created_time )
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	]]>
+	</entry>
+	
+	<entry key="getCrossReferenceLogsInfo">
+	<![CDATA[
+		select id,ilid,xreference_type,type_of_merge,condition_name,manual_merge_column_name,manual_merge_column_values,type_of_xref,
+		existing_selected_xref_value,selected_xref_key_value,bulkmerge_reference_fields,auto_merge_column_obj,
+		bulkmerge_xreference_fields,source_file_info_id,auto_merge_columns,applicable_date, start_date, end_date from minidwcs_crossreference_logs where ilid = ? and isActive = 1 order by 1
+	]]>
+	</entry>
+	
+	<entry key="getCrossReferenceLogsInfoById">
+	<![CDATA[
+		select id,ilid,xreference_type,type_of_merge,condition_name,manual_merge_column_name,manual_merge_column_values,type_of_xref,
+		existing_selected_xref_value,selected_xref_key_value,bulkmerge_reference_fields,auto_merge_column_obj,
+		bulkmerge_xreference_fields,source_file_info_id,auto_merge_columns,applicable_date,stats, start_date, end_date from minidwcs_crossreference_logs where id = ? and isActive = 1;
+	]]>
+	</entry>
+	
+	<entry key="getAllCrossReferences">
+	   <![CDATA[
+			 select mcl.id,
+		       mcl.ilid,
+		       mi.IL_name,
+			   mcl.xreference_type,
+		       mcl.type_of_merge,
+		       mcl.condition_name,
+		       mcl.manual_merge_column_name,
+		       mcl.manual_merge_column_values,
+		       mcl.type_of_xref,
+			   mcl.existing_selected_xref_value,
+			   mcl.selected_xref_key_value,
+			   mcl.bulkmerge_reference_fields,
+			   mcl.bulkmerge_xreference_fields,
+			   mcl.source_file_info_id,
+			   mcl.auto_merge_columns,
+			   mcl.applicable_date,
+			   mcl.start_date,
+			   mcl.end_date,
+			   mcl.isActive
+			from minidwcs_crossreference_logs mcl  
+		    join minidwcm_il_info mi on  mi.IL_id = mcl.ilid 
+		    order by mcl.id;
+	   ]]>
+	</entry>
+	
+	<entry key="savemergeLogUpdate">
+	<![CDATA[
+		INSERT INTO minidwcs_crossreference_logs (ilid, xreference_type, type_of_merge, condition_name, 
+		auto_merge_columns, applicable_date, stats, start_date, end_date, created_by, created_time, auto_merge_column_obj)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	]]>
+	</entry>
+	
+	<entry key="updatemergeLogUpdate">
+	<![CDATA[
+		update minidwcs_crossreference_logs set ilid = ?, xreference_type = ?, type_of_merge = ?, condition_name = ?, 
+		auto_merge_columns = ?, applicable_date = ?, stats = ?, start_date = ?, end_date = ?, created_by = ?, created_time = ?, auto_merge_column_obj = ?
+		where id = ?;
+	]]>
+	</entry>
+	
+	<entry key="getCrossReferencesByIlId">
+	  <![CDATA[
+		  select mcl.id,
+		       mcl.ilid,
+		       mi.IL_name,
+			   mcl.xreference_type,
+		       mcl.type_of_merge,
+		       mcl.condition_name,
+		       mcl.auto_merge_column_obj,
+		       mcl.manual_merge_column_name,
+		       mcl.manual_merge_column_values,
+		       mcl.type_of_xref,
+			   mcl.existing_selected_xref_value,
+			   mcl.selected_xref_key_value,
+			   mcl.bulkmerge_reference_fields,
+			   mcl.bulkmerge_xreference_fields,
+			   mcl.source_file_info_id,
+			   mcl.auto_merge_columns,
+			   mcl.applicable_date,
+			   mcl.start_date,
+			   mcl.end_date 
+			from minidwcs_crossreference_logs mcl  
+		    join minidwcm_il_info mi on  mi.IL_id = mcl.ilid where mcl.ilid = ? and type_of_merge = ? and mcl.isActive = 1 order by mcl.id;
+	  ]]>
+	</entry>
+	
+	<entry key="deleteCrossReferenceById">
+	  <![CDATA[
+		  update minidwcs_crossreference_logs set isActive = 0 where id = ?;
+	  ]]>
+	</entry>
+	
+	<entry key="bulkmergeLogUpdate">
+	  <![CDATA[
+	      update minidwcs_crossreference_logs set ilid = ?, xreference_type = ?, type_of_merge = ?, condition_name = ?, 
+					bulkmerge_reference_fields = ?, bulkmerge_xreference_fields = ?, source_file_info_id = ?, 
+					applicable_date = ?, start_date = ?, end_date = ?, created_by = ?, created_time = ?  where id = ?;
+	  ]]>
+	</entry>
+	
+	<entry key="activateCrossReferenceById">
+	  <![CDATA[
+		  update minidwcs_crossreference_logs set isActive = 1 where id = ?;
+	  ]]>
+	</entry>
+	
+	
+</properties>

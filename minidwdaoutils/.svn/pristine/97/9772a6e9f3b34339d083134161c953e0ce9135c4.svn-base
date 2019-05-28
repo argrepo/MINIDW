@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="fetchAllMasterConfigList">
+		select id, name, spark_job_path, elt_class_path, elt_library_path, master, deploy_mode, ppk_file,spark_master, is_active,source_type, is_default,
+		created_by, created_time, modified_by, modified_time from minidwcm_elt_master_configuration order by id;
+	</entry>
+	<entry key="fetchMasterConfigById">
+		select id, name, spark_job_path, elt_class_path, elt_library_path, master, deploy_mode, spark_master, is_active,source_type, is_default,
+		spark_submit_mode, host, port, job_submit_mode,
+		created_by, created_time, modified_by, modified_time,authentication_type , password, ppk_file,user_name from minidwcm_elt_master_configuration where id = ?;
+	</entry>
+	<entry key="fetchDefaultMasterConfig">
+		select id, name, spark_job_path, elt_class_path, elt_library_path, master, deploy_mode, spark_master, is_active,source_type, is_default,
+		spark_submit_mode, host, port, job_submit_mode,
+		created_by, created_time, modified_by, modified_time,authentication_type , password, ppk_file, user_name from minidwcm_elt_master_configuration where is_default = 1;
+	</entry>
+	<entry key="addMasterConfig">
+		insert into minidwcm_elt_master_configuration 
+		(name, spark_job_path, elt_class_path, elt_library_path, master, deploy_mode, spark_master, is_active,source_type,
+		spark_submit_mode,host,port,job_submit_mode,
+		 is_default,
+		created_by, created_time,authentication_type,password,ppk_file,user_name) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ? ,?, ?, ? ,?,?);
+	</entry>
+	<entry key="updateMasterConfig">
+		update minidwcm_elt_master_configuration set name = ?, spark_job_path = ?, elt_class_path = ?, elt_library_path = ?, master = ?, deploy_mode = ?, spark_master = ?, is_active = ?, 
+		source_type = ? ,spark_submit_mode = ?,host = ?,port = ?, job_submit_mode = ?,is_default = ? , modified_by = ?, modified_time = ?,
+		authentication_type = ?, password = ?,user_name = ?, ppk_file = ?
+		 where id = ?;
+	</entry>
+	<entry key="deleteMasterConfigById">
+		delete from minidwcm_elt_master_configuration where id = ?;
+	</entry>
+	<entry key="fetchMasterConfigEnvironmentVariablesByMappingId">
+		select * from minidwcm_elt_master_configuration_variables_mapping where master_config_id = ?;
+	</entry>
+	<entry key="addMasterConfigEnvironmentVariablesByMappingId">
+		insert into minidwcm_elt_master_configuration_variables_mapping ( master_config_id, `key`, `value`) values (?, ?, ?);
+	</entry>
+	<entry key="deleteMasterConfigEnvironmentVariablesByMappingId">
+		delete from minidwcm_elt_master_configuration_variables_mapping where master_config_id = ?;
+	</entry>
+	
+	<entry key="updateMasterConfigDefault">
+		update minidwcm_elt_master_configuration set is_default = ?;
+	</entry>
+	
+	<entry key="saveEltInitiatedInfo">
+		insert into minidwcs_elt_job_initiation_object 
+		(execution_id,package_id,schedule_id,dl_id,il_id,initiated_id,initiated_object,created_by,created_time) values (?, ?, ?, ?, ?, ?, ?, ?, ?);
+	</entry>
+
+</properties>
