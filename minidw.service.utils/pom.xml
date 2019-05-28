@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>minidw.service.utils</artifactId>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>com.anvizent.minidw</groupId>
+		<artifactId>minidw.api</artifactId>
+		<version>3.6</version>
+		<relativePath>../minidw.api/pom.xml</relativePath>
+	</parent>
+
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+	
+		
+		<dependency>
+			<groupId>com.anvizent.minidw</groupId>
+			<artifactId>client.data.to.csv.path.converter</artifactId>
+			<version>${minidw.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anvizent.minidw</groupId>
+			<artifactId>amazons3util</artifactId>
+			<version>${minidw.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>com.monitorjbl</groupId>
+			<artifactId>xlsx-streamer</artifactId>
+			<version>${com.monitorjbl.xlsx-streamer.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${org.apache.poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${org.apache.poi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${org.apache.common-dbcp.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
