@@ -1,0 +1,7 @@
+# Development
+db.driver = com.mysql.jdbc.Driver
+db.url = jdbc:mysql://127.0.0.1:3306/anvizentdatamodeltool
+db.username = root
+db.password = 
+db.pool.initialSize = 1
+db.pool.maxActive = 5

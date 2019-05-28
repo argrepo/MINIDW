@@ -1,0 +1,4 @@
+ftp.url=192.168.0.12
+ftp.username=anvitest
+ftp.password=Dwp@123
+ftp.root.folder=/datavg/appvol/anvitest/

@@ -1,0 +1,641 @@
+package com.datamodel.anvizent.AmazonS3;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import org.apache.commons.lang.StringUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.RequestBuilder;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
+import com.datamodel.anvizent.helper.WebServiceConstants;
+import minidwclientws.WebServiceUtils;
+
+public class RestExample {
+	 
+	public RestExample() {
+		// TODO Auto-generated constructor stub
+		System.out.println("in constructor block");
+	}
+	
+	public static void main(String[] args) {
+		JSONObject jo = new JSONObject();
+		jo.put("Modified_Date", "2017-03-07 00:00:00");
+		
+		System.out.println("jo -- > " + jo.toString());
+		//getSellers();
+		//getProduct();
+		 //getProductWithRest();
+		 getDeal();
+	}
+	
+	public static Map<String, String> getDeal()
+	{
+		 
+		try
+		{
+			
+			RestTemplate restTemplate = new RestTemplate();
+			/*HttpHeaders headers = new HttpHeaders();
+			headers.add(HttpHeaders.CONTENT_TYPE, "application/json");
+			//headers.setAccept(Collections.singletonList("application/json"));
+
+			JSONObject postBodyObject = new JSONObject();
+			 
+			postBodyObject.put("page","0");
+			postBodyObject.put("domainId", "1");
+			
+			postBodyObject.put("priceTypes", "[0]");
+			postBodyObject.put("dateRange", "0");
+			postBodyObject.put("salesRankRange", "[0,100]");
+			
+			HttpEntity<String> entity = new HttpEntity<>(postBodyObject.toString(),headers);
+
+	        String url = "https://api.keepa.com/deal?key=9k0roso90o88rdgfcec9p0hhfjknk8ou7fkgvg3h0n8l5sknfpn936ltmpn0mlek";
+ 
+	            String response =  restTemplate.postForObject(url, entity, String.class);
+				System.out.println(response);
+				System.out.println(response);*/
+			
+			JSONObject request = new JSONObject();
+			request.put("page","0");
+			request.put("domainId", "1");
+			
+			request.put("priceTypes", "[0]");
+			request.put("dateRange", "0");
+			request.put("salesRankRange", "[0,100]");
+			request.put("key", "9k0roso90o88rdgfcec9p0hhfjknk8ou7fkgvg3h0n8l5sknfpn936ltmpn0mlek");
+		    String url = "https://api.keepa.com/deal?key=9k0roso90o88rdgfcec9p0hhfjknk8ou7fkgvg3h0n8l5sknfpn936ltmpn0mlek";
+		    
+		    
+		    MultiValueMap<Object, Object> map = new LinkedMultiValueMap<>();
+		    map.add("page","0");
+		    map.add("domainId", "1");
+			
+		    map.add("priceTypes", "[0]");
+		    map.add("dateRange", "0");
+		    map.add("salesRankRange", "[0,100]");
+		    
+			// set headers
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+			HttpEntity<String> entity = new HttpEntity<String>(request.toString(), headers);
+
+			Object obj = restTemplate.getForObject(url, Map.class, map);
+			System.out.println(obj);
+			// send request and parse result
+			//ResponseEntity<Map> loginResponse = restTemplate   .exchange(url, HttpMethod.POST,map, Map.class);
+		/*	if (loginResponse.getStatusCode() == HttpStatus.OK) {
+			  JSONObject userJson = new JSONObject(loginResponse.getBody());
+			  System.out.println("userJson-------->"+userJson);
+			} else if (loginResponse.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+			  // nono... bad credentials
+			}*/
+				
+			}
+
+		catch ( Exception e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		 
+		return null ;
+	}
+	
+	public static Map<String, String> getProductWithRest()
+	{
+		 
+		try
+		{
+
+            SignedRequestsHelper key = new SignedRequestsHelper();
+			Map<String, String> par = new HashMap<>();
+			System.out.println("Time :: "+ key.sign(par).split("Timestamp=")[1].split("&Signature=")[0]);
+			System.out.println("signature :: "+ key.sign(par).split("&Signature=")[1]);
+			//String signature=key.sign(par).split("&Signature=")[1];
+			//String timestamp=key.sign(par).split("Timestamp=")[1].split("&Signature=")[0];
+			
+			RestTemplate restTemplate = new RestTemplate();
+			HttpHeaders headers = new HttpHeaders();
+			headers.add(HttpHeaders.CONTENT_TYPE, "text/xml");
+			headers.setAccept(Collections.singletonList(MediaType.TEXT_XML));
+
+			HttpEntity<String> entity = new HttpEntity<>(headers);
+
+			String signature = "HC5LgLK7kHJg3INsjELupY9rvyzAWUc4AS5M7DE51J8%3D";
+			String timestamp="2019-03-07T05%3A33%3A08Z";
+
+				String url = "https://mws.amazonservices.com/Products/2011-10-01?"
+						+ "AWSAccessKeyId=AKIAJSGKCNV7ILE4LO7A"
+						+ "&Action=ListMatchingProducts&SellerId=A3Q3HSIPGV7D5H&MWSAuthToken=amzn.mws.eab10075-ff7b-1a9a-c8e0-323c82932ce0&"
+						+ "SignatureVersion=2&Timestamp="+timestamp+"&Version=2011-10-01&"
+						+ "Signature="+ signature+"&SignatureMethod=HmacSHA256&"
+						+ "MarketplaceId=ATVPDKIKX0DER&Query=0439708184";
+ 
+				ResponseEntity<Object> response =  restTemplate.postForEntity(url, entity, Object.class, new Object());
+				System.out.println(response.getStatusCode());
+				System.out.println(response.getBody());
+				
+			}
+
+		catch ( UnsupportedEncodingException e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		catch ( IOException e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		catch ( Exception e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		 
+		return null ;
+	}
+	@SuppressWarnings("unchecked")
+	public static Map<String, String> getProduct()
+	{
+		HttpResponse httpResponse = null;
+		 
+		Map<String, String> map = new HashMap<String, String>();
+		org.apache.http.impl.client.DefaultHttpClient client = null;
+		try
+		{
+
+            SignedRequestsHelper key = new SignedRequestsHelper();
+			
+			Map<String, String> par = new HashMap<>();
+			
+			String sign = key.sign(par);
+			
+			System.out.println("sign-->"+sign);
+			
+			//String signature=key.sign(par).split("&Signature=")[1];
+			//String timestamp=key.sign(par).split("Timestamp=")[1].split("&Signature=")[0];
+		
+			//String signature = "6evSyq9hToNzl1SA60wKproS4F02Uk2qhDNyN1DUSU0%3D";
+			//String timestamp="2019-03-07T05%3A12%3A34Z";
+				client = new org.apache.http.impl.client.DefaultHttpClient();
+				String url =  sign 
+						+ "&Action=ListMatchingProducts&SellerId=A3Q3HSIPGV7D5H&MWSAuthToken="+URLEncoder.encode("amzn.mws.eab10075-ff7b-1a9a-c8e0-323c82932ce0", "UTF-8")+"" 
+						+ "&SignatureVersion=2&Version=2011-10-01&"
+						+ "SignatureMethod=HmacSHA256&"
+						+ "MarketplaceId=ATVPDKIKX0DER&Query=0439708184";
+ 
+				
+				HttpUriRequest request = RequestBuilder.post()
+						  .setUri(url)
+						  .setHeader(HttpHeaders.CONTENT_TYPE, "text/xml")
+						  .setHeader(HttpHeaders.ACCEPT, "text/xml")
+						  .build();
+				
+				httpResponse = client.execute(request);
+
+				int statusCode = httpResponse.getStatusLine().getStatusCode();
+				
+				System.out.println(statusCode);
+
+				map = WebServiceUtils.handleResponse(httpResponse);
+
+				if( statusCode == WebServiceConstants.HTTP_STATUS_OK )
+				{
+					System.out.println(map);
+				}
+
+			}
+
+		catch ( UnsupportedEncodingException e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		catch ( IOException e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		catch ( Exception e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		finally
+		{
+			if( client != null )
+			{
+				client.close();
+			}
+		}
+
+		return map;
+	}
+	 
+	public static Map<String, String> getSellers()
+	{
+
+	 
+		HttpResponse httpResponse = null;
+		 
+		Map<String, String> map = new HashMap<String, String>();
+		org.apache.http.impl.client.DefaultHttpClient client = null;
+		try
+		{
+
+            SignedRequestsHelper key = new SignedRequestsHelper();
+			
+			Map<String, String> par = new HashMap<>();
+			
+			
+			System.out.println("Time :: "+ key.sign(par).split("Timestamp=")[1].split("&Signature=")[0]);
+			System.out.println("signature :: "+ key.sign(par).split("&Signature=")[1]);
+			String signature=key.sign(par).split("&Signature=")[1];
+			String timestamp=key.sign(par).split("Timestamp=")[1].split("&Signature=")[0];
+		
+			
+				client = new org.apache.http.impl.client.DefaultHttpClient();
+
+				String url = "https://mws.amazonservices.com/Sellers/2011-07-01?AWSAccessKeyId=AKIAJSGKCNV7ILE4LO7A"
+						+ "&Action=GetServiceStatus&MWSAuthToken=amzn.mws.eab10075-ff7b-1a9a-c8e0-323c82932ce0&"
+						+ "SellerId=A3Q3HSIPGV7D5H&SignatureMethod=HmacSHA256&SignatureVersion=2&"
+						+ "Timestamp="+timestamp+"&Version=2011-07-01&Signature="+signature;
+			//	String url = "https://mws.amazonservices.com/Sellers/2011-07-01";
+				
+				//HttpPost post = new HttpPost(url);
+
+				List<BasicNameValuePair> parametersBody = new ArrayList<BasicNameValuePair>();
+
+				parametersBody.add(new BasicNameValuePair("AWSAccessKeyId", "AKIAJSGKCNV7ILE4LO7A"));
+
+				parametersBody.add(new BasicNameValuePair("Action", "GetServiceStatus"));
+
+				parametersBody.add(new BasicNameValuePair("MWSAuthToken", "amzn.mws.eab10075-ff7b-1a9a-c8e0-323c82932ce0"));
+
+				parametersBody.add(new BasicNameValuePair("SellerId", "A3Q3HSIPGV7D5H"));
+
+				parametersBody.add(new BasicNameValuePair("SignatureMethod", "HmacSHA256")); 
+				
+				parametersBody.add(new BasicNameValuePair("SignatureVersion", "2"));
+
+				parametersBody.add(new BasicNameValuePair("Timestamp", timestamp)); 
+				
+				parametersBody.add(new BasicNameValuePair("Version", "2011-07-01"));
+				
+				parametersBody.add(new BasicNameValuePair("Signature",signature));
+				 
+				//post.setEntity(new UrlEncodedFormEntity(parametersBody, HTTP.UTF_8));
+				
+				HttpUriRequest request = RequestBuilder.post()
+						  .setUri(url)
+						  .setHeader(HttpHeaders.CONTENT_TYPE, "text/xml")
+						  .setHeader(HttpHeaders.ACCEPT, "text/xml")
+						 // .setEntity(new UrlEncodedFormEntity(parametersBody, HTTP.UTF_8))
+						  .build();
+				
+				httpResponse = client.execute(request);
+
+				int statusCode = httpResponse.getStatusLine().getStatusCode();
+				
+				System.out.println(statusCode);
+
+				map = WebServiceUtils.handleResponse(httpResponse);
+
+				if( statusCode == WebServiceConstants.HTTP_STATUS_OK )
+				{
+					System.out.println(map);
+				}
+
+			}
+
+		catch ( UnsupportedEncodingException e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		catch ( IOException e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		catch ( Exception e )
+		{
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+		finally
+		{
+			if( client != null )
+			{
+				client.close();
+			}
+		}
+
+		return map;
+	}
+	public static void main19(String[] args) {
+		RestTemplate rt = new RestTemplate();
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type",MediaType.APPLICATION_FORM_URLENCODED_VALUE);
+		headers.add("Accept","application/json");
+		/*headers.add("Cookie","k3.anvizs=cm3fLF-FyUmIk74PiDhxP5lRFtsgD0UIszWNMMcbzQBSunRsyAZqK1n61IsoZ-YbWbGpIn5BOCIvACl3AAneP_gKjQIj8WGXtALPIK0wc7NBDq7GoBbH4NEYQPyFSE5VstXKJlOyEXdLY2FOmCjwXOyjMLlZ7WjRWL43KUPODYhxo_c6bHAdrdNTyJ9HZIn380RRmxqblwQqe8IIbpm-C8HInVrs-cXLYKHUtwMysuRwHxYC0i14TfZ6RUh0CNKZN9CWuoMveGqbnz0PBMq-PojSK8Z8H5xJ1Zo6hSKlYVF1TTFe0apjui8D545fmD257PNbZ5Yf1uhzme_4UJmAk4A0dtA; path=/; HttpOnly");
+		headers.add("Authorization","Konfigure-v1  token=\"x/eAoGfKsvGFg5q2FbhAEd4743+IbmyLML3JRBxaYRJCkXFGqoaID/ZxX5+B024M2Utt3Ze3BS4McrpahD6EuwNvTQI=\"");
+		
+		headers.add("X-Authentication-code","JlzsAtRwQ1l2mbAepT5vEV1_tHP9FP9EjvOmDeovndY7Q8UnBzBYbD4KdB7WchvNWNXk9FJyTa8CZXDaT1HFyw");
+		*/
+		
+		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+		params.add("wsTemplateId", "64");
+		params.add("iLId", "2");
+		HttpEntity<Object> headerParamsPost = new HttpEntity<Object>(params, headers);
+		
+		try {
+			ResponseEntity<Map> imap = rt.exchange("http://localhost:9090/minidwwebservice/adminWServices/user/vdamR0MQ_JNcWARht8nLMg/etlAdmin/getWSILMappingDetailsById",
+					HttpMethod.POST, headerParamsPost, Map.class);
+			System.out.println(imap.getBody());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		//
+	}
+	
+	public static void main18(String[] args) {
+		RestTemplate rt = new RestTemplate();
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type",MediaType.APPLICATION_JSON_VALUE);
+		headers.add("Accept","application/json");
+		headers.add("Cookie","k3.anvizs=LZqL5sb6kuqgry3_rinenwqXfPNWvwpNbVrRov19PF6IfGONzKfiGeAe8-xDujeT4MffmyqB7ZCZettRET9qRmUFfhS5AO54wVaw63qtzSA-qInEBFW73RaCIEAGRrDHWmWoB4ev9KeDSGtahuYNJuBWme1is_o-Snxi3EbJTWCZ87FHzWTfL6Gew791LNPy0iAd60twCosn6JQu_AAy3UH_moW5i6E0dyEHejtnm252GjonI5P5uAe0FreCSdyRc6NRf1psTI3s5TnIqXTTsPHze9kOa6VIRDETj2Jf8PyRH_05RwXrLCkfbmH4mN7vsHnqMLckpA3Vl1JRkRUh9rhdugE; path=/; HttpOnly");
+		//headers.add("Authorization","Konfigure-v1  token=\"x/eAoGfKsvGFg5q2FbhAEd4743+IbmyLML3JRBxaYRJCkXFGqoaID/ZxX5+B024M2Utt3Ze3BS4McrpahD6EuwNvTQI=\"");
+		
+		String body = "{\"Modified_Date\":\"2017-03-07 00:00:00\"}";
+//		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+//		params.add("Modified_Date", "2017-03-07 00:00:00");
+		HttpEntity<Object> headerParamsPost = new HttpEntity<Object>(body, headers);
+		
+		try {
+			ResponseEntity<Map> imap = rt.exchange("https://sandbox.keyedinmanufacturing.com/Anvizent-Sandbox/api/v1/report/b614cd2006944b5cb933e9a38bd49ef7/run",
+					HttpMethod.POST, headerParamsPost, Map.class);
+			System.out.println(imap.getBody());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void main2(String[] args) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss:SS");
+		System.out.println(sdf.format(new Date()));
+		
+	}
+	
+	
+	public static void main10(String[] args) {
+		String paramName = "$filter";
+		String paramValue = "state eq tg and --#/*orderdate gt {date} and */#- country eq india";
+		int startingIndex = StringUtils.indexOf(paramValue, "/*");
+		int endingIndex = StringUtils.indexOf(paramValue, "*/",startingIndex);
+		String newParamValue = "";
+		newParamValue += StringUtils.substring(paramValue, 0, startingIndex);
+		newParamValue += StringUtils.substring(paramValue, startingIndex+2, endingIndex);
+		newParamValue += StringUtils.substring(paramValue, endingIndex+2, paramValue.length());
+		
+		System.out.println(newParamValue);
+	}
+	
+	public static void main9(String[] args) {
+		//String pattern = "d{}.results[].Code";
+		//String pattern = "d{}.results[].__metadata{}.uri";
+		String pattern = "d{}.results";
+		String[] patternSplit = StringUtils.split(pattern,".");
+		Map fileObj2 = null;
+		try {
+			 	File file = new File("C:\\Rajesh\\tempMyObj");
+			    FileInputStream f = new FileInputStream(file);
+			    ObjectInputStream s = new ObjectInputStream(f);
+			    fileObj2 = (HashMap) s.readObject();
+			    s.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		List response = new ArrayList();
+		System.out.println("fileObj2  -- > " + fileObj2);
+		getObjects(patternSplit, 0, fileObj2, response);
+		System.out.println("Response  -- > " + response);
+	}
+
+	@SuppressWarnings("unchecked")
+	static void getObjects(String[] patternSplit, int patternIndex, Map<String, Object> sourceObject, List<Object> response) {
+		
+		if ( sourceObject != null && patternIndex <= patternSplit.length ) {
+			
+			String currentPattern = patternSplit[patternIndex];
+			System.out.println(currentPattern);
+			if ( currentPattern.endsWith("{}") ) {
+				Map<String, Object> resp = (Map<String, Object>)sourceObject.get(currentPattern.substring(0, currentPattern.length()-2));
+				System.out.println(resp);
+				getObjects(patternSplit, patternIndex+1, resp, response);
+			} else if ( currentPattern.endsWith("[]") ) {
+				List<Object> resp = (List<Object>)sourceObject.get(currentPattern.substring(0, currentPattern.length()-2));
+				System.out.println(resp);
+				if ( resp != null) {
+					int dataLength = resp.size();
+					for ( int i=0; i< dataLength; i++ ) {
+						Map<String, Object> intResp = (Map<String, Object>) resp.get(i);
+						getObjects(patternSplit, patternIndex+1, intResp, response);
+					}
+				}
+			} else {
+				Object finalOutput = sourceObject.get(currentPattern.substring(0, currentPattern.length()));
+				
+				if (finalOutput != null) {
+					if ( finalOutput instanceof List) {
+						List<Object> finalArray =  (List<Object>) finalOutput;
+						for (Object arr: finalArray) {
+							response.add(arr);
+						}
+					} else {
+						response.add(finalOutput);
+					}
+					
+				}
+				
+			}
+		}
+	}
+	
+	
+	public static void main8(String[] args) {
+		try {
+			HashMap fileObj = new HashMap();
+
+		    ArrayList<String> cols = new ArrayList<String>();
+		    cols.add("a");
+		    cols.add("b");
+		    cols.add("c");
+		    fileObj.put("mylist", cols);
+		    {
+		        File file = new File("C:\\Rajesh\\temp");
+		        FileOutputStream f = new FileOutputStream(file);
+		        ObjectOutputStream s = new ObjectOutputStream(f);
+		        s.writeObject(fileObj);
+		        s.close();
+		    }
+		    File file = new File("C:\\Rajesh\\temp");
+		    FileInputStream f = new FileInputStream(file);
+		    ObjectInputStream s = new ObjectInputStream(f);
+		    HashMap fileObj2 = (HashMap) s.readObject();
+		    
+		    System.out.println("fileObj2  -- > " + fileObj2);
+		    s.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	/*public static void main(String[] args) {
+		RestTemplate rt = new RestTemplate();
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json");
+		headers.add("Accept", "application/json");
+		HttpEntity<Object> tsr = new HttpEntity<Object>(new LinkedMultiValueMap<>(), headers);
+		ResponseEntity<Map> map = rt.postForEntity("https://staging.skuvault.com/api/gettokens?Email=gokul.a@anvizent.com&Password=6wE5tTyaTlvi", 
+				tsr, Map.class);
+		System.out.println("map " + map);
+	}*/
+	
+	public static void main6(String[] args) {
+		String authPathParams = "";
+		JSONObject authPathParamJsonObj = null;
+
+		String authRequestParams = "";
+		JSONObject authRequestParamJsonObj = null;
+		
+		String authenticationUrl = "";
+		
+		
+		try {
+			authenticationUrl =  "https://sandbox.keyedinmanufacturing.com/{#clientsandbaxname}/api/v1/authenticate/{#clientId}?r=antha";
+			authPathParams = "{\"clientsandbaxname\":\"Anvizent-Sandbox\",\"clientId\":\"CF574369BE28DB0A9913AB59950060576CC025FF\"}";
+			
+			if ( authPathParams != null) {
+				authPathParamJsonObj = new JSONObject(authPathParams);
+				Iterator<String> keys = authPathParamJsonObj.keys();
+				while ( keys.hasNext() ) {
+					String key = keys.next();
+					authenticationUrl = StringUtils.replace(authenticationUrl, "{#"+key+"}", authPathParamJsonObj.getString(key));
+				}
+			}
+			
+			authRequestParams = "{\"password\":\"ap asv ^*&!i2\"}";
+			StringBuilder requestParams = new StringBuilder();
+			if ( authRequestParams != null) {
+				authRequestParamJsonObj = new JSONObject(authRequestParams);
+				Iterator<String> keys = authRequestParamJsonObj.keys();
+				while ( keys.hasNext() ) {
+					String key = keys.next();
+					requestParams.append(key).append("=").append(URLEncoder.encode(authRequestParamJsonObj.getString(key), "UTF-8")).append("&");
+				}
+			}
+			
+			
+			if ( requestParams.length() > 0 ) {
+				requestParams.deleteCharAt( requestParams.length()-1 );
+				authenticationUrl += (authenticationUrl.contains("?") ? "&":"?") +requestParams;
+			}
+			
+			
+			System.out.println(authenticationUrl);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
+	
+	public static void main3(String[] args) {
+
+try {
+			
+			String data = "{\"data\":{\"oldVersion\":0,\"newVersion\":1},\"hasMessages\":false,\"inputBody\":null,\"inputParams\":null,\"messages\":null,\"status\":\"OK\"}";
+			
+			JSONObject jobj = new JSONObject(data);
+			if (jobj != null && jobj.get("status").toString().equalsIgnoreCase("ok")) {
+				JSONObject druidVersion = (JSONObject) jobj.get("data");
+		    	Long oldversion = druidVersion.getLong("oldVersion");
+		    	Long newversion = druidVersion.getLong("newVersion");
+		    	System.out.println(oldversion+"-"+newversion);
+			}
+			
+			//String code = URLEncoder.encode(AESConverter.encrypt("superadmin@anvizent.com#$#test#$#"+new Date()), "UTF-8");
+			/*String code = URLEncoder.encode(AESConverter.encrypt("dataprepteam@arghainc.com#$#test@123#$#"+new Date()), "UTF-8");
+			System.out.println(code);*/
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public int sumOfNumber(Integer[] nums) {
+		int sum = 0;
+		for ( int n:nums ) {
+			sum += n;
+		}
+		return sum;
+	}
+	
+	public String[][] sumOfNumber1(Integer[] nums) {
+		int sum = 0;
+		System.out.println("in method");
+		
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		for ( int n:nums ) {
+			sum += n;
+		}
+		
+		String[][] num = {{Integer.toString(sum)}};
+		return num;
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	static {
+		System.out.println("in static block");
+	}
+}
