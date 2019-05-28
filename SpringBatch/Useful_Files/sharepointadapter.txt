@@ -1,0 +1,766 @@
+package com.prifender.des.adapter.dss.sharepoint;
+
+import static com.prifender.des.util.DatabaseUtil.createDir;
+import static com.prifender.des.util.DatabaseUtil.getConvertedDate;
+import static com.prifender.des.util.DatabaseUtil.getUUID;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.StringReader;
+import java.io.Writer;
+import java.net.CookieHandler;
+import java.net.HttpCookie;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.prifender.des.DataExtractionServiceException;
+import com.prifender.des.controller.DataExtractionContext;
+import com.prifender.des.controller.DataExtractionThread;
+import com.prifender.des.controller.DataSourceAdapter;
+import com.prifender.des.model.ConnectionStatus;
+import com.prifender.des.model.DataExtractionJob;
+import com.prifender.des.model.DataExtractionSpec;
+import com.prifender.des.model.DataExtractionTask;
+import com.prifender.des.model.DataSource;
+import com.prifender.des.model.DataSourceType;
+import com.prifender.des.model.FileMetaInfo;
+import com.prifender.des.model.Metadata;
+import com.prifender.des.model.Problem;
+
+@SuppressWarnings("deprecation")
+@Component
+public class SharePointDssAdapter extends DataSourceAdapter
+{
+	private static final int MAX_FILES_THRESHOLD = 10;
+
+	public static final String TYPE_ID = "SharePoint";
+	public static final String TYPE_LABEL = "SharePoint";
+
+	private static final DataSourceType TYPE = new DataSourceType().id(TYPE_ID).label(TYPE_LABEL).addConnectionParamsItem(PARAM_USER).addConnectionParamsItem(PARAM_PASSWORD).addConnectionParamsItem(PARAM_HOST);
+
+	@Override
+	public DataSourceType getDataSourceType()
+	{
+		return TYPE;
+	}
+
+	@Override
+	public ConnectionStatus testConnection(DataSource ds) throws DataExtractionServiceException
+	{
+		List<String> usersList = null;
+
+		try
+		{
+			final String userName = getConnectionParam(ds, PARAM_USER_ID);
+			final String password = getConnectionParam(ds, PARAM_PASSWORD_ID);
+			final String host = getConnectionParam(ds, PARAM_HOST_ID);
+			Pair<String, String> token = login(userName, password, host);
+			if( token != null )
+			{
+				String rtfaCookie = token.getLeft();
+				String fedAuthCookie = token.getRight();
+				String formDigestJson = contextinfo(token, host);
+				JSONParser parser = new JSONParser();
+				JSONObject json = (JSONObject) parser.parse(formDigestJson);
+				String formDigest = json.get("FormDigestValue").toString();
+
+				usersList = getUsersList(ds, rtfaCookie, fedAuthCookie, formDigest);
+
+				String user = getUserId(usersList, userName);
+
+				if( null != user )
+				{
+					return new ConnectionStatus().code(ConnectionStatus.CodeEnum.SUCCESS).message("SharePoint Authorization Successful.");
+				}
+				else
+				{
+					return new ConnectionStatus().code(ConnectionStatus.CodeEnum.FAILURE).message("'" + user + "' not found.");
+				}
+			}
+
+		}
+		catch ( Exception e )
+		{
+			return new ConnectionStatus().code(ConnectionStatus.CodeEnum.FAILURE).message(e.getMessage());
+		}
+		return new ConnectionStatus().code(ConnectionStatus.CodeEnum.FAILURE).message("SharePoint Authorization failed.");
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	List<String> getUsersList(final DataSource ds, String rtfaCookie, String fedAuthCookie, String formDigest) throws Exception
+	{
+		List<String> usersList = new ArrayList<>();
+		final String host = getConnectionParam(ds, PARAM_HOST_ID);
+		String url = host + "/_api/web/SiteUsers";
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Map> responseEntity = restTemplate.exchange(url, HttpMethod.GET, getHeaderRequest(ds, rtfaCookie, fedAuthCookie, formDigest), Map.class);
+		Map mapObject = responseEntity.getBody();
+
+		List<Map<String, Object>> valueList = (List<Map<String, Object>>) mapObject.get("value");
+
+		for (Map<String, Object> map : valueList)
+		{
+			String email = map.get("Email").toString();
+			if( StringUtils.isNotBlank(email) )
+			{
+				usersList.add(email);
+			}
+		}
+
+		return usersList;
+
+	}
+
+	private HttpEntity<String> getHeaderRequest(final DataSource ds, String rtfaCookie, String fedAuthCookie, String formDigest)
+	{
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Accept", "application/json");
+		headers.add("Content-Type", "application/json");
+		headers.add("Cookie", rtfaCookie);
+		headers.add("Cookie", fedAuthCookie);
+		headers.add("X-RequestDigest", formDigest);
+		return new HttpEntity<String>(headers);
+
+	}
+
+	private HttpEntity<String> getHeaderRequestByVerboseAccept(final DataSource ds, String rtfaCookie, String fedAuthCookie, String formDigest)
+	{
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Accept", "application/json;odata=verbose");
+		headers.add("Content-Type", "application/json");
+		headers.add("Cookie", rtfaCookie);
+		headers.add("Cookie", fedAuthCookie);
+		headers.add("X-RequestDigest", formDigest);
+		return new HttpEntity<String>(headers);
+
+	}
+
+	private String getUserId(List<String> usersList, String userName)
+	{
+		for (String user : usersList)
+		{
+			if( user.equals(userName) )
+			{
+				return user;
+			}
+		}
+		return null;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	List<String> getSiteUrls(final DataSource ds, String rtfaCookie, String fedAuthCookie, String formDigest)
+	{
+		List<String> sitesList = new ArrayList<>();
+
+		final String host = getConnectionParam(ds, PARAM_HOST_ID);
+
+		String url = host + "/_api/search/query?querytext='contentclass:STS_Site'&selectproperties='Title,Path'";
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Map> responseEntity = restTemplate.exchange(url, HttpMethod.GET, getHeaderRequestByVerboseAccept(ds, rtfaCookie, fedAuthCookie, formDigest), Map.class);
+
+		Map mapObject = responseEntity.getBody();
+
+		Map<String, Object> dObject = (Map<String, Object>) mapObject.get("d");
+
+		Map<String, Object> queryObject = (Map<String, Object>) dObject.get("query");
+
+		Map<String, Object> primaryQueryResult = (Map<String, Object>) queryObject.get("PrimaryQueryResult");
+
+		Map<String, Object> relevantResults = (Map<String, Object>) primaryQueryResult.get("RelevantResults");
+
+		Map<String, Object> table = (Map<String, Object>) relevantResults.get("Table");
+
+		Map<String, Object> rows = (Map<String, Object>) table.get("Rows");
+
+		List<Map<String, Object>> results = (List<Map<String, Object>>) rows.get("results");
+
+		for (Map<String, Object> row : results)
+		{
+
+			Map<String, Object> cells = (Map<String, Object>) row.get("Cells");
+
+			List<Map<String, Object>> resultsList = (List<Map<String, Object>>) cells.get("results");
+
+			for (Map<String, Object> cell : resultsList)
+			{
+				if( cell.get("Key").toString().equals("Path") )
+				{
+					sitesList.add(cell.get("Value").toString());
+				}
+			}
+		}
+		return sitesList;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	List<String> getSubSiteUrls(final DataSource ds, String rtfaCookie, String fedAuthCookie, String formDigest)
+	{
+		List<String> sitesList = new ArrayList<>();
+
+		final String host = getConnectionParam(ds, PARAM_HOST_ID);
+
+		String url = host + "/_api/search/query?querytext='contentclass:STS_Web'&selectproperties='Title,Path'";
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Map> responseEntity = restTemplate.exchange(url, HttpMethod.GET, getHeaderRequestByVerboseAccept(ds, rtfaCookie, fedAuthCookie, formDigest), Map.class);
+
+		Map mapObject = responseEntity.getBody();
+
+		Map<String, Object> dObject = (Map<String, Object>) mapObject.get("d");
+
+		Map<String, Object> queryObject = (Map<String, Object>) dObject.get("query");
+
+		Map<String, Object> primaryQueryResult = (Map<String, Object>) queryObject.get("PrimaryQueryResult");
+
+		Map<String, Object> relevantResults = (Map<String, Object>) primaryQueryResult.get("RelevantResults");
+
+		Map<String, Object> table = (Map<String, Object>) relevantResults.get("Table");
+
+		Map<String, Object> rows = (Map<String, Object>) table.get("Rows");
+
+		List<Map<String, Object>> results = (List<Map<String, Object>>) rows.get("results");
+
+		for (Map<String, Object> row : results)
+		{
+
+			Map<String, Object> cells = (Map<String, Object>) row.get("Cells");
+
+			List<Map<String, Object>> resultsList = (List<Map<String, Object>>) cells.get("results");
+
+			for (Map<String, Object> cell : resultsList)
+			{
+				if( cell.get("Key").toString().equals("Path") )
+				{
+					sitesList.add(cell.get("Value").toString());
+				}
+			}
+		}
+		return sitesList;
+	}
+
+	@Override
+	public Metadata getMetadata(final DataSource ds) throws DataExtractionServiceException
+	{
+		Metadata metadata = getMetadataForUnstructuredDS(ds);
+		return metadata;
+	}
+
+	private Pair<String, String> login(String username, String password, String host) throws DataExtractionServiceException
+	{
+		username = StringEscapeUtils.escapeXml11(username);
+		password = StringEscapeUtils.escapeXml11(password);
+		Pair<String, String> result;
+		String token;
+		try
+		{
+			token = requestToken(host, username, password);
+			if( token == null )
+			{
+				return null;
+			}
+			result = submitToken(host, token);
+
+		}
+		catch ( Exception e )
+		{
+			throw new DataExtractionServiceException(new Problem().code("unknownConnection").message(e.getMessage()));
+		}
+		return result;
+	}
+
+	private String requestToken(String host, String username, String password) throws XPathExpressionException, SAXException, ParserConfigurationException, IOException
+	{
+		String saml = generateSAML(host, username, password);
+		String sts = "https://login.microsoftonline.com/extSTS.srf";
+		URL u = new URL(sts);
+		URLConnection uc = u.openConnection();
+		HttpURLConnection connection = (HttpURLConnection) uc;
+
+		connection.setDoOutput(true);
+		connection.setDoInput(true);
+		connection.setRequestMethod("POST");
+		connection.addRequestProperty("Content-Type", "text/xml; charset=utf-8");
+		OutputStream out = connection.getOutputStream();
+		Writer writer = new OutputStreamWriter(out);
+		writer.write(saml);
+
+		writer.flush();
+		writer.close();
+
+		InputStream in = connection.getInputStream();
+		int c;
+		StringBuilder sb = new StringBuilder("");
+		while ((c = in.read()) != -1)
+		{
+			sb.append((char) (c));
+		}
+		in.close();
+		String result = sb.toString();
+		String token = extractToken(result);
+		if( token == null || token.equals("") )
+		{
+			return null;
+		}
+		return token;
+	}
+
+	private String generateSAML(String host, String username, String password)
+	{
+		String reqXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\" xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n"
+				+ "   <s:Header>\n" + "      <a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue</a:Action>\n" + "      <a:ReplyTo>\n" + "         <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>\n" + "      </a:ReplyTo>\n"
+				+ "      <a:To s:mustUnderstand=\"1\">https://login.microsoftonline.com/extSTS.srf</a:To>\n" + "      <o:Security xmlns:o=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" s:mustUnderstand=\"1\">\n" + "         <o:UsernameToken>\n"
+				+ "            <o:Username>[[username]]</o:Username>\n" + "            <o:Password>[[password]]</o:Password>\n" + "         </o:UsernameToken>\n" + "      </o:Security>\n" + "   </s:Header>\n" + "   <s:Body>\n"
+				+ "      <t:RequestSecurityToken xmlns:t=\"http://schemas.xmlsoap.org/ws/2005/02/trust\">\n" + "         <wsp:AppliesTo xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\">\n" + "            <a:EndpointReference>\n" + "               <a:Address>[[endpoint]]</a:Address>\n"
+				+ "            </a:EndpointReference>\n" + "         </wsp:AppliesTo>\n" + "         <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>\n" + "         <t:RequestType>http://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>\n"
+				+ "         <t:TokenType>urn:oasis:names:tc:SAML:1.0:assertion</t:TokenType>\n" + "      </t:RequestSecurityToken>\n" + "   </s:Body>\n" + "</s:Envelope>";
+		String saml = reqXML.replace("[[username]]", username);
+		saml = saml.replace("[[password]]", password);
+		saml = saml.replace("[[endpoint]]", String.format("%s/_api/web/lists", host));
+		return saml;
+	}
+
+	private String extractToken(String result) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException
+	{
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.parse(new InputSource(new StringReader(result)));
+		XPathFactory xpf = XPathFactory.newInstance();
+		XPath xp = xpf.newXPath();
+		String token = xp.evaluate("//BinarySecurityToken/text()", document.getDocumentElement());
+		return token;
+	}
+
+	private Pair<String, String> submitToken(String host, String token) throws IOException
+	{
+		String loginContextPath = "/_forms/default.aspx?wa=wsignin1.0";
+		String url = String.format("%s%s", host, loginContextPath);
+		CookieHandler.setDefault(null);
+		URL u = new URL(url);
+		URLConnection uc = u.openConnection();
+		HttpURLConnection connection = (HttpURLConnection) uc;
+		connection.setDoOutput(true);
+		connection.setDoInput(true);
+		connection.setRequestMethod("POST");
+		connection.addRequestProperty("Accept", "application/x-www-form-urlencoded");
+		connection.addRequestProperty("Content-Type", "text/xml; charset=utf-8");
+		connection.setInstanceFollowRedirects(false);
+		OutputStream out = connection.getOutputStream();
+		Writer writer = new OutputStreamWriter(out);
+		writer.write(token);
+		writer.flush();
+		out.flush();
+		writer.close();
+		out.close();
+
+		String rtFa = null;
+		String fedAuth = null;
+		Map<String, List<String>> headerFields = connection.getHeaderFields();
+		List<String> cookiesHeader = headerFields.get("Set-Cookie");
+		if( cookiesHeader != null )
+		{
+			for (String cookie : cookiesHeader)
+			{
+				if( cookie.startsWith("rtFa=") )
+				{
+					rtFa = "rtFa=" + HttpCookie.parse(cookie).get(0).getValue();
+				}
+				else if( cookie.startsWith("FedAuth=") )
+				{
+					fedAuth = "FedAuth=" + HttpCookie.parse(cookie).get(0).getValue();
+				}
+			}
+		}
+		Pair<String, String> result = ImmutablePair.of(rtFa, fedAuth);
+		return result;
+	}
+
+	private String contextinfo(Pair<String, String> token, String host) throws DataExtractionServiceException
+	{
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		String contextinfo = null;
+		try
+		{
+			HttpPost getRequest = new HttpPost(host + "/_api/contextinfo");
+			getRequest.addHeader("Cookie", token.getLeft() + ";" + token.getRight());
+			getRequest.addHeader("accept", "application/json");
+			HttpResponse response = httpClient.execute(getRequest);
+			if( response.getStatusLine().getStatusCode() == 200 )
+			{
+				contextinfo = IOUtils.toString(response.getEntity().getContent(), "utf-8");
+			}
+			else
+			{
+				throw new RuntimeException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
+			}
+		}
+		catch ( ClientProtocolException e )
+		{
+			throw new DataExtractionServiceException(new Problem().code("unknownConnection").message(e.getMessage()));
+		}
+		catch ( IOException e )
+		{
+			throw new DataExtractionServiceException(new Problem().code("unknownConnection").message(e.getMessage()));
+		}
+		finally
+		{
+			try
+			{
+				httpClient.close();
+			}
+			catch ( IOException ex )
+			{
+				ex.printStackTrace();
+			}
+		}
+		return contextinfo;
+	}
+
+	public String get(Pair<String, String> token, String url) throws DataExtractionServiceException
+	{
+
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		String content = null;
+		try
+		{
+			HttpGet getRequest = new HttpGet(url);
+			getRequest.addHeader("Cookie", token.getLeft() + ";" + token.getRight());
+			getRequest.addHeader("accept", "application/json;odata=verbose");
+
+			HttpResponse response = httpClient.execute(getRequest);
+			if( response.getStatusLine().getStatusCode() == 200 )
+			{
+				content = IOUtils.toString(response.getEntity().getContent(), "utf-8");
+			}
+			else
+			{
+				throw new DataExtractionServiceException(new Problem().code("unknownConnection").message("Failed : HTTP error code : " + response.getStatusLine().getStatusCode() + ", " + url));
+			}
+		}
+		catch ( ClientProtocolException e )
+		{
+			throw new DataExtractionServiceException(new Problem().code("unknownConnection").message(e.getMessage()));
+		}
+		catch ( IOException e )
+		{
+			throw new DataExtractionServiceException(new Problem().code("unknownConnection").message(e.getMessage()));
+		}
+		finally
+		{
+			try
+			{
+				httpClient.close();
+			}
+			catch ( IOException ex )
+			{
+				ex.printStackTrace();
+			}
+		}
+		return content;
+	}
+
+	@Override
+	public StartResult startDataExtractionJob(DataSource ds, DataExtractionSpec spec, final int containersCount) throws DataExtractionServiceException
+	{
+		StartResult startResult = null;
+		try
+		{
+			final DataExtractionJob job = createDataExtractionJob(ds, spec);
+			String adapterHome = createDir(this.desHome, TYPE_LABEL);
+			final DataExtractionContext context = new DataExtractionContext(this, getDataSourceType(), ds, spec, job, this.messaging, this.pendingTasksQueue, this.pendingTasksQueueName, TYPE_LABEL, this.encryption);
+			final DataExtractionThread dataExtractionExecutor = new SharePointDataExtractionExecutor(context, adapterHome, containersCount);
+			this.threadPool.execute(dataExtractionExecutor);
+			startResult = new StartResult(job, dataExtractionExecutor);
+		}
+		catch ( Exception exe )
+		{
+			throw new DataExtractionServiceException(new Problem().code("unknownDataExtractionJob").message(exe.getMessage()));
+
+		}
+		return startResult;
+	}
+
+	public class SharePointDataExtractionExecutor extends DataExtractionThread
+	{
+		private final int containersCount;
+
+		public SharePointDataExtractionExecutor(final DataExtractionContext context, final String adapterHome, final int containersCount) throws DataExtractionServiceException
+		{
+			super(context);
+			this.containersCount = containersCount;
+		}
+
+		@Override
+		protected List<DataExtractionTask> runDataExtractionJob() throws Exception
+		{
+			final DataSource ds = this.context.ds;
+			final DataExtractionSpec spec = this.context.spec;
+			final DataExtractionJob job = this.context.job;
+
+			return getDataExtractionTasks(ds, spec, job, containersCount);
+		}
+
+		private List<DataExtractionTask> getDataExtractionTasks(DataSource ds, DataExtractionSpec spec,
+
+				DataExtractionJob job, int containersCount) throws DataExtractionServiceException
+		{
+
+			List<DataExtractionTask> dataExtractionJobTasks = new ArrayList<DataExtractionTask>();
+
+			int objectsCount = 0;
+			int tasksCount = 0;
+
+			try
+			{
+				synchronized (job)
+				{
+
+					job.setOutputMessagingQueue("DES-" + job.getId());
+
+					job.objectsExtracted(0);
+
+					job.setTasksCount(tasksCount);
+
+					job.setObjectCount(objectsCount);
+
+				}
+
+				RestTemplate restTemplate = new RestTemplate();
+				List<FileMetaInfo> filesInfoList = getFilesInfoMap(ds, restTemplate);
+
+				objectsCount = filesInfoList.size();
+
+				for (int i = 0; i < filesInfoList.size(); i += 10)
+				{
+					List<FileMetaInfo> tmpFilesInfoList = new ArrayList<>(MAX_FILES_THRESHOLD);
+					int start = i;
+					int end = (i + 10);
+
+					if( start >= objectsCount )
+					{
+						start = objectsCount;
+					}
+					if( end > objectsCount )
+					{
+						end = objectsCount;
+					}
+
+					tmpFilesInfoList = filesInfoList.subList(start, end);
+
+					dataExtractionJobTasks.add(getDataExtractionTask(ds, spec, job, tmpFilesInfoList));
+					tasksCount++;
+				}
+			}
+			catch ( Exception e )
+			{
+				throw new DataExtractionServiceException(new Problem().code("unknownDataExtractionJob").message(e.getMessage()));
+			}
+			synchronized (job)
+			{
+				job.setTasksCount(tasksCount);
+				job.setObjectCount(objectsCount);
+			}
+
+			return dataExtractionJobTasks;
+		}
+
+		private final DataExtractionTask getDataExtractionTask(DataSource ds, DataExtractionSpec spec,
+
+				DataExtractionJob job, List<FileMetaInfo> filesInfoList) throws DataExtractionServiceException
+		{
+
+			DataExtractionTask dataExtractionTask = new DataExtractionTask();
+
+			try
+			{
+
+				final String host = getConnectionParam(ds, PARAM_HOST_ID);
+				final String userName = getConnectionParam(ds, PARAM_USER_ID);
+				final String password = getConnectionParam(ds, PARAM_PASSWORD_ID);
+
+				Map<String, String> contextParams = getContextParams(job.getId(), userName, password, host, filesInfoList, spec.getScope().name(), String.valueOf(spec.getSampleSize()));
+
+				dataExtractionTask.taskId("DES-Task-" + getUUID())
+
+						.jobId(job.getId())
+
+						.typeId(TYPE_ID)
+
+						.contextParameters(contextParams)
+
+						.numberOfFailedAttempts(0);
+			}
+			catch ( Exception e )
+			{
+				throw new DataExtractionServiceException(new Problem().code("unknownDataExtractionJob").message(e.getMessage()));
+			}
+			return dataExtractionTask;
+		}
+
+		private Map<String, String> getContextParams(String jobId, String userName, String password, String host, List<FileMetaInfo> filesInfoList, final String extractionScope, final String sampleSize) throws IOException
+		{
+
+			ObjectMapper mapperObj = new ObjectMapper();
+
+			String filesInfo = mapperObj.writeValueAsString(filesInfoList);
+
+			Map<String, String> contextParams = new LinkedHashMap<>();
+
+			contextParams.put("JOB_STARTDATETIME", getConvertedDate(new Date()));
+
+			contextParams.put("USER_NAME", userName);
+
+			contextParams.put("PARAM_PASSWORD", password);
+
+			contextParams.put("PARAM_HOST", host);
+
+			contextParams.put("JOB_ID", jobId);
+
+			contextParams.put("FILES_INFO", filesInfo);
+
+			contextParams.put("SCOPE", extractionScope);
+
+			contextParams.put("SAMPLESIZE", sampleSize);
+
+			return contextParams;
+
+		}
+
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		private List<FileMetaInfo> getFilesInfoMap(final DataSource ds, RestTemplate restTemplate) throws DataExtractionServiceException
+		{
+			List<String> sitesList = null;
+			String url = null;
+			List<FileMetaInfo> filesInfoList = new ArrayList<>();
+			ResponseEntity<Map> responseEntity = null;
+			try
+			{
+				String[] fileTypes = new String[] { "doc", "docx", "xls", "xlsx", "ppt", "pptx", "odt", "ods", "odp", "txt", "rtf", "pdf" };
+
+				List<String> reqDocTypeList = new ArrayList<String>(Arrays.asList(fileTypes));
+
+				final String host = getConnectionParam(ds, PARAM_HOST_ID);
+				final String userName = getConnectionParam(ds, PARAM_USER_ID);
+				final String password = getConnectionParam(ds, PARAM_PASSWORD_ID);
+
+				Pair<String, String> token = login(userName, password, host);
+
+				if( token != null )
+				{
+					String rtfaCookie = token.getLeft();
+					String fedAuthCookie = token.getRight();
+					String formDigestJson = contextinfo(token, host);
+					JSONParser parser = new JSONParser();
+					JSONObject json = (JSONObject) parser.parse(formDigestJson);
+					String formDigest = json.get("FormDigestValue").toString();
+
+					sitesList = getSiteUrls(ds, rtfaCookie, fedAuthCookie, formDigest);
+					List<String> subSitesList = getSubSiteUrls(ds, rtfaCookie, fedAuthCookie, formDigest);
+					sitesList.addAll(subSitesList);
+
+					if( sitesList != null && sitesList.size() > 0 )
+					{
+
+						for (String siteUrl : sitesList)
+						{
+
+							url = siteUrl + "/_api/Web/folders";
+
+							responseEntity = restTemplate.exchange(url, HttpMethod.GET, getHeaderRequest(ds, rtfaCookie, fedAuthCookie, formDigest), Map.class);
+
+							Map foldersObject = responseEntity.getBody();
+
+							List<Map<String, Object>> valueList = (List<Map<String, Object>>) foldersObject.get("value");
+
+							for (Map<String, Object> serverRelativeUrl : valueList)
+							{
+
+								url = siteUrl + "/_api/web/GetFolderByServerRelativeUrl('" + serverRelativeUrl.get("ServerRelativeUrl").toString() + "')/Files";
+
+								responseEntity = restTemplate.exchange(url, HttpMethod.GET, getHeaderRequest(ds, rtfaCookie, fedAuthCookie, formDigest), Map.class);
+
+								Map filesObject = responseEntity.getBody();
+
+								List<Map<String, Object>> filesValueList = (List<Map<String, Object>>) filesObject.get("value");
+
+								if( filesValueList != null )
+								{
+									for (Map<String, Object> filesValueObject : filesValueList)
+									{
+										String fileExtension = filesValueObject.get("Name").toString().substring(filesValueObject.get("Name").toString().lastIndexOf(".") + 1);
+
+										if( reqDocTypeList.contains(fileExtension) )
+										{
+											FileMetaInfo fileMetaInfo = new FileMetaInfo();
+											fileMetaInfo.fileId(filesValueObject.get("UniqueId").toString());
+											fileMetaInfo.setFileName(filesValueObject.get("Name").toString());
+											fileMetaInfo.setFileExtension(fileExtension);
+											fileMetaInfo.setFileSize(Integer.valueOf(filesValueObject.get("Length").toString()));
+											fileMetaInfo.setFilePath(filesValueObject.get("ServerRelativeUrl").toString());
+											fileMetaInfo.setFileDownloadLink(siteUrl + "/_layouts/download.aspx?SourceUrl=" + host + filesValueObject.get("ServerRelativeUrl").toString());
+											filesInfoList.add(fileMetaInfo);
+										}
+									}
+								}
+
+							}
+
+						}
+					}
+				}
+			}
+			catch ( Exception e )
+			{
+				throw new DataExtractionServiceException(new Problem().code("unknownConnection").message(e.getMessage()));
+			}
+			return filesInfoList;
+		}
+	}
+
+	@Override
+	public int getCountRows(DataSource ds, DataExtractionSpec spec) throws DataExtractionServiceException
+	{
+		return 0;
+	}
+}

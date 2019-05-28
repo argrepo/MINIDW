@@ -1,0 +1,1007 @@
+{
+       "dataSource": "MySQL",
+       "collection": "cust_data_hr.Employees",
+       "scope": "all",
+       "sampleSize":"1000",
+       "attributes":
+       [
+            {
+                            "name": "id" 
+                        },
+                        {
+                            "name": "first_name" 
+                        },
+                        {
+                            "name": "last_name" 
+                        },
+                        {
+                            "name": "ssn" 
+                        },
+                        {
+                            "name": "email" 
+                        },
+                        {
+                            "name": "hire_date" 
+                        },
+                        {
+                            "name": "dob" 
+                        },
+                        {
+                            "name": "salary" 
+                        },
+                        {
+                            "name": "commission_pct" 
+                        }
+       ]
+   }
+		 {
+		   "dataSource": "Oracle",
+		   "collection": "CUST_DATA_HR.EMPLOYEES",
+		   "scope": "all",
+		   "sampleSize":"1000",
+		   "attributes":
+		   [
+			     {
+                            "name": "ID" 
+                        },
+                        {
+                            "name": "FIRST_NAME" 
+                        },
+                        {
+                            "name": "LAST_NAME" 
+                        },
+                        {
+                            "name": "SSN" 
+                        },
+                        {
+                            "name": "EMAIL" 
+                        },
+                        {
+                            "name": "HIRE_DATE" 
+                        },
+                        {
+                            "name": "DOB" 
+                        },
+                        {
+                            "name": "SALARY" 
+                        },
+                        {
+                            "name": "COMMISSION_PCT" 
+                        }
+		   ]
+	   }
+   
+   {
+       "dataSource": "SqlServer",
+       "collection": "cust_data_hr.dbo.Addresses",
+       "scope": "sample",
+       "sampleSize":"1110",
+       "attributes":
+       [
+           {
+               "name": "street"
+           },
+           {
+               "name": "city"
+           } 
+       ]
+   }
+  {
+       "dataSource": "SqlServerKerbores_4",
+       "collection": "cust_data_hr.dbo.Employees",
+       "scope": "sample",
+       "sampleSize":"200020",
+       "attributes":
+       [
+           {
+               "name": "id"
+           },
+           {
+               "name": "first_name"
+           },
+           {
+           	"name":"last_name"
+           },
+           {
+               "name": "ssn"
+           },
+           {
+               "name": "email"
+           },
+           {
+           	"name":"hire_date"
+           },
+           {
+               "name": "salary"
+           },
+           {
+           	"name":"commission_pct"
+           }
+       ]
+   }
+   
+  {
+      "dataSource": "SAP",
+      "collection": "PA0002",
+      "scope": "sample",
+      "sampleSize":"10",
+      "attributes":
+      [
+          {
+              "name": "MANDT"
+          },
+          {
+              "name": "PERNR"
+          },
+          {
+              "name": "OBJPS"
+          }
+      ]
+  }
+  
+  {
+     "dataSource": "Mongo",
+     "collection": "cust_data.EmployeeDetails_1Million",
+     "scope": "sample",
+     "sampleSize":"9",
+     "attributes":
+     [
+         {
+              "name": "_id"
+          },
+          {
+              "name": "first_name"
+          },
+          {
+              "name": "last_name"
+          },
+          {
+              "name": "ssn"
+          },
+          {
+              "name": "email"
+          },
+          {
+              "name": "hire_date"
+          },
+          {
+              "name": "dob"
+          },
+          {
+              "name": "salary"
+          },
+          {
+              "name": "commission_pct"
+          },
+         {
+         "name":"addresses",
+           "children":[
+             {
+               "name":"street"
+             },
+             {
+               "name":"city"
+             },
+             {
+               "name":"state"
+             },
+             {
+               "name":"zip"
+             }
+             ]
+         },
+         {
+         "name":"phone_numbers"
+         },
+         {
+         "name":"pay_checks",
+           "children":[
+             {
+               "name":"payment_date"
+             },
+             {
+               "name":"amount"
+             }
+             ]
+         }
+         
+     ]
+ }
+	{
+		 "dataSource": "Couchbase",
+		 "collection": "EmployeeDetails_New",
+		 "scope": "sample",
+		 "sampleSize":"1000",
+		 "attributes":
+		 [
+			 {
+				  "name": "id"
+			  },
+			  {
+				  "name": "first_name"
+			  },
+			  {
+				  "name": "last_name"
+			  },
+			  {
+				  "name": "ssn"
+			  },
+			  {
+				  "name": "email"
+			  },
+			  {
+				  "name": "hire_date"
+			  },
+			  {
+				  "name": "dob"
+			  },
+			  {
+				  "name": "salary"
+			  },
+			  {
+				  "name": "commission_pct"
+			  },
+			 {
+			 "name":"addresses",
+			   "children":[
+				 {
+				   "name":"street"
+				 },
+				 {
+				   "name":"city"
+				 },
+				 {
+				   "name":"state"
+				 },
+				 {
+				   "name":"zip"
+				 }
+				 ]
+			 },
+			 {
+			 "name":"phone_numbers"
+			 },
+			 {
+			 "name":"pay_checks",
+			   "children":[
+				 {
+				   "name":"payment_date"
+				 },
+				 {
+				   "name":"amount"
+				 }
+				 ]
+			 }
+			 
+		 ]
+	 }
+ 
+  {
+      "dataSource": "HBase",
+      "collection": "employees_details_simplified",
+      "scope": "sample",
+      "sampleSize":"200020",
+      "attributes":
+      [
+          {
+              "name": "employees:addr_postal_code"
+          },
+          {
+              "name": "employees:ssn"
+          },
+          {
+              "name": "employees:first_name"
+          },
+           {
+              "name": "employees:addr_region"
+          },
+          {
+              "name": "employees:email"
+          },
+          {
+              "name": "employees:hire_date"
+          },
+          {
+			"name": "employees:addr_street"
+			 
+		},
+		{
+			"name": "employees:phone_office"
+		 
+		},
+		{
+			"name": "employees:salary"
+		   
+		},
+		{
+			"name": "employees:phone_home"
+			
+		},
+		{
+			"name": "employees:addr_city"
+			
+		},
+		{
+			"name": "employees:last_name"
+			
+		},
+		{
+			"name": "employees:phone_mobile"
+			
+		},
+		{
+			"name": "employees:id"
+			
+		},
+		{
+			"name": "employees:commission_pct"
+			
+		},
+		{
+			"name": "employees:dob"
+			
+		},
+		{
+			"name": "employees:manager_id"
+			
+		}
+      ]
+  }
+  
+    {
+      "dataSource": "Hive",
+      "collection": "cust_data_hr.employees_details_hive_simplified",
+      "scope": "sample",
+      "sampleSize":"200020",
+      "attributes":
+      [
+          {
+                            "name": "id"
+                             
+                        },
+                        {
+                            "name": "first_name"
+                            
+                        },
+                        {
+                            "name": "last_name"
+                            
+                        },
+                        {
+                            "name": "ssn"
+                           
+                        },
+                        {
+                            "name": "phone_mobile"
+                           
+                        },
+                        {
+                            "name": "phone_home"
+                            
+                        },
+                        {
+                            "name": "phone_office"
+                            
+                        },
+                        {
+                            "name": "email"
+                            
+                        },
+                        {
+                            "name": "addr_street" 
+                        },
+                        {
+                            "name": "addr_city"
+                          
+                        },
+                        {
+                            "name": "addr_region"
+                             
+                        },
+                        {
+                            "name": "addr_postal_code"
+                          
+                        },
+                        {
+                            "name": "hire_date"
+                            
+                        },
+                        {
+                            "name": "dob"
+                            
+                        },
+                        {
+                            "name": "salary"
+                            
+                        },
+                        {
+                            "name": "commission_pct"
+                             
+                        },
+                        {
+                            "name": "manager_id"
+                             
+                        }
+		  
+      ]
+  }
+  
+  
+   {
+       "dataSource": "CSV",
+       "collection": "D:/prifender/Sequence",
+       "scope": "sample",
+       "sampleSize":"1000",
+       "attributes":
+       [
+           {
+               "name": "first_name"
+           },
+           {
+               "name": "last_name"
+           }
+       ]
+   }
+ {
+      "dataSource": "HDFSParquet",
+      "collection": "/user/parquet/employees_details_parquet",
+      "scope": "sample",
+      "sampleSize":"200020",
+      "attributes":
+      [
+          {
+              "name": "first_name"
+          },
+          {
+              "name": "last_name"
+          }  ,
+          {
+			 "name":"addresses",
+			 "children":[
+				 {
+				   "name":"street"
+				 },
+				 {
+				   "name":"city"
+				 },
+				 {
+				   "name":"state"
+				 },
+				 {
+				   "name":"zip"
+				 }
+				 ]
+			   
+		  },
+		  {
+		  	"name":"pay_checks" ,
+			   "children":[
+				 {
+				   "name":"payment_date"
+				 },
+				 {
+				   "name":"amount"
+				 }
+				 ]
+		  },
+		   {
+              "name": "commission_pct"
+          },
+          {
+              "name": "dob"
+          }  ,
+          {
+			 "name":"id"
+			   
+		  },
+		  {
+		  	"name":"hire_date"
+		  }
+		  ,
+		   {
+              "name": "salary"
+          },
+          {
+              "name": "email"
+          }  ,
+          {
+			 "name":"ssn"
+			   
+		  },
+		  {
+		  	"name":"phone_numbers"
+		  }
+      ]
+  }
+	  {
+		  "dataSource": "HDFSAvro",
+		  "collection": "/user/root/avro/employees/000000_0",
+		  "scope": "sample",
+		  "sampleSize":"1000",
+		  "attributes":
+		  [
+			  {
+				  "name": "first_name"
+			  },
+			  {
+				  "name": "last_name"
+			  }  
+		  ]
+	  }
+  {
+      "dataSource": "Teradata",
+      "collection": "Cust_Data_Hr.Addresses",
+      "scope": "sample",
+      "sampleSize":"1000",
+      "attributes":
+      [
+          {
+              "name": "street"
+          },
+          {
+              "name": "city"
+          }
+      ]
+  }
+  
+   {
+       "dataSource": "Cassandra",
+       "collection": "cust_data_hr.employees",
+       "scope": "sample",
+       "sampleSize":"1000",
+       "attributes":
+       [
+          {
+                            "name": "id" 
+                        },
+                        {
+                            "name": "addr_city" 
+                        },
+                        {
+                            "name": "addr_postal_code" 
+                        },
+                        {
+                            "name": "addr_region" 
+                        },
+                        {
+                            "name": "addr_street"  
+                             
+                        },
+                        {
+                            "name": "commission_pct" 
+                        },
+                        {
+                            "name": "dob" 
+                        },
+                        {
+                            "name": "email" 
+                        },
+                        {
+                            "name": "first_name" 
+                        },
+                        {
+                            "name": "hire_date" 
+                        },
+                        {
+                            "name": "last_name" 
+                        },
+                        {
+                            "name": "manager_id" 
+                        },
+                        {
+                            "name": "phone_home" 
+                        },
+                        {
+                            "name": "phone_mobile" 
+                        },
+                        {
+                            "name": "phone_office" 
+                        },
+                        {
+                            "name": "salary" 
+                        },
+                        {
+                            "name": "ssn" 
+                        }
+       ]
+   }
+   
+     {
+      "dataSource": "HDFSORC",
+      "collection": "/user/orc/employees_details_orc",
+      "scope": "sample",
+      "sampleSize":"1000",
+      "attributes":
+      [
+          {
+              "name": "first_name"
+          },
+          {
+              "name": "email"
+          }  ,
+         {
+         "name":"addresses",
+           "children":[
+             {
+               "name":"street"
+             },
+             {
+               "name":"city"
+             },
+             {
+               "name":"state"
+             },
+             {
+               "name":"zip"
+             }
+             ]
+         },
+         {
+         "name":"phone_numbers"
+         },
+         {
+         "name":"pay_checks",
+           "children":[
+             {
+               "name":"payment_date"
+             },
+             {
+               "name":"amount"
+             }
+             ]
+         }
+      ]
+  }
+  
+    {
+       "dataSource": "Redshift",
+       "collection": "prifenderdb.public.employees",
+       "scope": "sample",
+       "sampleSize":"1000",
+       "attributes":
+       [
+           {
+                            "name": "id"
+                            
+                        },
+                        {
+                            "name": "first_name" 
+                        },
+                        {
+                            "name": "last_name" 
+                        },
+                        {
+                            "name": "ssn" 
+                        },
+                        {
+                            "name": "email" 
+                        },
+                        {
+                            "name": "hire_date" 
+                        },
+                        {
+                            "name": "dob" 
+                        },
+                        {
+                            "name": "salary" 
+                        },
+                        {
+                            "name": "commission_pct" 
+                        },
+                        {
+                            "name": "manager_id" 
+                        }
+       ]
+   }
+   
+ {
+       "dataSource": "Cassandra_1",
+       "collection": "cust_data_hr.employees",
+       "scope": "sample",
+       "sampleSize":"1000",
+       "attributes":
+       [
+           {
+                            "name": "id"
+                            
+                        },
+                        {
+                            "name": "addr_city" 
+                        },
+                        {
+                            "name": "addr_postal_code" 
+                        },
+                        {
+                            "name": "addr_region" 
+                        },
+                        {
+                            "name": "addr_street" 
+                        },
+                        {
+                            "name": "commission_pct" 
+                        },
+                        {
+                            "name": "dob" 
+                        },
+                        {
+                            "name": "email" 
+                        },
+                        {
+                            "name": "first_name" 
+                        },
+                        {
+                            "name": "hire_date" 
+                        }
+       ]
+   }
+   
+   {
+       "dataSource": "DynamoDB",
+       "collection": "EmployeesDetails",
+       "scope": "sample",
+       "sampleSize":"1000",
+       "attributes":
+       [
+           {
+               "name": "phone_mobile"
+           } ,
+           {
+           	 "name": "commission_pct"
+           }
+            ,
+           {
+           	 "name": "last_name"
+           },
+           {
+           	 "name": "hire_date"
+           },
+           {
+           	 "name": "salary"
+           },
+           {
+           	 "name": "addr_street"
+           },
+           {
+           	 "name": "addr_region"
+           }
+       ]
+   }
+     {
+     "dataSource": "PostgreSQL",
+     "collection": "cust_data_hr.public.Addresses",
+     "scope": "sample",
+     "sampleSize":"1000",
+     "attributes":
+     [
+          {
+              "name": "id"
+          },
+          {
+              "name": "street"
+          } 
+     ]
+ }
+ {
+      "dataSource": "CSVNFS_1",
+      "collection": "Filesystem_Azure/Sequence_with_same_formats/",
+      "scope": "sample",
+      "sampleSize":"1000",
+      "attributes":
+      [
+          {
+              "name": "first_name"
+          },
+          {
+              "name": "last_name"
+          }  
+      ]
+  }
+  
+   {
+       "dataSource": "Db2_1",
+       "collection": "sample.DB2INST1.CUST_EMPLOYEES",
+       "scope": "",
+       "sampleSize":"10",
+       "attributes":
+       [
+                    {
+                            "name": "ID" 
+                        },
+                        {
+                            "name": "FIRST_NAME" 
+                        },
+                        {
+                            "name": "LAST_NAME" 
+                        },
+                        {
+                            "name": "SSN" 
+                        },
+                        {
+                            "name": "EMAIL" 
+                        },
+                        {
+                            "name": "HIRE_DATE" 
+                        },
+                        {
+                            "name": "DOB" 
+                        },
+                        {
+                            "name": "SALARY" 
+                        },
+                        {
+                            "name": "COMMISSION_PCT" 
+                        },
+                        {
+                            "name": "MANAGER_ID" 
+                        },
+                        {
+                            "name": "NATIONALITY" 
+                        }
+       ]
+   }
+    {
+       "dataSource": "Salesforce",
+       "collection": "Employees__c",
+       "scope": "sample",
+       "sampleSize":"10",
+       "attributes":
+       [
+                        {
+                            "name": "Id" 
+                        },
+                        {
+                            "name": "Name" 
+                        },
+                        {
+                            "name": "first_name__c" 
+                        },
+                        {
+                            "name": "last_name__c" 
+                        },
+                        {
+                            "name": "nationality__c"  
+                             
+                        },
+                        {
+                            "name": "manager_id__c" 
+                        } 
+       ]
+   }
+   
+   
+   {
+       "dataSource": "LdapActiveDirectory",
+       "collection": "mahender.alaveni",
+       "scope": "all",
+       "sampleSize":"1000",
+       "attributes":
+       [
+                          {
+                            "name": "lastLogoff" 
+                        },
+                        {
+                            "name": "logonCount" 
+                        },
+                        {
+                            "name": "accountExpires" 
+                        },
+                        {
+                            "name": "lastLogonTimestamp" 
+                        },
+                        {
+                            "name": "distinguishedName" 
+                        },
+                        {
+                            "name": "operatingSystemServicePack" 
+                        },
+                        {
+                            "name": "operatingSystem" 
+                        },
+                        {
+                            "name": "frsComputerReferenceBL" 
+                        },
+                        {
+                            "name": "dNSHostName" 
+                        },
+                        {
+                            "name": "operatingSystemVersion" 
+                        },
+                        {
+                            "name": "servicePrincipalName" 
+                        },
+                        {
+                            "name": "countryCode" 
+                        },
+                        {
+                            "name": "objectGUID" 
+                        },
+                        {
+                            "name": "dSCorePropagationData" 
+                        },
+                        {
+                            "name": "serverReferenceBL" 
+                        },
+                        {
+                            "name": "uSNCreated" 
+                        },
+                        {
+                            "name": "isCriticalSystemObject" 
+                        },
+                        {
+                            "name": "codePage" 
+                        },
+                        {
+                            "name": "userAccountControl" 
+                        },
+                        {
+                            "name": "lastLogon" 
+                        },
+                        {
+                            "name": "whenCreated" 
+                        },
+                        {
+                            "name": "badPasswordTime" 
+                        },
+                        {
+                            "name": "uSNChanged" 
+                        },
+                        {
+                            "name": "sAMAccountName" 
+                        },
+                        {
+                            "name": "instanceType" 
+                        },
+                        {
+                            "name": "objectClass" 
+                        },
+                        {
+                            "name": "localPolicyFlags" 
+                        },
+                        {
+                            "name": "cn" 
+                        },
+                        {
+                            "name": "whenChanged" 
+                        },
+                        {
+                            "name": "msDS-SupportedEncryptionTypes" 
+                        },
+                        {
+                            "name": "primaryGroupID" 
+                        },
+                        {
+                            "name": "sAMAccountType" 
+                        },
+                        {
+                            "name": "name" 
+                        },
+                        {
+                            "name": "objectSid" 
+                        },
+                        {
+                            "name": "rIDSetReferences" 
+                        },
+                        {
+                            "name": "objectCategory" 
+                        },
+                        {
+                            "name": "badPwdCount" 
+                        },
+                        {
+                            "name": "pwdLastSet" 
+                        }
+       ]
+   }
+   
+   
+   
+   ==============
+   Unstructured :
+   ============
+   
+{
+  "dataSource": "OneDrive_2",
+  "collection": "",
+  "scope": "all",
+  "sampleSize":"100"
+} 

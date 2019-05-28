@@ -1,0 +1,2242 @@
+
+http:///localhost:8080/des/supportedDataSourceTypes -- get
+http:///localhost:8080/des/dataSources -- get , post
+http:///localhost:8080/des/dataSources/{id}/testConnection -- get
+http:///localhost:8080/des/dataSources/{id}/metadata -- get
+http:///localhost:8080/des/dataExtractionJobs -- get, post
+
+http://rabbitmq.dwpractice.com:15672/
+admin
+admin
+
+open vpn:
+--------
+
+URL: https://104.43.255.53:943
+User name: pfuser
+pwd: gcEeYUs*ECg8
+
+
+Adapter list:
+----------
+https://tray.io/connectors -- conectors list
+
+M2:
+---
+D:\DES_GITHUB_M1_TO_M2_TO_MASTER_27_04_2018\Master\anvizent\des.controller.bundle
+D:\DES_GITHUB_M1_TO_M2_TO_MASTER_27_04_2018\Master\anvizent\encryption.service
+D:\DES_GITHUB_M1_TO_M2_TO_MASTER_27_04_2018\Master\anvizent\des.node
+
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8888' -- encryption
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8096' -- node
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8080' -- bundle
+
+MASTER:
+--------
+D:\DES_GITHUB_M1_TO_M2_TO_MASTER_27_04_2018\Master_09_05\anvizent\des.controller.bundle
+D:\DES_GITHUB_M1_TO_M2_TO_MASTER_27_04_2018\Master_09_05\anvizent\des.node
+D:\DES_GITHUB_M1_TO_M2_TO_MASTER_27_04_2018\Master_09_05\anvizent\encryption.service
+
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8888' -- encryption
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8096' -- node
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8080' -- bundle
+
++"?useUnicode=true&characterEncoding=UTF-8"
+
+HBase:- 
+IP Address:- 192.168.0.147
+User name:- root
+Password:- Dwp@1234
+
+Hive:- 
+IP Address:- 192.168.0.148
+User name:- root
+Password:- Dwp@1234
+
+Hbase:-
+Server IP:- 192.168.0.147
+Port No:- 9898 
+Web URL:- http://192.168.0.147:16010
+Version:- 1.3.1
+Hive:-
+Server IP:- 192.168.0.148
+Port No:- 10000
+Web URL:- http://192.168.0.148:100002
+Version:- 2.3.2
+
+
+
+Control Panel\Network and Internet\Network Connections
+
+orc vpn details:
+---------------
+10.9.0.4
+10.9.0.5
+DS-Hadoop-NewVM1	104.43.248.138	10.9.0.4
+DS-Hadoop-NewVM2	23.100.86.230	10.9.0.5
+User name: prifender
+pwd: gcEeYUs*ECg8
+
+DynamoDB:-
+-------
+Resource ARN - "arn:aws:dynamodb:eu-central-1:111254013410:table/prifender-dynamodb"
+user - dynamodb
+access key - AKIAIK2WNKTQUZFECRHQ
+secret - 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
+
+MongoDB:-
+--------
+Host: 13.68.21.43
+Port: 27017
+Username: desuser
+Password: SO#h3TbY*hx8ypJP
+Database: cust_data
+Collection : EmployeeDetails_1Million
+
+MySQL (Source) :
+-------------
+Public IP: 13.82.60.123
+User: prifender
+Password: gcEeYUs*ECg8
+port: 3306
+Database : cust_data_hr
+Tables:
+EmployeesDetails_Simplified
+
+couch base : 
+------------
+
+http://192.168.0.145:8091/ui/index.html#!/overview
+ittest
+Dwp@1234
+
+VM--
+IP Address:-52.165.216.11:1
+User name:- prifender
+Password:- gcEeYUs*ECg8
+
+======================
+VM details
+
+
+https://www.linkedin.com/in/konstantinkomissarchik -- profile
+
+ENCRYPTION_SERVICE
+http://localhost:8888/
+
+/etc/init.d/rabbitmq-server restart
+Server Details:- 
+IP Address:- 192.168.0.109
+User Name:- root 
+Password:- Dwp@1234   
+
+http://192.168.0.148:50070/explorer.html#/user
+hbase: http://192.168.0.147:9898
+
+amqp://etluser:password@192.168.0.109
+RabitMq
+---------
+root
+dwp@123
+
+
+
+http://localhost:8080/des/supportedDataSourceTypes
+http://localhost:8080/des/dataSources 
+http://localhost:8080/des/dataSources/OneDrive_2/testConnection
+http://localhost:8080/des/dataSources/OneDrive_2/metadata
+http://localhost:8080/des/dataExtractionJobs
+
+
+
+Sqlserverkerberos:
+=================
+
+https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/using-integrated-authentication?view=sql-server-2017  -- macos
+
+
+smb csv:
+
+========
+
+http://blog.icodejava.com/875/java-tutorial-using-jcifs-to-copy-files-to-shared-network-drive-using-username-and-password/ -- copy to local
+https://stackoverflow.com/questions/1277880/how-can-i-get-the-count-of-line-in-a-file-in-an-efficient-way/1277904
+
+http://www.technicalkeeda.com/java-tutorials/count-total-number-of-lines-of-file-using-java
+
+https://stackoverflow.com/questions/36339504/convert-smbfile-to-java-io-file/36473193
+
+nfs csv
+-------
+
+https://docs.oracle.com/cd/E19455-01/806-1067/6jacl3e6p/index.html
+https://stackoverflow.com/questions/41741365/access-to-nfs-share-from-java-application
+http://www2.sys-con.com/itsg/virtualcd/java/archives/0402/callaghan/index.html
+ https://docs.oracle.com/cd/E19455-01/806-1067/6jacl3e6g/index.html -- imp
+ https://docs.oracle.com/cd/E19455-01/806-1067/6jacl3e7l/index.html
+https://docs.oracle.com/cd/E19455-01/806-1067/806-1067.pdf -- imp
+http://www.java2s.com/Code/Jar/j/Downloadjftp152jar.htm - jar file
+
+hive
+----
+http://pubs.vmware.com/bde-1/index.jsp?topic=%2Fcom.vmware.bigdataextensions.admin.doc%2FGUID-805D4191-7972-4EFF-BB47-BEF06E4E189B.html
+
+https://community.hortonworks.com/articles/25410/simple-steps-to-test-hive-jdbc-connect.html
+
+http://hadooptutorial.info/hive-jdbc-client-example/
+
+https://stackoverflow.com/questions/25157273/connect-from-java-to-hive-using-jdbc
+
+
+http://www.hadooptpoint.org/hive-jdbc-connection/
+
+https://mapr.com/blog/connecting-apache-hive-to-odbc/
+https://drill.apache.org/docs/querying-the-information-schema/ --- get tables and schemas
+csv
+====
+https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml
+https://www.ietf.org/rfc/rfc4180.txt
+https://www.ietf.org/rfc/rfc4180.txt
+
+https://hortonworks.com/blog/hive-cheat-sheet-for-sql-users/
+http://javastoreroom.blogspot.in/2013/08/read-file-using-samba-jcifs.html
+
+https://data-flair.training/blogs/apache-hive-metastore/  -- important
+https://data-flair.training/blogs/configure-hive-metastore-to-mysql/  -- important
+ https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC
+ 
+ 
+ Cassandra:
+ ----------
+ 
+ https://docops.ca.com/ca-api-gateway/8-3/en/reference/cluster-properties/cassandra-cluster-properties -- connect and read timed out params
+ 
+ 
+ redshift
+ ----------
+ 
+ https://stackoverflow.com/questions/32640322/gradle-maven-dependency-for-redshift-jdbc-driver 
+ 
+ https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection-with-maven.html
+ 
+ 
+ hdfs parquet:
+ ------------
+ 
+ for(Footer f : ParquetFileReader.readFooters(conf, fs, false)){
+   for(BlockMetaData b : f.getParquetMetadata().getBlocks()){
+         rowCount += b.getRowCount();
+    }
+ 
+ Azure DataLake :
+ ====================
+ 
+ https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-get-started-java-sdk
+ 
+primary key:
+---------
+ SELECT 
+   d.NAME AS SCHEMA_NAME,
+   t.TBL_NAME AS TABLE_NAME,
+   kc.CONSTRAINT_NAME,
+   kc.CONSTRAINT_TYPE,
+   c.COLUMN_NAME,
+   c.TYPE_NAME,
+   '' AS REFERENCE_SCHEMA_NAME,
+   '' AS REFERENCE_TABLE_NAME,
+   '' AS REFERENCE_COL_NAME
+FROM
+   DBS d,
+   TBLS t,
+   SDS s,
+   COLUMNS_V2 c,
+   CDS cds,
+   KEY_CONSTRAINTS kc
+WHERE
+   d.DB_ID = t.DB_ID AND t.SD_ID = s.SD_ID
+       AND s.cd_id = c.cd_id
+       AND cds.CD_ID = c.CD_ID
+       AND kc.PARENT_TBL_ID = t.TBL_ID
+       AND kc.PARENT_CD_ID = c.CD_ID
+       AND c.INTEGER_IDX = kc.PARENT_INTEGER_IDX
+       AND CONSTRAINT_TYPE = '0' ;
+       
+
+UNION ALL
+
+Foreign key
+---------
+
+SELECT 
+   d.NAME AS SCHEMA_NAME,
+   t.TBL_NAME AS TABLE_NAME,
+   kc.CONSTRAINT_NAME,
+   kc.CONSTRAINT_TYPE,
+   c.COLUMN_NAME,
+   c.TYPE_NAME,
+   p_d.NAME AS REFERENCE_SCHEMA_NAME,
+   p_t.TBL_NAME AS REFERENCE_TABLE_NAME,
+   p_c.COLUMN_NAME AS REFERENCE_COL_NAME
+FROM
+   metastore.DBS d,
+   metastore.TBLS t,
+   metastore.SDS s,
+   metastore.COLUMNS_V2 c,
+   metastore.CDS cds,
+   metastore.KEY_CONSTRAINTS kc,
+   metastore.DBS p_d,
+   metastore.TBLS p_t,
+   metastore.SDS p_s,
+   metastore.COLUMNS_V2 p_c,
+   metastore.CDS p_cds
+WHERE
+   d.DB_ID = t.DB_ID AND t.SD_ID = s.SD_ID
+       AND s.cd_id = c.cd_id
+       AND cds.CD_ID = c.CD_ID
+       AND kc.CHILD_TBL_ID = t.TBL_ID
+       AND kc.CHILD_CD_ID = c.CD_ID
+       AND c.INTEGER_IDX = kc.CHILD_INTEGER_IDX
+       AND p_d.DB_ID = p_t.DB_ID
+       AND p_t.SD_ID = p_s.SD_ID
+       AND p_s.cd_id = p_c.cd_id
+       AND p_cds.CD_ID = p_c.CD_ID
+       AND kc.PARENT_TBL_ID = p_t.TBL_ID
+       AND kc.PARENT_CD_ID = p_c.CD_ID
+       AND p_c.INTEGER_IDX = kc.PARENT_INTEGER_IDX
+       AND CONSTRAINT_TYPE = '1'
+      # AND d.NAME IN ('vsatyp_schema')
+       #AND t.tbl_name = 'fk'
+ORDER BY SCHEMA_NAME , TABLE_NAME , CONSTRAINT_TYPE;
+ 
+hbase
+-----
+https://hbase.apache.org/1.2/apidocs/org/apache/hadoop/hbase/client/package-summary.html
+http://www.baeldung.com/hbase
+https://community.hortonworks.com/articles/2038/how-to-connect-to-hbase-11-using-java-apis.html
+http://www.bogotobogo.com/Hadoop/BigData_hadoop_HBase_Table_with_Java_API.php
+https://stackoverflow.com/questions/6614413/how-to-connect-to-remote-hbase-in-java
+https://dzone.com/articles/handling-big-data-hbase-part-4
+https://autofei.wordpress.com/2012/04/02/java-example-code-using-hbase-data-model-operations/
+https://github.com/emizell/HBase-Code-Samples -- useful link
+https://intellipaat.com/tutorial/hbase-tutorial/operations-using-java-api/
+http://www.baeldung.com/hbase
+https://cloud.google.com/bigtable/docs/samples-java-hello
+
+https://stackoverflow.com/questions/20186192/how-to-get-metadata-information-in-hbase -- metadata hbase
+
+https://maven-repository.com/artifact/org.apache.hbase/hbase-client/1.3.1 -- maven
+https://javalibs.com/artifact/org.apache.hbase/hbase-common -- maven
+
+http://michaelmorello.blogspot.in/2012/01/row-count-hbase-aggregation-example.html  -- row count example
+
+
+http://archive.cloudera.com/cdh/3/hbase-0.90.1-cdh3u0/configuration.html -- hbase configurations timed out 
+
+disable 'Table1'
+alter 'Table1', METHOD => 'table_att','coprocessor'=>'|org.apache.hadoop.hbase.coprocessor.AggregateImplementation||'
+enable 'Table1' 
+
+
+http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.3.1/book/hbase.accesscontrol.configuration.html
+http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.3.1/book/hbase.secure.simpleconfiguration.html
+http://www.infoobjects.com/2017/03/17/hbase-client-in-a-kerberos-enabled-cluster/ -- imp kerberos
+
+https://www.programcreek.com/java-api-examples/index.php?api=org.apache.hadoop.hbase.security.access.Permission
+
+teradata
+-------
+mahender.alaveni@anvizent.com
+test@1234
+
+https://developer.teradata.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html
+https://developer.teradata.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html
+https://developer.teradata.com/doc/connectivity/jdbc/reference/current/faq.html
+https://downloads.teradata.com/download/connectivity/jdbc-driver
+https://developer.teradata.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_1.html
+
+ install:install-file -Dfile=D:\Anvizent_Data_Model\jarfiles\tdgssconfig.jar -DgroupId=com.teradata.jdbc -DartifactId=tdgssconfig -Dversion=16.20.00.06 -Dpackaging=jar -DgeneratePom=true
+  install:install-file -Dfile=D:\Anvizent_Data_Model\jarfiles\terajdbc4.jar -DgroupId=com.teradata.jdbc -DartifactId=terajdbc4 -Dversion=16.20.00.06 -Dpackaging=jar -DgeneratePom=true
+
+
+HDFS-Parquet (Binary Columnar Storage Format)
+---------------------------------------------
+	https://www.cloudera.com/documentation/enterprise/5-8-x/topics/cdh_ig_parquet.html
+	
+	https://my.vertica.com/docs/8.1.x/HTML/index.htm#Authoring/SQLReferenceManual/Statements/EXPORTTOPARQUET.htm
+	https://dzone.com/articles/understanding-how-parquet -- imp
+	https://blog.matthewrathbone.com/2016/09/01/a-beginners-guide-to-hadoop-storage-formats.html
+	https://kudu.apache.org/faq.html
+https://drill.apache.org/docs/parquet-format/
+https://www.cloudera.com/documentation/enterprise/5-6-x/topics/cdh_ig_parquet.html -- example
+https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
+
+Avro
+----------
+https://community.hortonworks.com/articles/56702/a-secure-hdfs-client-example.html -- imp kerbero
+https://creativedata.atlassian.net/wiki/spaces/SAP/pages/52199514/Java+-+Read+Write+files+with+HDFS -- imp
+https://github.com/saagie/example-java-read-and-write-from-hdfs/blob/master/src/main/java/io/saagie/example/hdfs/Main.java -- imp
+----
+https://www.ibm.com/developerworks/library/bd-avrohadoop/index.html
+http://hadooptutorial.info/avro-mapreduce-word-count-example/
+https://www.programcreek.com/java-api-examples/index.php?api=org.apache.avro.hadoop.io.AvroKeyValue
+https://acadgild.com/blog/avro-file-processing-using-mapreduce/
+
+https://github.com/confluentinc/kafka-connect-hdfs/blob/master/src/main/java/io/confluent/connect/hdfs/avro/AvroFileReader.java
+https://github.com/confluentinc/kafka-connect-hdfs/blob/master/src/main/java/io/confluent/connect/hdfs/avro/AvroRecordWriterProvider.java
+https://gist.github.com/QwertyManiac/4724582  -- write avro file into hdfs imp
+https://stackoverflow.com/questions/11632067/reading-a-simple-avro-file-from-hdfs --  read avro file from hdfs imp
+https://community.hortonworks.com/questions/14661/read-a-avro-file-stored-in-hdfs.html --  read avro file from hdfs imp
+https://stackoverflow.com/questions/43744059/documentation-for-apaches-parquet-java-api -- read fields
+https://community.hortonworks.com/articles/73952/build-and-use-parquet-tools-to-read-parquet-files.html
+
+https://itellity.wordpress.com/2014/07/25/reading-avro-files-from-hdfs/ -- read avro file from hdfs imp
+
+https://www.infoq.com/articles/ApacheAvro/
+
+ 30/04/2018
+ ---------
+
+https://stackoverflow.com/questions/33807394/list-folder-and-files-of-hdfs-using-java
+
+
+https://stackoverflow.com/questions/24647992/wildcard-in-hadoops-filesystem-listing-api-calls
+
+https://self-learning-java-tutorial.blogspot.in/2016/01/hadoop-java-globbing.html -- imp
+
+https://www.programcreek.com/java-api-examples/?class=org.apache.hadoop.fs.FileStatus&method=isDir
+
+https://holynull.gitbooks.io/oreilly-hadoop-the-definitive-guide-4th-edition/page/querying-the-filesystem.html
+
+oracle:
+-----------
+
+https://martincarstenbach.wordpress.com/2013/07/17/dba_users-oracle_maintained-in-12c/  -- dba users predefind schemas
+
+nfs:
+----
+
+https://www.dcache.org/manuals/2012/chep/dcache-RPC-chep.pdf
+
+docker container
+------------------
+https://stackoverflow.com/questions/43692961/how-to-get-ip-address-of-running-docker-container
+https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
+https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host
+
+date:- 12/03/2018
+http://www.baeldung.com/docker-java-api 
+https://github.com/docker-java/docker-java
+https://examples.javacodegeeks.com/devops/docker/introduction-docker-java-developers/
+
+rabitmq:
+-------
+https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/java
+http://www.tothenew.com/blog/sending-scheduleddelayed-messages-with-rabbitmq-through-java-client/
+https://github.com/pubnub/rabbitmq/blob/master/src/com/pubnub/examples/SubscribeAdapter.java
+https://stackoverflow.com/questions/29841690/how-to-consume-one-message
+
+
+hdfs orc:
+---------
+https://stackoverflow.com/questions/32712932/reading-an-orc-file-in-java
+https://stackoverflow.com/questions/32712932/reading-an-orc-file-in-java/34594804#34594804
+https://codecheese.wordpress.com/2017/06/13/reading-and-writing-orc-files-using-vectorized-row-batch-in-java/
+https://www.programcreek.com/java-api-examples/?api=org.apache.hadoop.hive.ql.io.orc.Reader
+
+
+swagger:
+------
+https://stackoverflow.com/questions/38553582/how-can-i-define-a-property-type-as-being-a-list-list-set-array-collection
+https://swagger.io/specification/#specificationExtensions
+https://swagger.io/docs/specification/data-models/data-types/ -- imp
+https://swagger.io/docs/specification/data-models/dictionaries/ -- supports map and list of map 
+https://swagger.io/docs/specification/media-types/
+https://swagger.io/docs/specification/2-0/file-upload/ -- swagger supports multipart 
+
+
+
+hbase
+-----
+for row count:
+-------------
+disable 'EmployeesDetails'
+alter 'EmployeesDetails', METHOD => 'table_att','coprocessor'=>'|org.apache.hadoop.hbase.coprocessor.AggregateImplementation||'
+enable 'EmployeesDetails'
+
+http://michaelmorello.blogspot.in/2012/01/row-count-hbase-aggregation-example.html
+
+https://community.hortonworks.com/questions/104713/unable-to-connect-to-kerberos-hbase.html -- keytab
+
+mysql
+-----
+
+https://stackoverflow.com/questions/21772205/how-to-get-size-of-column-in-mysql-table  -- get size of columns
+https://docs.oracle.com/javase/7/docs/api/java/sql/DatabaseMetaData.html#getPrimaryKeys(java.lang.String,%20java.lang.String,%20java.lang.String) -- get columns
+
+https://stackoverflow.com/questions/21772205/how-to-get-size-of-column-in-mysql-table 
+ 
+
+git:
+---
+
+https://allaboutmynonexistedworld.wordpress.com/2014/02/05/eclipse-git-merging-branch-to-master/
+
+http://ananthchellathurai.blogspot.com/2013/06/how-to-create-new-git-local-branch-and.html -- create branches
+ 
+https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-100a.htm
+ 
+ ============
+ 
+ node relational extraction logic important:
+ ===========================
+ 
+ QueryResult	queryResult = partnerConnection.query(query);
+
+for(SObject sObject : queryResult.getRecords())
+{
+final JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
+
+for (String column : columnsArray)
+{
+
+final String name = column;
+final Object value = sObject.getField(name);
+if( value != null )
+{
+jsonObjectBuilder.add(name, value.toString());
+}
+}
+
+outputMessagingQueue.post(jsonObjectBuilder.build().toString());
+}
+
+
+public int db2DataExtraction(DataExtractionTask dataExtractionTask,MessagingConnectionFactory messagingConnectionFactory) throws ClassNotFoundException, SQLException
+	{
+		int objectsExtracted = 0;
+		ResultSet resultSet = null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try ( final MessagingConnection mc = messagingConnectionFactory.connect())
+		{
+
+			MessagingQueue outputMessagingQueue = mc.queue("DES-"+dataExtractionTask.getJobId());
+			
+			Map<String, String> contextParams = dataExtractionTask.getContextParameters();
+
+			connection = getConnection(contextParams);
+
+			if( connection != null )
+			{
+
+				String columns[] = contextParams.get("DATASOURCE_COLUMN_NAMES").split("@#@");
+
+				StringJoiner dataSourceColumns = new StringJoiner(",");
+
+				for (int i = 0; i < columns.length; i++)
+				{
+					dataSourceColumns.add("`" + columns[i] + "`");
+				}
+
+				String tableName = "`" + contextParams.get("DATASOURCE_TABLE_NAME") + "`";
+
+				String databaseName = "`" + contextParams.get("DATASOURCE_NAME") + "`";
+
+				String query = "Select " + dataSourceColumns + " from " + databaseName + "." + tableName + " LIMIT " + contextParams.get("LIMIT") + " OFFSET " + contextParams.get("OFFSET");
+
+				preparedStatement = connection.prepareStatement(query,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY );
+			 
+				preparedStatement.setFetchSize(500);
+				 
+				resultSet = preparedStatement.executeQuery();
+
+				while (resultSet.next())
+				{
+					final JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
+					
+					for (int i = 0; i < columns.length; i++)
+					{
+						final String name = columns[i];
+						final Object value = resultSet.getObject(name);
+						if(value != null)
+						{
+							jsonObjectBuilder.add(name, value.toString());
+						}
+					}
+					
+				    outputMessagingQueue.post(jsonObjectBuilder.build().toString());
+					 
+					objectsExtracted++;
+				}
+				
+			}
+		}
+		catch ( Exception e )
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if( preparedStatement != null )
+			{
+				preparedStatement.close();
+			}
+			if( resultSet != null )
+			{
+				resultSet.close();
+			}
+			if( connection != null )
+			{
+				connection.close();
+			}
+
+		}
+		return objectsExtracted;
+	}
+
+============
+ 
+ 
+ 
+package com.prifender.des.node;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+public class Application extends SpringBootServletInitializer {
+    public static void main(final String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+        TalendJobExecution talendJobExecution = context.getBean(TalendJobExecution.class);
+        TimerTask timerTask = new JobsForExecution(talendJobExecution);
+        Timer timer = new Timer(true);
+        timer.scheduleAtFixedRate(timerTask, 0, 100*1000);
+    }
+}
+
+package com.prifender.des.node;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+public class Application extends SpringBootServletInitializer { 
+	public static void main(final String[] args) {
+		    ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+	        TalendJobExecution talendJobExecution = context.getBean(TalendJobExecution.class);
+	        Thread thread = new DataExtractionChunkExecution(talendJobExecution);
+	        thread.start();
+    }
+}
+
+@Override
+    protected synchronized DataExtractionJob startDataExtractionJob( final DataSource ds, final DataExtractionSpec spec) throws DataExtractionServiceException
+	{
+    	final DataSourceAdapter adapter = getAdapter( ds.getType() );
+        final StartResult result = adapter.startDataExtractionJob( ds, spec ,this.messagingConnectionFactory);
+        //List<DataExtractionJob> dataExtractionChunkList = new ArrayList<DataExtractionJob>();
+        workQueueMonitoring = new WorkQueueMonitoring(this.messagingConnectionFactory);
+        int extractedCount = 0;
+        for(DataExtractionJob dataExtractionJob : workQueueMonitoring.getDataExtractionChunkList()){
+        	if(dataExtractionJob.getId().equals(result.job.getOutputMessagingQueue())){
+        		extractedCount += dataExtractionJob.getObjectsExtracted();
+        		workQueueMonitoring.getDataExtractionChunkList().remove(dataExtractionJob);
+        		System.out.println("extractedCount------------->"+extractedCount);
+        	}
+        }
+        result.job.setObjectsExtracted(extractedCount);
+        result.job.setState(StateEnum.SUCCEEDED);
+        this.jobToThreadMap.put(result.job, result.thread);
+        return result.job;
+	}
+	
+	   public static String getDataSourceRecord(DataSource ds, DataExtractionSpec spec,String pattern){
+		
+	    Gson gsonObj = new Gson();
+	    
+	    HashMap<String, String> map = new HashMap<String, String>();
+	    
+		for (final DataExtractionAttribute attribute : spec.getAttributes()) 
+		{
+			List<DataExtractionAttribute> childAttributeList = attribute.getChildren();
+			
+			if (childAttributeList != null && childAttributeList.size() > 0) 
+			{
+				for (DataExtractionAttribute childAttribute : childAttributeList) 
+				{
+					map.put(attribute.getName() + pattern + childAttribute.getName(), "");
+				}
+			} 
+			else 
+			{
+				map.put(attribute.getName(), "");
+			}
+		}
+		
+		return gsonObj.toJson(map);
+	}
+	
+	
+	
+	package com.prifender.des.adapter.hierarchical.hdfsavro;
+
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.FileUtil;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hdfs.DistributedFileSystem;
+
+public class Test {
+  public static void main(String[] args) throws IOException, URISyntaxException
+  {/*
+    //1. Get the Configuration instance
+    Configuration configuration = new Configuration();
+    //2. Get the instance of the HDFS
+    FileSystem hdfs = FileSystem.get(new URI("hdfs://192.168.1.186:50070"), configuration);
+    //3. Get the metadata of the desired directory
+    FileStatus[] fileStatus = hdfs.listStatus(new Path("hdfs://192.168.1.186:50070/user/root/avro/employees_details_avro_1million"));
+    //4. Using FileUtil, getting the Paths for all the FileStatus
+    Path[] paths = FileUtil.stat2Paths(fileStatus);
+    //5. Iterate through the directory and display the files in it
+    System.out.println("***** Contents of the Directory *****");
+    for(Path path : paths)
+    {
+      System.out.println(path);
+    }
+  */
+	  
+		System.setProperty("HADOOP_USER_NAME", "root");
+		
+		File file = new File(".");
+		System.getProperties().put("hadoop.home.dir", file.getAbsolutePath());
+		new File("./bin").mkdirs();
+		new File("./bin/winutils.exe").createNewFile();
+
+		Configuration	config = new Configuration();
+		config.set("fs.defaultFS", "hdfs://192.168.1.186");
+		config.setInt("dfs.replication", 1);
+	    FileSystem hdfs = FileSystem.get( config);
+	    //3. Get the metadata of the desired directory
+	    FileStatus[] fileStatus = hdfs.listStatus(new Path("/user/root/avro/employees_details_avro_1million"));
+	    //4. Using FileUtil, getting the Paths for all the FileStatus
+	    Path[] paths = FileUtil.stat2Paths(fileStatus);
+	    //5. Iterate through the directory and display the files in it
+	    System.out.println("***** Contents of the Directory *****");
+	    for(Path path : paths)
+	    {
+	      System.out.println(path.getPathWithoutSchemeAndAuthority(path));
+	    }
+  }
+}
+
+@SuppressWarnings("static-access")
+	private List<Path> getFilesPathList(FileSystem fileSystem, Path path, String pattern)
+			throws FileNotFoundException, IOException {
+		List<Path> filePathList = new ArrayList<>();
+		FileStatus[] fileStatuses = null;
+			if (fileSystem != null) {
+				if (fileSystem.isDirectory(path)) {
+					if(pattern != null){
+						 fileStatuses = listFiles(fileSystem, path,  pattern);
+					} else{
+						fileStatuses = fileSystem.listStatus(path);
+					}
+					for (FileStatus fileStatus : fileStatuses) {
+						if (fileStatus.isFile()) {
+							filePathList.add(path.getPathWithoutSchemeAndAuthority(fileStatus.getPath()));
+						}
+					}
+				} else {
+					filePathList.add(path);
+				}
+			}
+		return filePathList;
+	}
+	
+/** @return FileStatus for data files only. */
+	
+	@SuppressWarnings("deprecation")
+	private FileStatus[] listFiles(FileSystem fs, Path path,String pattern) throws IOException {
+	  FileStatus[] fileStatuses = fs.listStatus(path);
+	  List<FileStatus> files = new ArrayList<FileStatus>();
+	  Pattern patt = Pattern.compile(pattern);
+	  for (FileStatus fstat : fileStatuses) {
+	    String fname = fstat.getPath().getName();
+	    if (!fstat.isDir()) {
+	      Matcher mat = patt.matcher(fname);
+	      if (mat.matches()) {
+	        files.add(fstat);
+	      }
+	    }
+	  }
+	  return (FileStatus[]) files.toArray(new FileStatus[files.size()]);
+	}
+	
+	@SuppressWarnings("static-access")
+	private List<Path> getFilesPathList(FileSystem fileSystem, Path path, String pattern)
+			throws FileNotFoundException, IOException {
+		List<Path> filePathList = new ArrayList<>();
+		Path pathPattern = null;
+		FileStatus[] fileStatuses = null;
+			if (fileSystem != null) {
+				if (fileSystem.isDirectory(path)) {
+					if(pattern != null){
+						 pathPattern = new Path(pattern);
+						 fileStatuses = fileSystem.globStatus(pathPattern,);
+					} else{
+						fileStatuses = fileSystem.listStatus(path);
+					}
+					for (FileStatus fileStatus : fileStatuses) {
+						if (fileStatus.isFile()) {
+							filePathList.add(path.getPathWithoutSchemeAndAuthority(fileStatus.getPath()));
+						}
+					}
+				} else {
+					filePathList.add(path);
+				}
+			}
+		return filePathList;
+	}
+	
+	/**
+ * Based on the regex it will return the pattern	
+ * @param regex
+ * @return
+ */
+	private Pattern getPattern(String regex){
+		 Pattern pattern;
+			if (regex.startsWith("*")) {
+				pattern = Pattern.compile("/" + regex);
+			} else {
+				pattern = Pattern.compile(regex);
+			}
+			return pattern;
+	}
+	
+		public static int getCountRowsFromDb(Connection con,DataSource ds ,DataExtractionSpec spec ,String tableName) throws SQLException {
+		int countRows = 0;
+		ResultSet resultSet = null;
+		Statement statement = null;
+		try {
+			String clomnms = getDataSourceColumnNames(ds, spec,".");
+			String sql =  "SELECT count(*) from ( SELECT distinct "+clomnms +" from "+tableName+" ) t1 ";
+			statement = con.createStatement();
+			resultSet = statement.executeQuery(sql);
+			if (resultSet.next()) {
+				countRows = resultSet.getInt(1);
+			}
+		} finally {
+			closeSqlObject(resultSet, statement);
+		}
+		return countRows;
+	}
+	
+	private String[] getETLExecCommand(String dependentJars, String jobMainClass, String[] contextparmsArray) {
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("java");
+		list.add("-cp");
+
+		String commonlib = commonETLLib(commonEtlJobsFolder);
+		StringBuilder sb = new StringBuilder();
+		sb.append(commonlib);
+
+		String ildependentjars = dependentJars;
+		String[] il_jars_array = ildependentjars.split(",");
+
+		for (int i = 0; i < il_jars_array.length; i++) {
+			String il_jar = il_jars_array[i];
+			sb.append(etlJobsFolder + "/" + il_jar);
+			if (i < il_jars_array.length - 1) {
+				sb.append(PATH_SEPARATOR);
+			}
+		}
+
+		String jars = sb.toString();
+		list.add(jars);
+		list.add(jobMainClass);
+
+		for (int i = 0; i < contextparmsArray.length; i++) {
+			list.add(contextparmsArray[i]);
+		}
+
+		String[] command = new String[list.size()];
+		command = list.toArray(command);
+		System.out.println("Etl Jobs command --> ");
+		for (String commondLine : list) {
+			System.out.println(commondLine);
+		}
+		return command;
+	}
+	
+	---------------
+	
+	Please find below details for FIle server.
+
+Windows File server:
+Host name: DS-FileServer-W
+IP Address: 40.69.156.136
+SMB Share name: prifender_data
+user name: prifender
+pwd: gcEeYUs*ECg8
+SMB Share access command: \\40.69.156.136\prifender_data
+
+NFS Share name: prifender
+NFS share mount command in Windows: mount -o nolock 40.69.156.136:/prifender z:
+Note: Needs to be install NFS Client in windows machine to access NFS Share.
+
+Linux File server:
+Hostname: DS-FileServer-NFS
+IP Address: 52.176.149.8
+NFS share name: /prifender_data
+Mount NFS share in Linux machine command: mount -t nfs 52.176.149.8:/prifender_data /abc
+Note: Needs to be install NFS Client in Linux machine to access NFS Share.
+
+Please let us know if require more inputs on this.
+
+   { "connectionParams":[ { "id":"Host", "value":"10.9.0.4" }, { "id":"Port", "value":"50070" }, { "id":"User", "value":"hadoop" }, { "id":"File", "value":"/user/avro/employees_details_avro" }, { "id":"FileRegExp", "value":"*" } ], "label":"HDFSAvro", "type":"HDFSAvro" }
+
+{
+       "dataSource": "Oracle_3",
+       "collection": "HR.COUNTRIES",
+       "scope": "sample",
+       "sampleSize":"100",
+       "attributes":
+       [
+           {
+               "name": "COUNTRY_ID"
+           } ,
+           {
+           	 "name": "COUNTRY_NAME"
+           }
+       ]
+   }
+   
+    {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "52.167.229.219"
+      },
+      {
+        "id": "Port",
+        "value": "1521"
+      },
+	   {
+        "id": "ServiceName",
+        "value": "XE"
+      },
+      
+       {
+        "id": "User",
+        "value": "SYSTEM"
+      },
+      {
+        "id": "Password",
+        "value": "123"
+      },  { "id": "Schema", "value": "HR" } 
+    ],
+    "label": "Oracle",
+    "type": "Oracle"
+  }
+  
+   {
+  "connectionParams": [
+    {
+      "id": "Host",
+      "value": "13.82.42.116"
+    },
+    {
+      "id": "Port",
+      "value": "1521"
+    },
+ {
+      "id": "SID",
+      "value": "orcl"
+    },
+    
+     {
+      "id": "User",
+      "value": "cust_data_hr"
+    },
+    {
+      "id": "Password",
+      "value": "Dwp@1234"
+    }
+  ],
+  "label": "Oracle",
+  "type": "Oracle",
+  "description": "Oracle DB Azure Environment"
+} 
+
+ {
+       "dataSource": "Oracle_12",
+       "collection": "CUST_DATA_HR.ADDRESSES",
+       "scope": "sample",
+       "sampleSize":"1000",
+       "attributes":
+       [
+           {
+               "name": "ID"
+           } ,
+           {
+           	 "name": "STREET"
+           }
+       ]
+   }
+   
+   
+   [smb://40.69.156.136/prifender_data/File system_Azure/test/File_2.csv, smb://40.69.156.136/prifender_data/File system_Azure/test/File_3.csv, smb://40.69.156.136/prifender_data/File system_Azure/test/File_4.csv, smb://40.69.156.136/prifender_data/File system_Azure/test/File_5.csv, smb://40.69.156.136/prifender_data/File system_Azure/test/sree.csv]
+
+
+
+
+
+
+
+
+
+   {
+      "dataSource": "CSVNFS_7",
+      "collection": "File system_Azure/Sequence_with_same_formats/",
+      "scope": "sample",
+      "sampleSize":"1000",
+      "attributes":
+      [
+          
+                        {
+                            "name": "Column_1" 
+                             
+                        },
+                        {
+                            "name": "Column_2" 
+                        },
+                        {
+                            "name": "Column_3" 
+                        },
+                        {
+                            "name": "Column_4" 
+                        },
+                        {
+                            "name": "Column_5" 
+                        },
+                        {
+                            "name": "Column_6" 
+                        },
+                        {
+                            "name": "Column_7" 
+                        },
+                        {
+                            "name": "Column_8" 
+                        },
+                        {
+                            "name": "Column_9" 
+                        },
+                        {
+                            "name": "Column_10" 
+                        },
+                        {
+                            "name": "Column_11" 
+                        },
+                        {
+                            "name": "Column_12" 
+                        },
+                        {
+                            "name": "Column_13" 
+                        },
+                        {
+                            "name": "Column_14" 
+                        } 
+		  
+      ]
+  }
+  
+  
+  
+    <dependency>
+            <groupId>com.prifender</groupId>
+            <artifactId>des.adapter.relational.redshift</artifactId>
+            <version>${prifender.version}</version>
+        </dependency>
+		
+		
+		{
+ "connectionParams": [
+   {
+     "id": "File",
+     "value": "File system_Azure/Single_File_1_Million/"
+   },
+    {
+   "id":"FileRegExp",
+   "value":"EmployeesDetails_Simp.csv"
+   },
+   {
+     "id": "Host",
+     "value": "40.69.156.136"
+   },
+   {
+     "id": "Share",
+     "value": "prifender_data"
+   },
+   {
+     "id": "User",
+     "value": "prifender"
+   },
+   {
+     "id": "Password",
+     "value": "gcEeYUs*ECg8"
+   },
+  
+   {
+   	"id":"SmbAuthentication",
+   	"value":"true"
+   },
+   {
+     "id": "HeaderExists",
+     "value": "true"
+   }
+ ],
+ "label": "CSV",
+ "type": "CSV"
+}
+
+  {
+       "dataSource": "CSV_2",
+       "collection": "File system_Azure/Single_File_1_Million/",
+       "scope": "sample",
+       "sampleSize":"10000",
+       "attributes":
+       [
+           {
+               "name": "first_name"
+           },
+           {
+               "name": "last_name"
+           }
+       ]
+   }
+   
+   
+				
+				File filePath = new File("D:/Prifender/CSVFile/first.csv");
+				if(!filePath.exists())
+				{
+					filePath.createNewFile();
+				}
+	            InputStream   in = getSmbFileByPath(user + ":" + password,fileName).getInputStream();
+	            FileOutputStream  out = new FileOutputStream(filePath);
+			    IOUtils.copy(in, out);
+				
+			    Path path = Paths.get(filePath.getPath());
+			    long lineCount = Files.lines(path).count();
+			    
+			    System.out.println(lineCount);
+				//csvParser = getCsvParser(fileName, delimiter, csvHeaderExists, smbAuth, user + ":" + password);
+				//count += csvParser.getRecords().size();
+				
+				
+			private  long getFileSize(String fileName,String delimiter,boolean csvHeaderExists,boolean smbAuth,String userNamePassword) throws DataExtractionServiceException {
+        long sizeInBytes = 0;
+        SmbFile smbFile = null;
+        File file = null;
+		try {
+			if(smbAuth ){
+				smbFile = getSmbFileByPath(userNamePassword, fileName);
+				sizeInBytes = smbFile.length();
+			}else{
+				file = getFile(fileName);
+				sizeInBytes = file.length();
+			}
+			
+		} catch (IOException e) {
+			throw new DataExtractionServiceException(new Problem().code("Error").message(e.getMessage()));
+		} catch (Exception e) {
+			throw new DataExtractionServiceException(new Problem().code("Error").message(e.getMessage()));
+		}   
+		return sizeInBytes / 1024  ;
+	}
+	
+	String tableName = spec.getCollection();
+			
+			if( spec.getScope().equals(DataExtractionSpec.ScopeEnum.SAMPLE) )
+			{
+				if( spec.getSampleSize() == null )
+				{
+					throw new DataExtractionServiceException(
+							new Problem().code("unknownSampleSize").message("sampleSize not found."));
+				}
+				rowCount = spec.getSampleSize();
+			}
+			else
+			{
+				rowCount = getTableCountRows(ds, tableName);
+			}
+			
+			
+	private static int  getDescribeTable(Connection con,String tableName) throws SQLException {
+		int countRows = 0;
+		ResultSet resultSet = null;
+		Statement statement = null;
+		try {
+			String sql = "DESCRIBE EXTENDED " + tableName;
+			statement = con.createStatement();
+			resultSet = statement.executeQuery(sql);
+			if (resultSet.next()) {
+				 System.out.println(resultSet.getString(1));  
+			}
+		} finally {
+			closeSqlObject(resultSet, statement);
+		}
+		return countRows;
+	}
+	
+	
+	--context_param JOB_STARTDATETIME=2018-05-29 18:05:355
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/MySQL
+--context_param JOB_NAME=local_project.prifender_mysql_v1_0_1.Prifender_MYSQL_v1
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_TABLE_NAME="☻"
+--context_param DATASOURCE_COLUMN_NAMES="☻","❤"
+--context_param DATASOURCE_HOST=13.82.60.123
+--context_param DATASOURCE_PORT=3306
+--context_param DATASOURCE_NAME="arabic"
+--context_param JOB_ID=DES-MySQL_arabic_3-arabic__-57be49d2-187b-457c-9e0e-16107f36fdee
+--context_param OFFSET=0
+--context_param LIMIT=2
+--context_param SCOPE=sample
+--context_param SAMPLESIZE=2
+
+=====================
+
+
+https://developers.google.com/admin-sdk/directory/v1/quickstart/java
+https://developers.google.com/admin-sdk/directory/v1/reference/users/list   
+http://svn.dwpractice.com:18080/svn/AnvizentRND-Pocs/drive.list/trunk
+
+
+
+https://stackoverflow.com/questions/37346515/spring-data-cassandra-error-creating-bean-with-name-cassandrasession-invoca
+
+https://stackoverflow.com/questions/35532569/exception-while-running-spring-boot-cassandra-project/35534622
+
+https://github.com/jhipster/generator-jhipster/issues/3428
+
+https://github.com/jhipster/generator-jhipster/issues/3428
+
+
+Box api:
+-------
+https://dzone.com/articles/ingesting-boxcom-documents-into-hdfs-via-java
+
+https://community.hortonworks.com/articles/75023/ingesting-boxcom-documents-in-hdfs.html
+
+https://stackoverflow.com/questions/39072124/how-to-create-shared-link-in-box-using-java-sdk
+
+https://github.com/box/box-java-sdk/blob/master/doc/folders.md#get-the-users-root-folder
+
+
+http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html -- download jar files and put into 
+
+C:\Program Files\Java\jdk1.8.0_131\jre\lib\security -- path local_policy.jar , US_export_policy.jar files
+
+
+https://www.programcreek.com/java-api-examples/?class=com.box.sdk.BoxDeveloperEditionAPIConnection&method=getAppEnterpriseConnection
+
+https://www.javatips.net/api/box-java-sdk-master/src/example/java/com/box/sdk/example/AccessAsAppUser.java
+
+https://github.com/box/box-java-sdk/blob/master/src/test/java/com/box/sdk/BoxFolderTest.java
+
+https://github.com/box/box-java-sdk/blob/master/doc/files.md#download-a-file
+
+https://developer.box.com/docs/provision-user-accounts -- imp
+https://developer.box.com/reference -- imp
+
+https://developer.box.com/docs/setting-up-a-jwt-app#section-step-1-create-and-configure-a-jwt-application
+
+
+public class BoxPlayground {
+
+    public static void main(String[] args) throws Exception {
+        Path configPath = Paths.get("config.json");
+        try (BufferedReader reader = Files.newBufferedReader(configPath, Charset.forName("UTF-8"))) {
+            String skelFolderId = "45117847998";
+            String userId = "275111793";
+
+            BoxConfig boxConfig = BoxConfig.readFrom(reader);
+            BoxDeveloperEditionAPIConnection serviceAccountClient = BoxDeveloperEditionAPIConnection
+                    .getAppEnterpriseConnection(boxConfig);
+            BoxDeveloperEditionAPIConnection userClient = BoxDeveloperEditionAPIConnection.getAppUserConnection(userId,
+                    boxConfig);
+
+            BoxFolder skelFolder = new BoxFolder(serviceAccountClient, skelFolderId);
+            BoxCollaboration.Info skelFolderCollaboration;
+            try {
+                skelFolderCollaboration = skelFolder.collaborate(new BoxUser(serviceAccountClient, userId),
+                        BoxCollaboration.Role.EDITOR);
+            } catch (BoxAPIException e) {
+                System.out.println("Searching for existing collaborator.");
+                JsonObject errorMessage = JsonObject.readFrom(e.getResponse());
+                String code = errorMessage.get("code").asString().intern();
+                if (code == "user_already_collaborator") {
+                    System.out.println("Already collaborated...");
+                    Collection<BoxCollaboration.Info> collaborations = skelFolder.getCollaborations();
+                    System.out.println(collaborations.size());
+                    Optional<BoxCollaboration.Info> results = collaborations.stream().filter(c -> {
+                        return c.getAccessibleBy().getID().intern() == userId;
+                    }).findFirst();
+                    if (results.isPresent()) {
+                        skelFolderCollaboration = results.get();
+                    } else {
+                        throw new Exception("Couldn't create new collaboration or find existing collaboration.");
+                    }
+                } else {
+                    throw e;
+                }
+            }
+            System.out.println(skelFolderCollaboration.getID());
+
+            BoxFolder collabedSkelFolder = new BoxFolder(userClient, skelFolderId);
+            ArrayList<BoxItem.Info> copiedItems = new ArrayList<>();
+            for (BoxItem.Info itemInfo : collabedSkelFolder) {
+                if (itemInfo instanceof BoxFile.Info) {
+                    BoxFile.Info fileInfo = (BoxFile.Info) itemInfo;
+                    BoxFile copyFile = new BoxFile(userClient, fileInfo.getID());
+                    BoxFile.Info copiedFile;
+                    try {
+                        copiedFile = copyFile.copy(BoxFolder.getRootFolder(userClient));
+                    } catch (BoxAPIException e) {
+                        System.out.println(e.getMessage());
+                        String conflictId = getIdFromConflict(e.getMessage());
+                        System.out.println(conflictId);
+                        copiedFile = new BoxFile(userClient, conflictId).getInfo();
+                    }
+                    copiedItems.add((BoxItem.Info) copiedFile);
+                } else if (itemInfo instanceof BoxFolder.Info) {
+                    BoxFolder.Info folderInfo = (BoxFolder.Info) itemInfo;
+                    BoxFolder copyFolder = new BoxFolder(userClient, folderInfo.getID());
+                    BoxFolder.Info copiedFolder;
+                    try {
+                        copiedFolder = copyFolder.copy(BoxFolder.getRootFolder(userClient));
+                    } catch (BoxAPIException e) {
+                        System.out.println(e.getMessage());
+                        String conflictId = getIdFromConflict(e.getMessage());
+                        System.out.println(conflictId);
+                        copiedFolder = new BoxFolder(userClient, conflictId).getInfo();
+                    }
+                    copiedItems.add((BoxItem.Info) copiedFolder);
+                }
+            }
+
+            System.out.println("Copied " + copiedItems.size() + " items from the skel directory.");
+
+            BoxCollaboration tempSkelCollab = new BoxCollaboration(serviceAccountClient,
+                    skelFolderCollaboration.getID());
+            tempSkelCollab.delete();
+            System.out.println("Removed temporary skel directory collaboration.");
+        }
+    }
+
+    private static String getIdFromConflict(String message) {
+        String id = "";
+        Pattern p = Pattern.compile("\"id\":\"[0-9]+\"");
+        Pattern p2 = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(message);
+        if (m.find()) {
+            String sub = m.group();
+            Matcher m2 = p2.matcher(sub);
+            if (m2.find()) {
+                id = m2.group();
+            }
+        }
+        return id;
+    }
+}
+
+one drive:
+------
+
+https://github.com/nuxeo/onedrive-java-client 
+https://github.com/isac322/OneDrive-SDK-java
+https://github.com/onedrive
+https://onedrive.uservoice.com/forums/262982-onedrive/suggestions/8545654-java-sdk
+https://github.com/tawalaya/OneDriveJavaSDK -- imp
+
+https://github.com/wooti/onedrive-java-client --- jar file download url	-- imp 
+https://github.com/microsoftgraph/msgraph-sdk-java -- sdk api
+
+https://github.com/search?utf8=%E2%9C%93&q=java+sample+user:microsoftgraph&type=Repositories
+
+https://www.nuxeo.com/blog/onedrive-onedrive-for-business-java-client/ --- imp
+
+one drive apis:
+=============
+
+https://developer.microsoft.com/en-us/graph/docs/concepts/auth_v2_service -- steps to authenticate imp
+
+https://developer.microsoft.com/en-us/graph/docs/concepts/auth_overview
+
+https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive 
+
+https://apps.dev.microsoft.com/#/application/776c8715-f969-4e10-8cf1-4118eeb613ca --- link
+
+tzoVNTTUV401$~zofcT99~| --- password
+
+drop box:
+============
+https://www.dropbox.com/login?cont=https%3A%2F%2Fwww.dropbox.com%2Fdevelopers%2Fapps%2Fcreate
+https://stackoverflow.com/questions/20744265/how-to-get-the-auth-token-for-dropbox-directly-into-java-program-so-that-user-do
+
+https://www.dropboxforum.com/t5/API-Support-Feedback/How-to-access-Team-Folders-with-Java-API/td-p/271239 -- VVVV IMP
+
+https://www.programcreek.com/java-api-examples/?api=com.dropbox.core.v2.files.FileMetadata
+https://www.programcreek.com/java-api-examples/?class=com.dropbox.core.v2.files.FileMetadata&method=getRev
+https://stackoverflow.com/questions/37674917/dropbox-api-find-the-members-of-single-shared-file
+https://www.dropbox.com/developers-v1/core/start/java#authenticating
+
+https://www.dropboxforum.com/t5/API-Support-Feedback/How-to-access-Team-Folders-with-Java-API/td-p/271239
+
+basic:
+=========
+
+https://api.dropboxapi.com/2/users/get_current_account
+Authorization
+Bearer f2ANKTYXFaAAAAAAAAAAIZcnnPUh5uJYGIiM8Rp-BdMC9AN85IMxflIlkbsTuGox
+
+Content-Type
+
+application/json; charset=utf-8
+
+body null
+
+business:
+==========
+
+https://api.dropboxapi.com/2/team/groups/members/list
+
+Authorization
+
+kKZzRyIaTMAAAAAAAAAANiruZ_ngdaN55SBraGjUXZDKdJgBzamRYMh7o7-bEO9Q
+
+Content-Type
+
+application/json
+
+{
+    "group": {
+        ".tag": "group_id",
+        "group_id": "g:90a67347221a4cc00000000000000002"
+    },
+    "limit": 100
+}
+	
+ Box:
+ ====
+ https://github.com/box/box-java-sdk
+ 
+ google drive:
+ ===========
+ https://stackoverflow.com/questions/14133026/how-to-download-a-file-from-google-drive-using-drive-api-java
+ https://developers.google.com/drive/api/v3/manage-downloads#downloading_google_documents
+ 
+ Confluence Wiki :
+ =============
+ https://docs.atlassian.com/atlassian-confluence/REST/6.6.0/ -- REST API
+ https://developer.atlassian.com/server/framework/atlassian-sdk/working-with-maven/#atlassian-3rdparty-repository
+ https://community.atlassian.com/t5/Answers-Developer-Questions/How-to-create-a-Confluence-Space-with-Java-API/qaq-p/491588 -- imp
+ https://developer.atlassian.com/server/confluence/writing-confluence-plugins/ -- imp
+ https://community.atlassian.com/t5/Answers-Developer-Questions/SOLVED-How-to-create-new-confluence-space-via-Java-API/qaq-p/559052 -- imp
+ https://www.softwaretestinghelp.com/atlassian-confluence-tutorial/ -imp very very
+ 
+ https://teamwork.jacobs-university.de/display/ircit/20.+Confluence+Tutorial%2C+Basic+Production+of+Content -- imp
+ 
+ https://www.programcreek.com/java-api-examples/?api=com.atlassian.confluence.user.AuthenticatedUserThreadLocal -- use full
+ https://docs.atlassian.com/ConfluenceServer/javadoc/6.10.0/
+ https://developer.atlassian.com/server/framework/atlassian-sdk/working-with-maven/#atlassian-3rdparty-repository
+ 
+ https://developer.atlassian.com/server/bitbucket/reference/java-api/ -- maven
+ 
+ https://community.atlassian.com/t5/Answers-Developer-Questions/How-to-create-a-Confluence-Space-with-Java-API/qaq-p/491588 
+ 
+ 
+ https://mvnrepository.com/artifact/com.atlassian.confluence/confluence-bundled-plugins-library/6.2.3 -- maven 
+ 
+ Date: 20/07/2018
+ =====
+ 
+ https://community.atlassian.com/t5/Answers-Developer-Questions/How-do-I-get-the-list-of-all-users/qaq-p/544954
+ https://community.atlassian.com/t5/Answers-Developer-Questions/Which-Confluence-api-methods-shall-I-use-to-get-total-number-of/qaq-p/548878
+ https://community.atlassian.com/t5/Answers-Developer-Questions/How-do-I-get-the-list-of-all-users/qaq-p/544954
+ https://community.atlassian.com/t5/Answers-Developer-Questions/SOLVED-How-to-login-user-via-Java-API/qaq-p/511535
+ https://developer.atlassian.com/server/confluence/how-do-i-find-the-logged-in-user/
+ 
+ https://scriptrunner.adaptavist.com/4.3.9/jira/DevEnvironment.html -- maven plugins
+ 
+ https://www.google.co.in/search?q=com.atlassian.confluence.pages+maven&oq=com.atlassian.confluence.pages+maven+&aqs=chrome..69i57.6925j0j7&sourceid=chrome&ie=UTF-8  --- maven imp
+ 
+ IMAP:
+ ====
+ https://www.tutorialspoint.com/javamail_api/javamail_api_authentication.htm
+ https://stackoverflow.com/questions/16208665/imap-client-in-java-javamail-api-or-apache-commons-net
+ https://alvinalexander.com/blog/post/java/i-need-get-all-of-my-email-addresses-out-of-imap-mailbox
+ 
+ https://www.example-code.com/java/imap.asp -- api
+ 
+ https://javaee.github.io/javamail/ -- important
+ 
+ https://stackoverflow.com/questions/20122099/error-in-javamail-pkix-path-building-failed-unable-to-find-valid-certification -- ssl security
+ 
+ MongoDB:
+ =======
+ 
+ https://howtodoinjava.com/mongodb/mongodb-selectqueryfind-documents-examples/
+ 
+ SAP HANA:
+ ========
+ https://gerardnico.com/db/hana/jdbc
+ 
+ RabitMq:
+ =========
+ delete queues from Rabitmq
+ 
+ https://www.calazan.com/how-to-delete-all-queues-in-rabbitmq/
+ 
+ https://www.cloudamqp.com/blog/2016-06-21-how-to-delete-queues-in-rabbitmq.html
+ 
+ 
+ salesforce:
+ ==========
+ https://github.com/forcedotcom/java-sdk
+ http://resources.docs.salesforce.com/214/10/en-us/sfdc/pdf/salesforce_developer_environment_tipsheet.pdf
+ https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_partner_examples.htm
+ 
+ https://mvnrepository.com/artifact/com.force.api/force-partner-api/43.0.0   -- maven for salesforce
+ https://salesforce.stackexchange.com/questions/143584/possible-to-include-getsobjecttype-in-for-loop-parameters  -- soap doc
+ https://stackoverflow.com/questions/29877234/how-to-get-the-field-label-names-for-the-selected-object-objects-instead-of-fiel
+ -- -- soap doc
+https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_readMetadata.htm -- getting metadata
+
+https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_steps_walk_through_code.htm -- examples
+
+https://developer.salesforce.com/page/Introduction_to_the_Force.com_Web_Services_Connector
+
+https://salesforce.stackexchange.com/questions/22498/java-lang-noclassdeffounderror-com-sforce-soap-enterprise-connector
+
+https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_steps_walk_through_code.htm
+ 
+Sqlserver kerberos:
+===================
+https://stackoverflow.com/questions/15029148/tomcat-fails-to-authenticate-using-spnego-cannot-locate-default-realm
+http://kontext.tech/docs/DotNetEssential/p/java-kerberos-authentication-configuration-sample-amp-sql-server-connection-practice
+https://stackoverflow.com/questions/1431999/java-and-kerberos-authentication-krb5-conf-versus-system-setproperty
+https://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.base.doc/ae/rsec_SPNEGO_config_krb5.html -- imp
+https://runops.wordpress.com/2015/03/27/create-a-keytab-file-on-windows-and-use-java-and-kerberos-to-connect-to-sql-server/
+https://support.microsoft.com/en-us/help/319723/how-to-use-kerberos-authentication-in-sql-server
+
+Prifender Branches location:
+============================
+D:\PRIFENDER_WORKSPACES\PRIFENDER_WORK_SAPACE_M1 -- m1 branch
+D:\DES_MASTER_12062018 --- m2 brach
+D:\PRIFENDER_WORKSPACES\PRIFENDER_WORK_SAPACE_MASTER -- master brach
+
+D:\PRIFENDER_DES_GIT_WORKSPACE_UNSTRUCTURED -- unstructured
+D:\PRIFENDER_DES_GIT_WORKSPACE_UNSTRUCTURED_LATEST -- unstructured
+
+======================
+
+
+D:\DES_GITHUB_UNSTRUCTURED  -- git location unstructured
+D:\PRIFENDER_DES_GIT_WORKSPACE_UNSTRUCTURED -- workspace unstructured
+D:\DES_GITHUB_UNSTRUCTURED_LATEST -- UNSTRUCTURED LATEST GIT LOCATION
+
+Ldap Active Directory:
+----------------------
+
+https://stackoverflow.com/questions/390150/authenticating-against-active-directory-with-java-on-linux
+https://docs.oracle.com/javase/tutorial/jndi/ldap/authentication.html
+https://venkatsadasivam.com/2014/01/03/java-sample-active-directory-authentication-code/
+http://www.javaxt.com/tutorials/windows/how_to_authenticate_users_with_active_directory -- important
+https://javarevisited.blogspot.com/2011/11/ldap-authentication-active-directory.html
+http://www.developerscrappad.com/963/java/jndi/java-jndi-ldap-windows-active-directory-authentication-organizational-unit-group-and-other-information-access/
+
+https://stackoverflow.com/questions/8487544/extract-data-from-namingenumeration -- ldap active directory get the values
+
+https://www.programcreek.com/java-api-examples/?api=javax.naming.NamingEnumeration -- ldap active directory get the values example -- Important
+
+Pull Request git hub:
+============
+
+https://yangsu.github.io/pull-request-tutorial/
+
+
+
+salesforce dataextraction for custom and predefined :
+=======
+https://developer.salesforce.com/page/Introduction_to_the_Force.com_Web_Services_Connector -- very very important link to fetch records examples
+
+google oauth2:
+============
+
+https://developers.google.com/identity/protocols/OAuth2ServiceAccount
+
+
+shrarepoint:
+==============
+
+http://blog.ashwani.co.in/blog/2013-07-28/connect-and-access-sharepoint-webservice-from-java/
+https://www.javaworld.com/article/2078906/enterprise-java/java-tip-consuming-sharepoint-web-services-with-a-java-client.html
+https://sharepoint.stackexchange.com/questions/122894/connecting-to-sharepoint-from-java
+http://blog.ashwani.co.in/blog/2013-07-28/connect-and-access-sharepoint-webservice-from-java/
+https://stackoverflow.com/questions/6176871/accessing-sharepoint-through-java-application
+https://social.msdn.microsoft.com/Forums/office/en-US/1340c82a-825b-4a92-a20e-1ae0dd1023d2/how-to-access-sharepoint-document-library-through-java-api?forum=sharepointdevelopmentlegacy
+https://www.quora.com/How-do-you-upload-download-documents-in-SharePoint-using-Java
+https://coderanch.com/t/622486/java/Microsoft-Sharepoint-Web-Services-integration
+
+Imap:
+=====
+
+https://javapapers.com/java/receive-email-in-java-using-javamail-gmail-imap-example/ -- imp
+https://stackoverflow.com/questions/9263530/accessing-emails-from-gmail-using-imap-javamail-api
+
+
+confluence :
+=============
+
+https://developer.atlassian.com/cloud/confluence/getting-started/
+https://community.atlassian.com/t5/Answers-Developer-Questions/java-api-to-retrieve-users-from-confluence-group/qaq-p/497751
+https://community.atlassian.com/t5/Bitbucket-questions/How-to-receive-file-content-with-Bitbuckets-Java-API/qaq-p/770062
+
+
+https://docs.atlassian.com/ConfluenceServer/rest/6.10.1/#group-getGroups
+
+https://developer.atlassian.com/cloud/confluence/understanding-jwt/ -- create jwt token in confluence
+
+https://developer.atlassian.com/server/confluence/using-the-rest-apis-prototype-only/ -- rest api to authenticate
+
+https://bitbucket.org/bob_swift/confluence-soap/src/c549055b79f00bdcf52831f126a9f34ff1056897/src/itest/resources/ExampleClient.java?at=default&fileviewer=file-view-default  -- soap
+
+https://community.developer.atlassian.com/t/plugin-compile-issue-failure-to-find-org-apache-xmlgraphics-batik-pom-1-9/11877 -- maven version
+https://community.atlassian.com/t5/Confluence-questions/Getting-maven-build-errors-when-trying-to-run-atlassian-plugin/qaq-p/766935
+https://community.atlassian.com/t5/Confluence-questions/Getting-maven-build-errors-when-trying-to-run-atlassian-plugin/qaq-p/766937
+
+https://bobswift.atlassian.net/wiki/spaces/ACLI/pages/16875586/Downloads -- jars download
+
+https://confluence.atlassian.com/doc/enabling-the-remote-api-150460.html?_ga=2.213464404.1511138997.1532348959-1645873881.1513250636 -- soap enabled
+
+https://docs.atlassian.com/DAC/javadoc/confluence/4.2.13/reference/com/atlassian/confluence/rpc/soap/ConfluenceSoapService.html#getClusterInformation(java.lang.String) -- doc
+
+one drive api:
+
+==========
+by sathis:
+========
+https://www.nuxeo.com/blog/onedrive-onedrive-for-business-java-client/
+https://blog.cloudrail.com/onedrive-java-sdk-easily-integrate-the-onedrive-api-and-other-cloud-services/
+
+
+https://github.com/tjeerdnet/OneDriveAPI
+
+https://docs.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/graph-oauth
+
+https://docs.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/app-registration
+
+https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_get_content 
+
+one drive api outh2 authentication details:
+=========================================
+
+https://apps.dev.microsoft.com/?mkt=en-us&referrer=https%3a%2f%2faccount.live.com#/application/5f6df086-2270-46cf-b793-131725d3ffde -- app permissions
+
+
+https://www.getpostman.com/oauth2/callback
+
+TOKEN
+https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+https://login.microsoftonline.com/common/oauth2/v2.0/token
+776c8715-f969-4e10-8cf1-4118eeb613ca
+tybnzwSDGD14456^_sRWY!}
+files.read.all
+code
+
+Header:
+----------
+
+  [{"key":"Authorization","value":"Bearer EwBYA8l6BAAURSN/FHlDW5xN74t6GzbtsBBeBUYAAcOM8rC7ZZwqumfFuzs90aIejgmBD7HIuQQi4jVX4q0WsCSF/d1kqPXaoXqRZ533glq7PPGiDI7o+fJ1mY+ynk074rKAJGuhgggH7usaVRNTlr91Vm8BhgdTWnx8FoSCEjPnGlPEi3qgd7lAb1JIZ/xp6y/PQ/12kTMphthCmH2tbCfV8/8PwT/gEUQFgx0dKz9xKXiG/k9Z0qnHOFaTu2MhC+9MZm2vOAUZVI1g9Ap0T7X2g/yvMUA6MS/9gsCJsz9MOakMCyjT22d1vZdXrdq94ffHIDTELUKKbbPa90Psv2uRO2c4JEbzg/QYMy+uzb6L09+N6Dy1+hkc9H8l9WIDZgAACIWenYQf/hw0KAKfgOJflX5z/pwaB0VOdLMc4894sc8kUnsWTmwtWS/i5H5yVzgjYYCmKdy5kQu2ohnTf+ziqMVPyLdnIU2/gJujUUVDOB66CCB2xpD5BEwk9Pu7s/hLLf2ANQHwJF+93w4DYgCIS040W0WjZqLLDhhixhwsvPg5n2D3eSOFlQPonPuxvwYI+XifHlHQ9sQ6WMzJKv0jPJubUasvKjPGE0Z2fVpp8eg+qvlMX/EjlkePqPzPlgX02LxsH5syxqJvN/9i4AJo9OwixhGltDMsbOLGG8RmL3n4w/zisBeu7vqSa1AamYb2tTG9ARoddjh5Cic1BL3qSKVoXA19Hon6OkfHCHTKWFr6VbS09nd/+23acE4zOVC9MCVxf492uOlQV54jEg4D5C+x42OD+pyIfpE00qgrVYVkJMJT9YyOHnONJJJ+goKFLxU2S72XVjLFw5+kGFPBlVJsdL8ekN7g2hHZ8z8lAPqV+pLWNVHU49skcMAg4K00GWUu9rdDaamxkhOXviUIOEaP6h+PKgOyIagwMVsyiZ59YLpZZjNrzWt45zvWWoE3Ci1ylPXmYKkh1okS80gDXzVVMfvsHtVWXYsaiy6knsv589bdJZ9PLURsCkuU5nBut/eBtyRiTnsQ9td77DomOIapLv1PNHUVpadngdIvHHj2wAAsh/4aVVpy+m/37B80MvBL71UTXabL5EslenRR8/RewlcpfWnBIL2O1KEISvEDSiF0Ag==","description":""}]
+ 
+examples:get methods
+
+--->Unstructured--------->https://graph.microsoft.com/v1.0/me/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!198
+--->Unstructured--------->https://graph.microsoft.com/v1.0/me/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!197
+
+-===================
+
+
+https://github.com/isac322/OneDrive-SDK-java
+https://github.com/tawalaya/OneDriveJavaSDK
+
+
+
+sharepoint:
+========
+
+http://sharepoint-2016:2222/sites/demo/_vti_bin/Lists.asmx
+
+https://stackoverflow.com/questions/29570383/basic-authentication-from-java-to-sharepoint-2013-rest-api
+
+ 	
+Database server
+
+	sharepoint-2016.anvizent.test
+
+SQL Server database name
+
+	WSS_Content
+	
+	database authentication
+
+	Windows authentication
+	
+	anvi\anvizent
+	
+	
+	commons-lang3-3.1.jar
+commons-httpclient-3.1.jar
+commons-codec-1.4.jar
+commons-logging-1.1.1.jar
+Java 1.7
+	
+	https://mvnrepository.com/artifact/com.microsoft.services/sharepoint-services-java/1.0.0
+	https://mvnrepository.com/artifact/com.liferay/com.microsoft.schemas.sharepoint/1.0.1
+	https://mvnrepository.com/artifact/com.microsoft.services/sharepoint-services/1.0.0
+	
+	
+	https://developer.microsoft.com/en-us/graph/docs/concepts/sharepoint-concept-overview
+	
+	https://social.technet.microsoft.com/Forums/ie/en-US/65062a95-73f1-4d6d-a420-18773f55a93a/how-can-we-access-library-data-of-sharepoint-online-through-the-java-api-and-client-id?forum=onlineservicessharepoint
+	
+	https://stackoverflow.com/questions/30299629/sharepoint-api-for-java  -- soap
+	
+	
+	https://blog.trigent.com/introduction-to-rest-api-with-odata-operators-in-sharepoint-2013/
+	https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints
+	https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+	https://docs.microsoft.com/en-us/sharepoint/dev/general-development/social-feed-rest-api-reference-for-sharepoint
+	https://docs.microsoft.com/en-us/sharepoint/dev/general-development/following-people-and-content-rest-api-reference-for-sharepoint
+	https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-lists-and-list-items-with-rest
+	
+	
+	https://sharepoint.stackexchange.com/questions/121087/uploading-files-to-sharepoint-2013-via-soap  -- soap
+	
+	https://davidsit.wordpress.com/2010/02/10/reading-a-sharepoint-list-with-java-tutorial/
+	
+	https://social.technet.microsoft.com/Forums/ie/en-US/f2935d6e-a102-4c5e-88e2-6ee89d454da8/unable-to-read-the-sharepoint-list-using-java?forum=sharepointdevelopment
+	
+	http://svn.bonitasoft.org/bonita-connectors/tags/bonita-connectors-5.2/microsoft/sharepoint/src/main/java/org/bonitasoft/connectors/microsoft/sharepoint/common/SharepointClient.java
+	
+	
+	https://developer.salesforce.com/blogs/developer-relations/2017/04/machine-machine-salesforce-integrations-java-rest-soap.html -- imp
+	
+	https://sharepoint.stackexchange.com/questions/122894/connecting-to-sharepoint-from-java
+	
+	https://code.google.com/archive/p/java-sharepoint-library/downloads -- library
+	
+	http://latest-tutorial.com/2015/12/29/read-sharepoint-news-web-service-list-in-java-tutorial/ -- soap tutorial
+	
+	
+	http://sharepoint-2016:2222/_admin/SiteCreated.aspx?SiteId=a40ad2e4-85d6-4c38-a744-c9c926170452
+	
+	
+	domain: anvizent.test
+	prfix: anvi
+	
+	
+	https://www.experts-exchange.com/questions/24193799/How-do-I-fix-the-'Failed-to-access-the-WSDL'-error.html 
+	
+	
+	file:///C:/Program%20Files/CData/CData%20JDBC%20Driver%20for%20SharePoint%202018/help/help.htm#pg_connectionj -- local
+	
+	
+onedrive:
+======
+https://www.javatips.net/api/onedrive4j-master/src/main/java/com/nickdsantos/onedrive4j/DriveItem.java  -- driveitem
+
+https://apps.dev.microsoft.com/?mkt=en-us&referrer=https%3a%2f%2faccount.live.com#/application/5f6df086-2270-46cf-b793-131725d3ffde -- app permissions
+
+https://blogs.technet.microsoft.com/sharepointdevelopersupport/2018/02/06/use-postman-and-aad-app-to-get-data-from-sharepoint-online-using-graph-api/ -- very very imp
+
+https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/driveitem#instance-attributes -- api doc 
+
+Apis:
+=====
+
+https://graph.microsoft.com/v1.0/users
+https://graph.microsoft.com/v1.0/me/drive
+https://graph.microsoft.com/v1.0/me/drives
+
+https://graph.microsoft.com/v1.0/users/b2e57c470fd53ad6/drives
+
+https://graph.microsoft.com/v1.0/me/drive/root
+
+https://graph.microsoft.com/v1.0/me/drive/root -- root directory
+
+
+
+example to conert pdf:
+------------------
+
+https://graph.microsoft.com/v1.0/me/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!120/content?format=pdf
+
+
+https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_get_content_format  --
+
+----------
+
+https://github.com/onedrive
+
+https://github.com/microsoftgraph/msgraph-sdk-java -- imp
+
+https://dl.bintray.com/microsoftgraph/Maven/com/microsoft/graph/microsoft-graph/0.3.0/ -- jars
+
+https://github.com/microsoftgraph/msgraph-sdk-java/wiki/Overview -- graph wiki
+
+https://github.com/microsoftgraph/msgraph-sdk-java/tree/dev/src/main/java/com/microsoft/graph/core
+
+https://github.com/microsoftgraph/msgraph-sdk-android-msa-auth-for-android-adapter
+
+https://github.com/OneDrive/onedrive-sdk-csharp#4-making-requests-to-the-service
+
+https://github.com/microsoftgraph/msgraph-sdk-java/wiki/Working-with-Collections -- graph doc
+
+https://developer.microsoft.com/en-us/graph/docs/concepts/auth_register_app_v2 -- register app
+
+https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code -- imp
+
+https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/permissions_reference -- permissions
+
+https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/onedrive -- files list
+
+
+sharepoint:
+========
+
+https://bintray.com/package/files/msopentech/Maven/Office-365-SDK-for-Java?order=asc&sort=name&basePath=com%2Fmicrosoft%2Fservices%2Fgraph-services-java%2F0.2.5&tab=files  -- jar files
+
+http://www.independentsoft.de/download.html -- sharepoint
+
+https://github.com/OfficeDev/Office-365-SDK-for-Java   --- java sdk for sharepoint
+
+https://bintray.com/msopentech/Maven/Office-365-SDK-for-Java/0.2.5  --- java sdk for sharepoint
+ 
+Steps that I am trying to perform the following steps through Java:
+
+1) Connect to a sharepoint site with a given URL.
+
+2) Get the list of files listed on that page
+
+3) Filter the files using Modified date
+
+4) Perform some more checks using Create Date and Modified Date
+
+5) And finally save that file(s) into the Unix box.
+
+https://github.com/OfficeDev/Office-365-SDK-for-Java/blob/master/samples/files-sample/src/main/java/com/microsoft/services/EntryPoint.java
+
+https://social.msdn.microsoft.com/Forums/lync/en-US/f9293623-3d60-4691-b4ff-e65bf09e9a1f/authenticatingauthorizing-with-azure-ad-and-sharepoint-online?forum=sharepointdevelopment
+
+
+https://blogs.sap.com/2018/02/01/consume-sharepoint-rest-to-create-a-file-using-java-sap-pi-udf/
+
+https://blogs.sap.com/2017/10/05/sap-pi-udf-part-1-consume-sharepoint-rest-authentication/
+
+https://gitlab.com/quantr/sharepoint/Sharepoint-Java-API  -- sdk ai
+
+https://code.google.com/archive/p/java-sharepoint-library/downloads
+
+
+date: 31/07/2018 night
+===========
+
+http://192.168.0.153:2222/_layouts/15/viewlsts.aspx  -- view sites
+
+http://192.168.0.153:2222/_admin/ServiceApplications.aspx  -- services in sharepoint
+
+
+http://sharepoint-16:2346/sites/Prifender/_layouts/15/appregnew.aspx
+
+http://sharepoint-16:2346/_layouts/15/appregnew.aspx
+for adding app id
+
+http://sharepoint-16:2346/_layouts/15/Appinv.aspx -- app id and secret
+for trusting
+
+   <AppPermissionRequests AllowAppOnlyPolicy="true">
+   
+	 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read" />
+	 <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="Read" />
+	   
+</AppPermissionRequests>
+
+
+	
+	 
+	 https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/register-sharepoint-add-ins
+	 
+	 http://spshell.blogspot.com/2015/03/sharepoint-online-o365-oauth.html -- share point authentication very very importtant
+	 
+	The app identifier has been successfully created.
+Client Id:  	82f90396-7b5c-412f-951a-456eb2025a94
+Client Secret:  	H3aly0/dfvVHwWso8041wCJC/84BFldbTMOgBDq/O8w=
+Title:  	SharePoint
+App Domain:  	sharepoint-2016:2222
+Redirect URI:  	https://www.getpostman.com/oauth2/callback
+
+
+The app identifier has been successfully created.
+Client Id:  	2baf2fa8-3d8a-4ed3-a59c-cf7975c88647
+Client Secret:  	mIbGoFlPRISh7AFjey6FQ+MdkA2WqPfsgK6v4IWMxyI=
+Title:  	OAuthTest App
+App Domain:  	www.google.com
+Redirect URI:  	https://www.getpostman.com/oauth2/callback
+
+The app identifier has been successfully created.
+Client Id:  	1fc79e75-f6ad-49a5-b894-a0f2b00e1092
+Client Secret:  	SO9LRNS1yZMjni/rgJ2dLSoCLbepfrCTkuaKvbqKckk=
+Title:  	OAuthTest
+App Domain:  	www.google.com
+Redirect URI:  	https://localhost/
+
+https://github.com/OfficeDev/O365-Android-Snippets  ----- important for sharepoint
+https://azure.microsoft.com/en-in/resources/samples/active-directory-android/  ----- important for sharepoint
+https://github.com/Azure-Samples/active-directory-android  ----- important for sharepoint
+
+https://docs.microsoft.com/en-us/sharepoint/administration/claims-authentication-does-not-validate-user#setting-the-level-of-uls-logging-for-user-authentication --- claims authentication compulsary required
+
+
+http://sharepoint-2016:2222/_layouts/oauthauthorize.aspx?client_id=1fc79e75-f6ad-49a5-b894-a0f2b00e1092&scope=Web.Read&response_type=code&redirect_uri=https://localhost/
+
+
+https://docs.microsoft.com/en-us/sharepoint/dev/general-development/urls-and-tokens-in-sharepoint  -- apis sharepoint-2013-rest-api
+
+
+https://docs.microsoft.com/en-us/rest/api/datacatalog/authenticate-a-client-app  -- get token from share point
+
+
+onedrive apis:
+------------
+
+https://graph.microsoft.com/v1.0/me/drive/root
+ 
+https://graph.microsoft.com/v1.0/drives/b2e57c470fd53ad6/root/children
+
+https://graph.microsoft.com/v1.0/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!102/
+
+https://graph.microsoft.com/v1.0/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!102/content -- for download
+
+
+https://graph.microsoft.com/v1.0/me/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!112/content
+
+
+example to conert pdf:
+------------------
+
+https://graph.microsoft.com/v1.0/me/drives/b2e57c470fd53ad6/items/B2E57C470FD53AD6!120/content?format=pdf
+
+
+https://docs.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_get_content_format  --
+
+
+netsuite:
+--------
+https://developers.cloud-elements.com/docs/elements/netsuite-crm/api-documentation.html?elementId=140
+
+https://www.techfino.com/blog/suitetalk-web-services-integration-guide
+
+https://system.na2.netsuite.com/core/media/media.nl?id=1337&c=411141&h=ab360507868eb92a972d&_xt=.pdf --- imp doc
+
+https://docs.mulesoft.com/mule-user-guide/v/3.9/netsuite-apidoc 
+http://mulesoft.github.io/mule-netsuite-connector/7.6.0/apidocs/apidoc.html
+
+
+https://tray.io/docs/article/netsuite-search -- imp
+
+sharepoint:
+======
+https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-lists-and-list-items-with-rest
+https://github.com/SharePoint/sp-dev-docs/blob/master/docs/sp-add-ins/get-to-know-the-sharepoint-rest-service.md
+http://www.independentsoft.de/jshare/index.html  -- java sdk sharepoint
+
+
+http://dolszewski.com/spring/sharepoint-web-services-spring-and-ntlm-authentication/  -- sharepoint authentication
+https://dmdaa.wordpress.com/2012/10/10/ntlm-v2-support-for-java-web-service-clients-wsimport-or-axis2-stubs-for-sharepoint-server/
+https://sharepoint.stackexchange.com/questions/122894/connecting-to-sharepoint-from-java -- connection example of sharepoiinnt
+https://code.google.com/archive/p/java-sharepoint-library/ -- get list
+
+
+https://niranjanrao.wordpress.com/2012/01/24/sharepoint-server-object-model-sample-code-snippets/	-- imp
+
+http://blog.ashwani.co.in/blog/2013-07-28/connect-and-access-sharepoint-webservice-from-java/  -- imp
+
+https://code.google.com/archive/p/java-sharepoint-library/downloads -- jar files
+
+https://gist.github.com/TheAshwanik/983fde4be42022ac1f29 -- imp project
+
+
+http://sharepoint-16:2222/_layouts/15/listedit.aspx?List={4C0033A5-3064-404F-8258-EBCE7343588F}
+
+https://social.technet.microsoft.com/Forums/ie/en-US/f2935d6e-a102-4c5e-88e2-6ee89d454da8/unable-to-read-the-sharepoint-list-using-java?forum=sharepointdevelopment
+
+https://github.com/AndreaInfUFSM/bpm-infufsm/blob/master/bonita/trunk/bonita-connectors/microsoft/sharepoint/src/main/java/org/bonitasoft/connectors/microsoft/sharepoint/common/SharepointClient.java -- sharepoint client
+
+For example:  Generate Java Stubs for these wsdls
+“<pathtoJDK>\wsimport.exe” -p "com.microsoft.schemas.sharepoint.soap" -keep -extension http://sharepoint-16:2222/_vti_bin/Lists.asmx?WSDL
+“<pathtoJDK>\wsimport.exe” -p "com.microsoft.schemas.sharepoint.soap" -keep -extension versions.wsdl
+
+Do this for all the WSDLs you downloaded. and Import those classes in your project.
+
+
+http://sharepoint-16:2222/_vti_bin/Lists.asmx?WSDL
+
+
+The app identifier has been successfully created.
+Client Id:  	f809770c-53ec-4a87-81e7-1c866098d8ef
+Client Secret:  	wAhtMuiC9UuPHu0ySsWGvIaGdxXamzf7X2UM8473hEo=
+Title:  	TestOauth
+App Domain:  	www.getpostman.com
+Redirect URI:  	https://www.getpostman.com/oauth2/callback
+
+
+The app identifier has been successfully created.
+Client Id:  	8a827f7e-3b0d-458e-9981-34d2ca413390
+Client Secret:  	BnzerdNLv9EXA1hm5yeV9ucSQy+Bo8gXmTyuNGQIF08=
+Title:  	TestOauth
+App Domain:  	www.anvizent.in
+Redirect URI:  	https://sharepoint-16:2222
+
+ https://dwphyderabad.sharepoint.com/sites/Prifender/_vti_bin/Lists.asmx?wsdl --  soap url
+
+http://sharepoint-16:2222/_layouts/oauthauthorize.aspx?client_id=8a827f7e-3b0d-458e-9981-34d2ca413390&scope=Web.Read&response_type=code&redirect_uri=https://sharepoint-16:2222
+
+
+Let it read items in this site collection.
+ 
+Let it read items in this site.
+ 
+Let it share its permissions with other users.
+ 
+Let it access basic information about the users of this site.
+ 
+ 
+http://sharepoint-16:2222/_layouts/15/OAuthAuthorize.aspx
+ 
+
+ 
+  <?xml version="1.0" encoding="utf-8" ?>
+  <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
+      ProductID="{4a07f3bd-803d-45f2-a710-b9e944c3396e}"
+      Version="1.0.0.0"
+      SharePointMinVersion="15.0.0.0"
+      Name="MySampleAddIn"
+  >
+    <Properties>
+      <Title>My Sample Add-in</Title>
+      <StartPage>~remoteAppUrl/Home.aspx?{StandardTokens}</StartPage>
+    </Properties>
+
+    <AppPrincipal>
+      <RemoteWebApplication ClientId="f809770c-53ec-4a87-81e7-1c866098d8ef" />
+    </AppPrincipal>
+
+    <AppPermissionRequests>
+      <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
+      <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
+    </AppPermissionRequests>
+  </App>
+  
+  ------------
+  
+  
+  The app identifier has been successfully created.
+Client Id:  	f929b8cf-4edc-45d7-983c-dc5896806674
+Client Secret:  	wcuKwBs/JzM/BP5wELju3dxchR/ihzuOD7rJMso4kSs=
+Title:  	TestOAuthen
+App Domain:  	www.getpostman.com
+Redirect URI:  	https://www.getpostman.com/oauth2/callback
+
+
+The app identifier has been successfully created.
+Client Id:  	fb5c67e4-ca37-400d-aec9-98134fa3ba56
+Client Secret:  	wk7rZrVHDbyP+702Oiwjo3vxkCQXNboj4OLrZI6sPAI=
+Title:  	oauth
+App Domain:  	www.google.com
+Redirect URI:  	https://localhost/
+
+
+http://sharepoint-16:2346/sites/Prifender/_layouts/15/appregnew.aspx
+
+
+
+NTLM, Bearer realm="e7b4f30e-8b3c-4b4b-a702-e193d7ad2100",client_id="00000003-0000-0ff1-ce00-000000000000",trusted_issuers="00000003-0000-0ff1-ce00-000000000000@e7b4f30e-8b3c-4b4b-a702-e193d7ad2100"
+
+http://sharepoint-16:2346/sites/Prifender/_layouts/oauthauthorize.aspx?client_id=f929b8cf-4edc-45d7-983c-dc5896806674&scope=Web.Read&response_type=code &redirect_uri=https://www.getpostman.com/oauth2/callback
+
+https://accounts.accesscontrol.windows.net/e7b4f30e-8b3c-4b4b-a702-e193d7ad2100/tokens/OAuth/2
+
+
+http://spshell.blogspot.com/2015/03/sharepoint-online-o365-oauth.html -- imp to connect oauth sharepoint
+https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service
+https://docs.microsoft.com/en-us/sharepoint/dev/general-development/following-people-and-content-rest-api-reference-for-sharepoint
+https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints
+  
+  https://www.advaiya.com/blog/access-sharepoint-rest-api-using-oauth/ -- oauth2 authentication for sharepoint in online
+  
+  
+  The app identifier has been successfully created.
+Client Id:  	47445795-d73a-4482-b797-8d81bceb9f0e
+Client Secret:  	tbBRy6zAhZ7gNMXZ1W9ikpxbCtfIamSwkBOPS52SDe4=
+Title:  	Test
+App Domain:  	www.getpostman.com
+Redirect URI:  	https://www.getpostman.com/oauth2/callback
+
+
+
+www-authenticate →NTLM, Bearer realm="e7b4f30e-8b3c-4b4b-a702-e193d7ad2100",client_id="00000003-0000-0ff1-ce00-000000000000",trusted_issuers="00000003-0000-0ff1-ce00-000000000000@e7b4f30e-8b3c-4b4b-a702-e193d7ad2100"
+
+date:-
+----
+09/08/2018
+
+sharepoint rest api for java
+
+https://www.c-sharpcorner.com/UploadFile/Roji.Joy/enabling-anonymous-access-sharepoint-2013/ -- ananymous acceess
+
+https://sharepoint.stackexchange.com/questions/239128/connect-to-sharepoint-online-rest-api-using-java
+
+https://github.com/quantr-research/Sharepoint-Java-API/blob/master/src/test/java/hk/quantr/sharepoint/TestSPOnline.java
+
+
+http://www.whypad.com/posts/authenticate-sharepoint-rest-call-in-a-rest-client/1169/ -- very very imp
+
+http://tech.bool.se/basic-rest-request-sharepoint-using-postman/ -- very very imp
+
+https://finarne.wordpress.com/2015/06/10/403-forbidden-from-_apicontextinfo-when-using-chrome-postman-rest-app/ -- ananymous acceess
+
+----------------
+Accessing share point using java form digest
+
+http://sharepoint-16:2346/Sites/Prifender/_api/contextinfo 
+
+POST
+
+Accept application/json; odata=verbose
+
+{
+  d={
+    GetContextWebInformation={
+      __metadata={
+        type=SP.ContextWebInformation
+      },
+      FormDigestTimeoutSeconds=1800,
+      FormDigestValue=0x1DA447C08249893CC0A68FA7518D72FA83FBF8C7661DE4A1A3DC4F4D7D424221EC41A3DF6DAF7D3841B7ED2D6D9F8FC31ED14C9325274E9C7A7FC109B08A75F3,
+      10Aug201811: 14: 19-0000,
+      LibraryVersion=16.0.4327.1000,
+      SiteFullUrl=http: //sharepoint-16: 2346/Sites/Prifender,
+      SupportedSchemaVersions={
+        __metadata={
+          type=Collection(Edm.String)
+        },
+        results=[
+          14.0.0.0,
+          15.0.0.0
+        ]
+      },
+      WebFullUrl=http: //sharepoint-16: 2346/sites/Prifender
+    }
+  }
+}
+
+the below is for accessing services:
+-----------------------------
+
+Header:
+--------
+
+X-RequestDigest 0x1DA447C08249893CC0A68FA7518D72FA83FBF8C7661DE4A1A3DC4F4D7D424221EC41A3DF6DAF7D3841B7ED2D6D9F8FC31ED14C9325274E9C7A7FC109B08A75F3
+
+
+http://sharepoint-16:2346/Sites/Prifender/_api/web/lists
+
+http://sharepoint-16:2346/sites/Prifender/_api/Web/Lists/getbytitle('Docs1')/items
+
+http://sharepoint-16:2346/sites/Prifender/_api/Web/Lists(guid'20be7747-6d46-4d10-9167-9104fa5600f1')/Items(1)
+
+http://sharepoint-16:2346/sites/Prifender/_api/Web/Lists(guid'20be7747-6d46-4d10-9167-9104fa5600f1')/Items(1)/File
+
+
+http://sharepoint-16:2346/sites/Prifender/_layouts/download.aspx?SourceUrl=https://dwphyderabad.sharepoint.com/sites/Prifender/Docs1/firewalls.ppt
+
+http://sharepoint-16:2346/sites/Prifender/_api/web/AppTiles
+
+http://sharepoint-16:2346/sites/Prifender/_api/SP.AppTile5740bcab-d50f-443e-af90-dfd666cf2e5c
+
+
+
+date:14/08/2018
+
+-------------
+
+http://paulryan.com.au/2014/spo-remote-authentication-rest/ ---- very very imp
+https://www.anupams.net/sharepoint-rest-service-microsoft-flow/ --
+
+date:- 30/08/2018
+---------------
+R Language file calling from java
+
+http://www.studytrails.com/rjava-eclipse-plugin/execute-r-from-java/ 
+
+https://stackoverflow.com/questions/10216014/simple-program-to-call-r-from-java-using-eclipse-and-rserve
+http://rss.acs.unt.edu/Rdoc/library/SJava/Docs/RFromJava.pdf
+http://stdioe.blogspot.com/2011/07/rcaller-20-calling-r-from-java.html
+http://code.google.com/p/rcaller/downloads/list
+http://codophile.com/2015/05/02/how-to-integrate-r-with-java-using-rserve/ -- very very important if u are need server
+http://codophile.com/2015/04/15/how-to-integrate-r-with-java-using-rjava/ -- very very important if u are no need server
+https://www.cnblogs.com/mavlarn/archive/2012/12/24/2831688.html -- in eclipse
+
+Angular js:
+------------
+https://docs.angularjs.org/api
+
+https://www.aspsnippets.com/Articles/AngularJS-ng-repeat-index-example-Get-Index-using-index-in-ng-repeat-using-AngularJS.aspx -- for get index
+
+https://docs.angularjs.org/api/ng/directive/ngRepeat
+
+--------------------------
+
+Oracle cloud:
+-------------
+
+https://docs.oracle.com/en/cloud/iaas/storage-cloud/ssapi/toc.htm
+Container Name:occadmin   
+idcs-09060f8960a74eea857777dde5484c3a.StorageApp-d1cc52ea205444bd9d011746321b63cf.Storage_ReadWriteGroup
+\\fsvn\projects\Mahender\ORACLE_S3_SDK

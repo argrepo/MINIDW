@@ -1,0 +1,55 @@
+i). Need to Add webservice Authentications In Web service Connetion
+
+1)JWT Authentication
+2)Digest Authentication
+3)OAuth1.0 Authentication
+4)Hawk Authentication
+5)AWS Signature Authentication
+
+
+ii). need to Implement Spring Aspect oriented programming (AOP)
+     Aspects like logging, auditing, declarative transactions, security, caching.
+
+iii). Two Factor Authentication for Client creation.
+
+iv).Migrate to spring boot application with swagger implementation.
+
+v).need to Implement relational database adapters 
+   ex:- oracle,mysql,sql server ,redshift etc...
+   
+vi). need to implement heirarchical database adapters 
+    ex:- mongo,couch base etc..
+	
+vii). need to implement unstructured database adapters
+     ex:- google drive,one drive,sharepoint etc...
+	 
+viii).need to add google cloud and oracle cloud for storage(like amazon s3.)
+      as client specific storage for files.
+	 
+ix).need to implement Spring ORM(Object Relational Mapping) instead of jdbc template.
+    Means complete object oriented mechanism.
+	If we are changing our application db there is no problems will come.
+	And in built   methods are avaible to faster development.
+	
+
+x). need to implement client specific logging.
+
+xi).need to implement spring batch in schedulers.(ItemReader, ItemProcessor, ItemWriter)
+    From csv to database and database to csv data insertion(using inbuilt methods.)
+
+xii).need to implement JSP - Custom Tags(user defined).
+     which uses faster development.
+	 
+xiii).need to add  XML as source file for IL(input layout).
+
+xiv).user choice is required to upload as csv or xml or json or xlsx,xls file to upload to s3 for job execution.
+
+xv).client db and staging schemas generate in any db. that is user choice.restrict to only relational.
+
+xvi).migrate from tomcat server to jboss server(as a appication server.)always better.
+
+xvii). JWT Authentication for web service.
+
+xviii).
+     
+

@@ -1,0 +1,63 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> install.packages("Rserve")
+Installing package into ‘C:/Users/mahender.alaveni/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+--- Please select a CRAN mirror for use in this session ---
+trying URL 'https://cran.cnr.berkeley.edu/bin/windows/contrib/3.5/Rserve_1.7-3.zip'
+Content type 'application/zip' length 638177 bytes (623 KB)
+downloaded 623 KB
+
+package ‘Rserve’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\mahender.alaveni\AppData\Local\Temp\RtmpSgh9Bh\downloaded_packages
+> install.packages('rJava')
+Installing package into ‘C:/Users/mahender.alaveni/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.cnr.berkeley.edu/bin/windows/contrib/3.5/rJava_0.9-10.zip'
+Content type 'application/zip' length 826966 bytes (807 KB)
+downloaded 807 KB
+
+package ‘rJava’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\mahender.alaveni\AppData\Local\Temp\RtmpSgh9Bh\downloaded_packages
+> install.packages('RMySQL', repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/mahender.alaveni/Documents/R/win-library/3.5’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘DBI’
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/3.5/DBI_1.0.0.zip'
+Content type 'application/zip' length 887296 bytes (866 KB)
+downloaded 866 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/3.5/RMySQL_0.10.15.zip'
+Content type 'application/zip' length 2371544 bytes (2.3 MB)
+downloaded 2.3 MB
+
+package ‘DBI’ successfully unpacked and MD5 sums checked
+package ‘RMySQL’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\mahender.alaveni\AppData\Local\Temp\RtmpSgh9Bh\downloaded_packages
+> 

@@ -1,0 +1,22 @@
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcm_database_types ;-- where id = 2;
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_database_connections  where connection_id = 2;
+
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_package where package_id = 126;
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_package_source_mapping where Package_id = 126;
+
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_source_file_info;
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_custom_package_flat_file_headers_info where packageId = 126;
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_custom_package_target_table_info where package_Id =126;
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_custom_package_target_table_query where packageId = 126;
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_custom_package_temp_tables_mapping ;-- where packageId = 130;
+
+SELECT * FROM mahender_1010009_1010027_appdb.minidwcs_package_execution where package_id = 126;
+
+-- temp table
+SELECT * FROM mahender_1010009_1010027_staging.anv_temp_134_20180829_195425_377;
+
+-- target table
+SELECT * FROM mahender_1010009_1010027.`employees_m001v3_[hr]_[Employees]_9IF9`;
+
+-- view results
+SELECT * FROM mahender_1010009_1010027_staging.ETL_JOB_LOAD_SMRY;

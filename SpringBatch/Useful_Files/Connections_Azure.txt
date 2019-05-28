@@ -1,0 +1,881 @@
+
+  {
+  "connectionParams": [
+    {
+      "id": "Host",
+      "value": "13.82.42.116"
+    },
+    {
+      "id": "Port",
+      "value": "1521"
+    },
+ {
+      "id": "SID",
+      "value": "orcl"
+    },
+    
+     {
+      "id": "User",
+      "value": "cust_data_hr"
+    },
+    {
+      "id": "Password",
+      "value": "Dwp@1234"
+    }
+  ],
+  "label": "Oracle",
+  "type": "Oracle",
+  "description": "Oracle DB Azure Environment"
+}
+  
+  
+  {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "137.117.19.172"
+      },
+      {
+        "id": "Port",
+        "value": "1433"
+      },
+      
+       {
+        "id": "User",
+        "value": "prifender"
+      },
+      {
+        "id": "Password",
+        "value": "gcEeYUs*ECg8"
+      },
+       {
+        "id": "Database",
+        "value": "cust_data_hr"
+      } ,
+      
+       {
+        "id": "Schema",
+        "value": "dbo"
+      } 
+    ],
+    "label": "SqlServer",
+    "type": "SqlServer"
+  }
+  
+  {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "13.82.60.123"
+      },
+      {
+        "id": "Port",
+        "value": "3306"
+      },
+      
+       {
+        "id": "User",
+        "value": "prifender"
+      },
+      {
+        "id": "Password",
+        "value": "gcEeYUs*ECg8"
+      },
+       {
+        "id": "Database",
+        "value": "cust_data_hr"
+      } 
+    ],
+    "label": "MySql",
+    "type": "MySql"
+  }
+  {
+  "connectionParams": [
+    {
+      "id": "Host",
+      "value": "13.77.76.123"
+    },
+    {
+      "id": "Port",
+      "value": "8091"
+    },
+    
+     {
+      "id": "User",
+      "value": "Administrator"
+    },
+    {
+      "id": "Password",
+      "value": "gcEeYUs*ECg8"
+    },
+     {
+      "id": "BucketPassword",
+      "value": "test@123"
+    },
+    
+     {
+      "id": "Bucket",
+      "value": "EmployeeDetails_New"
+    },
+     {
+      "id": "QueryTimeout",
+      "value": "7500000"
+    },
+     {
+      "id": "ConnectTimeout",
+      "value": "10000000"
+    }
+  ],
+  "label": "Couchbase",
+  "type": "Couchbase"
+}
+  
+  
+  {
+  "connectionParams": [
+    {
+      "id": "Pool",
+      "value": "EC6"
+    },
+    {
+      "id": "MaxConnections",
+      "value": "5"
+    },
+     {
+      "id": "Client",
+      "value": "800"
+    },
+    {
+      "id": "User",
+      "value": "sapuser"
+    },
+     {
+      "id": "Password",
+      "value": "India123"
+    } ,
+  
+    {
+      "id": "Language",
+      "value": "EN"
+    },
+    {
+      "id": "Host",
+      "value": "VISUINFOEHP6"
+    },
+    {
+      "id": "Port",
+      "value": "1521"
+    },
+     {
+      "id": "SystemNumber",
+      "value": "66"
+    },
+     {
+      "id": "Repository",
+      "value": "MYRepository"
+    },
+     {
+      "id": "Function",
+      "value": "ZHRDET"
+    }   
+  ],
+  "label": "SAP",
+  "type": "SAP"
+}
+    {
+       "id": "Mongo",
+       "label": "Mongo",
+       "type": "Mongo",
+       "connectionParams": [
+           {
+               "id": "Host",
+               "value": "13.68.21.43"
+           },
+           {
+               "id": "Port",
+               "value": "27017"
+           },
+           {
+               "id": "Database",
+               "value": "cust_data"
+           },
+           {
+               "id": "User",
+               "value": "desuser"
+           },
+           {
+               "id": "Password",
+               "value": "SO#h3TbY*hx8ypJP"
+           }
+       ]
+   }
+   
+   {
+       "id": "HBase",
+       "label": "HBase",
+       "type": "HBase",
+       "connectionParams": [
+           {
+               "id": "ZookeeperQuorum",
+               "value": "52.173.197.245"
+           },
+           {
+               "id": "ZookeeperPropertyClientPort",
+               "value": "2181"
+           } ,
+           {
+               "id": "User",
+               "value": "hadoop"
+           }
+       ]
+   }
+   
+   {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "192.168.0.116"
+      },
+      {
+        "id": "Port",
+        "value": "1433"
+      },
+      {
+        "id": "AdminHost",
+        "value": "192.168.0.117"
+      },
+       {
+        "id": "FullyQualifiedDomain",
+        "value": "MSSQLSvc/win-mssql-2017.anvizent.local"
+      },
+	   {
+        "id": "Realm",
+        "value": "ANVIZENT.LOCAL"
+      },
+	  
+      {
+        "id": "IntegratedSecurity",
+        "value": "true"
+      },
+       {
+        "id": "AuthenticationScheme",
+        "value": "JavaKerberos"
+      } ,
+      
+       {
+        "id": "Database",
+        "value": "cust_data_hr"
+      } ,     
+	  {
+        "id": "Schema",
+        "value": "dbo"
+      },
+	  {
+		"id": "EncryptionMethod",
+		"value": "ssl"
+      }
+	  ,
+	  {
+		"id": "User",
+		"value": "ituser@ANVIZENT.LOCAL"
+      }
+	  ,
+	  {
+		"id": "Password",
+		"value": "Dwp@1234"
+      }
+    ],
+    "label": "SqlServerKerbores",
+    "type": "SqlServerKerbores"
+  }
+  
+  {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "40.69.156.2"
+     },
+     {
+       "id": "Port",
+       "value": "10000"
+     },
+     
+      {
+       "id": "User",
+       "value": "hadoop"
+     },
+     {
+       "id": "Password",
+       "value": "UnW6dQ8cEm"
+     },
+      {
+       "id": "Schema",
+       "value": "cust_data_hr"
+     } 
+   ],
+   "label": "Hive",
+   "type": "Hive"
+ }
+ 
+{
+  "connectionParams": [
+    {
+      "id": "File",
+      "value": "D:/CSV_ExtractionFiles/Single_File_1_Million"
+    },
+     {
+    "id":"FileRegExp",
+    "value":"IL_Bill_Of_Material_Stg1.csv"
+    } ,
+   {
+   	"id":"SmbAuthentication",
+   	"value":"false"
+   },
+    {
+      "id": "HeaderExists",
+      "value": "true"
+    }
+  ],
+  "label": "CSV",
+  "type": "CSV"
+}
+
+
+{
+ "connectionParams": [
+   {
+     "id": "File",
+     "value": "File system_Azure/Single_File_1_Million"
+   },
+    {
+   "id":"FileRegExp",
+   "value":"EmployeesDetails_Simp.csv"
+   },
+   {
+     "id": "Host",
+     "value": "40.69.156.136"
+   },
+   {
+     "id": "Share",
+     "value": "prifender_data"
+   },
+   {
+     "id": "User",
+     "value": "prifender"
+   },
+   {
+     "id": "Password",
+     "value": "gcEeYUs*ECg8"
+   },
+  
+   {
+   	"id":"SmbAuthentication",
+   	"value":"true"
+   },
+   {
+     "id": "HeaderExists",
+     "value": "true"
+   }
+ ],
+ "label": "CSV",
+ "type": "CSV"
+}
+
+
+  {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "52.173.197.245"
+     },
+     {
+       "id": "Port",
+       "value": "50070"
+     },
+	 
+     {
+       "id": "User",
+       "value": "root"
+     },
+	  
+     {
+       "id": "File",
+       "value": "/user/parquet/employees_details_parquet_1million"
+     } ,
+       
+     {
+       "id": "FileRegExp",
+       "value": "000000_0*"
+     }
+   ],
+   "label": "HDFSParquet",
+   "type": "HDFSParquet"
+ }
+  
+ 
+ {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "52.173.197.245"
+     },
+     {
+       "id": "Port",
+       "value": "50070"
+     },
+	 
+     {
+       "id": "User",
+       "value": "root"
+     },
+	  
+     {
+       "id": "File",
+       "value": "/user/avro/employees_details_avro_1million"
+     } ,
+       
+     {
+       "id": "FileRegExp",
+       "value": "000000_0*"
+     }
+   ],
+   "label": "HDFSAvro",
+   "type": "HDFSAvro"
+ }
+
+ 
+  {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "52.176.154.128"
+     },
+	  {
+       "id": "Port",
+       "value": "1025"
+     },
+      {
+       "id": "User",
+       "value": "DBC"
+     },
+    
+       {
+       "id": "Password",
+       "value": "gcEeYUs*ECg8"
+     },
+  {
+       "id": "Database",
+       "value": "Cust_Data_Hr"
+     }
+   ],
+   "label": "Teradata",
+   "type": "Teradata"
+ }
+  
+{  
+   "connectionParams":[  
+      {  
+         "id":"Host",
+         "value":"ds-cassandra.centralus.cloudapp.azure.com"
+      },
+      {  
+         "id":"Port",
+         "value":"9042"
+      },
+      {  
+         "id":"User",
+         "value":"prifender"
+      },
+      {  
+         "id":"Password",
+         "value":"gcEeYUs*ECg8"
+      },
+      {  
+         "id":"KeySpace",
+         "value":"cust_data_hr"
+      },
+      {  
+         "id":"ConnectTimeout",
+         "value":"60000"
+      },
+      {  
+         "id":"ReadTimeout",
+         "value":"50000"
+      }
+   ],
+   "label":"Cassandra",
+   "type":"Cassandra"
+}
+ 
+ 
+
+//http://10.9.0.4:50070/explorer.html#/user/orc
+
+{
+"connectionParams": [
+    {
+      "id": "Host",
+      "value": "10.9.0.4"
+    },
+    {
+      "id": "Port",
+      "value": "50070"
+    },
+
+    {
+      "id": "User",
+      "value": "hadoop" 
+    },
+      {
+      "id": "File",
+      "value": "/user/orc/employees_details_orc/"
+    } ,
+      
+    {
+      "id": "FileRegExp",
+      "value": "000000_0"
+    }
+   ],
+  "label": "HDFSORC",
+  "type": "HDFSORC"
+}
+
+{
+    "connectionParams": [
+	
+	 {
+        "id": "Host",
+        "value": "prifender-redshift.ckbrgam2k4nr.eu-central-1.redshift.amazonaws.com"
+      } ,
+      {
+        "id": "Port",
+        "value": "5439"
+      },
+      
+       {
+        "id": "User",
+        "value": "prifender"
+      },
+      {
+        "id": "Password",
+        "value": "Prifender999!"
+      },
+       {
+        "id": "Database",
+        "value": "prifenderdb"
+      } 
+    ],
+    "label": "Redshift",
+    "type": "Redshift"
+  }
+  
+  {
+    "connectionParams": [
+	
+	 {
+        "id": "Table",
+        "value": "EmployeesDetails"
+      } ,
+       {
+        "id": "User",
+        "value": "dynamodb"
+      },
+      {
+        "id": "AWSAccessKey",
+        "value": "AKIAIK2WNKTQUZFECRHQ"
+      },
+       {
+        "id": "AWSSecretAccessKey",
+        "value": "UWYNuYd4N+fWYZxrWMP0JorX/X+a3nrKQLT4twdf"
+      } 
+    ],
+    "label": "DynamoDB",
+    "type": "DynamoDB"
+  }
+  {  
+   "connectionParams":[  
+      {  
+         "id":"Host",
+         "value":"40.113.220.98"
+      },
+      {  
+         "id":"Port",
+         "value":"5432"
+      },
+      {  
+         "id":"User",
+         "value":"prifender"
+      },
+      {  
+         "id":"Password",
+         "value":"gcEeYUs*ECg8"
+      },
+      {  
+         "id":"Database",
+         "value":"cust_data_hr"
+      }
+   ],
+   "label":"PostgreSQL",
+   "type":"PostgreSQL"
+}
+  
+ 
+ {
+"connectionParams": [
+ {
+   "id": "File",
+   "value": "Filesystem_Azure/Sequence_with_same_formats/"
+ },
+  {
+ "id":"FileRegExp",
+ "value":"Single_Format_File_1.csv"
+ },
+ {
+   "id": "Host",
+   "value": "104.43.253.60"
+ },
+ {
+   "id": "Share",
+   "value": "/cust_data_hr/"
+ },
+ 
+ {
+   "id": "Delimiter",
+   "value": ","
+ } ,
+ {
+   "id": "HeaderExists",
+   "value": "true"
+ }
+],
+"label": "CSVNFS",
+"type": "CSVNFS"
+}
+
+
+
+{  
+   "connectionParams":[  
+      {  
+         "id":"Host",
+         "value":"ldap://dwpractice.com:389"
+      },
+      {  
+         "id":"User",
+         "value":"mahender.alaveni"
+      },
+      {  
+         "id":"Password",
+         "value":"mahi$123"
+      },
+      {  
+         "id":"SecurityAuthentication",
+         "value":"simple"
+      },
+      {  
+         "id":"SecurityPrincipal",
+         "value":"mahender.alaveni@dwpractice.com"
+      },
+      {  
+         "id":"DomainComponent",
+         "value":"dwpractice.com"
+      }
+   ],
+   "label":"LdapActiveDirectory",
+   "type":"LdapActiveDirectory"
+}
+
+{
+   "id": "Salesforce",
+   "label": "Salesforce",
+   "type": "Salesforce",
+   "connectionParams": [
+       {
+           "id": "Host",
+           "value": "https://login.salesforce.com/services/Soap/c/43.0/"
+       },
+       {
+           "id": "Port",
+           "value": "2707"
+       },
+       {
+           "id": "User",
+           "value": "itteamdwp@gmail.com"
+       },
+       {
+           "id": "Password",
+           "value": "Nd9!Lp3$bQ0c2IfaRcem1zkqtJm79Q1f8T"
+       }
+   ]
+}
+
+ {  
+ "connectionParams":[  
+    {  
+       "id":"Host",
+       "value":"10.0.1.173"
+    },
+    
+    {  
+       "id":"Port",
+       "value":"50000"
+    },
+    {  
+       "id":"Password",
+       "value":"gcEeYUs*ECg8"
+    },
+    {  
+       "id":"User",
+       "value":"db2inst1"
+    },
+    {  
+       "id":"Schema",
+       "value":"DB2INST1"
+    }
+    ,
+    {  
+       "id":"Database",
+       "value":"sample"
+    }
+ ],
+ "label":"DB2",
+ "type":"DB2"
+}
+  
+
+=================
+Unstructured:
+=================
+
+{
+   "id": "IMAP",
+   "label": "IMAP",
+   "type": "IMAP",
+   "connectionParams": [
+       {
+           "id": "Host",
+           "value": "192.168.0.241"
+       },
+       {
+           "id": "Port",
+           "value": "143"
+       },
+       {
+           "id": "User",
+           "value": "imapadmin@dwpractice.biz"
+       },
+       {
+           "id": "Password",
+           "value": "Prifender@09"
+       }
+        ,
+	     {
+           "id": "Protocol",
+           "value": "imap"
+       },
+       {
+           "id": "Folder",
+           "value": "INBOX"
+       }
+   ]
+}
+
+{
+  "id": "IMAP",
+  "label": "IMAP",
+  "type": "IMAP",
+  "connectionParams": [
+      {
+          "id": "Host",
+          "value": "192.168.0.241"
+      },
+      {
+          "id": "Port",
+          "value": "143"
+      },
+      {
+          "id": "User",
+          "value": "qauser1@dwpractice.biz"
+      },
+      {
+          "id": "Password",
+          "value": "Q@U$#radwp"
+      } 
+	  ,
+       {
+           "id": "Folder",
+           "value": "INBOX"
+       }
+  ]
+}
+
+ 
+{
+   "id": "Confluence",
+   "label": "Confluence",
+   "type": "Confluence",
+   "connectionParams": [
+       {
+           "id": "Host",
+           "value": "192.168.0.101"
+       },
+       {
+           "id": "Port",
+           "value": "8090"
+       },
+       {
+           "id": "User",
+           "value": "Admin"
+       },
+       {
+           "id": "Password",
+           "value": "Prifender.09"
+       },
+       {
+           "id": "EndPoint",
+           "value": "/rpc/soap-axis/confluenceservice-v2"
+       },
+       {
+           "id": "SpaceKey",
+           "value": "ADMIN"
+       }
+   ]
+}
+
+{
+   "id": "OneDrive",
+   "label": "OneDrive",
+   "type": "OneDrive",
+   "connectionParams": [  
+       {
+           "id": "User",
+           "value": "itsupport@arghainc.com"
+       },
+       {
+           "id": "AccessToken",
+           "value": "EwBYA8l6BAAURSN/FHlDW5xN74t6GzbtsBBeBUYAAakUwvfFfySZiEP2oR8/aVKXob/LA4b3RGvdPCpA5vr9pFJIf0NAsm7/NvD/WmmzvxFyun+JVD+2tBySqbkthUrTsolPGuibxkCZVSeM6WV9k3x7RrZkZz5mVnpdkwy6uI/Uto8YZUas0EfMWOcFq16KNfSVxbTzlz+zDgPMbNbW5lsUunNtYALPj/9YH4aeRl1FB9ZbcumYE5HVdeWFJw27kYSbNbTEh1puO14+DHvlmb2BjMfn8bBovHaShSXauy1YpiMyyYpltEju3ezfPMKK3KRDdA422kZbk8mg+OshDTcN4Fg0edgD00ZkjOFpHqUvDIfWX1vf6tw2LTNAu4wDZgAACJ6p4P5HKSrRKAJDZUhs+ezeo+f6cvZTrLSmb2uSIRfkbkq/2Melpk+jVzJM7EQdrOjnNFw30eoY+fT2L1ObGW9Mk3B5wxDE+sHab0rbNEZhavEM/4Ms7QCgIbQgD4a3S3Hyg13ZcOC9z3b88n20qNaH73S2yJyVrenkr7gWa29+m6V4zgF0TAAUeB5Oy2vVlKxpA0TCk90dfLjUKgWqwvFIt74AyA1ScGagN4BLNNJyi0moxEAkfYeIcO85fyb9knQOJ3Jsz2CeeDDFOtFGVTAUParZB5bN+8PbCJoNIzm0EAxEDdx4Q/EblvcDWpIRU1X40QwQyZDygVSXwJs1LhscMg5AsglMW3725SASM2mBSNzppFKTOjKW5VFmlg8YPV/lmT4T7JbVGFqm5PhsSMWadVCH+oN5k0sTN0vyYx7YGJ7qb5sWTrZ8nDTnRsQvo1fofw6uI2nVD/dZ78iP6rTo30tiD7BVhkuGZGI3T2Rhv8KC9BJ+6zMb8A1a2wejv+kWQ6IHgtveQcT4q8NKF4vTuzIPgE7lDRTgeBlkzEKk5Mn3qAft+0ZjmWsn9RjWSv07/DsIXzTGYOrSqCsbCGa3VEODqWNABq+PB/DR32w+Znu0TmRcP0PwYsoLAm/5uPEg90YMLmT8vwQ4FxSiAC0yDC6kn4IRqYwq4/SpN4/58UtO43tfndZPi1KtCJG4OlbudhLMCqNiTYYURGj8h63Rn14klfj6ycdcgOV1MiBnTc90Ag=="
+       } 
+   ]
+}
+
+ {
+    "id": "SharePoint",
+    "label": "SharePoint",
+    "type": "SharePoint",
+    "connectionParams": [
+        {
+            "id": "User",
+            "value": "dwp@dwphyderabad.onmicrosoft.com"
+        },
+        {
+            "id": "Host",
+            "value": "https://dwphyderabad.sharepoint.com"
+        },
+		{
+            "id": "Password",
+            "value": "Sh@12345"
+        } 
+    ]
+}
+
+ 

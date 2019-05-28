@@ -1,0 +1,506 @@
+{
+    "objects": [
+        {
+            "name": "ITAB",
+            "type": {
+                "kind": "list",
+                "entryType": {
+                    "kind": "object",
+                    "attributes": [
+                        {
+                            "name": "MANDT",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "PERNR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "SUBTY",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "OBJPS",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "SPRPS",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "ENDDA",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "BEGDA",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "SEQNR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "AEDTM",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "UNAME",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "HISTO",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "ITXEX",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "REFEX",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "ORDEX",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "ITBLD",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "PREAS",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FLAG1",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FLAG2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FLAG3",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FLAG4",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "RESE1",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "RESE2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GRPVL",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "INITS",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NACHN",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NAME2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NACH2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "VORNA",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "CNAME",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "TITEL",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "TITL2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NAMZU",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "VORSW",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "VORS2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "RUFNM",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "MIDNM",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "KNZNM",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "ANRED",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GESCH",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBDAT",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBLND",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBDEP",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBORT",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NATIO",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NATI2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NATI3",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "SPRSL",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "KONFE",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FAMST",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FAMDT",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "ANZKD",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NACON",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "PERMO",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "PERID",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBPAS",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FNAMK",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "LNAMK",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "FNAMR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "LNAMR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NABIK",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NABIR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NICKK",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NICKR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBJHR",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBMON",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "GBTAG",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NCHMC",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "VNAMC",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        },
+                        {
+                            "name": "NAMZ2",
+                            "type": {
+                                "kind": "value",
+                                "dataType": "string"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+---------------------
+
+https://link.springer.com/content/pdf/bbm%3A978-1-4302-0811-2%2F1.pdf
+ https://books.google.co.in/books?id=cCP8rrGeHEQC&pg=PA1093&lpg=PA1093&dq=get+all+tables+list+from+jco+sap+java+connection&source=bl&ots=milZJ1Gsqr&sig=MWpQoZCk_Lb4BRFibjyj03lgaeM&hl=en&sa=X&ved=0ahUKEwjbgdPFgv_YAhVHQI8KHfx8D-IQ6AEITDAE#v=onepage&q=get%20all%20tables%20list%20from%20jco%20sap%20java%20connection&f=false
+
+https://wiki.scn.sap.com/wiki/display/Snippets/How+To+Import+and+Export+data+to+Function+Module
+
+http://books.gigatux.nl/mirror/beaweblogic8.1/0672324873_ch32lev1sec5.html

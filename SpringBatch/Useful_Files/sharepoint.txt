@@ -1,0 +1,333 @@
+
+http://spshell.blogspot.com/2015/03/sharepoint-online-o365-oauth.html
+
+https://support.muhimbi.com/hc/en-us/articles/228090947-How-to-elevate-App-privileges-to-access-advanced-Features
+
+
+https://dwphyderabad.sharepoint.com/_layouts/oauthauthorize.aspx
+
+uname : dwp@dwphyderabad.onmicrosoft.com
+pwd: Sh@12345
+
+https://dwphyderabad.sharepoint.com
+-----------------------------------------------------------------------
+
+http://dwphyderabad.sharepoint.com/sites/Prifender/_layouts/15/appregnew.aspx
+
+ The app identifier has been successfully created.
+Client Id:  	9817ceee-3fe9-45cc-8842-102a29ff38d1
+Client Secret:  	ju1kZhJS3vsECkWmng/eNi+87YAyx3blNjRQp8UqhGU=
+Title:  	OAuthTest
+App Domain:  	www.getpostman.com
+Redirect URI:  	https://www.getpostman.com/oauth2/callback
+
+http://dwphyderabad.sharepoint.com/_layouts/15/Appinv.aspx 
+
+
+
+  <?xml version="1.0" encoding="utf-8" ?>
+  <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
+      ProductID="{4a07f3bd-803d-45f2-a710-b9e944c3396e}"
+      Version="1.0.0.0"
+      SharePointMinVersion="15.0.0.0"
+      Name="MySampleAddIn">
+    <Properties>
+      <Title>My Sample Add-in</Title>
+      <StartPage>~remoteAppUrl/Home.aspx?{StandardTokens}</StartPage>
+    </Properties>
+
+    <AppPrincipal>
+      <RemoteWebApplication ClientId="9817ceee-3fe9-45cc-8842-102a29ff38d1" />
+    </AppPrincipal>
+
+    <AppPermissionRequests>
+      <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Read"/>
+      <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Write"/>
+    </AppPermissionRequests>
+  </App>
+
+
+  <AppPermissionRequests>
+      <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl"/>
+      <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl"/>
+	   <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="FullControl"/>
+      <AppPermissionRequest Scope="http://sharepoint/content/tenant" Right="FullControl"/>
+    </AppPermissionRequests>
+  
+  
+
+
+ https://dwphyderabad.sharepoint.com/_vti_bin/client.svc
+
+ Bearer realm="8b9c33be-703a-47e7-810e-6ea9b2c4b8a8",client_id="00000003-0000-0ff1-ce00-000000000000",trusted_issuers="00000001-0000-0000-c000-000000000000@*,D3776938-3DBA-481F-A652-4BEDFCAB7CD8@*,https://sts.windows.net/*/,00000003-0000-0ff1-ce00-000000000000@90140122-8516-11e1-8eff-49304924019b",authorization_uri="https://login.windows.net/common/oauth2/authorize"
+ 
+ 
+ 
+ https://dwphyderabad.sharepoint.com/_layouts/oauthauthorize.aspx?client_id=9817ceee-3fe9-45cc-8842-102a29ff38d1&scope=Web.Read List.Read&response_type=code&redirect_uri=https://www.getpostman.com/oauth2/callback
+ 
+ https://app.getpostman.com/oauth2/callback?code=PAQABAAIAAADXzZ3ifr-GRbDT45zNSEFEpx7EXQxRbBoZrX1taRC6Fr94zf1HExYZwuxP3RlUdAUiVfitwPwvvYrhD1UgoQE3paSjv2wsZJhBdMyezRvmFmHRBiSzJO8uenxpmlVcgJUXHZNlgwE9sJ3vO_j6yEdcHSk25fnhT-I0zcMB0g8K2smkXuEGk1J30ARBBjg6nCAKBHtux8zGG4N0LIgGBRV1FGJUJEXc_lKilZBHdL_IuUuDr_mCybrUGiNnCbbeIylXEg-QYeweSCm1S_emg084IHKHhWF7f-caLov_LqJxG8acIF70aHaDgs9E-3sHq4e2LytCVibBpZUC3-y9dbuWETEqsG3pBRhbiUvoBGFekyAA
+
+https://accounts.accesscontrol.windows.net/8b9c33be-703a-47e7-810e-6ea9b2c4b8a8/tokens/OAuth/2
+
+PostParameters:
+=============
+
+grant_type=authorization_code
+&client_id=9817ceee-3fe9-45cc-8842-102a29ff38d1@8b9c33be-703a-47e7-810e-6ea9b2c4b8a8
+&client_secret=ju1kZhJS3vsECkWmng/eNi+87YAyx3blNjRQp8UqhGU=
+&code=PAQABAAIAAADXzZ3ifr-GRbDT45zNSEFEpx7EXQxRbBoZrX1taRC6Fr94zf1HExYZwuxP3RlUdAUiVfitwPwvvYrhD1UgoQE3paSjv2wsZJhBdMyezRvmFmHRBiSzJO8uenxpmlVcgJUXHZNlgwE9sJ3vO_j6yEdcHSk25fnhT-I0zcMB0g8K2smkXuEGk1J30ARBBjg6nCAKBHtux8zGG4N0LIgGBRV1FGJUJEXc_lKilZBHdL_IuUuDr_mCybrUGiNnCbbeIylXEg-QYeweSCm1S_emg084IHKHhWF7f-caLov_LqJxG8acIF70aHaDgs9E-3sHq4e2LytCVibBpZUC3-y9dbuWETEqsG3pBRhbiUvoBGFekyAA
+&redirect_uri=https://www.getpostman.com/oauth2/callback
+&resource=00000003-0000-0ff1-ce00-000000000000/Fdwphyderabad.sharepoint.com@8b9c33be-703a-47e7-810e-6ea9b2c4b8a8
+
+
+for refresh_token :
+==================
+
+grant_type= refresh_token
+&client_id=9817ceee-3fe9-45cc-8842-102a29ff38d1@8b9c33be-703a-47e7-810e-6ea9b2c4b8a8
+&client_secret=ju1kZhJS3vsECkWmng/eNi+87YAyx3blNjRQp8UqhGU=
+&refresh_token =PAQABAAIAAADXzZ3ifr-GRbDT45zNSEFE7b6aSwHOW3rmL_LGt2eYxFZ4pmrR6IAOb-W5gc7uUJb4m1AccWOQOcfuu2IsLvE9LTTOC30-3LHPwmLUMks3i1jnejIEgsxoXW_5pR54g0obCZ-gy9vaHR_Np1W2Lb-Kb3e7KH99tDTG-FJYBmLd0u9xVh9cFlFSED4zLO3HOjLvYrhovc2Eyvu-ov7sQZgFazOc8dAtLvOlROXCR3osvBkslrUhY3fLAH9EMe8F-82D_4orVAJTM9DbA5cKbZKKM-VaNK0yfpcYJICdzq2yLyAA
+&redirect_uri=https://www.getpostman.com/oauth2/callback
+&resource=00000003-0000-0ff1-ce00-000000000000/Fdwphyderabad.sharepoint.com@8b9c33be-703a-47e7-810e-6ea9b2c4b8a8
+
+{
+    "token_type": "Bearer",
+    "expires_in": "28800",
+    "not_before": "1534165636",
+    "expires_on": "1534194736",
+    "resource": "00000003-0000-0ff1-ce00-000000000000/fdwphyderabad.sharepoint.com@8b9c33be-703a-47e7-810e-6ea9b2c4b8a8",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjdfWnVmMXR2a3dMeFlhSFMzcTZsVWpVWUlHdyIsImtpZCI6IjdfWnVmMXR2a3dMeFlhSFMzcTZsVWpVWUlHdyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvZmR3cGh5ZGVyYWJhZC5zaGFyZXBvaW50LmNvbUA4YjljMzNiZS03MDNhLTQ3ZTctODEwZS02ZWE5YjJjNGI4YTgiLCJpc3MiOiIwMDAwMDAwMS0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDBAOGI5YzMzYmUtNzAzYS00N2U3LTgxMGUtNmVhOWIyYzRiOGE4IiwiaWF0IjoxNTM0MTY1NjM2LCJuYmYiOjE1MzQxNjU2MzYsImV4cCI6MTUzNDE5NDczNiwiYWN0b3IiOiI5ODE3Y2VlZS0zZmU5LTQ1Y2MtODg0Mi0xMDJhMjlmZjM4ZDFAOGI5YzMzYmUtNzAzYS00N2U3LTgxMGUtNmVhOWIyYzRiOGE4IiwiaWRlbnRpdHlwcm92aWRlciI6InVybjpmZWRlcmF0aW9uOm1pY3Jvc29mdG9ubGluZSIsIm5hbWVpZCI6IjEwMDNCRkZEQUQxNEQ2NzEifQ.PgR646MfAZIRg8CkZ5CjEEHlyBMPpkgkl6nXZ8rO5Z7PiSCN1AjcoJ2CUy_UzhBunVtmNxXlzgUmLfnUN9YDriCYwNJAFTEJvhEgJHDNBndxbkFl1XCdIYD9JTumQ8-ZSTaQgtFkiVV5zCaOy2UA-ecCYPkhRzJRsiFuMxh9Vp2yUlVyV5JkVYqMH3LmQsEg67AhoeQSLj6P9_3-Msjg_2ZAsNUASs9KriUkBsVpiVOdFMghZGrt3YxEZ4v_7SgaRka0Sgougg2iyArgjEcHfCFnLXfyofIXKGppQVuwPGKZzQCW-mOG2LeNFwyvR5JywUd0lnCc7c-ZaesBStwULw",
+    "refresh_token": "PAQABAAIAAADXzZ3ifr-GRbDT45zNSEFEhU1bfcwjAhAft_7GY7KVjZYc8-wXs-ccafpJMXFFPzmucxmumrO_l13B0eifpPBsbX83DpG5hainw1-OwD-pZhQ5BF-7wd9VN-KcdTe4bdku4rSpBvfDCWR20Z3xTjbEt1w5qxZtw3te0XrhgJBOybWlXsyeyxFJOtGmfwsDZDCE4zQDBycxmEncSRLXYq84m3iEA65EUjRJxfOCQenGGR2_qC0m3qd-lS_Qiub1HwR6NRdAH8hlbpzEhDFdhaF0V3RqyBC8r_3TzjOc3Abw3SAA"
+}
+
+refresh token:
+=============
+{
+    "token_type": "Bearer",
+    "expires_in": "28799",
+    "not_before": "1534165662",
+    "expires_on": "1534194762",
+    "resource": "00000003-0000-0ff1-ce00-000000000000/fdwphyderabad.sharepoint.com@8b9c33be-703a-47e7-810e-6ea9b2c4b8a8",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjdfWnVmMXR2a3dMeFlhSFMzcTZsVWpVWUlHdyIsImtpZCI6IjdfWnVmMXR2a3dMeFlhSFMzcTZsVWpVWUlHdyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvZmR3cGh5ZGVyYWJhZC5zaGFyZXBvaW50LmNvbUA4YjljMzNiZS03MDNhLTQ3ZTctODEwZS02ZWE5YjJjNGI4YTgiLCJpc3MiOiIwMDAwMDAwMS0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDBAOGI5YzMzYmUtNzAzYS00N2U3LTgxMGUtNmVhOWIyYzRiOGE4IiwiaWF0IjoxNTM0MTY1NjYyLCJuYmYiOjE1MzQxNjU2NjIsImV4cCI6MTUzNDE5NDc2MiwiYWN0b3IiOiI5ODE3Y2VlZS0zZmU5LTQ1Y2MtODg0Mi0xMDJhMjlmZjM4ZDFAOGI5YzMzYmUtNzAzYS00N2U3LTgxMGUtNmVhOWIyYzRiOGE4IiwiaWRlbnRpdHlwcm92aWRlciI6InVybjpmZWRlcmF0aW9uOm1pY3Jvc29mdG9ubGluZSIsIm5hbWVpZCI6IjEwMDNCRkZEQUQxNEQ2NzEifQ.HU-J7ACCWF0CMGP3Jslv5wzDGHWdSj-HA95zE4GENSACNH8R6UWixehGqhEYDYHZjS9Xb664VkZAU31WJQ2KU4mD5xkmuWMXtDfsEJwiuXD4t-gwkuIJze8HLlyklNzTsuW0ax19Y2tVYCMtQtYUimbVsMsn8N7tiOUGN6YDDU2jjmkaxuzrNlhBMZXDRpM5XC9r588K-R1XaQIypbqDCWrT-cUMpwJ0vFUPPd7gP7f4NQw8LroTjcQvXINrtqglTy44-CWF3qBserftpzDedT-ZiEkNZh0nEgA6fieLpmKqAJfvXEOdGUJyokyKddiKA4bVk7rA89xtvCTtsPHN3g"
+}
+
+
+-------------------------------------------------
+digest authentication:
+=================================
+ 
+ http://paulryan.com.au/2014/spo-remote-authentication-rest/ --- doc link
+ 
+ https://login.microsoftonline.com/extSTS.srf
+ 
+ Header :
+ 
+ Accept : application/json;odata=verbose
+ 
+ Body :
+ ---------------
+ 
+ 
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+      xmlns:a="http://www.w3.org/2005/08/addressing"
+      xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue</a:Action>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <a:To s:mustUnderstand="1">https://login.microsoftonline.com/extSTS.srf</a:To>
+    <o:Security s:mustUnderstand="1"
+       xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <o:UsernameToken>
+        <o:Username>dwp@dwphyderabad.onmicrosoft.com</o:Username>
+        <o:Password>Sh@12345</o:Password>
+      </o:UsernameToken>
+    </o:Security>
+  </s:Header>
+  <s:Body>
+    <t:RequestSecurityToken xmlns:t="http://schemas.xmlsoap.org/ws/2005/02/trust">
+      <wsp:AppliesTo xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+        <a:EndpointReference>
+          <a:Address>http://dwphyderabad.sharepoint.com/_api/web/lists</a:Address>
+        </a:EndpointReference>
+      </wsp:AppliesTo>
+      <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>
+      <t:RequestType>http://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>
+      <t:TokenType>urn:oasis:names:tc:SAML:1.0:assertion</t:TokenType>
+    </t:RequestSecurityToken>
+  </s:Body>
+</s:Envelope>
+
+
+Response:
+-------
+
+<?xml version="1.0" encoding="utf-8"?>
+<S:Envelope xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+    <S:Header>
+        <wsa:Action S:mustUnderstand="1" wsu:Id="Action">http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue</wsa:Action>
+        <wsa:To S:mustUnderstand="1" wsu:Id="To">http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+        <wsse:Security S:mustUnderstand="1">
+            <wsu:Timestamp wsu:Id="TS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                <wsu:Created>2018-08-14T11:38:16.5552647Z</wsu:Created>
+                <wsu:Expires>2018-08-14T11:43:16.5552647Z</wsu:Expires>
+            </wsu:Timestamp>
+        </wsse:Security>
+    </S:Header>
+    <S:Body xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+        <wst:RequestSecurityTokenResponse xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust">
+            <wst:TokenType>urn:passport:compact</wst:TokenType>
+            <wsp:AppliesTo>
+                <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+                    <wsa:Address>http://dwphyderabad.sharepoint.com/_api/web/lists</wsa:Address>
+                </wsa:EndpointReference>
+            </wsp:AppliesTo>
+            <wst:Lifetime>
+                <wsu:Created>2018-08-14T11:38:16Z</wsu:Created>
+                <wsu:Expires>2018-08-15T11:38:16Z</wsu:Expires>
+            </wst:Lifetime>
+            <wst:RequestedSecurityToken>
+                <wsse:BinarySecurityToken Id="Compact0" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">t=EwDoAk6hBwAUamW55wMmWmxpdUrikyyDcCuRBpIAAc7NkE/6oH77YIbdLwZinDFhcY3eelMLh1hw+/iCx0Tay8Hltr7XtAPBrE6hSFub6i0d/iebe5pnUkm8eAyPeuVwlU5xaDkCyVhkFeKUqpnhfTyLH7twFg75EU4hweuHpxaixio8IxUINHzD9qNQPvZKpQ4wNGDZoBmwn8i0axq04iSMJJKgLMX24JVZr6NxgcWkcB5m3GkT5BuT8Oxdnj5S3TNNLioJPx9dtRY5nY1Okb3JCzZrSEPu0YWeuLHp4q9H2QIYTAEyXiI1lrcJVu+MDNXdhJTDcM92r090WwrknBaIDF+OvhPIlkghj0PSBv3ForDr5nPwiWk4tgy0yiADZgAACL99cmAG7+GIuAHEMDwh0cR+uIgZ61/8/N2vZQe0k+UxcxGIZd3ks9m5uY8rb7h16VAsqtnohjjYPHT4JEvW5c2eKmZpJSWfIhi6ox99uKo1qnc9+zy9Lh4hrrvP4NxSHR72tKpwq5MXlZgqjXn1aBjiplTX/Oq2TkyQoEoRCHGHQ+LKlO4DNQIV/H2dB1t0vrHS9bIzGX/l2VEbSir+DEG55w1DOSUw3pZp/WZiJZhAbPxNHWotLcQNfc1/n3S5VekbDW6MXntvKGTFiWtTImjlT0dZfuuX32avQVq+eVrzyXvgtZ9NWQF20+dX2DVx+vfZU8A68W7Wow3s9M82MO8fj3YXyT/rt+cR2jBJuFPIGTWByl1sh4cOBFH/jLEGuS+nxejZvB+uagOcaiuXmR51vN3OoiWFgKuorNhwxQTNq0q4fZcTP22Ppgfe3FX6LITk0rmHN/nIP7brlYUufBa1zorN70uh4H8AFOae6SJRd65JR0Xg75/wEhubyJGANTnu3n/R2DDONgye+Q/ceNIE+CAOjPWf5MTWwuJl216Cd35E3gT0vYnJhzZxp2vyyN7UOb4eOz+Rh5R+MBZ9Zf4dkSAC&amp;p=</wsse:BinarySecurityToken>
+            </wst:RequestedSecurityToken>
+            <wst:RequestedAttachedReference>
+                <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+                    <wsse:Reference URI="7k427RTDi16WfG0dRV14pKHneuE="></wsse:Reference>
+                </wsse:SecurityTokenReference>
+            </wst:RequestedAttachedReference>
+            <wst:RequestedUnattachedReference>
+                <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+                    <wsse:Reference URI="7k427RTDi16WfG0dRV14pKHneuE="></wsse:Reference>
+                </wsse:SecurityTokenReference>
+            </wst:RequestedUnattachedReference>
+        </wst:RequestSecurityTokenResponse>
+    </S:Body>
+</S:Envelope>
+
+2) https://dwphyderabad.sharepoint.com/_forms/default.aspx?wa=wsignin1.0
+
+taken from above RequestedSecurityToken value
+
+Body:
+----
+
+t=EwDoAk6hBwAUamW55wMmWmxpdUrikyyDcCuRBpIAAc7NkE/6oH77YIbdLwZinDFhcY3eelMLh1hw+/iCx0Tay8Hltr7XtAPBrE6hSFub6i0d/iebe5pnUkm8eAyPeuVwlU5xaDkCyVhkFeKUqpnhfTyLH7twFg75EU4hweuHpxaixio8IxUINHzD9qNQPvZKpQ4wNGDZoBmwn8i0axq04iSMJJKgLMX24JVZr6NxgcWkcB5m3GkT5BuT8Oxdnj5S3TNNLioJPx9dtRY5nY1Okb3JCzZrSEPu0YWeuLHp4q9H2QIYTAEyXiI1lrcJVu+MDNXdhJTDcM92r090WwrknBaIDF+OvhPIlkghj0PSBv3ForDr5nPwiWk4tgy0yiADZgAACL99cmAG7+GIuAHEMDwh0cR+uIgZ61/8/N2vZQe0k+UxcxGIZd3ks9m5uY8rb7h16VAsqtnohjjYPHT4JEvW5c2eKmZpJSWfIhi6ox99uKo1qnc9+zy9Lh4hrrvP4NxSHR72tKpwq5MXlZgqjXn1aBjiplTX/Oq2TkyQoEoRCHGHQ+LKlO4DNQIV/H2dB1t0vrHS9bIzGX/l2VEbSir+DEG55w1DOSUw3pZp/WZiJZhAbPxNHWotLcQNfc1/n3S5VekbDW6MXntvKGTFiWtTImjlT0dZfuuX32avQVq+eVrzyXvgtZ9NWQF20+dX2DVx+vfZU8A68W7Wow3s9M82MO8fj3YXyT/rt+cR2jBJuFPIGTWByl1sh4cOBFH/jLEGuS+nxejZvB+uagOcaiuXmR51vN3OoiWFgKuorNhwxQTNq0q4fZcTP22Ppgfe3FX6LITk0rmHN/nIP7brlYUufBa1zorN70uh4H8AFOae6SJRd65JR0Xg75/wEhubyJGANTnu3n/R2DDONgye+Q/ceNIE+CAOjPWf5MTWwuJl216Cd35E3gT0vYnJhzZxp2vyyN7UOb4eOz+Rh5R+MBZ9Zf4dkSAC&amp;p=
+ 
+ 
+reponse cookies:
+-----------
+
+
+rtFa=kBUNB+y9R6nL9bf5J628xTfXILYQvjswHSnFR+WV8ZYmOEI5QzMzQkUtNzAzQS00N0U3LTgxMEUtNkVBOUIyQzRCOEE4DIGR2+uajbsV3iBKrOU6duJorfWq0sn5jbuvje9kEDwPHB4czsyylQppXl/onIVdwo+kBneVbFwn/+IyUZaMlwjxA6VMf3yfI14EPyNnHkkyPlAKMi1JH3t4meZS4yi6zOjq7ekBtSx2h5VUUdPflaEDRUGHeLWS4UxcQW8oYCMfqCJ5uaJjURtfYNpQIknImeNfUXm5YSZaVvLZFBBiXGjflTVFUnzNELT+myvzdXsKAUNX9f40DCYz1gvXnqTqM4sLMwiruInSS7NaUpZF7pwBhhptnRY95HlyutdRspAu4019M0e0PzouUtNV2wOdDzldS1A6hHsjAqe9BNombkUAAAA=
+
+FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjQsMGguZnxtZW1iZXJzaGlwfDEwMDNiZmZkYWQxNGQ2NzFAbGl2ZS5jb20sMCMuZnxtZW1iZXJzaGlwfGR3cEBkd3BoeWRlcmFiYWQub25taWNyb3NvZnQuY29tLDEzMTc4NzIwMjk2MDAwMDAwMCwxMzE3ODYyNjE5MzAwMDAwMDAsMTMxNzg4MDY5NzMzNDA4Nzk2LDAuMC4wLjAsMiw4YjljMzNiZS03MDNhLTQ3ZTctODEwZS02ZWE5YjJjNGI4YTgsLCxiY2E2ODQ5ZS1mMDczLTAwMDAtMGNjYS0xZDYzMDUwYjI2MDcsYmNhNjg0OWUtZjA3My0wMDAwLTBjY2EtMWQ2MzA1MGIyNjA3LCwwLDAsMCxraUhnRmlIT1c0NFFDVEVnTWJSZnpab2VQU2QwQTloQk8rZDY5d2dyNi9vendHTVJ4UHk3ZDBkdlQzNEFMd0kzODk0WG9ZMTRNdSthR2J3VFlScndaRWlISG5TRE9wWlZBM0FmemtUVjR6Y2J0SVkxOE9pdzJZVHRJWXBWQzRPR3EvdWNFUnhFWlIxZmdDYm1BVWVMeloramxMSzhuVWRhTWQzZW1NSmhjdWxWVmhyUXJkM01TMmtaU3NwalI1VHlOTEh3c3MyNWpVeTRTUE5jcnlyL0lqQ0g2Z2xYOVQxN1EwRU92SWFiZUJlc2IrN2g1SUllOWttaEQydTdiT0o5V0d0YzdlM1l4cmxoK0t1R1FEWUhFV1Roc1piajZJU0lIenN1V3RmUkhtc1NHSG9VeEQ2T0I3Q3VYdUZXR2JTTjlXbndZRjZxdEtuNTFjR1dTenNBdUE9PTwvU1A+
+
+
+3) http://dwphyderabad.sharepoint.com/Sites/Prifender/_api/contextinfo
+
+Headers:
+----------
+
+Accept application/json
+
+and above two cookies
+
+reponse:
+-------
+
+{
+    "odata.metadata": "https://dwphyderabad.sharepoint.com/sites/Prifender/_api/$metadata#SP.ContextWebInformation",
+    "FormDigestTimeoutSeconds": 1800,
+    "FormDigestValue": "0x59569940443E005E2D94C7D0EBE79A8C36FFB6E2E13C08534A0321A953A2E0E4DD947C7574508630A7E37373F2BFF8E1618FF5ED2F232C71210E22E663539E49,14 Aug 2018 12:14:17 -0000",
+    "LibraryVersion": "16.0.8008.1206",
+    "SiteFullUrl": "https://dwphyderabad.sharepoint.com/sites/Prifender",
+    "SupportedSchemaVersions": [
+        "14.0.0.0",
+        "15.0.0.0"
+    ],
+    "WebFullUrl": "https://dwphyderabad.sharepoint.com/sites/Prifender"
+}
+
+
+4) https://dwphyderabad.sharepoint.com/Sites/Prifender/_api/web/lists 
+
+headers :
+
+Accept application/json
+
+and above two cookies , FormDigestValue from above json
+
+=============================
+
+https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest  -- usefull for development
+
+
+https://dwphyderabad.sharepoint.com/Sites/Prifender/_api/web/lists/getbytitle('Docs1')/items
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/Lists(guid'6d559c8c-2fd8-4d5d-999e-5f7356d0bea1')/Items(1)
+
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/Lists(guid'6d559c8c-2fd8-4d5d-999e-5f7356d0bea1')/Items(1)/File
+
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/GetFileByServerRelativePath(decodedurl='/sites/Prifender/Docs1/api.txt )
+
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_layouts/download.aspx?SourceUrl=https://dwphyderabad.sharepoint.com/sites/Prifender/Docs1/api.txt
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/Lists(guid'6d559c8c-2fd8-4d5d-999e-5f7356d0bea1')/Items(1)/File/
+
+
+------------------
+https://dwphyderabad.sharepoint.com/_api/web/SiteUsers
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/web/SiteUsers
+
+https://dwphyderabad.sharepoint.com/_api/search/query?querytext='contentclass:STS_Site contentclass:STS_Web'
+&selectproperties='Title,Path'&rowlimit=500
+ 
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/folders
+ 
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/web/GetFolderByServerRelativeUrl('/sites/Prifender/Docs1')/Files
+ 
+https://dwphyderabad.sharepoint.com/sites/Prifender/_layouts/download.aspx?SourceUrl=https://dwphyderabad.sharepoint.com/sites/Prifender/Docs1/api.txt
+
+
+//getsubfolder and file sample url
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/web/GetFolderByServerRelativeUrl('/sites/Prifender/Shared Documents/Sample/SampleDoc')/Folders
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/web/GetFolderByServerRelativeUrl('/sites/Prifender/Shared Documents/Sample/SampleDoc')/File
+
+------------
+
+https://info.paitgroup.com/blog/sharepoint-rest-api-and-lists-with-folders -- imp
+
+get lists from share point :
+-------------------------
+  
+https://dwphyderabad.sharepoint.com/_api/Web/Lists/getByTitle('Form Templates')/
+ 
+ https://dwphyderabad.sharepoint.com/_api/Web/Lists/getByTitle('Form Templates')/items
+
+https://dwphyderabad.sharepoint.com/_api/Web/Lists(guid'39482cbe-19aa-45cf-8e1e-fd15334d34d9')/Items(1)/File
+
+https://dwphyderabad.sharepoint.com/_api/Web/Lists(guid'd3d10caa-1954-4d1c-a3ff-4ac6cc57f75e')/Items(1)/File
+
+https://dwphyderabad.sharepoint.com/_api/web/GetFolderByServerRelativeUrl('/FormServerTemplates')/Files
+
+https://dwphyderabad.sharepoint.com/_layouts/download.aspx?SourceUrl=https://dwphyderabad.sharepoint.com/FormServerTemplates/Document.docx
+
+--------------------
+
+https://dwphyderabad.sharepoint.com/_api/web/GetFolderByServerRelativeUrl('/Form Templates')/Files
+
+https://dwphyderabad.sharepoint.com/_layouts/download.aspx?SourceUrl=https://dwphyderabad.sharepoint.com/FormServerTemplates/Document.docx
+
+----------------
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/folders
+
+https://dwphyderabad.sharepoint.com/sites/Prifender/_api/Web/GetFolderByServerRelativePath(decodedurl='/sites/Prifender/SiteAssets')/Files

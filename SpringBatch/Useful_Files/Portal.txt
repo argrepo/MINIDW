@@ -1,0 +1,99 @@
+Portal Segregation By user wise :
+--------------------------------
+
+1) client admin User (minidw) activity
+   -----------
+ --> Verticals
+ --> Client Vertical mapping
+ --> Databases  
+ --> Database Connectors
+ --> Client database connector mapping
+ --> Webservice Template
+ --> Client webservice template mapping
+ --> Instant Script Execution
+ --> File Settings
+ --> Client currency mapping
+ --> Client s3 bucket mapping
+ --> Error logs
+ --> Existing jars
+ --> Execute scripts
+ 
+2) Etl User activity
+   --------
+ --> IL info
+ --> DL info
+ --> IL Prebuild queries
+ --> Client DL mapping
+ --> Client job execution parameter
+ --> Webservice IL mapping
+ 
+3) Elt User activity
+   --------
+
+ --> Config Tags
+ --> Job Tags
+ --> Master configuration
+ --> Load Parameters
+ 
+4) deployment admin user activity
+   ---------------
+ --> Middle level manager
+ --> S3 bucket info
+ --> Hybrid clients grouping
+ --> currency integration in minidw
+ --> App db version table scripts
+ --> multiclient table script execution
+ --> multiclient insert query execution
+ --> version upgrade
+ 
+ date:- 08/01/2018
+ ---------------------
+ 
+superadmin@anvizent.com--  -200	
+vidya_BA@anvizent.com--    -600
+vidya_BU@anvizent.com--    -900
+vidya_PA@anvizent.com--    -800
+vidya_DA@anvizent.com--    -700
+vidya_DU@anvizent.com--    -900
+vidya_EA@anvizent.com--    -1000
+vidya_EU@anvizent.com--    -900
+
+
+
+SELECT * FROM anvizent.minidwm_default_templates_mapping;
+
+SELECT * FROM anvizent.minidwm_default_templates;
+
+home_page_templete
+minidwcm_currency_list
+minidwcm_database_connectors
+minidwcm_database_types
+minidwcm_dl_il_mapping
+minidwcm_dl_info
+minidwcm_il_info
+minidwcm_il_prebuild_queries_mapping
+minidwcm_kpis
+minidwcm_kpis_dl_mapping
+minidwcm_ws_api_mapping
+minidwcm_ws_authentication_types
+minidwcm_ws_template_auth_request_params
+minidwcm_ws_template_mst
+
+
+
+minidwcs_data_validation_script
+minidwcs_data_validation_script_dl_il_mapping
+minidwcs_database_connectors_client_mapping
+minidwcs_ddls
+minidwcs_dl_client_mapping
+minidwcs_dl_client_specific_jobs
+minidwcs_dl_trailingmonths_mapping
+minidwcs_il_client_specific_jobs
+minidwcs_package_schedule
+minidwcs_package_source_mapping
+minidwcs_package_web_service_source_mapping
+minidwcs_ws_client_mapping
+wishlist
+
+
+http://svn.dwpractice.com:18080/svn/anvizent_tool/branch/v4_client_db_separation_maven/anvizent-setup-portal

@@ -1,0 +1,333 @@
+Oracle:
+======
+--context_param DATASOURCE_PORT=1521
+--context_param JOB_ID=DES-Oracle_1-CUST_DATA_HR_ADDRESSES-1742de2d-c984-4528-b982-d44681142edf
+--context_param DATASOURCE_COLUMN_NAMES=ID@#@STREET@#@CITY@#@STATE@#@ZIP
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 15:06:212
+--context_param LIMIT=200000
+--context_param SAMPLESIZE=200000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/Oracle/
+--context_param JOB_NAME=local_project.prifender_oracle_m2_v1_0_1.Prifender_Oracle_M2_v1
+--context_param DATASOURCE_PASS=Dwp@1234
+--context_param DATASOURCE_HOST=13.82.42.116
+--context_param DATASOURCE_USER=cust_data_hr
+--context_param DATASOURCE_TABLE_NAME=ADDRESSES
+--context_param OFFSET=1
+--context_param DATASOURCE_SERVICE_NAME=
+--context_param DATASOURCE_SID=orcl
+--context_param DATASOURCE_NAME=CUST_DATA_HR
+
+CSVNFS:
+======
+
+--context_param JOB_ID=DES-CSVNFS_2-Filesystem_Azure_Sequence_with_same_formats_withheaders_-667ac798-451b-4afb-aa94-d0f4193630b4
+--context_param FILEREGEX=*
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@dob@#@salary@#@commission_pct@#@street@#@city@#@state@#@zip@#@phnumber
+--context_param DATASOURCE_DELIMITER=,
+--context_param SCOPE=all
+--context_param JOB_STARTDATETIME=2018-06-26 16:06:602
+--context_param DESTASKID=DES-Task-20fa7019-a43c-43ce-b999-b8911657c22b
+--context_param HOST=104.43.253.60
+--context_param LIMIT=0
+--context_param SAMPLESIZE=15399525
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/CSVNFS/
+--context_param DATASOURCE_FILE_PATH=Filesystem_Azure/Sequence_with_same_formats_withheaders//Single_Format_File_6.csv
+--context_param DESTASKSTATUS=DES-TaskStatus
+--context_param JOB_NAME=local_project.prifender_csv_nfs_v3_0_1.Prifender_CSV_NFS_v3
+--context_param PASSWORD=0
+--context_param USERNAME=0
+--context_param OFFSET=1
+--context_param SHARENAME=/cust_data_hr/
+
+
+CSVSMB:
+======
+
+--context_param JOB_ID=DES-CSV_3-File_system_Azure_Sequence_with_different_formats_noheaders_-12d7102e-0770-4e11-a875-558da36ebd0a
+--context_param FILEREGEX=*
+--context_param DATASOURCE_COLUMN_NAMES=1@#@2@#@3@#@4@#@5@#@6@#@7@#@8@#@9@#@10@#@11@#@12@#@13@#@14
+--context_param DATASOURCE_DELIMITER=,
+--context_param SCOPE=all
+--context_param JOB_STARTDATETIME=2018-06-26 16:06:753
+--context_param DESTASKID=DES-Task-5467ba9a-c596-4738-a3c0-917635d4bed0
+--context_param HOST=40.69.156.136
+--context_param LIMIT=0
+--context_param SAMPLESIZE=15218630
+--context_param FILE_PATH=/Users/itadmin/Documents/Prifender/Prifender_Jobs//CSV/
+--context_param DATASOURCE_FILE_PATH=File system_Azure/Sequence_with_different_formats_noheaders/File_1.csv
+--context_param DESTASKSTATUS=DES-TaskStatus-Testing
+--context_param JOB_NAME=local_project.prifender_csv_smb_without_header_v2_0_1.Prifender_CSV_SMB_Without_Header_v2
+--context_param PASSWORD=gcEeYUs*ECg8
+--context_param USERNAME=prifender
+--context_param OFFSET=1
+--context_param SHARENAME=prifender_data
+
+
+HBASE:
+======
+
+--context_param DATASOURCE_PORT=2181
+--context_param JOB_ID=DES-HBase_2-employees_details_simplified-7023c233-50b7-4e5b-bee1-876d2a8eb887
+--context_param DATASOURCE_COLUMN_NAMES=employees:id@#@employees:first_name@#@employees:last_name@#@employees:ssn@#@employees:phone_mobile@#@employees:phone_home@#@employees:phone_office@#@employees:email@#@employees:addr_street@#@employees:addr_city@#@employees:addr_region@#@employees:addr_postal_code@#@employees:hire_date@#@employees:dob@#@employees:salary@#@employees:commission_pct@#@employees:manager_id
+--context_param DATASOURCE_HOST=23.100.85.19
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 11:06:205
+--context_param DATASOURCE_TABLE_NAME=employees_details_simplified
+--context_param OFFSET=1
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=/Users/itadmin/Documents/Prifender/Prifender_Jobs//HBase/
+--context_param JOB_NAME=local_project.prifender_hbase_m2_v1_0_1.Prifender_Hbase_M2_v1
+
+Teradata:
+=======
+
+--context_param DATASOURCE_PORT=1025
+--context_param JOB_ID=DES-Teradata-Cust_Data_Hr_Employees-55f53f64-dbb5-4f93-8e67-5f42d5d5799f
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@dob@#@salary@#@commission_pct
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 15:06:361
+--context_param LIMIT=200000
+--context_param SAMPLESIZE=200000
+--context_param FILE_PATH=/Users/itadmin/Documents/Prifender/Prifender_Jobs//Teradata/
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=52.176.154.128
+--context_param DATASOURCE_USER=DBC
+--context_param DATASOURCE_TABLE_NAME=Employees
+--context_param OFFSET=800001
+--context_param DATASOURCE_NAME=Cust_Data_Hr
+
+Couchbase:
+==========
+
+--context_param JOB_ID=DES-Couchbase_5-EmployeeDetails_New-ab43aab8-3284-4c2b-aff3-119f3f9465b4
+--context_param DATASOURCE_COLUMN_NAMES=`id`,`first_name`,`last_name`,`ssn`,`email`,`hire_date`,`dob`,`salary`,`commission_pct`,`addresses`[*].`street`,`addresses`[*].`city`,`addresses`[*].`state`,`addresses`[*].`zip`,`phone_numbers`,`pay_checks`[*].`payment_date`,`pay_checks`[*].`amount`
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-27 11:06:619
+--context_param QUERYTIMEOUT=7500000
+--context_param LIMIT=100000
+--context_param SAMPLESIZE=100000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/Couchbase/
+--context_param CONNECTTIMEOUT=10000000
+--context_param JOB_NAME=local_project.prifender_couchbase_m2_v1_0_1.Prifender_COUCHBASE_M2_v1
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=13.77.76.123:8091
+--context_param DATASOURCE_USER=Administrator
+--context_param DATASOURCE_TABLE_NAME=EmployeeDetails_New
+--context_param OFFSET=1
+--context_param DATASOURCE_NAME=EmployeeDetails_New
+
+Sql Server
+==========
+
+--context_param DATASOURCE_PORT=1433
+--context_param JOB_ID=DES-SqlServer_2-cust_data_hr_dbo_Employees-72eb2448-fedb-4ac1-ad74-cbe3d9a2451d
+--context_param DATASOURCE_COLUMN_NAMES=[id]@#@[first_name]@#@[last_name]@#@[ssn]@#@[email]@#@[hire_date]@#@[salary]@#@[commission_pct]
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 17:06:930
+--context_param LIMIT=100000
+--context_param SAMPLESIZE=100000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/SqlServer/
+--context_param JOB_NAME=local_project.prifender_mssql_m2_v1_0_1.Prifender_MSSQL_M2_v1
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=137.117.19.172
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_TABLE_NAME=[dbo].[Employees]
+--context_param OFFSET=100001
+--context_param DATASOURCE_NAME=[cust_data_hr]
+
+Oracle:
+======
+
+--context_param DATASOURCE_PORT=1521
+--context_param JOB_ID=DES-Oracle_2-CUST_DATA_HR_EMPLOYEES-52d34126-6e97-4108-b387-c9b8b292e710
+--context_param DATASOURCE_COLUMN_NAMES=ID@#@FIRST_NAME@#@LAST_NAME@#@SSN@#@EMAIL@#@HIRE_DATE@#@DOB@#@SALARY@#@COMMISSION_PCT
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 17:06:445
+--context_param LIMIT=20
+--context_param SAMPLESIZE=20
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/Oracle/
+--context_param JOB_NAME=local_project.prifender_oracle_m2_v1_0_1.Prifender_Oracle_M2_v1
+--context_param DATASOURCE_PASS=Dwp@1234
+--context_param DATASOURCE_HOST=13.82.42.116
+--context_param DATASOURCE_USER=cust_data_hr
+--context_param DATASOURCE_TABLE_NAME=EMPLOYEES
+--context_param OFFSET=200001
+--context_param DATASOURCE_SERVICE_NAME=
+--context_param DATASOURCE_SID=orcl
+--context_param DATASOURCE_NAME=CUST_DATA_HR
+
+Mysql:
+======
+
+--context_param DATASOURCE_PORT=3306
+--context_param JOB_ID=DES-MySQL-cust_data_hr_Employees-36924654-2928-4b8c-a59c-975c95905ff9
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@salary@#@commission_pct
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 17:06:624
+--context_param LIMIT=20
+--context_param SAMPLESIZE=20
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/MySQL/
+--context_param JOB_NAME=local_project.prifender_mysql_m2_v1_0_1.Prifender_MYSQL_M2_v1
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=13.82.60.123
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_TABLE_NAME=Employees
+--context_param OFFSET=200001
+--context_param DATASOURCE_NAME=cust_data_hr
+
+sqlserver kerberos:
+==================
+
+--context_param DATASOURCE_PORT=1433
+--context_param JOB_ID=DES-SqlServerKerbores_1-cust_data_hr_dbo_Employees-297d30ca-15b3-42eb-aefd-329ed4897bdd
+--context_param DATASOURCE_COLUMN_NAMES=[id]@#@[first_name]@#@[last_name]@#@[ssn]@#@[email]@#@[hire_date]@#@[salary]@#@[commission_pct]
+--context_param ENCRYPTIONMETHOD=ssl
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 17:06:768
+--context_param LIMIT=20
+--context_param SAMPLESIZE=20
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/SqlServerKerbores/
+--context_param REALM=ANVIZENT.LOCAL
+--context_param JOB_NAME=local_project.prifender_mssql_kerbores_m2_v1_0_1.Prifender_MSSQL_Kerbores_M2_v1
+--context_param DATASOURCE_PASS=Dwp@1234
+--context_param ADMINHOSTNAME=192.168.0.117
+--context_param FQDN=MSSQLSvc/win-mssql-2017.anvizent.local
+--context_param DATASOURCE_HOST=192.168.0.116
+--context_param DATASOURCE_USER=ituser@ANVIZENT.LOCAL
+--context_param DATASOURCE_TABLE_NAME=[dbo].[Employees]
+--context_param OFFSET=200001
+--context_param DATASOURCE_NAME=[cust_data_hr]
+--context_param AUTHENTICATIONSCHEME=JavaKerberos
+--context_param INTEGRATEDSECURITY=true
+
+hive:
+=====
+
+
+--context_param DATASOURCE_PORT=10000
+--context_param JOB_ID=DES-Hive_3-cust_data_hr_employees_details_hive_simplified-a0c615b9-23b8-4ed0-a219-629f5d6ae710
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@dob@#@salary@#@commission_pct@#@addr_postal_code@#@addr_region@#@addr_street@#@phone_office@#@phone_home@#@addr_city@#@phone_mobile@#@manager_id
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-26 18:06:89
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=/Users/itadmin/Documents/Prifender/Prifender_Jobs//Hive/
+--context_param JOB_NAME=local_project.prifender_hive_m2_v1_0_1.Prifender_Hive_M2_v1
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=104.43.142.36
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_TABLE_NAME=employees_details_hive_simplified
+--context_param OFFSET=1
+--context_param DATASOURCE_NAME=cust_data_hr
+
+Mongo:
+======
+	
+--context_param DATASOURCE_PORT=27017
+--context_param JOB_ID=DES-Mongo_2-cust_data_EmployeeDetails_1Million-003cc6c5-7e34-44c4-bd90-98b3db4f009b
+--context_param DATASOURCE_COLUMN_NAMES=_id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@dob@#@salary@#@commission_pct@#@addresses.street@#@addresses.city@#@addresses.state@#@addresses.zip@#@phone_numbers@#@pay_checks.payment_date@#@pay_checks.amount
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-27 14:06:161
+--context_param LIMIT=9
+--context_param SAMPLESIZE=9
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/Mongo/
+--context_param JOB_NAME=local_project.prifender_mongodb_m2_v1_0_1.Prifender_MONGODB_M2_v1
+--context_param DATASOURCE_PASS=Ld6!bWh#n3Qj
+--context_param DATASOURCE_HOST=13.68.21.43
+--context_param DATASOURCE_USER=despfuser
+--context_param DATASOURCE_TABLE_NAME=EmployeeDetails_1Million
+--context_param OFFSET=1
+--context_param DATASOURCE_NAME=cust_data
+
+Redshift:
+======
+
+--context_param DATASOURCE_PORT=5439
+--context_param JOB_ID=DES-Redshift_1-prifenderdb_public_employees-f6576ff1-924f-457d-8e79-83da772f0431
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@dob@#@salary@#@commission_pct@#@manager_id
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-28 15:06:203
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/Redshift/
+--context_param JOB_NAME=local_project.prifender_redshift_m3_v1_0_1.Prifender_Redshift_M3_v1
+--context_param DATASOURCE_PASS=Prifender999!
+--context_param DATASOURCE_HOST=prifender-redshift.ckbrgam2k4nr.eu-central-1.redshift.amazonaws.com
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_TABLE_NAME=public.employees
+--context_param OFFSET=1
+--context_param DATASOURCE_NAME=prifenderdb
+
+PostgreSQL:
+========
+
+--context_param DATASOURCE_PORT=5432
+--context_param JOB_ID=DES-PostgreSQL_1-cust_data_hr_public_Employees-9f1caf77-94d2-4fa9-b087-48a2eaca58f9
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@last_name@#@ssn@#@email@#@hire_date@#@dob@#@salary@#@commission_pct@#@manager_id
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-28 15:06:148
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/PostgreSQL/
+--context_param JOB_NAME=local_project.prifender_postgresql_m3_v1_0_1.Prifender_PostgreSQL_M3_v1
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=40.113.220.98
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_TABLE_NAME=\"public\".\"Employees\"
+--context_param OFFSET=1
+--context_param DATASOURCE_NAME=cust_data_hr
+
+DynamoDb :
+========
+
+
+--context_param JOB_ID=DES-DynamoDB_1-EmployeesDetails-83e16573-fa59-4529-94df-430deb76e3fb
+--context_param DATASOURCE_COLUMN_NAMES=phone_mobile@#@commission_pct@#@last_name@#@hire_date@#@salary@#@addr_street@#@addr_region
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-28 18:06:83
+--context_param SECRET_KEY=UWYNuYd4N+fWYZxrWMP0JorX/X+a3nrKQLT4twdf
+--context_param DATASOURCE_TABLE_NAME=EmployeesDetails
+--context_param OFFSET=1
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/DynamoDB/
+--context_param JOB_NAME=local_project.prifender_dynamodb_m3_v1_0_1.Prifender_DynamoDB_M3_v1
+--context_param ACCESS_KEY=AKIAIK2WNKTQUZFECRHQ
+
+Cassandra:
+===========
+
+--context_param DATASOURCE_PORT=9042
+--context_param JOB_ID=DES-Cassandra_2-cust_data_hr_employees-1d2a8052-e7b4-47ad-a12e-04a906816442
+--context_param DATASOURCE_COLUMN_NAMES=id@#@addr_city@#@addr_postal_code@#@addr_region@#@addr_street@#@commission_pct@#@dob@#@email@#@first_name@#@hire_date
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-28 18:06:996
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/Cassandra/
+--context_param JOB_NAME=local_project.prifender_cassandra_m3_v1_0_1.Prifender_Cassandra_M3_v1
+--context_param DATASOURCE_PASS=gcEeYUs*ECg8
+--context_param DATASOURCE_HOST=ds-cassandra.centralus.cloudapp.azure.com
+--context_param DATASOURCE_USER=prifender
+--context_param DATASOURCE_TABLE_NAME=employees
+--context_param OFFSET=1
+--context_param DATASOURCE_NAME=cust_data_hr
+
+HDFSORC:
+=======
+--context_param JOB_ID=DES-HDFSORC_4-_user_orc_employees_details_orc-9dcc74f6-d927-447b-8055-f6eb10cd8e96
+--context_param FILEREGEX=*
+--context_param DATASOURCE_COLUMN_NAMES=id@#@first_name@#@email@#@addresses.street@#@addresses.city@#@addresses.state@#@addresses.zip@#@phone_numbers@#@pay_checks.payment_date@#@pay_checks.amount
+--context_param SCOPE=sample
+--context_param JOB_STARTDATETIME=2018-06-28 19:06:170
+--context_param LIMIT=1000
+--context_param SAMPLESIZE=1000
+--context_param FILE_PATH=C:/_PRIFENDER/ETLJOBS/HDFSORC/
+--context_param Cont_File=
+--context_param JOB_NAME=local_project.prifender_hdfs_orc_m3_v1_0_1.Prifender_HDFS_ORC_M3_v1
+--context_param HADOOP_USER_NAME=hadoop
+--context_param OFFSET=1
+--context_param HDFS_URI=hdfs://10.9.0.4
+--context_param HDFS_FILE_PATH=/user/orc/employees_details_orc

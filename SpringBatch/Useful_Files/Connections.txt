@@ -1,0 +1,618 @@
+
+  {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "192.168.0.140"
+      },
+      {
+        "id": "Port",
+        "value": "1521"
+      },
+	   {
+        "id": "ServiceName",
+        "value": "cdb4"
+      },
+      
+       {
+        "id": "User",
+        "value": "system"
+      },
+      {
+        "id": "Password",
+        "value": "dwp1234"
+      } 
+    ],
+    "label": "Oracle",
+    "type": "Oracle"
+  }
+  {
+  "connectionParams": [
+    {
+      "id": "Host",
+      "value": "192.168.0.46"
+    },
+    {
+      "id": "Port",
+      "value": "1521"
+    },
+ {
+      "id": "ServiceName",
+      "value": "pdb1"
+    },
+    
+     {
+      "id": "User",
+      "value": "SYS as SYSDBA"
+    },
+    {
+      "id": "Password",
+      "value": "Anviz123"
+    }
+  ],
+  "label": "Oracle",
+  "type": "Oracle",
+  "description": "Oracle DB Azure Environment"
+}
+  
+  {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "137.117.19.172"
+      },
+      {
+        "id": "Port",
+        "value": "1433"
+      },
+      
+       {
+        "id": "User",
+        "value": "prifender"
+      },
+      {
+        "id": "Password",
+        "value": "gcEeYUs*ECg8"
+      },
+       {
+        "id": "Database",
+        "value": "cust_data_hr"
+      } ,
+      
+       {
+        "id": "Schema",
+        "value": "dbo"
+      } 
+    ],
+    "label": "SqlServer",
+    "type": "SqlServer"
+  }
+  
+  {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "192.168.0.130"
+      },
+      {
+        "id": "Port",
+        "value": "4475"
+      },
+      
+       {
+        "id": "User",
+        "value": "almadmin"
+      },
+      {
+        "id": "Password",
+        "value": "Un!qu3Pa5$"
+      },
+       {
+        "id": "Database",
+        "value": "MAHI_MINIDW_1009007"
+      } 
+    ],
+    "label": "MySQL",
+    "type": "MySQL"
+  }
+  {
+  "connectionParams": [
+    {
+      "id": "Host",
+      "value": "13.77.76.123"
+    },
+    {
+      "id": "Port",
+      "value": "8091"
+    },
+    
+     {
+      "id": "User",
+      "value": "Administrator"
+    },
+    {
+      "id": "Password",
+      "value": "gcEeYUs*ECg8"
+    },
+     {
+      "id": "BucketPassword",
+      "value": "test@123"
+    },
+    
+     {
+      "id": "Bucket",
+      "value": "emp"
+    },
+     {
+      "id": "QueryTimeout",
+      "value": "7500000"
+    },
+     {
+      "id": "ConnectTimeout",
+      "value": "10000000"
+    }
+  ],
+  "label": "Couchbase",
+  "type": "Couchbase"
+}
+  
+  
+  {
+  "connectionParams": [
+    {
+      "id": "Pool",
+      "value": "EC6"
+    },
+    {
+      "id": "MaxConnections",
+      "value": "5"
+    },
+     {
+      "id": "Client",
+      "value": "800"
+    },
+    {
+      "id": "User",
+      "value": "sapuser"
+    },
+     {
+      "id": "Password",
+      "value": "India123"
+    } ,
+  
+    {
+      "id": "Language",
+      "value": "EN"
+    },
+    {
+      "id": "Host",
+      "value": "VISUINFOEHP6"(192.168.0.191)
+    },
+    {
+      "id": "Port",
+      "value": "1521"
+    },
+     {
+      "id": "SystemNumber",
+      "value": "66"
+    },
+     {
+      "id": "Repository",
+      "value": "MYRepository"
+    },
+     {
+      "id": "Function",
+      "value": "ZHRDET"
+    }   
+  ],
+  "label": "SAP",
+  "type": "SAP"
+}
+    {
+       "id": "Mongo",
+       "label": "Mongo",
+       "type": "Mongo",
+       "connectionParams": [
+           {
+               "id": "Host",
+               "value": "13.68.21.43"
+           },
+           {
+               "id": "Port",
+               "value": "27017"
+           },
+           {
+               "id": "Database",
+               "value": "cust_data"
+           },
+           {
+               "id": "User",
+               "value": "mongoadmin"
+           },
+           {
+               "id": "Password",
+               "value": "mongoadmin"
+           }
+       ]
+   }
+   
+        {
+       "id": "HBase",
+       "label": "HBase",
+       "type": "HBase",
+       "connectionParams": [
+           {
+               "id": "ZookeeperQuorum",
+               "value": "Hbase.dwpractice.com"
+           },
+           
+           {
+               "id": "User",
+               "value": "hadoop"
+           },
+           {
+               "id": "ZookeeperPropertyClientPort",
+               "value": "2181"
+           } 
+       ]
+   }
+   
+   {
+    "connectionParams": [
+      {
+        "id": "Host",
+        "value": "192.168.0.116"
+      },
+      {
+        "id": "Port",
+        "value": "1433"
+      },
+      {
+        "id": "AdminHost",
+        "value": "192.168.0.117"
+      },
+       {
+        "id": "FullyQualifiedDomain",
+        "value": "MSSQLSvc/win-mssql-2017.anvizent.local"
+      },
+	   {
+        "id": "Realm",
+        "value": "ANVIZENT.LOCAL"
+      },
+	  
+      {
+        "id": "IntegratedSecurity",
+        "value": "true"
+      },
+       {
+        "id": "AuthenticationScheme",
+        "value": "JavaKerberos"
+      } ,
+      
+       {
+        "id": "Database",
+        "value": "cust_data_hr"
+      } ,     
+	  {
+        "id": "Schema",
+        "value": "dbo"
+      },
+	  {
+		"id": "EncryptionMethod",
+		"value": "ssl"
+      }
+	  ,
+	  {
+		"id": "User",
+		"value": "ituser@ANVIZENT.LOCAL"
+      }
+	  ,
+	  {
+		"id": "Password",
+		"value": "Dwp@1234"
+      }
+    ],
+    "label": "SqlServerKerbores",
+    "type": "SqlServerKerbores"
+  }
+  
+  {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "192.168.0.148"
+     },
+     {
+       "id": "Port",
+       "value": "10000"
+     },
+     
+      {
+       "id": "User",
+       "value": "hadoop"
+     },
+     {
+       "id": "Password",
+       "value": "Dwp@1234"
+     },
+      {
+       "id": "Database",
+       "value": "employeesdetails"
+     } 
+   ],
+   "label": "Hive",
+   "type": "Hive"
+ }
+ 
+{
+  "connectionParams": [
+    {
+      "id": "File",
+      "value": "File system_Azure/test"
+    },
+     {
+    "id":"FileRegExp",
+    "value":"sree.csv"
+    },
+    {
+      "id": "Host",
+      "value": "40.69.156.136"
+    },
+    {
+      "id": "ShareName",
+      "value": "prifender_data"
+    },
+    {
+      "id": "User",
+      "value": "prifender"
+    },
+    {
+      "id": "Password",
+      "value": "gcEeYUs*ECg8"
+    },
+   
+    {
+      "id": "HeaderExists",
+      "value": "true"
+    }
+  ],
+  "label": "CSV",
+  "type": "CSV"
+}
+{
+  "connectionParams": [
+    {
+      "id": "File",
+      "value": "D:/CSV_ExtractionFiles/Single_File_1_Million1"
+    },
+     {
+    "id":"FileRegExp",
+    "value":".csv"
+    } ,
+   
+    {
+      "id": "HeaderExists",
+      "value": "false"
+    }
+  ],
+  "label": "CSV",
+  "type": "CSV"
+}
+  
+ {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "192.168.1.186"
+     },
+     {
+       "id": "Port",
+       "value": "50070"
+     },
+	 
+     {
+       "id": "User",
+       "value": "root"
+     },
+	  
+     {
+       "id": "File",
+       "value": "/user/root/parquet/employees_details_parquet"
+     } ,
+       
+     {
+       "id": "FileRegExp",
+       "value": "000000_0*"
+     }
+   ],
+   "label": "HDFSParquet",
+   "type": "HDFSParquet"
+ }
+
+
+{
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "192.168.1.186"
+     },
+     {
+       "id": "Port",
+       "value": "50070"
+     },
+	 
+     {
+       "id": "User",
+       "value": "root"
+     },
+	  
+     {
+       "id": "File",
+       "value": "/user/root/avro/employees_details_avro"
+     } ,
+       
+     {
+       "id": "FileRegExp",
+       "value": "000000_0*"
+     }
+   ],
+   "label": "HDFSAvro",
+   "type": "HDFSAvro"
+ }
+
+
+  {
+   "connectionParams": [
+     {
+       "id": "Host",
+       "value": "192.168.1.16"
+     },
+	  {
+       "id": "Port",
+       "value": "1025"
+     },
+      {
+       "id": "User",
+       "value": "DBC"
+     },
+    
+       {
+       "id": "Password",
+       "value": "dbc"
+     },
+  {
+       "id": "Database",
+       "value": "EmployeesDetails"
+     }
+   ],
+   "label": "Teradata",
+   "type": "Teradata"
+ }
+
+{
+"connectionParams": [
+  {
+    "id": "Host",
+    "value": "52.173.24.49"
+  },
+   {
+    "id": "User",
+    "value": "prifender"
+  },
+  {
+    "id": "Password",
+    "value": "gcEeYUs*ECg8"
+  },
+  {
+    "id": "KeySpace",
+    "value": "cust_data_hr"
+  },{
+  	  "id": "ReadTimeout",
+    "value": "60000"
+  	
+  },
+  {
+  	 "id": "ConnectTimeout",
+    "value": "60000"
+  	
+  }
+],
+"label": "Cassandra",
+"type": "Cassandra"
+}
+ 
+
+{
+    "connectionParams": [
+	
+	 {
+        "id": "Host",
+        "value": "prifender-redshift.ckbrgam2k4nr.eu-central-1.redshift.amazonaws.com"
+      } ,
+      {
+        "id": "Port",
+        "value": "5439"
+      },
+      
+       {
+        "id": "User",
+        "value": "prifender"
+      },
+      {
+        "id": "Password",
+        "value": "Prifender999!"
+      },
+       {
+        "id": "Database",
+        "value": "prifenderdb"
+      } 
+    ],
+    "label": "Redshift",
+    "type": "Redshift"
+  }
+  
+  
+   
+ {
+  "connectionParams": [
+    {
+      "id": "Host",
+      "value": "192.168.1.186"
+    },
+    {
+      "id": "Port",
+      "value": "50070"
+    },
+
+    {
+      "id": "User",
+      "value": "hadoop"
+    },
+ {
+       "id": "FileRegExp",
+       "value": "*"
+     }
+   ,
+    {
+      "id": "File",
+      "value": "/user/root/ORC/000000_0"
+    }  
+  ],
+  "label": "HDFSORC",
+  "type": "HDFSORC"
+}
+
+{
+  "connectionParams": [
+    {
+      "id": "File",
+      "value": "File system_Azure/Sequence_with_same_formats/Single_Format_File_1.csv"
+    },
+     {
+    "id":"FileRegExp",
+    "value":"*"
+    },
+    {
+      "id": "Host",
+      "value": "52.176.149.8"
+    },
+    {
+      "id": "ShareName",
+      "value": "prifender_data"
+    },
+    {
+      "id": "User",
+      "value": "prifender"
+    },
+    {
+      "id": "Password",
+      "value": "gcEeYUs*ECg8"
+    } ,
+    {
+      "id": "HeaderExists",
+      "value": "false"
+    }
+  ],
+  "label": "CSVNFS",
+  "type": "CSVNFS"
+}
