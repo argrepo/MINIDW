@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.anvizent.minidw</groupId>
+	<artifactId>minidw.api</artifactId>
+	<version>3.6</version>
+	<packaging>pom</packaging>
+	<name>minidw.api</name>
+
+	<properties>
+
+		<minidw.version.base>3.6</minidw.version.base>
+		<minidw.version>3.6</minidw.version>
+
+		<java-version>1.8</java-version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+		<org.apache.maven.plugins.version>3.1</org.apache.maven.plugins.version>
+		<org.codehaus.mojo.version>1.2.1</org.codehaus.mojo.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<org.springframework-version>4.2.6.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.7.25</org.slf4j-version>
+		<log4j.version>1.2.17</log4j.version>
+		<spring-security.version>3.2.5.RELEASE</spring-security.version>
+		<velocity.version>1.7</velocity.version>
+		<mail.version>1.4.7</mail.version>
+
+		<javax.servlet.version>3.0.1</javax.servlet.version>
+		<javax.servlet.jsp.jsp-api.version>2.1</javax.servlet.jsp.jsp-api.version>
+		<javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
+		<org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+		<com.fasterxml.jackson.datatype.version>2.5.1</com.fasterxml.jackson.datatype.version>
+		
+		<org.apache.commoms.lang.version>2.6</org.apache.commoms.lang.version>
+		<org.apache.commoms.codec.version>1.11</org.apache.commoms.codec.version>
+		<org.apache.commoms.io.version>2.6</org.apache.commoms.io.version>
+		<org.apache.httpcomponents.version>4.5.5</org.apache.httpcomponents.version>
+		<org.apache.common-dbcp.version>1.4</org.apache.common-dbcp.version>
+		<org.apache.commons-fileupload.version>1.3.1</org.apache.commons-fileupload.version>
+		<org.apache.poi.version>3.17</org.apache.poi.version>
+		<org.apache.tiles.version>3.0.5</org.apache.tiles.version>
+		<org.apache.commons-net.version>3.3</org.apache.commons-net.version>
+		<org.apache.commons-collections.version>3.2.1</org.apache.commons-collections.version>
+		
+		<org.json.version>20180130</org.json.version>
+		<junit.version>4.12</junit.version>
+		<net.sf.flexjson.version>2.0</net.sf.flexjson.version>
+		<com.opencsv.version>3.3</com.opencsv.version>
+		<com.googlecode.json-simple.version>1.1.1</com.googlecode.json-simple.version>
+		<com.amazonaws.java.sdk.s3.version>1.11.149</com.amazonaws.java.sdk.s3.version>
+		<com.monitorjbl.xlsx-streamer.version>1.2.1</com.monitorjbl.xlsx-streamer.version>
+		<quartz.version>2.2.3</quartz.version>
+		<org.apache.commons.version>1.5</org.apache.commons.version>
+		
+		<io.springfo.version>2.8.0</io.springfo.version>
+		<net.bull.javamelody.version>1.67.0</net.bull.javamelody.version>
+		
+		<org.postgresql.version>9.4-1200-jdbc41</org.postgresql.version>
+		<net.sf.ucanaccess.version>3.0.5</net.sf.ucanaccess.version>
+		
+		<javax.validation.version>1.1.0.Final</javax.validation.version>
+		<org.hibernate.hibernate-validator.version>5.1.3.Final</org.hibernate.hibernate-validator.version>
+		<org.springframework.mobile.version>1.1.5.RELEASE</org.springframework.mobile.version>
+		<javax.inject.version>1</javax.inject.version>
+		
+		<xml-apis.version>1.4.01</xml-apis.version>
+		
+		<org.apache.oltu.oauth2.client.version>1.0.2</org.apache.oltu.oauth2.client.version>
+		
+		<mysql.version>5.1.38</mysql.version>
+		<!-- <mysql.version>8.0.14</mysql.version> -->
+		<oracle-connector.version>10.2.0.4.0</oracle-connector.version>
+		<openedge-connector.version>1.0</openedge-connector.version>
+		<db2-connector.version>4.0</db2-connector.version>
+		<db2-as400-connector.version>7.10</db2-as400-connector.version>
+		<salesforce-connector.version>1.0</salesforce-connector.version>
+		<vortex-connector.version>1.0</vortex-connector.version>
+		<sqljdbc4-connector.version>1.0</sqljdbc4-connector.version>
+		<ojdbc-connector.version>1.0</ojdbc-connector.version>
+		<com.google.code.gson.version>2.2.2</com.google.code.gson.version>
+		<commons-validator.version>1.4.0</commons-validator.version>
+		<json-flattener.version>0.2.4</json-flattener.version>
+		
+		<jjwt.version>0.7.0</jjwt.version>
+		<jackson.version>2.7.5</jackson.version>
+		<tomcat-dbcp.version>8.0.26</tomcat-dbcp.version>
+		<org.apache.commons.commons-dbcp2.version>2.1.1</org.apache.commons.commons-dbcp2.version>
+	</properties>
+	
+	<modules>
+		<module>../encryptor</module>
+		<module>../common-utils</module>
+		<module>../Logger</module>
+		<module>../minidw.client.jdbc.utils</module>
+		<module>../client.data.to.csv.path.converter</module>
+		<module>../amazons3util</module>
+		<module>../minidwclientws</module>
+		<module>../minidw.service.utils</module>
+		<module>../minidw.processors</module>
+		<module>../minidwdaoutils</module>
+		<module>../minidw_druid__integration</module>
+		<module>../minidw</module>
+		<module>../client.metadata.update</module>
+		<module>../minidwwebservice</module>
+		<module>../minidwpackagerunnerapi</module>
+		<module>../schedulermaster</module>
+		<module>../schedulerui</module>
+  </modules>
+
+</project>
